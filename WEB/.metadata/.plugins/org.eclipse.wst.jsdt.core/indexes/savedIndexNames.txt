@@ -1,0 +1,6 @@
+INDEX VERSION 1.122+D:\Ceren\MoneyTreeApp\WEB\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+722754512.index
+1083126429.index
+4118857792.index
+2136916205.index
+1255450450.index
