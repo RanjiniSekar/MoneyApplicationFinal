@@ -1,2 +1,0 @@
-INDEX VERSION 1.126+D:\Ceren\MoneyTreeApp\WEB\.metadata\.plugins\org.eclipse.jdt.core
-722754512.index
