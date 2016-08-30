@@ -6,7 +6,7 @@ var app = express();
 
 app.use(cors());
 
-var port = process.env.PORT || 3000;
+var port = process.env.PORT || 8080;
 var listenIP = process.env.LISTENIP || "localhost";
 
 app.use(bodyParser.json());
@@ -25,3 +25,7 @@ var pmRouter = require('./routes/pm');
 
 app.use('/api/trader', traderRouter);
 app.use('/api/pm', pmRouter);
+
+app.use('/', function () {
+    res.send('Welcome');
+});

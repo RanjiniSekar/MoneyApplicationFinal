@@ -6,8 +6,8 @@ gulp.task('default', function () {
         script: 'app.js',
         extension: 'js',
         env: {
-            PORT: 8000,
-            LISTENIP: 0.0.0.0
+            PORT: 8080,
+            LISTENIP: '127.0.0.1'
         },
         ignore: ['./node_modules/**']
     }).on('restart', function () {
