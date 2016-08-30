@@ -14,7 +14,7 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 
-app.listen(port, listenIP, function () {
+app.listen(port, function () {
     console.log('Listening on port ' + port);
 });
 
