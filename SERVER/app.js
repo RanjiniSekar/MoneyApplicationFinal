@@ -17,7 +17,7 @@ app.listen(port, function () {
 });
 
 
-var tradeRouter = require('./routes/trader');
+var traderRouter = require('./routes/trader');
 var pmRouter = require('./routes/pm');
 
 
