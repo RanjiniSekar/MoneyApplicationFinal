@@ -5,14 +5,16 @@ var app = express();
 
 
 app.use(cors());
+
 var port = process.env.PORT || 3000;
+var listenIP = process.env.LISTENIP || "localhost";
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: true
 }));
 
-app.listen(port, function () {
+app.listen(port, listenIP, function () {
     console.log('Listening on port ' + port);
 });
 
