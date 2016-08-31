@@ -1,4 +1,14 @@
 package UserObjects;
+
+/**
+*
+* @author agiria
+*/
+
 public abstract class User {
-	abstract void testFunction(); 
+	
+	long id;
+	String name;
+	String username;
+	
 }
