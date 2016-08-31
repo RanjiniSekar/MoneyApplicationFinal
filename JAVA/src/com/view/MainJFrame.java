@@ -1,4 +1,12 @@
 package com.view;
+
+import java.awt.Component;
+import javax.swing.DefaultCellEditor;
+import javax.swing.JComboBox;
+import javax.swing.JTable;
+import javax.swing.table.TableCellRenderer;
+import javax.swing.table.TableColumn;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -115,6 +123,7 @@ public class MainJFrame extends javax.swing.JFrame {
 
         OrderRequestsTable1.setBackground(new java.awt.Color(240, 240, 240));
         OrderRequestsTable1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        String[] values = {"Trader 1", "Trader 2", "Trader 3"};
         OrderRequestsTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null, null},
@@ -133,13 +142,16 @@ public class MainJFrame extends javax.swing.JFrame {
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.Double.class, java.lang.Double.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.Double.class, java.lang.Double.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class
             };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
             }
         });
+        TableColumn col = OrderRequestsTable1.getColumnModel().getColumn(9);
+        col.setCellEditor(new myComboBoxEditor(values));
+        col.setCellRenderer(new MyComboBoxRenderer(values));
         OrderRequestsTable1.setGridColor(new java.awt.Color(255, 255, 255));
         OrderRequestsTable1.getTableHeader().setReorderingAllowed(false);
         jScrollPane6.setViewportView(OrderRequestsTable1);
@@ -276,7 +288,29 @@ public class MainJFrame extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+private class myComboBoxEditor extends DefaultCellEditor {
+    myComboBoxEditor(String[] items) {
+        super(new JComboBox(items));
+    }
+}
+private class MyComboBoxRenderer extends JComboBox implements TableCellRenderer {
+    public MyComboBoxRenderer(String[] items) {
+        super(items);
+    }
+    @Override
+    public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected,
+            boolean hasFocus, int row, int column) {
+        if (isSelected) {
+            setForeground(table.getSelectionForeground());
+            super.setBackground(table.getSelectionBackground());
+        } else {
+            setForeground(table.getForeground());
+            setBackground(table.getBackground());
+        }
+        setSelectedItem(value);
+        return this;
+    }
+}
     private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jToggleButton1ActionPerformed
