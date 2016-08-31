@@ -132,7 +132,11 @@ public class PortfolioManager extends javax.swing.JFrame {
                     .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton3))
+<<<<<<< HEAD:JAVA/src/com/view/PortfolioManager.java
                 .addContainerGap(244, Short.MAX_VALUE))
+=======
+                .addContainerGap(229, Short.MAX_VALUE))
+>>>>>>> origin/master:JAVA/src/com/view/MainJFrame.java
         );
 
         jTabbedPane1.addTab("Pending Order Requests", PendingOrders);
@@ -304,7 +308,11 @@ public class PortfolioManager extends javax.swing.JFrame {
                 .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 217, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jToggleButton2)
+<<<<<<< HEAD:JAVA/src/com/view/PortfolioManager.java
                 .addContainerGap(182, Short.MAX_VALUE))
+=======
+                .addContainerGap(167, Short.MAX_VALUE))
+>>>>>>> origin/master:JAVA/src/com/view/MainJFrame.java
         );
 
         jTabbedPane1.addTab("Create Order", jPanel1);
@@ -372,7 +380,11 @@ public class PortfolioManager extends javax.swing.JFrame {
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton2))
+<<<<<<< HEAD:JAVA/src/com/view/PortfolioManager.java
                 .addGap(0, 246, Short.MAX_VALUE))
+=======
+                .addGap(0, 231, Short.MAX_VALUE))
+>>>>>>> origin/master:JAVA/src/com/view/MainJFrame.java
         );
 
         jTabbedPane1.addTab("Order History", jPanel3);
