@@ -62,10 +62,10 @@ public class TradeWindow extends javax.swing.JFrame {
         jTextField1 = new javax.swing.JTextField();
         jComboBox2 = new javax.swing.JComboBox<>();
         jButton5 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
         jButton6 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Trader Platform");
         getContentPane().setLayout(new java.awt.GridBagLayout());
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
@@ -131,7 +131,7 @@ public class TradeWindow extends javax.swing.JFrame {
                 .addContainerGap(318, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("Requests", jPanel1);
+        jTabbedPane1.addTab("Pending Requests", jPanel1);
 
         jTable4.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -375,14 +375,6 @@ public class TradeWindow extends javax.swing.JFrame {
         gridBagConstraints.insets = new java.awt.Insets(11, 10, 11, 10);
         getContentPane().add(jTabbedPane1, gridBagConstraints);
 
-        jLabel1.setText("Trader Window");
-        gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 0;
-        gridBagConstraints.gridy = 0;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
-        gridBagConstraints.insets = new java.awt.Insets(15, 10, 0, 0);
-        getContentPane().add(jLabel1, gridBagConstraints);
-
         jButton6.setText("Change Password");
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -503,7 +495,6 @@ public class TradeWindow extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JComboBox<String> jComboBox3;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
