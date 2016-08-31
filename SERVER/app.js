@@ -26,6 +26,6 @@ var pmRouter = require('./routes/pm');
 app.use('/api/trader', traderRouter);
 app.use('/api/pm', pmRouter);
 
-app.use('/', function () {
+app.use('/', function (req, res) {
     res.send('Welcome');
 });
