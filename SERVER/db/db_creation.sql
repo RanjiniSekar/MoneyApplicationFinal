@@ -23,17 +23,27 @@ create table portfolio_manager (
    FOREIGN KEY (pm_id) REFERENCES user(u_id)
 );
 
+-- Admin
+
+create table portfolio_manager (
+   adm_id BIGINT not null,
+   PRIMARY KEY  (adm_id),
+   FOREIGN KEY (adm_id) REFERENCES user(u_id)
+);
+
 -- Portfolio
 
 create table portfolio (
-   p_id BIGINT AUTO_INCREMENT
+   p_id BIGINT not null AUTO_INCREMENT,
+   PRIMARY KEY (p_id)
 );
 
 -- Trader 
 
 create table trader (
    t_id BIGINT not null,
-   PRIMARY KEY  (t_id)
+   PRIMARY KEY  (t_id),
+   FOREIGN KEY (t_id) REFERENCES user(u_id)
 );
 
 
@@ -49,14 +59,13 @@ create table pm_to_portfolio (
 
 -- Trade related operations
 
-create table trade_block (
+create table trader_block (
    block_id BIGINT not null AUTO_INCREMENT,
-   symbol VARCHAR (8) not null,
+   symbol CHAR (6) not null,
    quantity int not null,
-   order_type int not null,
-   stop_price double not null,
-   limit_price double not null,
-   status int not null, 
+   order_type VARCHAR(8) not null,
+   price_executed DECIMAL(18, 4),
+   status VARCHAR(8) not null, 
    t_id BIGINT not null,
    b_id BIGINT not null,
    PRIMARY KEY(block_id),
@@ -81,19 +90,22 @@ create table single_order (
    sorder_id BIGINT not null,
    p_id BIGINT not null,
    order_id BIGINT not null,
-   block_id BIGINT not null,
-   symbol CHAR(6) not null,
+   block_id BIGINT,
+   symbol CHAR (6) not null,
    quantity double not null,
-   action VARCHAR(15) not null, 
-   price_stop DECIMAL(18, 4) not null,
-   price_limit DECIMAL(18, 4) not null,
-   price_purchase DECIMAL(18, 4) not null,
-   stock_exchange int not null,
+   action_type VARCHAR(15) not null, 
+   order_type VARCHAR(10) not null,
    account_type double not null,
-   order_type int not null,
+   stock_exchange VARCHAR(8) not null,
+   price_stop DECIMAL(18, 4),
+   price_limit DECIMAL(18, 4),
+   price_executed DECIMAL(18, 4),
    status int not null,
+   date_pmorder TIMESTAMP not null,
+   date_trequest TIMESTAMP,
+   date_bexecuted TIMESTAMP,
    PRIMARY KEY(sorder_id),
    FOREIGN KEY(p_id) REFERENCES pm_order(p_id),
    FOREIGN KEY(order_id) REFERENCES pm_order(order_id),
-   FOREIGN KEY(block_id) REFERENCES trade_block(block_id)
+   FOREIGN KEY(block_id) REFERENCES trader_block(block_id)
 );
