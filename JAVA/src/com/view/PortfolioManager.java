@@ -54,6 +54,8 @@ public class PortfolioManager extends javax.swing.JFrame {
         FilterOptionsPMEOD = new javax.swing.JComboBox<>();
         PMEODFilter = new javax.swing.JButton();
         CreateOrder = new javax.swing.JPanel();
+        TraderSelectBrokerOptions = new javax.swing.JComboBox<>();
+        jLabel5 = new javax.swing.JLabel();
         PMSendOrderScrollPane = new javax.swing.JScrollPane();
         PMSendOrderTable = new javax.swing.JTable();
         PMSendOrder = new javax.swing.JButton();
@@ -266,23 +268,46 @@ public class PortfolioManager extends javax.swing.JFrame {
 
         PMPlatformTabbedPane.addTab("EOD", PMEOD);
 
+        TraderSelectBrokerOptions.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Automatic", "Trader 1", "Trader 2", "Trader 3", "Trader 4" }));
+        TraderSelectBrokerOptions.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TraderSelectBrokerOptionsActionPerformed(evt);
+            }
+        });
+
+        jLabel5.setText("Select Trader to Assign To:");
+
         PMSendOrderTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Order ID", "Portfolio ID", "Symbol", "Quantity", "Action", "Stop Price", "Limit Price", "Account Type", "Order Type", "Assign To", "Stock Exchange"
+                "Order ID", "Portfolio ID", "Symbol", "Quantity", "Action", "Stop Price", "Limit Price", "Stock Exchange", "Account Type", "Order Type"
             }
-        ));
-        TableColumn col = PMSendOrderTable.getColumnModel().getColumn(9);
-        col.setCellEditor(new myComboBoxEditor(TraderNames));
-        col.setCellRenderer(new MyComboBoxRenderer(TraderNames));
-        TableColumn col2 = PMSendOrderTable.getColumnModel().getColumn(10);
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Long.class, java.lang.Long.class, java.lang.String.class, java.lang.Integer.class, java.lang.Object.class, java.lang.Double.class, java.lang.Double.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        TableColumn col1 = PMSendOrderTable.getColumnModel().getColumn(4);
+        col1.setCellEditor(new myComboBoxEditor(ActionItems));
+        col1.setCellRenderer(new MyComboBoxRenderer(ActionItems));
+        TableColumn col2 = PMSendOrderTable.getColumnModel().getColumn(7);
         col2.setCellEditor(new myComboBoxEditor(StockExchange));
         col2.setCellRenderer(new MyComboBoxRenderer(StockExchange));
+        TableColumn col3 = PMSendOrderTable.getColumnModel().getColumn(8);
+        col3.setCellEditor(new myComboBoxEditor(AccountType));
+        col3.setCellRenderer(new MyComboBoxRenderer(AccountType));
+        TableColumn col4 = PMSendOrderTable.getColumnModel().getColumn(9);
+        col4.setCellEditor(new myComboBoxEditor(OrderType));
+        col4.setCellRenderer(new MyComboBoxRenderer(OrderType));
         PMSendOrderScrollPane.setViewportView(PMSendOrderTable);
 
         PMSendOrder.setText("Send Order");
@@ -298,11 +323,16 @@ public class PortfolioManager extends javax.swing.JFrame {
         CreateOrder.setLayout(CreateOrderLayout);
         CreateOrderLayout.setHorizontalGroup(
             CreateOrderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PMSendOrderScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 821, Short.MAX_VALUE)
+            .addComponent(PMSendOrderScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CreateOrderLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(CreateOrderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(PMSendOrder, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CreateOrderLayout.createSequentialGroup()
+                        .addComponent(jLabel5)
+                        .addGap(18, 18, 18)
+                        .addComponent(TraderSelectBrokerOptions, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(213, 213, 213)
+                        .addComponent(PMSendOrder))
                     .addComponent(PMAddOrderRow, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap())
         );
@@ -310,10 +340,14 @@ public class PortfolioManager extends javax.swing.JFrame {
             CreateOrderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(CreateOrderLayout.createSequentialGroup()
                 .addGap(5, 5, 5)
-                .addComponent(PMSendOrder)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(CreateOrderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(PMSendOrder)
+                    .addGroup(CreateOrderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel5)
+                        .addComponent(TraderSelectBrokerOptions, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(28, 28, 28)
                 .addComponent(PMSendOrderScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(107, 107, 107)
+                .addGap(90, 90, 90)
                 .addComponent(PMAddOrderRow)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -421,6 +455,10 @@ public class PortfolioManager extends javax.swing.JFrame {
     private void ChangePasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChangePasswordActionPerformed
         new ChangePassword().setVisible(true);
     }//GEN-LAST:event_ChangePasswordActionPerformed
+
+    private void TraderSelectBrokerOptionsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TraderSelectBrokerOptionsActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TraderSelectBrokerOptionsActionPerformed
 private class myComboBoxEditor extends DefaultCellEditor {
     myComboBoxEditor(String[] items) {
         super(new JComboBox(items));
@@ -482,7 +520,10 @@ private class MyComboBoxRenderer extends JComboBox implements TableCellRenderer 
     }
     //Trader Names and Currency Strings
     String[] TraderNames = {"Trader 1","Trader 2"};
+    String[] ActionItems = {"Buy","Sell"};
     String[] StockExchange = {"New York Exchange","London Stock Exchange"};
+    String[] AccountType = {"Margin Account","Cash Account"};
+    String[] OrderType = {"Market Order","Stop Order","Limit Order","Stop Limit Order"};
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ChangePassword;
     private javax.swing.JPanel CreateOrder;
@@ -511,7 +552,9 @@ private class MyComboBoxRenderer extends JComboBox implements TableCellRenderer 
     private javax.swing.JTable PMSendOrderTable;
     private javax.swing.JScrollPane PendingOrderRequests;
     private javax.swing.JPanel PendingOrders;
+    private javax.swing.JComboBox<String> TraderSelectBrokerOptions;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel5;
     // End of variables declaration//GEN-END:variables
 }

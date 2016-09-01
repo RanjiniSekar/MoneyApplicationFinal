@@ -41,7 +41,7 @@ public class UserLogin extends javax.swing.JFrame {
         jButton1.setText("Login");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
-        gridBagConstraints.gridy = 5;
+        gridBagConstraints.gridy = 6;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(0, 117, 71, 64);
         getContentPane().add(jButton1, gridBagConstraints);
