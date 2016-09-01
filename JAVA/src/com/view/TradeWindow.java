@@ -28,15 +28,15 @@ public class TradeWindow extends javax.swing.JFrame {
     private void initComponents() {
         java.awt.GridBagConstraints gridBagConstraints;
 
-        jTabbedPane1 = new javax.swing.JTabbedPane();
-        jPanel1 = new javax.swing.JPanel();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
-        jButton7 = new javax.swing.JButton();
-        jComboBox3 = new javax.swing.JComboBox<>();
-        jTextField2 = new javax.swing.JTextField();
-        jButton8 = new javax.swing.JButton();
-        jPanel2 = new javax.swing.JPanel();
+        TraderPlatformTabbedPane = new javax.swing.JTabbedPane();
+        TraderPlatformRequestsTab = new javax.swing.JPanel();
+        TraderIncomingRequestsScrollPane = new javax.swing.JScrollPane();
+        TraderIncomingRequestsTable = new javax.swing.JTable();
+        TraderBlockOrders = new javax.swing.JButton();
+        FilterOptionsTraderRequests = new javax.swing.JComboBox<>();
+        FilterTextTraderRequests = new javax.swing.JTextField();
+        TraderRequestsFilter = new javax.swing.JButton();
+        TraderPlatformBlockedRequests = new javax.swing.JPanel();
         jScrollPane4 = new javax.swing.JScrollPane();
         jTable4 = new javax.swing.JTable();
         jScrollPane5 = new javax.swing.JScrollPane();
@@ -52,86 +52,106 @@ public class TradeWindow extends javax.swing.JFrame {
         jCheckBox1 = new javax.swing.JCheckBox();
         jCheckBox2 = new javax.swing.JCheckBox();
         jCheckBox3 = new javax.swing.JCheckBox();
-        jButton4 = new javax.swing.JButton();
-        jCheckBox4 = new javax.swing.JCheckBox();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        TraderSubmitBlocks = new javax.swing.JButton();
+        TraderSelectAllBlocks = new javax.swing.JCheckBox();
+        TraderSelectBrokerOptions = new javax.swing.JComboBox<>();
         jLabel5 = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jTextField1 = new javax.swing.JTextField();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        TraderPlatformBlockOrderHistory = new javax.swing.JPanel();
+        TraderBlockHistoryScrollPane = new javax.swing.JScrollPane();
+        TraderBlockHistoryTable = new javax.swing.JTable();
+        FilterTextTraderBlockHistory = new javax.swing.JTextField();
+        FilterOptionsTraderBlockHistory = new javax.swing.JComboBox<>();
+        TraderBlockHistoryFilter = new javax.swing.JButton();
+        ChangePassword = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Trader Platform");
+        setName("TraderPlatformFrame"); // NOI18N
         getContentPane().setLayout(new java.awt.GridBagLayout());
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        TraderPlatformTabbedPane.setName("TraderPlatformTabbedPane");
+
+        TraderPlatformRequestsTab.setName("TraderPlatformRequestsTab"); // NOI18N
+
+        TraderIncomingRequestsTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Order ID", "Portfolio ID", "Symbol", "Quantity", "Action", "Stop Price", "Limit Price", "Account Type", "Order Type", "Assigned By"
+                "Order ID", "Portfolio ID", "Symbol", "Quantity", "Action", "Stop Price", "Limit Price", "Account Type", "Order Type", "Assigned By", "Currency"
             }
-        ));
-        jScrollPane3.setViewportView(jTable2);
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.String.class
+            };
 
-        jButton7.setText("Block Orders");
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        TraderIncomingRequestsScrollPane.setViewportView(TraderIncomingRequestsTable);
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Order ID", "Portfolio ID", "Symbol", "Quantity", "Action", "Stop Price", "Limit Price", "Account Type", "Order Type", "Assigned By" }));
-        jComboBox3.addActionListener(new java.awt.event.ActionListener() {
+        TraderBlockOrders.setText("Block Orders");
+        TraderBlockOrders.setActionCommand("BlockOrders()");
+        TraderBlockOrders.setName("TraderBlockOrders"); // NOI18N
+        TraderBlockOrders.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox3ActionPerformed(evt);
+                TraderBlockOrdersActionPerformed(evt);
             }
         });
 
-        jTextField2.setText("Filter By");
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        FilterOptionsTraderRequests.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Order ID", "Portfolio ID", "Symbol", "Quantity", "Action", "Stop Price", "Limit Price", "Account Type", "Order Type", "Assigned By" }));
+        FilterOptionsTraderRequests.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                FilterOptionsTraderRequestsActionPerformed(evt);
             }
         });
 
-        jButton8.setText("Filter");
+        FilterTextTraderRequests.setText("Filter By");
+        FilterTextTraderRequests.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FilterTextTraderRequestsActionPerformed(evt);
+            }
+        });
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 786, Short.MAX_VALUE)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE)
+        TraderRequestsFilter.setText("Filter");
+
+        javax.swing.GroupLayout TraderPlatformRequestsTabLayout = new javax.swing.GroupLayout(TraderPlatformRequestsTab);
+        TraderPlatformRequestsTab.setLayout(TraderPlatformRequestsTabLayout);
+        TraderPlatformRequestsTabLayout.setHorizontalGroup(
+            TraderPlatformRequestsTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(TraderPlatformRequestsTabLayout.createSequentialGroup()
+                .addGroup(TraderPlatformRequestsTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(TraderIncomingRequestsScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 786, Short.MAX_VALUE)
+                    .addGroup(TraderPlatformRequestsTabLayout.createSequentialGroup()
+                        .addComponent(FilterTextTraderRequests, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(FilterOptionsTraderRequests, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton8)
+                        .addComponent(TraderRequestsFilter)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton7)))
+                        .addComponent(TraderBlockOrders)))
                 .addContainerGap())
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+        TraderPlatformRequestsTabLayout.setVerticalGroup(
+            TraderPlatformRequestsTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TraderPlatformRequestsTabLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(TraderIncomingRequestsScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jComboBox3, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jButton8, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jButton7))
+                .addGroup(TraderPlatformRequestsTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(TraderPlatformRequestsTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(FilterTextTraderRequests, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(FilterOptionsTraderRequests, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(TraderRequestsFilter, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(TraderBlockOrders))
                 .addContainerGap(318, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("Pending Requests", jPanel1);
+        TraderPlatformTabbedPane.addTab("Requests", TraderPlatformRequestsTab);
 
         jTable4.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -205,88 +225,88 @@ public class TradeWindow extends javax.swing.JFrame {
             }
         });
 
-        jButton4.setText("Submit Selected Blocks");
+        TraderSubmitBlocks.setText("Submit Selected Blocks");
 
-        jCheckBox4.setText("Select All");
-        jCheckBox4.addActionListener(new java.awt.event.ActionListener() {
+        TraderSelectAllBlocks.setText("Select All");
+        TraderSelectAllBlocks.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jCheckBox4ActionPerformed(evt);
+                TraderSelectAllBlocksActionPerformed(evt);
             }
         });
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Broker 1", "Broker 2", "Broker 3", "Broker 4" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        TraderSelectBrokerOptions.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Broker 1", "Broker 2", "Broker 3", "Broker 4" }));
+        TraderSelectBrokerOptions.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                TraderSelectBrokerOptionsActionPerformed(evt);
             }
         });
 
         jLabel5.setText("Select Broker");
 
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        javax.swing.GroupLayout TraderPlatformBlockedRequestsLayout = new javax.swing.GroupLayout(TraderPlatformBlockedRequests);
+        TraderPlatformBlockedRequests.setLayout(TraderPlatformBlockedRequestsLayout);
+        TraderPlatformBlockedRequestsLayout.setHorizontalGroup(
+            TraderPlatformBlockedRequestsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(TraderPlatformBlockedRequestsLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(TraderPlatformBlockedRequestsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane6)
                     .addComponent(jScrollPane4)
-                    .addGroup(jPanel2Layout.createSequentialGroup()
+                    .addGroup(TraderPlatformBlockedRequestsLayout.createSequentialGroup()
                         .addComponent(jLabel4)
                         .addGap(18, 18, 18)
                         .addComponent(jCheckBox3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton1))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TraderPlatformBlockedRequestsLayout.createSequentialGroup()
                         .addComponent(jLabel3)
                         .addGap(18, 18, 18)
                         .addComponent(jCheckBox2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(TraderPlatformBlockedRequestsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jButton3, javax.swing.GroupLayout.Alignment.TRAILING)))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
+                    .addGroup(TraderPlatformBlockedRequestsLayout.createSequentialGroup()
                         .addComponent(jLabel2)
                         .addGap(30, 30, 30)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(TraderPlatformBlockedRequestsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jCheckBox1)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(jCheckBox4)
+                            .addGroup(TraderPlatformBlockedRequestsLayout.createSequentialGroup()
+                                .addComponent(TraderSelectAllBlocks)
                                 .addGap(136, 136, 136)
                                 .addComponent(jLabel5)
                                 .addGap(18, 18, 18)
-                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(TraderSelectBrokerOptions, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 147, Short.MAX_VALUE)
-                                .addComponent(jButton4))))
+                                .addComponent(TraderSubmitBlocks))))
                     .addComponent(jScrollPane5))
                 .addContainerGap())
         );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
+        TraderPlatformBlockedRequestsLayout.setVerticalGroup(
+            TraderPlatformBlockedRequestsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(TraderPlatformBlockedRequestsLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton4)
-                    .addComponent(jCheckBox4)
+                .addGroup(TraderPlatformBlockedRequestsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(TraderSubmitBlocks)
+                    .addComponent(TraderSelectAllBlocks)
                     .addComponent(jLabel5)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(TraderSelectBrokerOptions, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(19, 19, 19)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(TraderPlatformBlockedRequestsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jCheckBox1)
                     .addComponent(jLabel2)
                     .addComponent(jButton2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(TraderPlatformBlockedRequestsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(jCheckBox2)
                     .addComponent(jButton3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(TraderPlatformBlockedRequestsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(jCheckBox3)
                     .addComponent(jButton1))
@@ -295,75 +315,75 @@ public class TradeWindow extends javax.swing.JFrame {
                 .addGap(140, 140, 140))
         );
 
-        jTabbedPane1.addTab("Blocked Orders", jPanel2);
+        TraderPlatformTabbedPane.addTab("Blocked Orders", TraderPlatformBlockedRequests);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        TraderBlockHistoryTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Block ID", "Symbol", "Quantity", "Order Type", "Stop Price", "Limit Price", "Broker Assigned", "Status"
+                "Block ID", "Symbol", "Quantity", "Order Type", "Stop Price", "Limit Price", "Broker Assigned", "Status", "Currency"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.Double.class, java.lang.Double.class, java.lang.String.class, java.lang.String.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.Double.class, java.lang.Double.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        TraderBlockHistoryScrollPane.setViewportView(TraderBlockHistoryTable);
 
-        jTextField1.setText("Filter By");
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        FilterTextTraderBlockHistory.setText("Filter By");
+        FilterTextTraderBlockHistory.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                FilterTextTraderBlockHistoryActionPerformed(evt);
             }
         });
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Block ID", "Symbol", "Quantity", "Order Type", "Stop Price", "Limit Price", "Broker Assigned", "Status" }));
-        jComboBox2.addActionListener(new java.awt.event.ActionListener() {
+        FilterOptionsTraderBlockHistory.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Block ID", "Symbol", "Quantity", "Order Type", "Stop Price", "Limit Price", "Broker Assigned", "Status" }));
+        FilterOptionsTraderBlockHistory.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox2ActionPerformed(evt);
+                FilterOptionsTraderBlockHistoryActionPerformed(evt);
             }
         });
 
-        jButton5.setText("Filter");
+        TraderBlockHistoryFilter.setText("Filter");
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        javax.swing.GroupLayout TraderPlatformBlockOrderHistoryLayout = new javax.swing.GroupLayout(TraderPlatformBlockOrderHistory);
+        TraderPlatformBlockOrderHistory.setLayout(TraderPlatformBlockOrderHistoryLayout);
+        TraderPlatformBlockOrderHistoryLayout.setHorizontalGroup(
+            TraderPlatformBlockOrderHistoryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(TraderPlatformBlockOrderHistoryLayout.createSequentialGroup()
                 .addGap(28, 28, 28)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(TraderPlatformBlockOrderHistoryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(TraderPlatformBlockOrderHistoryLayout.createSequentialGroup()
+                        .addComponent(FilterTextTraderBlockHistory, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(FilterOptionsTraderBlockHistory, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton5))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 722, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(46, Short.MAX_VALUE))
+                        .addComponent(TraderBlockHistoryFilter))
+                    .addComponent(TraderBlockHistoryScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 722, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        TraderPlatformBlockOrderHistoryLayout.setVerticalGroup(
+            TraderPlatformBlockOrderHistoryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(TraderPlatformBlockOrderHistoryLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(TraderBlockHistoryScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(20, 20, 20)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(TraderPlatformBlockOrderHistoryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(FilterTextTraderBlockHistory, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FilterOptionsTraderBlockHistory, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TraderBlockHistoryFilter, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(388, Short.MAX_VALUE))
         );
 
-        jTabbedPane1.addTab("Block Order History", jPanel3);
+        TraderPlatformTabbedPane.addTab("Block Order History", TraderPlatformBlockOrderHistory);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
@@ -373,12 +393,12 @@ public class TradeWindow extends javax.swing.JFrame {
         gridBagConstraints.ipady = -83;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(11, 10, 11, 10);
-        getContentPane().add(jTabbedPane1, gridBagConstraints);
+        getContentPane().add(TraderPlatformTabbedPane, gridBagConstraints);
 
-        jButton6.setText("Change Password");
-        jButton6.addActionListener(new java.awt.event.ActionListener() {
+        ChangePassword.setText("Change Password");
+        ChangePassword.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton6ActionPerformed(evt);
+                ChangePasswordActionPerformed(evt);
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -387,7 +407,7 @@ public class TradeWindow extends javax.swing.JFrame {
         gridBagConstraints.gridheight = 2;
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.insets = new java.awt.Insets(11, 607, 0, 10);
-        getContentPane().add(jButton6, gridBagConstraints);
+        getContentPane().add(ChangePassword, gridBagConstraints);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -404,8 +424,8 @@ public class TradeWindow extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
 
-    private void jCheckBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox4ActionPerformed
-        if(jCheckBox4.isSelected()){
+    private void TraderSelectAllBlocksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TraderSelectAllBlocksActionPerformed
+        if(TraderSelectAllBlocks.isSelected()){
             jCheckBox1.setSelected(true);
             jCheckBox2.setSelected(true);
             jCheckBox3.setSelected(true);     
@@ -416,31 +436,35 @@ public class TradeWindow extends javax.swing.JFrame {
             jCheckBox3.setSelected(false);     
         }
             
-    }//GEN-LAST:event_jCheckBox4ActionPerformed
+    }//GEN-LAST:event_TraderSelectAllBlocksActionPerformed
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+    private void TraderSelectBrokerOptionsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TraderSelectBrokerOptionsActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+    }//GEN-LAST:event_TraderSelectBrokerOptionsActionPerformed
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void FilterTextTraderBlockHistoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FilterTextTraderBlockHistoryActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_FilterTextTraderBlockHistoryActionPerformed
 
-    private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
+    private void FilterOptionsTraderBlockHistoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FilterOptionsTraderBlockHistoryActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox2ActionPerformed
+    }//GEN-LAST:event_FilterOptionsTraderBlockHistoryActionPerformed
 
-    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+    private void ChangePasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChangePasswordActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton6ActionPerformed
+    }//GEN-LAST:event_ChangePasswordActionPerformed
 
-    private void jComboBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox3ActionPerformed
+    private void FilterOptionsTraderRequestsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FilterOptionsTraderRequestsActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox3ActionPerformed
+    }//GEN-LAST:event_FilterOptionsTraderRequestsActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void FilterTextTraderRequestsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FilterTextTraderRequestsActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_FilterTextTraderRequestsActionPerformed
+
+    private void TraderBlockOrdersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TraderBlockOrdersActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TraderBlockOrdersActionPerformed
 
     /**
      * @param args the command line arguments
@@ -480,40 +504,40 @@ public class TradeWindow extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton ChangePassword;
+    private javax.swing.JComboBox<String> FilterOptionsTraderBlockHistory;
+    private javax.swing.JComboBox<String> FilterOptionsTraderRequests;
+    private javax.swing.JTextField FilterTextTraderBlockHistory;
+    private javax.swing.JTextField FilterTextTraderRequests;
+    private javax.swing.JButton TraderBlockHistoryFilter;
+    private javax.swing.JScrollPane TraderBlockHistoryScrollPane;
+    private javax.swing.JTable TraderBlockHistoryTable;
+    private javax.swing.JButton TraderBlockOrders;
+    private javax.swing.JScrollPane TraderIncomingRequestsScrollPane;
+    private javax.swing.JTable TraderIncomingRequestsTable;
+    private javax.swing.JPanel TraderPlatformBlockOrderHistory;
+    private javax.swing.JPanel TraderPlatformBlockedRequests;
+    private javax.swing.JPanel TraderPlatformRequestsTab;
+    private javax.swing.JTabbedPane TraderPlatformTabbedPane;
+    private javax.swing.JButton TraderRequestsFilter;
+    private javax.swing.JCheckBox TraderSelectAllBlocks;
+    private javax.swing.JComboBox<String> TraderSelectBrokerOptions;
+    private javax.swing.JButton TraderSubmitBlocks;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
-    private javax.swing.JButton jButton7;
-    private javax.swing.JButton jButton8;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JCheckBox jCheckBox2;
     private javax.swing.JCheckBox jCheckBox3;
-    private javax.swing.JCheckBox jCheckBox4;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
-    private javax.swing.JComboBox<String> jComboBox3;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
-    private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable4;
     private javax.swing.JTable jTable5;
     private javax.swing.JTable jTable6;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
 }
