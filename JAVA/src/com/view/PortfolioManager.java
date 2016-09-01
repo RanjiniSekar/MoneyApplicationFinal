@@ -5,6 +5,7 @@ import javax.swing.DefaultCellEditor;
 import javax.swing.JComboBox;
 import javax.swing.JTable;
 import javax.swing.RowFilter;
+import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableColumn;
 import javax.swing.table.TableModel;
@@ -295,6 +296,10 @@ public class PortfolioManager extends javax.swing.JFrame {
                 {null, null, null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
@@ -331,6 +336,11 @@ public class PortfolioManager extends javax.swing.JFrame {
         });
 
         PMAddOrderRow.setText("Add Row");
+        PMAddOrderRow.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PMAddOrderRowActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout CreateOrderLayout = new javax.swing.GroupLayout(CreateOrder);
         CreateOrder.setLayout(CreateOrderLayout);
@@ -345,9 +355,11 @@ public class PortfolioManager extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(TraderSelectBrokerOptions, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(213, 213, 213)
-                        .addComponent(PMSendOrder))
-                    .addComponent(PMAddOrderRow, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addContainerGap())
+                        .addComponent(PMSendOrder)
+                        .addContainerGap())
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CreateOrderLayout.createSequentialGroup()
+                        .addComponent(PMAddOrderRow)
+                        .addGap(109, 109, 109))))
         );
         CreateOrderLayout.setVerticalGroup(
             CreateOrderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -359,8 +371,8 @@ public class PortfolioManager extends javax.swing.JFrame {
                         .addComponent(TraderSelectBrokerOptions, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(PMSendOrder))
                 .addGap(28, 28, 28)
-                .addComponent(PMSendOrderScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(90, 90, 90)
+                .addComponent(PMSendOrderScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
                 .addComponent(PMAddOrderRow)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -383,11 +395,11 @@ public class PortfolioManager extends javax.swing.JFrame {
                 {null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Order ID", "Portfolio ID", "Symbol", "Quantity", "Action", "Stop Price", "Limit Price", "Account Type", "Order Type", "Assigned To", "Stock Exchange"
+                "Order ID", "Portfolio ID", "Symbol", "Quantity", "Action", "Stop Price", "Limit Price", "Stock Exchange", "Account Type", "Order Type", "Assigned To"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.Double.class, java.lang.Double.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.Double.class, java.lang.Double.class, java.lang.Object.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -403,6 +415,11 @@ public class PortfolioManager extends javax.swing.JFrame {
         FilterOptionsPMOrderHistory.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Order ID", "Portfolio ID", "Symbol", "Quantity", "Action", "Stop Price", "Limit Price", "Account Type", "Order Type", "Assigned To" }));
 
         PMOrderHistoryFilter.setText("Filter");
+        PMOrderHistoryFilter.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PMOrderHistoryFilterActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout PMOrderHistoryLayout = new javax.swing.GroupLayout(PMOrderHistory);
         PMOrderHistory.setLayout(PMOrderHistoryLayout);
@@ -488,9 +505,8 @@ public class PortfolioManager extends javax.swing.JFrame {
         final TableRowSorter<TableModel> sorter = new TableRowSorter<TableModel>(PMEODBoughtTable.getModel());
         PMEODBoughtTable.setRowSorter(sorter);
         final TableRowSorter<TableModel> sorter2 = new TableRowSorter<TableModel>(PMEODSoldTable.getModel());
-        PMEODBoughtTable.setRowSorter(sorter);
         PMEODSoldTable.setRowSorter(sorter2);
-        String text = FilterTextPMPending.getText();
+        String text = FilterTextPMEOD.getText();
         if (text.length() == 0) {
           sorter.setRowFilter(null);
           sorter2.setRowFilter(null);
@@ -499,6 +515,22 @@ public class PortfolioManager extends javax.swing.JFrame {
           sorter2.setRowFilter(RowFilter.regexFilter(text));
         }
     }//GEN-LAST:event_PMEODFilterActionPerformed
+
+    private void PMOrderHistoryFilterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PMOrderHistoryFilterActionPerformed
+        final TableRowSorter<TableModel> sorter = new TableRowSorter<TableModel>(PMOrderHistoryTable.getModel());
+        PMOrderHistoryTable.setRowSorter(sorter);
+        String text = FilterTextPMOrderHistory.getText();
+        if (text.length() == 0) {
+          sorter.setRowFilter(null);
+        } else {
+          sorter.setRowFilter(RowFilter.regexFilter(text));
+        }
+    }//GEN-LAST:event_PMOrderHistoryFilterActionPerformed
+
+    private void PMAddOrderRowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PMAddOrderRowActionPerformed
+        DefaultTableModel m =(DefaultTableModel)PMSendOrderTable.getModel(); 
+        m.addRow(new Object[]{null,null,null,null,null,null,null,null,null,null});                       
+    }//GEN-LAST:event_PMAddOrderRowActionPerformed
 private class myComboBoxEditor extends DefaultCellEditor {
     myComboBoxEditor(String[] items) {
         super(new JComboBox(items));
