@@ -112,7 +112,7 @@
                         <Column editable="true" title="Account Type" type="java.lang.Object"/>
                         <Column editable="true" title="Order Type" type="java.lang.Object"/>
                         <Column editable="true" title="Assigned By" type="java.lang.Object"/>
-                        <Column editable="true" title="Currency" type="java.lang.String"/>
+                        <Column editable="true" title="Stock Exchange" type="java.lang.String"/>
                       </Table>
                     </Property>
                     <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
@@ -734,7 +734,7 @@
                         <Column editable="true" title="Limit Price" type="java.lang.Double"/>
                         <Column editable="true" title="Broker Assigned" type="java.lang.String"/>
                         <Column editable="true" title="Status" type="java.lang.String"/>
-                        <Column editable="true" title="Currency" type="java.lang.String"/>
+                        <Column editable="true" title="Stock Exchange" type="java.lang.String"/>
                       </Table>
                     </Property>
                     <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">

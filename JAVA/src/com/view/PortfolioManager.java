@@ -68,7 +68,10 @@ public class PortfolioManager extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Portfolio Manager Platform");
+        setMinimumSize(new java.awt.Dimension(1024, 768));
         getContentPane().setLayout(new java.awt.GridBagLayout());
+
+        PMPlatformTabbedPane.setMinimumSize(new java.awt.Dimension(150, 65));
 
         PMPendingOrdersTable.setBackground(new java.awt.Color(240, 240, 240));
         PMPendingOrdersTable.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -87,7 +90,7 @@ public class PortfolioManager extends javax.swing.JFrame {
                 {null, null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Order ID", "Portfolio ID", "Symbol", "Quantity", "Action", "Stop Price", "Limit Price", "Account Type", "Order Type", "Assigned To", "Status", "Currency"
+                "Order ID", "Portfolio ID", "Symbol", "Quantity", "Action", "Stop Price", "Limit Price", "Account Type", "Order Type", "Assigned To", "Status", "Stock Exchange"
             }
         ) {
             Class[] types = new Class [] {
@@ -135,7 +138,7 @@ public class PortfolioManager extends javax.swing.JFrame {
                     .addComponent(FilterTextPMPending, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(FilterOptionsPMPending, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(PMPendingOrderFilter))
-                .addContainerGap(270, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         PMPlatformTabbedPane.addTab("Pending Order Requests", PendingOrders);
@@ -221,7 +224,7 @@ public class PortfolioManager extends javax.swing.JFrame {
                 .addGroup(PMEODLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(PMEODLayout.createSequentialGroup()
                         .addComponent(FilterTextPMEOD, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 26, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(FilterOptionsPMEOD, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(PMEODFilter))
@@ -258,7 +261,7 @@ public class PortfolioManager extends javax.swing.JFrame {
                     .addComponent(PMEODFilter)
                     .addComponent(FilterOptionsPMEOD, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(FilterTextPMEOD, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(138, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         PMPlatformTabbedPane.addTab("EOD", PMEOD);
@@ -271,15 +274,15 @@ public class PortfolioManager extends javax.swing.JFrame {
                 {null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Order ID", "Portfolio ID", "Symbol", "Quantity", "Action", "Stop Price", "Limit Price", "Account Type", "Order Type", "Assign To", "Currency"
+                "Order ID", "Portfolio ID", "Symbol", "Quantity", "Action", "Stop Price", "Limit Price", "Account Type", "Order Type", "Assign To", "Stock Exchange"
             }
         ));
         TableColumn col = PMSendOrderTable.getColumnModel().getColumn(9);
         col.setCellEditor(new myComboBoxEditor(TraderNames));
         col.setCellRenderer(new MyComboBoxRenderer(TraderNames));
         TableColumn col2 = PMSendOrderTable.getColumnModel().getColumn(10);
-        col2.setCellEditor(new myComboBoxEditor(CurrencyValues));
-        col2.setCellRenderer(new MyComboBoxRenderer(CurrencyValues));
+        col2.setCellEditor(new myComboBoxEditor(StockExchange));
+        col2.setCellRenderer(new MyComboBoxRenderer(StockExchange));
         PMSendOrderScrollPane.setViewportView(PMSendOrderTable);
 
         PMSendOrder.setText("Send Order");
@@ -312,7 +315,7 @@ public class PortfolioManager extends javax.swing.JFrame {
                 .addComponent(PMSendOrderScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(107, 107, 107)
                 .addComponent(PMAddOrderRow)
-                .addContainerGap(211, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         PMPlatformTabbedPane.addTab("Create Order", CreateOrder);
@@ -333,7 +336,7 @@ public class PortfolioManager extends javax.swing.JFrame {
                 {null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Order ID", "Portfolio ID", "Symbol", "Quantity", "Action", "Stop Price", "Limit Price", "Account Type", "Order Type", "Assigned To", "Currency"
+                "Order ID", "Portfolio ID", "Symbol", "Quantity", "Action", "Stop Price", "Limit Price", "Account Type", "Order Type", "Assigned To", "Stock Exchange"
             }
         ) {
             Class[] types = new Class [] {
@@ -361,7 +364,7 @@ public class PortfolioManager extends javax.swing.JFrame {
             .addGroup(PMOrderHistoryLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(PMOrderHistoryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(PMOrderHistoryScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 801, Short.MAX_VALUE)
+                    .addComponent(PMOrderHistoryScrollPane)
                     .addGroup(PMOrderHistoryLayout.createSequentialGroup()
                         .addComponent(FilterTextPMOrderHistory, javax.swing.GroupLayout.PREFERRED_SIZE, 281, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
@@ -380,7 +383,7 @@ public class PortfolioManager extends javax.swing.JFrame {
                     .addComponent(FilterTextPMOrderHistory, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(FilterOptionsPMOrderHistory, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(PMOrderHistoryFilter))
-                .addGap(0, 272, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         PMPlatformTabbedPane.addTab("Order History", PMOrderHistory);
@@ -470,7 +473,7 @@ private class MyComboBoxRenderer extends JComboBox implements TableCellRenderer 
     }
     //Trader Names and Currency Strings
     String[] TraderNames = {"Trader 1","Trader 2"};
-    String[] CurrencyValues = {"USD","GBP"};
+    String[] StockExchange = {"New York Exchange","London Stock Exchange"};
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ChangePassword;
     private javax.swing.JPanel CreateOrder;
