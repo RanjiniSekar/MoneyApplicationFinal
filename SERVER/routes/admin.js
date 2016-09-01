@@ -1,10 +1,24 @@
 var express = require('express');
-var router = express.Router();
+var db = require('../db/config');
 
-/* GET users listing. */
-router.get('/', function (req, res, next) {
-    console.log("GET request on /admin");
-    res.send('Welcome to admin page');
-});
+
+var router = express.Router();
+router.route('/')
+    .get(function (req, res, next) {
+        console.log('GET request on /admin');
+        db.connect();
+        db.query('SELECT * from user', function (err, rows, fields) {
+            if (!err)
+                console.log(rows);
+            else
+                console.log('Error performing the query');
+        });
+
+    })
+    .post(function () {
+        console.log('Inserting new user');
+
+    });
+
 
 module.exports = router;
