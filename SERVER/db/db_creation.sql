@@ -1,5 +1,5 @@
 -- Broker
-create table broker (
+create table IF NOT EXISTS broker (
    b_id BIGINT not null AUTO_INCREMENT,
    name VARCHAR (8) not null,
    email VARCHAR (254) not null,
@@ -8,7 +8,7 @@ create table broker (
 
 -- User-related information
 
-create table user (
+create table IF NOT EXISTS user (
    u_id BIGINT not null AUTO_INCREMENT,
    username VARCHAR (8) not null,
    password VARCHAR (64) not null,
@@ -17,7 +17,7 @@ create table user (
 
 -- Portfolio Manager
 
-create table portfolio_manager (
+create table IF NOT EXISTS portfolio_manager (
    pm_id BIGINT not null,
    PRIMARY KEY  (pm_id),
    FOREIGN KEY (pm_id) REFERENCES user(u_id)
@@ -25,7 +25,7 @@ create table portfolio_manager (
 
 -- Admin
 
-create table portfolio_manager (
+create table IF NOT EXISTS admin (
    adm_id BIGINT not null,
    PRIMARY KEY  (adm_id),
    FOREIGN KEY (adm_id) REFERENCES user(u_id)
@@ -33,14 +33,14 @@ create table portfolio_manager (
 
 -- Portfolio
 
-create table portfolio (
+create table IF NOT EXISTS portfolio (
    p_id BIGINT not null AUTO_INCREMENT,
    PRIMARY KEY (p_id)
 );
 
 -- Trader 
 
-create table trader (
+create table IF NOT EXISTS trader (
    t_id BIGINT not null,
    PRIMARY KEY  (t_id),
    FOREIGN KEY (t_id) REFERENCES user(u_id)
@@ -49,7 +49,7 @@ create table trader (
 
 -- Portfolio Managers portfolios
 
-create table pm_to_portfolio (
+create table IF NOT EXISTS pm_to_portfolio (
    pm_id BIGINT not null,
    p_id BIGINT not null,
    PRIMARY KEY  (pm_id, p_id),
@@ -59,7 +59,7 @@ create table pm_to_portfolio (
 
 -- Trade related operations
 
-create table trader_block (
+create table IF NOT EXISTS trader_block (
    block_id BIGINT not null AUTO_INCREMENT,
    symbol CHAR (6) not null,
    quantity int not null,
@@ -69,13 +69,13 @@ create table trader_block (
    t_id BIGINT not null,
    b_id BIGINT not null,
    PRIMARY KEY(block_id),
-   FOREIGN KEY(t_id),
+   FOREIGN KEY(t_id) REFERENCES trader(t_id),
    FOREIGN KEY(b_id) REFERENCES broker(b_id)
 );
 
 -- Order related info
 
-create table pm_order (
+create table IF NOT EXISTS pm_order (
    order_id BIGINT not null AUTO_INCREMENT,
    p_id  BIGINT not null,
    pm_id BIGINT not null,
@@ -86,7 +86,7 @@ create table pm_order (
    FOREIGN KEY(assigned_to) REFERENCES trader(t_id)
 );
 
-create table single_order (
+create table IF NOT EXISTS single_order (
    sorder_id BIGINT not null,
    p_id BIGINT not null,
    order_id BIGINT not null,
