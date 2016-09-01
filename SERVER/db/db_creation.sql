@@ -100,7 +100,7 @@ create table IF NOT EXISTS single_order (
    price_stop DECIMAL(18, 4),
    price_limit DECIMAL(18, 4),
    price_executed DECIMAL(18, 4),
-   status int not null,
+   status VARCHAR(15) not null,
    date_pmorder TIMESTAMP not null DEFAULT CURRENT_TIMESTAMP,
    date_trequest TIMESTAMP DEFAULT '0000-00-00 00:00:00',
    date_bexecuted TIMESTAMP DEFAULT '0000-00-00 00:00:00',
