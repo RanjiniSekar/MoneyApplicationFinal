@@ -101,7 +101,7 @@ create table IF NOT EXISTS single_order (
    price_limit DECIMAL(18, 4),
    price_executed DECIMAL(18, 4),
    status int not null,
-   date_pmorder TIMESTAMP not null CURRENT_TIMESTAMP,
+   date_pmorder TIMESTAMP not null DEFAULT CURRENT_TIMESTAMP,
    date_trequest TIMESTAMP DEFAULT '0000-00-00 00:00:00',
    date_bexecuted TIMESTAMP DEFAULT '0000-00-00 00:00:00',
    PRIMARY KEY(sorder_id),
