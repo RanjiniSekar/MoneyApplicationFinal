@@ -466,7 +466,7 @@ public class TradeWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_FilterOptionsTraderBlockHistoryActionPerformed
 
     private void ChangePasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChangePasswordActionPerformed
-        // TODO add your handling code here:
+         new ChangePassword().setVisible(true);
     }//GEN-LAST:event_ChangePasswordActionPerformed
 
     private void FilterOptionsTraderRequestsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FilterOptionsTraderRequestsActionPerformed

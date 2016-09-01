@@ -4,8 +4,11 @@ import java.awt.Component;
 import javax.swing.DefaultCellEditor;
 import javax.swing.JComboBox;
 import javax.swing.JTable;
+import javax.swing.RowFilter;
 import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableColumn;
+import javax.swing.table.TableModel;
+import javax.swing.table.TableRowSorter;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -108,6 +111,11 @@ public class PortfolioManager extends javax.swing.JFrame {
         PendingOrderRequests.setViewportView(PMPendingOrdersTable);
 
         PMPendingOrderFilter.setText("Filter");
+        PMPendingOrderFilter.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PMPendingOrderFilterActionPerformed(evt);
+            }
+        });
 
         FilterOptionsPMPending.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Order ID", "Portfolio ID", "Symbol", "Quantity", "Action", "Stop Price", "Limit Price", "Account Type", "Order Type", "Assigned To" }));
 
@@ -216,6 +224,11 @@ public class PortfolioManager extends javax.swing.JFrame {
         FilterOptionsPMEOD.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Portfolio ID", "Symbol", "Quantity", "Price" }));
 
         PMEODFilter.setText("Filter");
+        PMEODFilter.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PMEODFilterActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout PMEODLayout = new javax.swing.GroupLayout(PMEOD);
         PMEOD.setLayout(PMEODLayout);
@@ -340,11 +353,11 @@ public class PortfolioManager extends javax.swing.JFrame {
             CreateOrderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(CreateOrderLayout.createSequentialGroup()
                 .addGap(5, 5, 5)
-                .addGroup(CreateOrderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(PMSendOrder)
+                .addGroup(CreateOrderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(CreateOrderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel5)
-                        .addComponent(TraderSelectBrokerOptions, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(TraderSelectBrokerOptions, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(PMSendOrder))
                 .addGap(28, 28, 28)
                 .addComponent(PMSendOrderScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(90, 90, 90)
@@ -459,6 +472,33 @@ public class PortfolioManager extends javax.swing.JFrame {
     private void TraderSelectBrokerOptionsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TraderSelectBrokerOptionsActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_TraderSelectBrokerOptionsActionPerformed
+
+    private void PMPendingOrderFilterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PMPendingOrderFilterActionPerformed
+        final TableRowSorter<TableModel> sorter = new TableRowSorter<TableModel>(PMPendingOrdersTable.getModel());
+        PMPendingOrdersTable.setRowSorter(sorter);
+        String text = FilterTextPMPending.getText();
+        if (text.length() == 0) {
+          sorter.setRowFilter(null);
+        } else {
+          sorter.setRowFilter(RowFilter.regexFilter(text));
+        }
+    }//GEN-LAST:event_PMPendingOrderFilterActionPerformed
+
+    private void PMEODFilterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PMEODFilterActionPerformed
+        final TableRowSorter<TableModel> sorter = new TableRowSorter<TableModel>(PMEODBoughtTable.getModel());
+        PMEODBoughtTable.setRowSorter(sorter);
+        final TableRowSorter<TableModel> sorter2 = new TableRowSorter<TableModel>(PMEODSoldTable.getModel());
+        PMEODBoughtTable.setRowSorter(sorter);
+        PMEODSoldTable.setRowSorter(sorter2);
+        String text = FilterTextPMPending.getText();
+        if (text.length() == 0) {
+          sorter.setRowFilter(null);
+          sorter2.setRowFilter(null);
+        } else {
+          sorter.setRowFilter(RowFilter.regexFilter(text));
+          sorter2.setRowFilter(RowFilter.regexFilter(text));
+        }
+    }//GEN-LAST:event_PMEODFilterActionPerformed
 private class myComboBoxEditor extends DefaultCellEditor {
     myComboBoxEditor(String[] items) {
         super(new JComboBox(items));
