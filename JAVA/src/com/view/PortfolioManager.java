@@ -1,8 +1,12 @@
 package com.view;
 
+import UserObjects.SingleOrder;
 import java.awt.Component;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.DefaultCellEditor;
 import javax.swing.JComboBox;
+import static javax.swing.JOptionPane.showMessageDialog;
 import javax.swing.JTable;
 import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
@@ -293,39 +297,29 @@ public class PortfolioManager extends javax.swing.JFrame {
 
         PMSendOrderTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Order ID", "Portfolio ID", "Symbol", "Quantity", "Action", "Stop Price", "Limit Price", "Stock Exchange", "Account Type", "Order Type"
+                "Portfolio ID", "Symbol", "Quantity", "Action", "Stop Price", "Limit Price", "Stock Exchange", "Account Type"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Long.class, java.lang.Long.class, java.lang.String.class, java.lang.Integer.class, java.lang.Object.class, java.lang.Double.class, java.lang.Double.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
+                java.lang.Long.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.Double.class, java.lang.Double.class, java.lang.String.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
             }
         });
-        TableColumn col1 = PMSendOrderTable.getColumnModel().getColumn(4);
+        TableColumn col1 = PMSendOrderTable.getColumnModel().getColumn(3);
         col1.setCellEditor(new myComboBoxEditor(ActionItems));
         col1.setCellRenderer(new MyComboBoxRenderer(ActionItems));
-        TableColumn col2 = PMSendOrderTable.getColumnModel().getColumn(7);
+        TableColumn col2 = PMSendOrderTable.getColumnModel().getColumn(6);
         col2.setCellEditor(new myComboBoxEditor(StockExchange));
         col2.setCellRenderer(new MyComboBoxRenderer(StockExchange));
-        TableColumn col3 = PMSendOrderTable.getColumnModel().getColumn(8);
+        TableColumn col3 = PMSendOrderTable.getColumnModel().getColumn(7);
         col3.setCellEditor(new myComboBoxEditor(AccountType));
         col3.setCellRenderer(new MyComboBoxRenderer(AccountType));
-        TableColumn col4 = PMSendOrderTable.getColumnModel().getColumn(9);
-        col4.setCellEditor(new myComboBoxEditor(OrderType));
-        col4.setCellRenderer(new MyComboBoxRenderer(OrderType));
         PMSendOrderScrollPane.setViewportView(PMSendOrderTable);
 
         PMSendOrder.setText("Send Order");
@@ -479,7 +473,77 @@ public class PortfolioManager extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void PMSendOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PMSendOrderActionPerformed
-        // TODO add your handling code here:
+        DefaultTableModel dtm = (DefaultTableModel) PMSendOrderTable.getModel();
+        int nRow = dtm.getRowCount();
+        int nCol = dtm.getColumnCount();
+        Object[][] tableData = new Object[nRow][nCol];
+        List<SingleOrder> parsedOrders = new ArrayList();
+           
+        
+        for(int i = 0; i < nRow; i++){
+            for (int j = 0 ; j < nCol ; j++){
+                tableData[i][j] = dtm.getValueAt(i,j);
+            }
+            boolean trigg = true;
+            if(tableData[i][0] != null && tableData[i][1] != null && tableData[i][2] != null && tableData[i][3] != null){
+                if(tableData[i][0] != null){
+                    long portIDC = (long)tableData[i][0];
+                    if(portIDC < 0){
+                        showMessageDialog(null, "You have entered a negative portfolio ID value. Please fix this value before submitting the order.");
+                        trigg = false;
+                    }
+                }
+                if(tableData[i][2] != null){
+                    int quantityC = (int)tableData[i][2];
+                    if(quantityC < 0){
+                        showMessageDialog(null, "You have entered a negative quantity value. Please fix this value before submitting the order.");
+                        trigg = false;
+                    }
+                }
+                if(tableData[i][4] != null){
+                    double stopC = (double)tableData[i][4];
+                    if(stopC < 0){
+                        showMessageDialog(null, "You have entered a negative stop price value. Please fix this value before submitting the order.");
+                        trigg = false;
+                    }
+                }                            
+                if(tableData[i][5] != null){
+                    double limitC = (double)tableData[i][4];
+                    if(limitC < 0){
+                        showMessageDialog(null, "You have entered a negative limit price value. Please fix this value before submitting the order.");
+                        trigg = false;
+                    }
+                }
+                if(trigg == true){
+                    SingleOrder o = new SingleOrder(tableData[i]);
+                    System.out.println(o.toString());
+                    parsedOrders.add(o);
+                    showMessageDialog(null, "You have successfully sent your trades."); 
+                    dtm.setRowCount(0);
+                    dtm.addRow(new Object[]{null,null,null,null,null,null,null,null,null}); 
+                }
+                             
+            }
+            else {
+                String a,b,c,d,e;
+                if(tableData[i][0] == null){
+                    a = "Portfolio ID";
+                } else { a = ""; } 
+                if(tableData[i][1] == null){
+                    b = "Symbol";
+                } else { b = ""; } 
+                if(tableData[i][2] == null){
+                    c = "Quantity";
+                } else { c = ""; } 
+                if(tableData[i][3] == null){
+                    d = "Action";
+                } else { d = ""; } 
+                if(tableData[i][6] == null){
+                    e = "Stock Exchange";
+                } else { e = ""; } 
+                showMessageDialog(null, "You need to fill in the necessary fields before sending the order:\n" + a + "\n" + b + "\n" + c +  "\n" + d +  "\n" + e); 
+            }
+       }
     }//GEN-LAST:event_PMSendOrderActionPerformed
 
     private void ChangePasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChangePasswordActionPerformed
@@ -529,7 +593,7 @@ public class PortfolioManager extends javax.swing.JFrame {
 
     private void PMAddOrderRowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PMAddOrderRowActionPerformed
         DefaultTableModel m =(DefaultTableModel)PMSendOrderTable.getModel(); 
-        m.addRow(new Object[]{null,null,null,null,null,null,null,null,null,null});                       
+        m.addRow(new Object[]{null,null,null,null,null,null,null,null,null});                       
     }//GEN-LAST:event_PMAddOrderRowActionPerformed
 private class myComboBoxEditor extends DefaultCellEditor {
     myComboBoxEditor(String[] items) {
@@ -629,4 +693,5 @@ private class MyComboBoxRenderer extends JComboBox implements TableCellRenderer 
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
     // End of variables declaration//GEN-END:variables
+
 }
