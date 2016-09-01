@@ -1,4 +1,9 @@
 package com.view;
+
+import javax.swing.RowFilter;
+import javax.swing.table.TableModel;
+import javax.swing.table.TableRowSorter;
+
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -118,6 +123,11 @@ public class TradeWindow extends javax.swing.JFrame {
         });
 
         TraderRequestsFilter.setText("Filter");
+        TraderRequestsFilter.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TraderRequestsFilterActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout TraderPlatformRequestsTabLayout = new javax.swing.GroupLayout(TraderPlatformRequestsTab);
         TraderPlatformRequestsTab.setLayout(TraderPlatformRequestsTabLayout);
@@ -353,6 +363,11 @@ public class TradeWindow extends javax.swing.JFrame {
         });
 
         TraderBlockHistoryFilter.setText("Filter");
+        TraderBlockHistoryFilter.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TraderBlockHistoryFilterActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout TraderPlatformBlockOrderHistoryLayout = new javax.swing.GroupLayout(TraderPlatformBlockOrderHistory);
         TraderPlatformBlockOrderHistory.setLayout(TraderPlatformBlockOrderHistoryLayout);
@@ -451,7 +466,7 @@ public class TradeWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_FilterOptionsTraderBlockHistoryActionPerformed
 
     private void ChangePasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChangePasswordActionPerformed
-        // TODO add your handling code here:
+         new ChangePassword().setVisible(true);
     }//GEN-LAST:event_ChangePasswordActionPerformed
 
     private void FilterOptionsTraderRequestsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FilterOptionsTraderRequestsActionPerformed
@@ -465,6 +480,30 @@ public class TradeWindow extends javax.swing.JFrame {
     private void TraderBlockOrdersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TraderBlockOrdersActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_TraderBlockOrdersActionPerformed
+
+    private void TraderRequestsFilterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TraderRequestsFilterActionPerformed
+            // TODO add your handling code here:
+        final TableRowSorter<TableModel> sorter = new TableRowSorter<TableModel>(TraderIncomingRequestsTable.getModel());
+        TraderIncomingRequestsTable.setRowSorter(sorter);
+        String text = FilterTextTraderRequests.getText();
+        if (text.length() == 0) {
+          sorter.setRowFilter(null);
+        } else {
+          sorter.setRowFilter(RowFilter.regexFilter(text));
+        }
+        
+    }//GEN-LAST:event_TraderRequestsFilterActionPerformed
+
+    private void TraderBlockHistoryFilterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TraderBlockHistoryFilterActionPerformed
+        final TableRowSorter<TableModel> sorter = new TableRowSorter<TableModel>(TraderBlockHistoryTable.getModel());
+        TraderBlockHistoryTable.setRowSorter(sorter);
+        String text = FilterTextTraderBlockHistory.getText();
+        if (text.length() == 0) {
+          sorter.setRowFilter(null);
+        } else {
+          sorter.setRowFilter(RowFilter.regexFilter(text));
+        }
+    }//GEN-LAST:event_TraderBlockHistoryFilterActionPerformed
 
     /**
      * @param args the command line arguments

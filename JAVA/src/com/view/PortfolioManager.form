@@ -197,6 +197,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Filter"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PMPendingOrderFilterActionPerformed"/>
+              </Events>
             </Component>
             <Component class="javax.swing.JComboBox" name="FilterOptionsPMPending">
               <Properties>
@@ -430,6 +433,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Filter"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PMEODFilterActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -445,14 +451,23 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="PMSendOrderScrollPane" alignment="0" pref="821" max="32767" attributes="0"/>
+                  <Component id="PMSendOrderScrollPane" alignment="0" pref="0" max="32767" attributes="0"/>
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="PMSendOrder" alignment="1" min="-2" max="-2" attributes="0"/>
-                          <Component id="PMAddOrderRow" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="jLabel5" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="TraderSelectBrokerOptions" min="-2" pref="137" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="213" max="-2" attributes="0"/>
+                              <Component id="PMSendOrder" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="PMAddOrderRow" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="109" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
-                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -460,10 +475,16 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="5" max="-2" attributes="0"/>
-                      <Component id="PMSendOrder" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="PMSendOrderScrollPane" min="-2" pref="113" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="107" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="103" alignment="0" groupAlignment="3" attributes="0">
+                              <Component id="jLabel5" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="TraderSelectBrokerOptions" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="PMSendOrder" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                      <Component id="PMSendOrderScrollPane" min="-2" pref="233" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="PMAddOrderRow" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
@@ -471,6 +492,30 @@
             </DimensionLayout>
           </Layout>
           <SubComponents>
+            <Component class="javax.swing.JComboBox" name="TraderSelectBrokerOptions">
+              <Properties>
+                <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
+                  <StringArray count="5">
+                    <StringItem index="0" value="Automatic"/>
+                    <StringItem index="1" value="Trader 1"/>
+                    <StringItem index="2" value="Trader 2"/>
+                    <StringItem index="3" value="Trader 3"/>
+                    <StringItem index="4" value="Trader 4"/>
+                  </StringArray>
+                </Property>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="TraderSelectBrokerOptionsActionPerformed"/>
+              </Events>
+              <AuxValues>
+                <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
+              </AuxValues>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel5">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Select Trader to Assign To:"/>
+              </Properties>
+            </Component>
             <Container class="javax.swing.JScrollPane" name="PMSendOrderScrollPane">
               <AuxValues>
                 <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
@@ -480,28 +525,22 @@
               <SubComponents>
                 <Component class="javax.swing.JTable" name="PMSendOrderTable">
                   <Properties>
-                    <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor" postCode="TableColumn col = PMSendOrderTable.getColumnModel().getColumn(9);&#xa;col.setCellEditor(new myComboBoxEditor(TraderNames));&#xa;col.setCellRenderer(new MyComboBoxRenderer(TraderNames));&#xa;TableColumn col2 = PMSendOrderTable.getColumnModel().getColumn(10);&#xa;col2.setCellEditor(new myComboBoxEditor(StockExchange));&#xa;col2.setCellRenderer(new MyComboBoxRenderer(StockExchange));">
-                      <Table columnCount="11" rowCount="4">
-                        <Column editable="true" title="Order ID" type="java.lang.Object"/>
-                        <Column editable="true" title="Portfolio ID" type="java.lang.Object"/>
-                        <Column editable="true" title="Symbol" type="java.lang.Object"/>
-                        <Column editable="true" title="Quantity" type="java.lang.Object"/>
+                    <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor" postCode="TableColumn col1 = PMSendOrderTable.getColumnModel().getColumn(4);&#xa;col1.setCellEditor(new myComboBoxEditor(ActionItems));&#xa;col1.setCellRenderer(new MyComboBoxRenderer(ActionItems));&#xa;TableColumn col2 = PMSendOrderTable.getColumnModel().getColumn(7);&#xa;col2.setCellEditor(new myComboBoxEditor(StockExchange));&#xa;col2.setCellRenderer(new MyComboBoxRenderer(StockExchange));&#xa;TableColumn col3 = PMSendOrderTable.getColumnModel().getColumn(8);&#xa;col3.setCellEditor(new myComboBoxEditor(AccountType));&#xa;col3.setCellRenderer(new MyComboBoxRenderer(AccountType));&#xa;TableColumn col4 = PMSendOrderTable.getColumnModel().getColumn(9);&#xa;col4.setCellEditor(new myComboBoxEditor(OrderType));&#xa;col4.setCellRenderer(new MyComboBoxRenderer(OrderType));">
+                      <Table columnCount="10" rowCount="8">
+                        <Column editable="true" title="Order ID" type="java.lang.Long"/>
+                        <Column editable="true" title="Portfolio ID" type="java.lang.Long"/>
+                        <Column editable="true" title="Symbol" type="java.lang.String"/>
+                        <Column editable="true" title="Quantity" type="java.lang.Integer"/>
                         <Column editable="true" title="Action" type="java.lang.Object"/>
-                        <Column editable="true" title="Stop Price" type="java.lang.Object"/>
-                        <Column editable="true" title="Limit Price" type="java.lang.Object"/>
+                        <Column editable="true" title="Stop Price" type="java.lang.Double"/>
+                        <Column editable="true" title="Limit Price" type="java.lang.Double"/>
+                        <Column editable="true" title="Stock Exchange" type="java.lang.Object"/>
                         <Column editable="true" title="Account Type" type="java.lang.Object"/>
                         <Column editable="true" title="Order Type" type="java.lang.Object"/>
-                        <Column editable="true" title="Assign To" type="java.lang.Object"/>
-                        <Column editable="true" title="Stock Exchange" type="java.lang.Object"/>
                       </Table>
                     </Property>
                     <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                       <TableColumnModel selectionModel="0">
-                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                          <Title/>
-                          <Editor/>
-                          <Renderer/>
-                        </Column>
                         <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
                           <Title/>
                           <Editor/>
@@ -573,6 +612,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Add Row"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PMAddOrderRowActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -647,10 +689,10 @@
                         <Column editable="true" title="Action" type="java.lang.String"/>
                         <Column editable="true" title="Stop Price" type="java.lang.Double"/>
                         <Column editable="true" title="Limit Price" type="java.lang.Double"/>
+                        <Column editable="true" title="Stock Exchange" type="java.lang.Object"/>
                         <Column editable="true" title="Account Type" type="java.lang.String"/>
                         <Column editable="true" title="Order Type" type="java.lang.String"/>
                         <Column editable="true" title="Assigned To" type="java.lang.String"/>
-                        <Column editable="true" title="Stock Exchange" type="java.lang.Object"/>
                       </Table>
                     </Property>
                     <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
@@ -719,6 +761,9 @@
                       <TableHeader reorderingAllowed="false" resizingAllowed="true"/>
                     </Property>
                   </Properties>
+                  <AuxValues>
+                    <AuxValue name="JavaCodeGenerator_CreateCodeCustom" type="java.lang.String" value="new javax.swing.JTable()"/>
+                  </AuxValues>
                 </Component>
               </SubComponents>
             </Container>
@@ -752,6 +797,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Filter"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PMOrderHistoryFilterActionPerformed"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -761,6 +809,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Change Password"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ChangePasswordActionPerformed"/>
+      </Events>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout" value="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout$GridBagConstraintsDescription">
           <GridBagConstraints gridX="1" gridY="0" gridWidth="1" gridHeight="2" fill="0" ipadX="0" ipadY="0" insetsTop="11" insetsLeft="610" insetsBottom="0" insetsRight="85" anchor="18" weightX="0.0" weightY="0.0"/>
