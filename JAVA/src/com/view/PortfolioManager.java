@@ -485,7 +485,8 @@ public class PortfolioManager extends javax.swing.JFrame {
                 tableData[i][j] = dtm.getValueAt(i,j);
             }
             boolean trigg = true;
-            if(tableData[i][0] != null && tableData[i][1] != null && tableData[i][2] != null && tableData[i][3] != null){
+            //System.out.println(tableData[i][1]);
+            if(tableData[i][0] != null && tableData[i][1] != null && tableData[i][2] != null && tableData[i][3] != null && tableData[i][6] != null){
                 if(tableData[i][0] != null){
                     long portIDC = (long)tableData[i][0];
                     if(portIDC < 0){
