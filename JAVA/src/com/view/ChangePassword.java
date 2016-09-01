@@ -43,11 +43,21 @@ public class ChangePassword extends javax.swing.JFrame {
         button1.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         button1.setForeground(new java.awt.Color(240, 240, 240));
         button1.setLabel("Submit");
+        button1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button1ActionPerformed(evt);
+            }
+        });
 
         button2.setBackground(new java.awt.Color(51, 51, 51));
         button2.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
         button2.setForeground(new java.awt.Color(240, 240, 240));
         button2.setLabel("Cancel");
+        button2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                button2ActionPerformed(evt);
+            }
+        });
 
         label1.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         label1.setText(" Change Your Password");
@@ -109,6 +119,14 @@ public class ChangePassword extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2ActionPerformed
+        this.dispose();
+    }//GEN-LAST:event_button2ActionPerformed
+
+    private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
+        // TODO : SEND PASSWORD DATA TO DATABASE
+    }//GEN-LAST:event_button1ActionPerformed
 
     /**
      * @param args the command line arguments
