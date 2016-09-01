@@ -398,6 +398,11 @@ public class PortfolioManager extends javax.swing.JFrame {
         getContentPane().add(PMPlatformTabbedPane, gridBagConstraints);
 
         ChangePassword.setText("Change Password");
+        ChangePassword.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ChangePasswordActionPerformed(evt);
+            }
+        });
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
         gridBagConstraints.gridy = 0;
@@ -412,6 +417,10 @@ public class PortfolioManager extends javax.swing.JFrame {
     private void PMSendOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PMSendOrderActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_PMSendOrderActionPerformed
+
+    private void ChangePasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChangePasswordActionPerformed
+        new ChangePassword().setVisible(true);
+    }//GEN-LAST:event_ChangePasswordActionPerformed
 private class myComboBoxEditor extends DefaultCellEditor {
     myComboBoxEditor(String[] items) {
         super(new JComboBox(items));
