@@ -1,13 +1,17 @@
 package UserObjects;
 
 public class Block {
+	
 	long blockId;
+	long traderId;
+	long brokerId;
 	String symbol;
 	int quantity;
 	int orderType;
 	double stopPrice;
 	double limitPrice;
 	int status;
+	
 	public long getBlockId() {
 		return blockId;
 	}

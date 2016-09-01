@@ -8,15 +8,17 @@ import java.util.ArrayList;
 */
 
 public class PortfolioManager extends User {
-	ArrayList<Portfolio> portfolioList;
+	
+	long portfolioManagerId;
+	ArrayList<PMPortfolio> portfolioList;
 	ArrayList<Order> orderList;
 	ArrayList<Trader> traderList;
 	
-	public ArrayList<Portfolio> getPortfolioList() {
+	public ArrayList<PMPortfolio> getPortfolioList() {
 		return portfolioList;
 	}
 	
-	public void setPortfolioList(ArrayList<Portfolio> portfolioList) {
+	public void setPortfolioList(ArrayList<PMPortfolio> portfolioList) {
 		this.portfolioList = portfolioList;
 	}
 	
