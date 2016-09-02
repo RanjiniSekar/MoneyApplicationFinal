@@ -63,7 +63,6 @@ public class AdminWindow extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         label6 = new java.awt.Label();
         ChangePassword = new javax.swing.JPanel();
-        button2 = new java.awt.Button();
         label2 = new java.awt.Label();
         label3 = new java.awt.Label();
         NewPassText = new java.awt.TextField();
@@ -341,16 +340,6 @@ public class AdminWindow extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Add Broker", AddBroker);
 
-        button2.setBackground(new java.awt.Color(51, 51, 51));
-        button2.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        button2.setForeground(new java.awt.Color(240, 240, 240));
-        button2.setLabel("Cancel");
-        button2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                button2ActionPerformed(evt);
-            }
-        });
-
         label2.setText("Old Password:");
 
         label3.setText("New Password:");
@@ -404,11 +393,8 @@ public class AdminWindow extends javax.swing.JFrame {
             .addComponent(jPanel5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(ChangePasswordLayout.createSequentialGroup()
                 .addGap(72, 72, 72)
-                .addGroup(ChangePasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addGroup(ChangePasswordLayout.createSequentialGroup()
-                        .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(submitButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(ChangePasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(submitButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(ChangePasswordLayout.createSequentialGroup()
                         .addGroup(ChangePasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(label3, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -439,9 +425,7 @@ public class AdminWindow extends javax.swing.JFrame {
                     .addComponent(label7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ConfirmPassText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(34, 34, 34)
-                .addGroup(ChangePasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(submitButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(submitButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(45, Short.MAX_VALUE))
         );
 
@@ -478,10 +462,6 @@ public class AdminWindow extends javax.swing.JFrame {
     private void CreatePortfolioNameTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CreatePortfolioNameTextActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_CreatePortfolioNameTextActionPerformed
-
-    private void button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2ActionPerformed
-        this.dispose();
-    }//GEN-LAST:event_button2ActionPerformed
 
     private void OldPassTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OldPassTextActionPerformed
         // TODO add your handling code here:
@@ -566,7 +546,6 @@ public class AdminWindow extends javax.swing.JFrame {
     private javax.swing.JTextField CreateTraderUsernameText;
     private java.awt.TextField NewPassText;
     private java.awt.TextField OldPassText;
-    private java.awt.Button button2;
     private java.awt.Button createBrokerButton;
     private java.awt.Button createTraderButton;
     private javax.swing.JLabel jLabel1;

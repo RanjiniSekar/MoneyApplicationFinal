@@ -241,6 +241,11 @@ public class TradeWindow extends javax.swing.JFrame {
         });
 
         TraderSubmitBlocks.setText("Submit Selected Blocks");
+        TraderSubmitBlocks.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TraderSubmitBlocksActionPerformed(evt);
+            }
+        });
 
         TraderSelectAllBlocks.setText("Select All");
         TraderSelectAllBlocks.addActionListener(new java.awt.event.ActionListener() {
@@ -526,6 +531,10 @@ public class TradeWindow extends javax.swing.JFrame {
           sorter.setRowFilter(RowFilter.regexFilter(text));
         }
     }//GEN-LAST:event_TraderBlockHistoryFilterActionPerformed
+
+    private void TraderSubmitBlocksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TraderSubmitBlocksActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TraderSubmitBlocksActionPerformed
 
     /**
      * @param args the command line arguments
