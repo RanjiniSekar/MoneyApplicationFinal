@@ -5,6 +5,7 @@
  */
 package com.controller;
 
+import TestModules.JTableDataPopulation.JsonParsing;
 import UserObjects.Block;
 import UserObjects.SingleOrder;
 import java.util.ArrayList;
@@ -99,6 +100,11 @@ public class ControllerBlockOrders {
         }
         for(Block b : blocks){          
             System.out.println("Blocks :\n"+ b);
+            //PARSING BLOCK TO SEND TO DB
+            JsonParsing.parseJsonFromObject(b);
+            
+            //QUERY TO SEND TO DB GOES HERE
+            
         }
   }
 }
