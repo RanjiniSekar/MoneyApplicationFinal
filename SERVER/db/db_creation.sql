@@ -78,11 +78,9 @@ create table IF NOT EXISTS trader_block (
 
 create table IF NOT EXISTS pm_order (
    order_id BIGINT not null AUTO_INCREMENT,
-   p_id  BIGINT not null,
    pm_id BIGINT not null,
    assigned_to  BIGINT not null,
    PRIMARY KEY(order_id),
-   FOREIGN KEY(p_id) REFERENCES portfolio(p_id),
    FOREIGN KEY(pm_id) REFERENCES portfolio_manager(pm_id),
    FOREIGN KEY(assigned_to) REFERENCES trader(t_id)
 );
