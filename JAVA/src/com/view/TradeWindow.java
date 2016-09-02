@@ -86,6 +86,8 @@ public class TradeWindow extends javax.swing.JFrame {
 
         TraderIncomingRequestsTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
