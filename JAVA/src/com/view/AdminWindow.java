@@ -357,11 +357,15 @@ public class AdminWindow extends javax.swing.JFrame {
         String nameText = CreateTraderNameText.getText();
         String usernameText = CreateTraderUsernameText.getText();
         String passwordText = CreateTraderPasswordText.getText();
+        //SEND TO CONTROLLER TO CREATE TRADER AND SEND TO DB
+        CAdmin.addTrader(nameText, usernameText, passwordText); 
     }//GEN-LAST:event_createTraderButtonActionPerformed
 
     private void createBrokerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createBrokerButtonActionPerformed
         String nameText = CreateBrokerNameText.getText();
         String usernameText = CreateBrokerEmailText.getText();
+        //SEND TO CONTROLLER TO CREATE BROKER AND SEND TO DB
+        CAdmin.addBroker(nameText, usernameText); 
     }//GEN-LAST:event_createBrokerButtonActionPerformed
 
     private void CreatePortfolioNameTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CreatePortfolioNameTextActionPerformed
