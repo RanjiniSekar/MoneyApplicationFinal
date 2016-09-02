@@ -31,9 +31,9 @@ public class AdminWindow extends javax.swing.JFrame {
         jTabbedPane1 = new javax.swing.JTabbedPane();
         AddPortfMan = new javax.swing.JPanel();
         button1 = new java.awt.Button();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
+        CreatePortfolioNameText = new javax.swing.JTextField();
+        CreatePortfolioUsernameText = new javax.swing.JTextField();
+        CreatePortfolioPasswordText = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -41,9 +41,9 @@ public class AdminWindow extends javax.swing.JFrame {
         label4 = new java.awt.Label();
         AddTrader = new javax.swing.JPanel();
         button2 = new java.awt.Button();
-        jTextField9 = new javax.swing.JTextField();
-        jTextField10 = new javax.swing.JTextField();
-        jTextField11 = new javax.swing.JTextField();
+        CreateTraderNameText = new javax.swing.JTextField();
+        CreateTraderUsernameText = new javax.swing.JTextField();
+        CreateTraderPasswordText = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
@@ -51,8 +51,8 @@ public class AdminWindow extends javax.swing.JFrame {
         label5 = new java.awt.Label();
         AddBroker = new javax.swing.JPanel();
         button3 = new java.awt.Button();
-        jTextField13 = new javax.swing.JTextField();
-        jTextField14 = new javax.swing.JTextField();
+        CreateBrokerNameText = new javax.swing.JTextField();
+        CreateBrokerEmailText = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
@@ -68,6 +68,12 @@ public class AdminWindow extends javax.swing.JFrame {
         button1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 button1ActionPerformed(evt);
+            }
+        });
+
+        CreatePortfolioNameText.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CreatePortfolioNameTextActionPerformed(evt);
             }
         });
 
@@ -117,9 +123,9 @@ public class AdminWindow extends javax.swing.JFrame {
                             .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel1)
                             .addComponent(jLabel2)
-                            .addComponent(jTextField3)
-                            .addComponent(jTextField2)
-                            .addComponent(jTextField1))
+                            .addComponent(CreatePortfolioPasswordText)
+                            .addComponent(CreatePortfolioUsernameText)
+                            .addComponent(CreatePortfolioNameText))
                         .addGap(0, 152, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AddPortfManLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
@@ -135,15 +141,15 @@ public class AdminWindow extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(CreatePortfolioNameText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel2)
                 .addGap(7, 7, 7)
-                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(CreatePortfolioUsernameText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(CreatePortfolioPasswordText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
                 .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -207,9 +213,9 @@ public class AdminWindow extends javax.swing.JFrame {
                             .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel9)
                             .addComponent(jLabel10)
-                            .addComponent(jTextField11)
-                            .addComponent(jTextField10)
-                            .addComponent(jTextField9))
+                            .addComponent(CreateTraderPasswordText)
+                            .addComponent(CreateTraderUsernameText)
+                            .addComponent(CreateTraderNameText))
                         .addGap(0, 152, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AddTraderLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
@@ -225,15 +231,15 @@ public class AdminWindow extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addComponent(jLabel9)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(CreateTraderNameText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel10)
                 .addGap(7, 7, 7)
-                .addComponent(jTextField10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(CreateTraderUsernameText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel11)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(CreateTraderPasswordText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
                 .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -294,8 +300,8 @@ public class AdminWindow extends javax.swing.JFrame {
                         .addGroup(AddBrokerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel14, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel13)
-                            .addComponent(jTextField14)
-                            .addComponent(jTextField13))
+                            .addComponent(CreateBrokerEmailText)
+                            .addComponent(CreateBrokerNameText))
                         .addGap(0, 187, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AddBrokerLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
@@ -311,11 +317,11 @@ public class AdminWindow extends javax.swing.JFrame {
                 .addGap(76, 76, 76)
                 .addComponent(jLabel13)
                 .addGap(7, 7, 7)
-                .addComponent(jTextField13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(CreateBrokerNameText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(jLabel14)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTextField14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(CreateBrokerEmailText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
                 .addComponent(button3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -335,16 +341,28 @@ public class AdminWindow extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
-        // TODO add your handling code here:
+        String nameText = CreatePortfolioNameText.getText();
+        String usernameText = CreatePortfolioUsernameText.getText();
+        String passwordText = CreatePortfolioPasswordText.getText();
+        
+        
+        
     }//GEN-LAST:event_button1ActionPerformed
 
     private void button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2ActionPerformed
-        // TODO add your handling code here:
+        String nameText = CreateTraderNameText.getText();
+        String usernameText = CreateTraderUsernameText.getText();
+        String passwordText = CreateTraderPasswordText.getText();
     }//GEN-LAST:event_button2ActionPerformed
 
     private void button3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button3ActionPerformed
-        // TODO add your handling code here:
+        String nameText = CreateBrokerNameText.getText();
+        String usernameText = CreateBrokerEmailText.getText();
     }//GEN-LAST:event_button3ActionPerformed
+
+    private void CreatePortfolioNameTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CreatePortfolioNameTextActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CreatePortfolioNameTextActionPerformed
 
     /**
      * @param args the command line arguments
@@ -389,6 +407,14 @@ public class AdminWindow extends javax.swing.JFrame {
     private javax.swing.JPanel AddBroker;
     private javax.swing.JPanel AddPortfMan;
     private javax.swing.JPanel AddTrader;
+    private javax.swing.JTextField CreateBrokerEmailText;
+    private javax.swing.JTextField CreateBrokerNameText;
+    private javax.swing.JTextField CreatePortfolioNameText;
+    private javax.swing.JTextField CreatePortfolioPasswordText;
+    private javax.swing.JTextField CreatePortfolioUsernameText;
+    private javax.swing.JTextField CreateTraderNameText;
+    private javax.swing.JTextField CreateTraderPasswordText;
+    private javax.swing.JTextField CreateTraderUsernameText;
     private java.awt.Button button1;
     private java.awt.Button button2;
     private java.awt.Button button3;
@@ -404,14 +430,6 @@ public class AdminWindow extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JTabbedPane jTabbedPane1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField10;
-    private javax.swing.JTextField jTextField11;
-    private javax.swing.JTextField jTextField13;
-    private javax.swing.JTextField jTextField14;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField9;
     private java.awt.Label label4;
     private java.awt.Label label5;
     private java.awt.Label label6;
