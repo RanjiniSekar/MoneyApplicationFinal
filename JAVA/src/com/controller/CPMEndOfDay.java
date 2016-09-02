@@ -18,7 +18,7 @@ public class CPMEndOfDay {
     
     public static TableModel getTableModel(){
         ArrayList objList = getData();
-        return new PMOrderHistoryTableModel(objList);
+        return new PMEndOfDayTableModel(objList);
     }
     
     private static ArrayList getData(){
