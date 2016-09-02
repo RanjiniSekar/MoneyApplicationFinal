@@ -7,6 +7,11 @@ package UserObjects;
 
 public abstract class User {
 
+    public User(String username, String tempPass) {
+        this.username = username;
+        this.tempPass = tempPass;
+    }
+
     long id;
     String name;
     String username;
