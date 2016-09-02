@@ -54,10 +54,9 @@ router.route('/')
                                 res.status(201).send(results);
                             }
                         });
-                });
-        }
+                }
+            });
     });
-
 
 
 
