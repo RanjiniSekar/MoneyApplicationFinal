@@ -1,24 +1,22 @@
-package com.controller;
-
-import java.util.ArrayList;
-import javax.swing.table.AbstractTableModel;
-import UserObjects.SingleOrder;
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+package com.controller;
+
+import UserObjects.SingleOrder;
+import java.util.ArrayList;
+import javax.swing.table.AbstractTableModel;
 
 /**
  *
  * @author kjha4
  */
-class PMPendingRequestTableModel extends AbstractTableModel {
-    
+public class TraderBlockOrderTableModel extends AbstractTableModel{
     private ArrayList objList = new ArrayList();
 
-    public PMPendingRequestTableModel(ArrayList datalist) {
+    public TraderBlockOrderTableModel(ArrayList datalist) {
         this.objList = datalist;
     }
       
@@ -45,7 +43,7 @@ class PMPendingRequestTableModel extends AbstractTableModel {
         SingleOrder widget = (SingleOrder) objList.get(rowIndex);
         switch (columnIndex) {
          case 0:
-          return String.valueOf(widget.getSingleOrderId());
+          return String.valueOf(widget.getBlockId());
          case 1:
           return String.valueOf(widget.getPortfolioId());
          case 2:
@@ -63,7 +61,7 @@ class PMPendingRequestTableModel extends AbstractTableModel {
          case 8:
           return widget.getOrderType();
          case 9:
-          return widget.getAssignedTo();
+          return widget.getPmId();
          case 10:
           return widget.getStatus();
          case 11:
@@ -73,6 +71,4 @@ class PMPendingRequestTableModel extends AbstractTableModel {
           return null;
         }
     }
-    
 }
-

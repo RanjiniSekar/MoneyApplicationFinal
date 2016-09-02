@@ -27,7 +27,7 @@ public class PMEndOfDayTableModel extends AbstractTableModel{
 
     @Override
     public int getColumnCount() {
-        return 11;
+        return 4;
     }
     
      @Override
@@ -46,11 +46,11 @@ public class PMEndOfDayTableModel extends AbstractTableModel{
         switch (columnIndex) {
           case 0:
           return String.valueOf(widget.getPortfolioId());
-         case 2:
+         case 1:
           return widget.getSymbol();
-         case 3:
+         case 2:
           return String.valueOf(widget.getQuantity());
-         case 4:
+         case 3:
           return String.valueOf(widget.getPricePaid());
 
          default:
