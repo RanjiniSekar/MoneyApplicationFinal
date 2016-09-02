@@ -82,22 +82,23 @@ public class SingleOrder {
         
             this.portfolioId = (long)object[0];
             
+            //COLUMN 1: STOCK EXCHANGE: REQUIRED
+            this.stockExchange = (String)object[1];
             
-            this.symbol = (String)object[1];
-            this.quantity = (int)object[2];
+            this.symbol = (String)object[2];
+            this.quantity = (int)object[3];
             
-            this.action = (String)object[3];
+            this.action = (String)object[4];
             
             
-            if(object[4] != null){
-                this.stopPrice = (double)object[4];
-            }
             if(object[5] != null){
-                this.limitPrice = (double)object[5];
+                this.stopPrice = (double)object[5];
+            }
+            if(object[6] != null){
+                this.limitPrice = (double)object[6];
             }
             //this.pricePaid = (double)pricePaid;
-            //COLUMN 6: STOCK EXCHANGE: REQUIRED
-            this.stockExchange = (String)object[6];
+            
             
             
             if(object[7] != null){
@@ -106,16 +107,16 @@ public class SingleOrder {
             }
             
             
-            if(object[4] == null && object[5] == null){
+            if(object[5] == null && object[6] == null){
                 this.orderType = "Market Order"; //MARKET ORDER
             }
-            if(object[4] != null && object[5] == null){
+            if(object[5] != null && object[6] == null){
                 this.orderType = "Stop Order"; //STOP ORDER
             }
-            if(object[4] == null && object[5] != null){
+            if(object[5] == null && object[6] != null){
                 this.orderType = "Limit Order"; //LIMIT ORDER
             }
-            if(object[4] != null && object[5] != null){
+            if(object[5] != null && object[6] != null){
                 this.orderType = "Stop Limit Order"; //STOP LIMIT ORDER
             }
             

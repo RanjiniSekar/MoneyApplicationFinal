@@ -1,7 +1,14 @@
 package com.view;
 
+import TestModules.JTableDataPopulation.JsonParsing;
+import UserObjects.Order;
 import UserObjects.SingleOrder;
+import com.controller.ControllerPMCreatedOrders;
 import java.awt.Component;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.DefaultCellEditor;
@@ -62,7 +69,7 @@ public class PortfolioManager extends javax.swing.JFrame {
         FilterOptionsPMEOD = new javax.swing.JComboBox<>();
         PMEODFilter = new javax.swing.JButton();
         CreateOrder = new javax.swing.JPanel();
-        TraderSelectBrokerOptions = new javax.swing.JComboBox<>();
+        PMSelectTraderOptions = new javax.swing.JComboBox<>();
         jLabel5 = new javax.swing.JLabel();
         PMSendOrderScrollPane = new javax.swing.JScrollPane();
         PMSendOrderTable = new javax.swing.JTable();
@@ -100,11 +107,11 @@ public class PortfolioManager extends javax.swing.JFrame {
                 {null, null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Order ID", "Portfolio ID", "Symbol", "Quantity", "Action", "Stop Price", "Limit Price", "Account Type", "Order Type", "Assigned To", "Status", "Stock Exchange"
+                "Order ID", "Portfolio ID", "Stock Exchange", "Symbol", "Quantity", "Action", "Stop Price", "Limit Price", "Account Type", "Order Type", "Assigned To", "Status"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.Double.class, java.lang.Double.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Object.class
+                java.lang.Integer.class, java.lang.String.class, java.lang.Object.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.Double.class, java.lang.Double.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -286,10 +293,10 @@ public class PortfolioManager extends javax.swing.JFrame {
 
         PMPlatformTabbedPane.addTab("EOD", PMEOD);
 
-        TraderSelectBrokerOptions.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Automatic", "Trader 1", "Trader 2", "Trader 3", "Trader 4" }));
-        TraderSelectBrokerOptions.addActionListener(new java.awt.event.ActionListener() {
+        PMSelectTraderOptions.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Automatic", "Trader 1", "Trader 2", "Trader 3", "Trader 4" }));
+        PMSelectTraderOptions.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TraderSelectBrokerOptionsActionPerformed(evt);
+                PMSelectTraderOptionsActionPerformed(evt);
             }
         });
 
@@ -300,23 +307,23 @@ public class PortfolioManager extends javax.swing.JFrame {
                 {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Portfolio ID", "Symbol", "Quantity", "Action", "Stop Price", "Limit Price", "Stock Exchange", "Account Type"
+                "Portfolio ID", "Stock Exchange", "Symbol", "Quantity", "Action", "Stop Price", "Limit Price", "Account Type"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Long.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.Double.class, java.lang.Double.class, java.lang.String.class, java.lang.String.class
+                java.lang.Long.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.Double.class, java.lang.Double.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
             }
         });
-        TableColumn col1 = PMSendOrderTable.getColumnModel().getColumn(3);
-        col1.setCellEditor(new myComboBoxEditor(ActionItems));
-        col1.setCellRenderer(new MyComboBoxRenderer(ActionItems));
-        TableColumn col2 = PMSendOrderTable.getColumnModel().getColumn(6);
+        TableColumn col2 = PMSendOrderTable.getColumnModel().getColumn(1);
         col2.setCellEditor(new myComboBoxEditor(StockExchange));
         col2.setCellRenderer(new MyComboBoxRenderer(StockExchange));
+        TableColumn col1 = PMSendOrderTable.getColumnModel().getColumn(4);
+        col1.setCellEditor(new myComboBoxEditor(ActionItems));
+        col1.setCellRenderer(new MyComboBoxRenderer(ActionItems));
         TableColumn col3 = PMSendOrderTable.getColumnModel().getColumn(7);
         col3.setCellEditor(new myComboBoxEditor(AccountType));
         col3.setCellRenderer(new MyComboBoxRenderer(AccountType));
@@ -347,7 +354,7 @@ public class PortfolioManager extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, CreateOrderLayout.createSequentialGroup()
                         .addComponent(jLabel5)
                         .addGap(18, 18, 18)
-                        .addComponent(TraderSelectBrokerOptions, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(PMSelectTraderOptions, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(213, 213, 213)
                         .addComponent(PMSendOrder)
                         .addContainerGap())
@@ -362,7 +369,7 @@ public class PortfolioManager extends javax.swing.JFrame {
                 .addGroup(CreateOrderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(CreateOrderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel5)
-                        .addComponent(TraderSelectBrokerOptions, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(PMSelectTraderOptions, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(PMSendOrder))
                 .addGap(28, 28, 28)
                 .addComponent(PMSendOrderScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -478,15 +485,17 @@ public class PortfolioManager extends javax.swing.JFrame {
         int nCol = dtm.getColumnCount();
         Object[][] tableData = new Object[nRow][nCol];
         List<SingleOrder> parsedOrders = new ArrayList();
-           
+        String selectedTrader = String.valueOf(PMSelectTraderOptions.getSelectedItem());
+        boolean thereAreOrders = false;
         
         for(int i = 0; i < nRow; i++){
             for (int j = 0 ; j < nCol ; j++){
                 tableData[i][j] = dtm.getValueAt(i,j);
             }
+            System.out.println("Retrieved all table data");
             boolean trigg = true;
             //System.out.println(tableData[i][1]);
-            if(tableData[i][0] != null && tableData[i][1] != null && tableData[i][2] != null && tableData[i][3] != null && tableData[i][6] != null){
+            if(tableData[i][0] != null && tableData[i][1] != null && tableData[i][2] != null && tableData[i][3] != null && tableData[i][4] != null){
                 if(tableData[i][0] != null){
                     long portIDC = (long)tableData[i][0];
                     if(portIDC < 0){
@@ -494,36 +503,33 @@ public class PortfolioManager extends javax.swing.JFrame {
                         trigg = false;
                     }
                 }
-                if(tableData[i][2] != null){
-                    int quantityC = (int)tableData[i][2];
+                if(tableData[i][3] != null){
+                    int quantityC = (int)tableData[i][3];
                     if(quantityC < 0){
                         showMessageDialog(null, "You have entered a negative quantity value. Please fix this value before submitting the order.");
                         trigg = false;
                     }
                 }
-                if(tableData[i][4] != null){
-                    double stopC = (double)tableData[i][4];
+                if(tableData[i][5] != null){
+                    double stopC = (double)tableData[i][5];
                     if(stopC < 0){
                         showMessageDialog(null, "You have entered a negative stop price value. Please fix this value before submitting the order.");
                         trigg = false;
                     }
                 }                            
-                if(tableData[i][5] != null){
-                    double limitC = (double)tableData[i][4];
+                if(tableData[i][6] != null){
+                    double limitC = (double)tableData[i][6];
                     if(limitC < 0){
                         showMessageDialog(null, "You have entered a negative limit price value. Please fix this value before submitting the order.");
                         trigg = false;
                     }
                 }
                 if(trigg == true){
+                    thereAreOrders = true;
                     SingleOrder o = new SingleOrder(tableData[i]);
-                    System.out.println(o.toString());
+                    //System.out.println(o.toString());
                     parsedOrders.add(o);
-                    showMessageDialog(null, "You have successfully sent your trades."); 
-                    dtm.setRowCount(0);
-                    dtm.addRow(new Object[]{null,null,null,null,null,null,null,null,null}); 
-                }
-                             
+                }             
             }
             else {
                 String a,b,c,d,e;
@@ -531,19 +537,26 @@ public class PortfolioManager extends javax.swing.JFrame {
                     a = "Portfolio ID";
                 } else { a = ""; } 
                 if(tableData[i][1] == null){
-                    b = "Symbol";
+                    b = "Stock Exchange";
                 } else { b = ""; } 
                 if(tableData[i][2] == null){
-                    c = "Quantity";
+                    c = "Symbol";
                 } else { c = ""; } 
                 if(tableData[i][3] == null){
-                    d = "Action";
+                    d = "Quantity";
                 } else { d = ""; } 
-                if(tableData[i][6] == null){
-                    e = "Stock Exchange";
+                if(tableData[i][4] == null){
+                    e = "Action";
                 } else { e = ""; } 
                 showMessageDialog(null, "You need to fill in the necessary fields before sending the order:\n" + a + "\n" + b + "\n" + c +  "\n" + d +  "\n" + e); 
             }
+       }
+       if(thereAreOrders){
+        showMessageDialog(null, "You have successfully sent your trades."); 
+        dtm.setRowCount(0);
+        dtm.addRow(new Object[]{null,null,null,null,null,null,null,null,null}); 
+        Order toSend = new Order(selectedTrader, parsedOrders);
+        ControllerPMCreatedOrders.handleOrder(toSend); 
        }
     }//GEN-LAST:event_PMSendOrderActionPerformed
 
@@ -551,9 +564,9 @@ public class PortfolioManager extends javax.swing.JFrame {
         new ChangePassword().setVisible(true);
     }//GEN-LAST:event_ChangePasswordActionPerformed
 
-    private void TraderSelectBrokerOptionsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TraderSelectBrokerOptionsActionPerformed
+    private void PMSelectTraderOptionsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PMSelectTraderOptionsActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_TraderSelectBrokerOptionsActionPerformed
+    }//GEN-LAST:event_PMSelectTraderOptionsActionPerformed
 
     private void PMPendingOrderFilterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PMPendingOrderFilterActionPerformed
         final TableRowSorter<TableModel> sorter = new TableRowSorter<TableModel>(PMPendingOrdersTable.getModel());
@@ -658,9 +671,34 @@ private class MyComboBoxRenderer extends JComboBox implements TableCellRenderer 
     //Trader Names and Currency Strings
     String[] TraderNames = {"Trader 1","Trader 2"};
     String[] ActionItems = {"Buy","Sell"};
-    String[] StockExchange = {"New York Exchange","London Stock Exchange"};
+    String[] StockExchange = {"US Stock Exchange","London Stock Exchange"};
     String[] AccountType = {"Margin Account","Cash Account"};
     String[] OrderType = {"Market Order","Stop Order","Limit Order","Stop Limit Order"};
+    
+    /*
+    public void readNasdaq() throws IOException {
+        try {
+            FileReader input;
+            input = new FileReader("...\\JAVA\\Resources\\nasdaqlisted.txt");
+            BufferedReader bufRead = new BufferedReader(input);
+            String myLine = null;
+            
+            while ((myLine = bufRead.readLine()) != null){    
+                String[] array1 = myLine.split("|");
+                // check to make sure you have valid data
+                String[] array2 = array1[1].split(" ");
+                for (int i = 0; i < array2.length; i++)
+                    function(array1[0], array2[i]);
+        }
+            
+            
+        }
+        catch(IOException e) {
+            System.out.println("File to read NASDAQ data not found");  
+        }
+    }
+    */
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ChangePassword;
     private javax.swing.JPanel CreateOrder;
@@ -684,12 +722,12 @@ private class MyComboBoxRenderer extends JComboBox implements TableCellRenderer 
     private javax.swing.JButton PMPendingOrderFilter;
     private javax.swing.JTable PMPendingOrdersTable;
     private javax.swing.JTabbedPane PMPlatformTabbedPane;
+    private javax.swing.JComboBox<String> PMSelectTraderOptions;
     private javax.swing.JButton PMSendOrder;
     private javax.swing.JScrollPane PMSendOrderScrollPane;
     private javax.swing.JTable PMSendOrderTable;
     private javax.swing.JScrollPane PendingOrderRequests;
     private javax.swing.JPanel PendingOrders;
-    private javax.swing.JComboBox<String> TraderSelectBrokerOptions;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
