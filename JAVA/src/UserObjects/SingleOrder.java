@@ -3,7 +3,7 @@ package UserObjects;
 public class SingleOrder {
 	
     
-	private long SingleOrderId;
+	private long singleOrderId;
 	private long portfolioId ;
 	private long OrderId;
 	private long BlockId;
@@ -21,7 +21,7 @@ public class SingleOrder {
         private long assignedTo;
 
     public SingleOrder(long SingleOrderId, long portfolioId, long OrderId, long BlockId, String symbol, int quantitiy, int action, double stopPrice, double limitPrice, double pricePaid, int stockExchange, int accountType, int orderType, int status) {
-        this.SingleOrderId = SingleOrderId;
+        this.singleOrderId = SingleOrderId;
         this.portfolioId = portfolioId;
         this.OrderId = OrderId;
         this.BlockId = BlockId;
@@ -153,15 +153,15 @@ public class SingleOrder {
 
     @Override
     public String toString() {
-        return "SingleOrder{" + "SingleOrderId=" + SingleOrderId + ", portfolioId=" + portfolioId + ", OrderId=" + OrderId + ", BlockId=" + BlockId + ", symbol=" + symbol + ", quantitiy=" + quantity + ", action=" + action + ", stopPrice=" + stopPrice + ", limitPrice=" + limitPrice + ", pricePaid=" + pricePaid + ", stockExchange=" + stockExchange + ", accountType=" + accountType + ", orderType=" + orderType + ", status=" + status + '}';
+        return "SingleOrder{" + "SingleOrderId=" + singleOrderId + ", portfolioId=" + portfolioId + ", OrderId=" + OrderId + ", BlockId=" + BlockId + ", symbol=" + symbol + ", quantitiy=" + quantity + ", action=" + action + ", stopPrice=" + stopPrice + ", limitPrice=" + limitPrice + ", pricePaid=" + pricePaid + ", stockExchange=" + stockExchange + ", accountType=" + accountType + ", orderType=" + orderType + ", status=" + status + '}';
     } 
 
     public long getSingleOrderId() {
-        return SingleOrderId;
+        return singleOrderId;
     }
 
     public void setSingleOrderId(long SingleOrderId) {
-        this.SingleOrderId = SingleOrderId;
+        this.singleOrderId = SingleOrderId;
     }
 
     public long getPortfolioId() {
