@@ -9,18 +9,18 @@ public class SingleOrder {
 	private long BlockId;
 	private String symbol;
 	private int quantity;
-	private int action;
+	private String action;
 	private double stopPrice;
 	private double limitPrice;
 	private double pricePaid;
-	private int stockExchange;
-	private int accountType;
-	private int orderType;
-	private int status;
+	private String stockExchange;
+	private String accountType;
+	private String orderType;
+	private String status;
         private long pmId;
         private long assignedTo;
 
-    public SingleOrder(long SingleOrderId, long portfolioId, long OrderId, long BlockId, String symbol, int quantitiy, int action, double stopPrice, double limitPrice, double pricePaid, int stockExchange, int accountType, int orderType, int status) {
+    public SingleOrder(long SingleOrderId, long portfolioId, long OrderId, long BlockId, String symbol, int quantitiy, String action, double stopPrice, double limitPrice, double pricePaid, String stockExchange, String accountType, String orderType, String status) {
         this.singleOrderId = SingleOrderId;
         this.portfolioId = portfolioId;
         this.OrderId = OrderId;
@@ -47,47 +47,32 @@ public class SingleOrder {
         this.portfolioId = (long)object[1];    
         this.symbol = (String)object[2];
         this.quantity = (int)object[3];
-        String actionI = (String)object[4];
-        if(actionI.equals("Sell")){
-            this.action = 0;
-        }
-        else if(actionI.equals("Buy")){
-            this.action = 1;
-        }
+        
+        this.action = (String)object[4];
         if(object[5] != null){
             this.stopPrice = (double)object[5];
         }
         if(object[6] != null){
             this.limitPrice = (double)object[6];
         }
-        String exchange = (String)object[7];
-        if(exchange.equals("New York Exchange")){
-            this.stockExchange = 0;
-        }
-        else if(exchange.equals("London Stock Exchange")){
-            this.stockExchange = 1;
-        }
+        this.stockExchange = (String)object[7];
+        
             
         if(object[8] != null){
-            String acctT = (String)object[8];
-            if(acctT.equals("Margin Account")){
-                this.accountType = 0;
-            }
-            else if(acctT.equals("Cash Account")){
-                this.accountType = 1;
-            }
+            this.accountType = (String)object[8];
+            
         }
         if(object[5] == null && object[6] == null){
-            this.orderType = 0; //MARKET ORDER
+            this.orderType = "Market Order"; //MARKET ORDER
         }
         if(object[5] != null && object[6] == null){
-            this.orderType = 1; //STOP ORDER
+            this.orderType = "Stop Order"; //STOP ORDER
         }
         if(object[5] == null && object[6] != null){
-            this.orderType = 2; //LIMIT ORDER
+            this.orderType = "Limit Order"; //LIMIT ORDER
         }
         if(object[5] != null && object[6] != null){
-            this.orderType = 3; //STOP LIMIT ORDER
+            this.orderType = "Stop Limit Order"; //STOP LIMIT ORDER
         }
         this.pmId = (long)object[10];
     }
@@ -101,13 +86,8 @@ public class SingleOrder {
             this.symbol = (String)object[1];
             this.quantity = (int)object[2];
             
-            String actionI = (String)object[3];
-            if(actionI.equals("Sell")){
-                this.action = 0;
-            }
-            else if(actionI.equals("Buy")){
-                this.action = 1;
-            }
+            this.action = (String)object[3];
+            
             
             if(object[4] != null){
                 this.stopPrice = (double)object[4];
@@ -117,36 +97,26 @@ public class SingleOrder {
             }
             //this.pricePaid = (double)pricePaid;
             //COLUMN 6: STOCK EXCHANGE: REQUIRED
-            String exchange = (String)object[6];
-            if(exchange.equals("New York Exchange")){
-                this.stockExchange = 0;
-            }
-            else if(exchange.equals("London Stock Exchange")){
-                this.stockExchange = 1;
-            }
+            this.stockExchange = (String)object[6];
+            
             
             if(object[7] != null){
-                String acctT = (String)object[7];
-                if(acctT.equals("Margin Account")){
-                    this.accountType = 0;
-                }
-                else if(acctT.equals("Cash Account")){
-                    this.accountType = 1;
-                }
+                this.accountType = (String)object[7];
+                
             }
             
             
             if(object[4] == null && object[5] == null){
-                this.orderType = 0; //MARKET ORDER
+                this.orderType = "Market Order"; //MARKET ORDER
             }
             if(object[4] != null && object[5] == null){
-                this.orderType = 1; //STOP ORDER
+                this.orderType = "Stop Order"; //STOP ORDER
             }
             if(object[4] == null && object[5] != null){
-                this.orderType = 2; //LIMIT ORDER
+                this.orderType = "Limit Order"; //LIMIT ORDER
             }
             if(object[4] != null && object[5] != null){
-                this.orderType = 3; //STOP LIMIT ORDER
+                this.orderType = "Stop Limit Order"; //STOP LIMIT ORDER
             }
             
     }
@@ -204,11 +174,11 @@ public class SingleOrder {
         this.quantity = quantity;
     }
 
-    public int getAction() {
+    public String getAction() {
         return action;
     }
 
-    public void setAction(int action) {
+    public void setAction(String action) {
         this.action = action;
     }
 
@@ -236,35 +206,35 @@ public class SingleOrder {
         this.pricePaid = pricePaid;
     }
 
-    public int getStockExchange() {
+    public String getStockExchange() {
         return stockExchange;
     }
 
-    public void setStockExchange(int stockExchange) {
+    public void setStockExchange(String stockExchange) {
         this.stockExchange = stockExchange;
     }
 
-    public int getAccountType() {
+    public String getAccountType() {
         return accountType;
     }
 
-    public void setAccountType(int accountType) {
+    public void setAccountType(String accountType) {
         this.accountType = accountType;
     }
 
-    public int getOrderType() {
+    public String getOrderType() {
         return orderType;
     }
 
-    public void setOrderType(int orderType) {
+    public void setOrderType(String orderType) {
         this.orderType = orderType;
     }
 
-    public int getStatus() {
+    public String getStatus() {
         return status;
     }
 
-    public void setStatus(int status) {
+    public void setStatus(String status) {
         this.status = status;
     }
 
