@@ -14,7 +14,7 @@ router.route('/orders')
     .get(function (req, res) {
         console.log('GET request on /pm/orders');
 
-        db.query('SELECT * from user', function (err, rows, fields) {
+        db.query('SELECT * from orders', function (err, rows, fields) {
             if (!err) {
                 console.log(rows);
                 res.json(rows);
@@ -29,6 +29,12 @@ router.route('/orders')
         console.log('Inserting new order...');
         console.log(req.body);
 
+        /* Check if the trader is set or should be automatically set */
+        if (req.body.assignedTrader == "Automatic") {
+            // query the database for finding the less busy one
+            var assignedTo = 0;
+            req.body.assignedTo = assignedTo;
+        }
 
         /* Insert general order info into pm_order table */
         var orderId = 0;
@@ -46,6 +52,8 @@ router.route('/orders')
                     res.status(500).send(error);
                 } else {
                     console.log("ORDER insert successful");
+                    console.log(fields);
+                    orderId = results.insertId;
                     res.status(201).send(results);
                 }
             });
@@ -79,7 +87,7 @@ router.route('/orders')
                         console.log(error);
                         res.status(500).send(error);
                     } else {
-                        console.log("SINGLE_ORDER insert successful");
+                        console.log("SINGLE_    ORDER insert successful");
                         res.status(201).send(results);
                     }
                 });
