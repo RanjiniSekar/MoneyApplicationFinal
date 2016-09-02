@@ -2,6 +2,7 @@ package UserObjects;
 
 public class SingleOrder {
 	
+    
 	long SingleOrderId;
 	long portfolioId ;
 	long OrderId;
@@ -16,6 +17,7 @@ public class SingleOrder {
 	int accountType;
 	int orderType;
 	int status;
+        long pmId;
 
     public SingleOrder(long SingleOrderId, long portfolioId, long OrderId, long BlockId, String symbol, int quantitiy, int action, double stopPrice, double limitPrice, double pricePaid, int stockExchange, int accountType, int orderType, int status) {
         this.SingleOrderId = SingleOrderId;
@@ -35,10 +37,59 @@ public class SingleOrder {
     }
 
     public SingleOrder() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
     }
 
-    
+    public void SingleOrderMakeBlocks(Object[] object){
+        
+        this.OrderId = (long)object[0];
+        this.portfolioId = (long)object[1];    
+        this.symbol = (String)object[2];
+        this.quantity = (int)object[3];
+        String actionI = (String)object[4];
+        if(actionI.equals("Sell")){
+            this.action = 0;
+        }
+        else if(actionI.equals("Buy")){
+            this.action = 1;
+        }
+        if(object[5] != null){
+            this.stopPrice = (double)object[5];
+        }
+        if(object[6] != null){
+            this.limitPrice = (double)object[6];
+        }
+        String exchange = (String)object[7];
+        if(exchange.equals("New York Exchange")){
+            this.stockExchange = 0;
+        }
+        else if(exchange.equals("London Stock Exchange")){
+            this.stockExchange = 1;
+        }
+            
+        if(object[8] != null){
+            String acctT = (String)object[8];
+            if(acctT.equals("Margin Account")){
+                this.accountType = 0;
+            }
+            else if(acctT.equals("Cash Account")){
+                this.accountType = 1;
+            }
+        }
+        if(object[5] == null && object[6] == null){
+            this.orderType = 0; //MARKET ORDER
+        }
+        if(object[5] != null && object[6] == null){
+            this.orderType = 1; //STOP ORDER
+        }
+        if(object[5] == null && object[6] != null){
+            this.orderType = 2; //LIMIT ORDER
+        }
+        if(object[5] != null && object[6] != null){
+            this.orderType = 3; //STOP LIMIT ORDER
+        }
+        this.pmId = (long)object[10];
+    }
     
     //SINGLE ORDER PARSED FROM TABLE - AT POINT OF SUBMITTING BY PM
     public SingleOrder(Object[] object) {

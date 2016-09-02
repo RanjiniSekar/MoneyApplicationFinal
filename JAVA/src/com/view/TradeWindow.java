@@ -1,6 +1,12 @@
 package com.view;
 
+import UserObjects.SingleOrder;
+import com.controller.ControllerBlockOrders;
+import java.util.ArrayList;
+import java.util.List;
+import static javax.swing.JOptionPane.showMessageDialog;
 import javax.swing.RowFilter;
+import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import javax.swing.table.TableRowSorter;
 
@@ -80,9 +86,6 @@ public class TradeWindow extends javax.swing.JFrame {
 
         TraderIncomingRequestsTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
@@ -90,7 +93,7 @@ public class TradeWindow extends javax.swing.JFrame {
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
+                java.lang.Long.class, java.lang.Long.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.Double.class, java.lang.Double.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Long.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -478,7 +481,24 @@ public class TradeWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_FilterTextTraderRequestsActionPerformed
 
     private void TraderBlockOrdersActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TraderBlockOrdersActionPerformed
-        // TODO add your handling code here:
+        DefaultTableModel dtm = (DefaultTableModel) TraderIncomingRequestsTable.getModel();
+        int nRow = dtm.getRowCount();
+        int nCol = dtm.getColumnCount();
+        Object[][] tableData = new Object[nRow][nCol];
+        List<SingleOrder> parsedOrders = new ArrayList();
+        ControllerBlockOrders control = new ControllerBlockOrders();
+        
+        for(int i = 0; i < nRow; i++){
+            for (int j = 0 ; j < nCol ; j++){
+                tableData[i][j] = dtm.getValueAt(i,j);
+            }
+            SingleOrder o = new SingleOrder();
+            o.SingleOrderMakeBlocks(tableData[i]);
+            parsedOrders.add(o);                   
+        }
+        control.MakeBlock(parsedOrders);
+        showMessageDialog(null, "Blocks have been successfully completed."); 
+        dtm.setRowCount(0);
     }//GEN-LAST:event_TraderBlockOrdersActionPerformed
 
     private void TraderRequestsFilterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TraderRequestsFilterActionPerformed
