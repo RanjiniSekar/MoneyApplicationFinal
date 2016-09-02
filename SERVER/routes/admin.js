@@ -13,7 +13,6 @@ router.route('/')
                 res.json(rows);
             } else
                 console.log('Error performing the query');
-
         });
         // db.end();
 
@@ -21,6 +20,7 @@ router.route('/')
     .post(function (req, res) {
         console.log('Inserting new user...');
         console.log(req.body);
+        var userId = 0;
 
         db.query({
                 sql: 'INSERT INTO user (name, username, password) VALUES (?, ?, ?)'
@@ -33,10 +33,31 @@ router.route('/')
                     console.log('Error performing the query');
                     res.status(500).send(error);
                 } else {
+
                     res.status(201).send(results);
                 }
             });
-        // db.end();
+
+        var query = "";
+        if (req.body.userType === "trader") {
+            query = 'INSERT INTO trader (t_id) VALUES (?)'
+        } else if (req.body.userType === "pm") {
+            query = 'INSERT INTO portfolio_manager (pm_id) VALUES (?)'
+        } else if (req.body.userType === "admin") {
+            query = 'INSERT INTO admin (adm_id) VALUES (?)'
+        }
+        db.query(query, [userId],
+            function (error, results, fields) {
+                // error will be an Error if one occurred during the query 
+                // results will contain the results of the query 
+                // fields will contain information about the returned results fields (if any)
+                if (error) {
+                    console.log('Error performing the query');
+                    res.status(500).send(error);
+                } else {
+                    res.status(201).send(results);
+                }
+            });
     });
 
 
