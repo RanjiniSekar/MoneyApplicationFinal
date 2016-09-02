@@ -33,8 +33,7 @@ router.route('/')
                     console.log('Error performing the query');
                     res.status(500).send(error);
                 } else {
-
-                    res.status(201).send(results);
+                    console.log("INSERT user successfully")
                 }
             });
 
