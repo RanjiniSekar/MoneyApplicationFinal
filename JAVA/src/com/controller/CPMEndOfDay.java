@@ -5,7 +5,9 @@
  */
 package com.controller;
 
+import com.model.PortfolioManagerDAO;
 import java.util.ArrayList;
+import java.util.List;
 import javax.swing.table.TableModel;
 
 /**
@@ -14,7 +16,14 @@ import javax.swing.table.TableModel;
  */
 public class CPMEndOfDay {
     
-    public static TableModel getTableModel(ArrayList objList){
+    public static TableModel getTableModel(){
+        ArrayList objList = getData();
         return new PMOrderHistoryTableModel(objList);
     }
+    
+    private static ArrayList getData(){
+        PortfolioManagerDAO pmDAO = new PortfolioManagerDAO();
+        return pmDAO.getEODObjList();
+    }
+    
 }

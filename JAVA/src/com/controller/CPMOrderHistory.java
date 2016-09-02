@@ -5,6 +5,8 @@
  */
 package com.controller;
 
+import UserObjects.SingleOrder;
+import com.model.PortfolioManagerDAO;
 import java.util.ArrayList;
 import javax.swing.table.TableModel;
 
@@ -14,8 +16,15 @@ import javax.swing.table.TableModel;
  */
 public class CPMOrderHistory {
     
-    public static TableModel getTableModel(ArrayList objList){
-        
+    public static TableModel getTableModel(){
+        ArrayList<SingleOrder> objList = getData();
         return new PMOrderHistoryTableModel(objList);
     }
+    
+        
+    private static ArrayList<SingleOrder> getData(){
+        PortfolioManagerDAO pmDAO = new PortfolioManagerDAO();
+        return pmDAO.getOrderHistoryObjList();
+    }
+    
 }
