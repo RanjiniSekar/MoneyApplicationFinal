@@ -25,9 +25,8 @@ router.route('/')
 
         db.connect();
         db.query({
-                sql: 'INSERT INTO user SET '
-            },
-            req.body,
+                sql: 'INSERT INTO user (name, username, password) VALUES (?, ?, ?)'
+            }, [req.body.name, req.body.username, req.body.password],
             function (error, results, fields) {
                 // error will be an Error if one occurred during the query 
                 // results will contain the results of the query 
