@@ -11,7 +11,7 @@ create table IF NOT EXISTS broker (
 create table IF NOT EXISTS user (
    u_id BIGINT not null AUTO_INCREMENT,
    name VARCHAR(20) not null, 
-   username VARCHAR (8) not null,
+   username VARCHAR (8) not null UNIQUE,
    password VARCHAR (64) not null,
    PRIMARY KEY (u_id)
 );
