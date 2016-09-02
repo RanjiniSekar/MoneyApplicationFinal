@@ -674,9 +674,9 @@ private class MyComboBoxRenderer extends JComboBox implements TableCellRenderer 
     //Trader Names and Currency Strings
     String[] TraderNames = {"Trader 1","Trader 2"};
     String[] ActionItems = {"Buy","Sell"};
-    String[] StockExchange = {"US Stock Exchange","London Stock Exchange"};
-    String[] AccountType = {"Margin Account","Cash Account"};
-    String[] OrderType = {"Market Order","Stop Order","Limit Order","Stop Limit Order"};
+        String[] StockExchange = {"NASDAQ","LSE"};
+    String[] AccountType = {"Margin","Cash"};
+    String[] OrderType = {"Market","Stop","Limit","Stop Limit"};
     
     /*
     public void readNasdaq() throws IOException {

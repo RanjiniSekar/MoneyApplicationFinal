@@ -1,6 +1,18 @@
 package UserObjects;
 
+import java.util.List;
+
 public class Block {
+    //CONSTRUCTOR FOR CREATING BLOCKS IN TRADER WINDOW
+    public Block(String symbol, int quantity, int orderType, double stopPrice, double limitPrice, int status, List<SingleOrder> holdingOrders) {
+        this.symbol = symbol;
+        this.quantity = quantity;
+        this.orderType = orderType;
+        this.stopPrice = stopPrice;
+        this.limitPrice = limitPrice;
+        this.status = status;
+       this.holdingOrders = holdingOrders;
+    }
 	
 	long blockId;
 	long traderId;
@@ -10,6 +22,15 @@ public class Block {
 	int orderType;
 	double stopPrice;
 	double limitPrice;
+        List<SingleOrder> holdingOrders;
+
+    public void setHoldingOrders(List<SingleOrder> holdingOrders) {
+        this.holdingOrders = holdingOrders;
+    }
+
+    public List<SingleOrder> getHoldingOrders() {
+        return holdingOrders;
+    }
 	int status;
 	
 	public long getBlockId() {

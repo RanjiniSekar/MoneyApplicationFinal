@@ -5,25 +5,26 @@
  */
 package com.controller;
 
+import UserObjects.SingleOrder;
 import com.model.PortfolioManagerDAO;
 import java.util.ArrayList;
-import java.util.List;
 import javax.swing.table.TableModel;
 
 /**
  *
  * @author kjha4
  */
-public class CPMEndOfDay {
+public class CTraderBlockOrder {
     
     public static TableModel getTableModel(){
-        ArrayList objList = getData();
-        return new PMEndOfDayTableModel(objList);
+        ArrayList<SingleOrder> objList = getData();
+        return new PMOrderHistoryTableModel(objList);
     }
     
-    private static ArrayList getData(){
+        
+    private static ArrayList<SingleOrder> getData(){
         PortfolioManagerDAO pmDAO = new PortfolioManagerDAO();
-        return pmDAO.getEODObjList();
+        return pmDAO.getOrderHistoryObjList();
     }
     
 }
