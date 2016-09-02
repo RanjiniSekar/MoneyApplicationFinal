@@ -86,9 +86,6 @@ public class TradeWindow extends javax.swing.JFrame {
 
         TraderIncomingRequestsTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
@@ -96,7 +93,7 @@ public class TradeWindow extends javax.swing.JFrame {
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
+                java.lang.Long.class, java.lang.Long.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.Double.class, java.lang.Double.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Long.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -495,7 +492,8 @@ public class TradeWindow extends javax.swing.JFrame {
             for (int j = 0 ; j < nCol ; j++){
                 tableData[i][j] = dtm.getValueAt(i,j);
             }
-            SingleOrder o = new SingleOrder(tableData[i]);
+            SingleOrder o = new SingleOrder();
+            o.SingleOrderMakeBlocks(tableData[i]);
             parsedOrders.add(o);                   
         }
         control.MakeBlock(parsedOrders);
