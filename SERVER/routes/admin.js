@@ -35,11 +35,11 @@ router.route('/')
                 } else {
                     console.log("INSERT user successfully");
                     var query = "";
-                    if (req.body.userType === "trader") {
+                    if (req.body.user_type === "trader") {
                         query = 'INSERT INTO trader (t_id) VALUES (?)'
-                    } else if (req.body.userType === "pm") {
+                    } else if (req.body.user_type === "pm") {
                         query = 'INSERT INTO portfolio_manager (pm_id) VALUES (?)'
-                    } else if (req.body.userType === "admin") {
+                    } else if (req.body.user_type === "admin") {
                         query = 'INSERT INTO admin (adm_id) VALUES (?)'
                     }
                     db.query(query, [userId],
