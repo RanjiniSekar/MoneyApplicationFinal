@@ -1,0 +1,41 @@
+{
+    "orderId": 0,
+    "portfolioManagerId": 0,
+    "assignedTo": 0,
+    "assignedTrader": "Automatic",
+    "containedSingleOrders": [
+        {
+            "singleOrderId": 0,
+            "portfolioId": 500,
+            "OrderId": 0,
+            "BlockId": 0,
+            "symbol": "GOOGL",
+            "quantity": 50,
+            "action": "Sell",
+            "stopPrice": 500.0,
+            "limitPrice": 0.0,
+            "pricePaid": 0.0,
+            "stockExchange": "London Stock Exchange",
+            "accountType": "Cash Account",
+            "orderType": "Stop Order",
+            "pmId": 0,
+            "assignedTo": 0
+    },
+        {
+            "singleOrderId": 0,
+            "portfolioId": 300,
+            "OrderId": 0,
+            "BlockId": 0,
+            "symbol": "APPL",
+            "quantity": 599,
+            "action": "Sell",
+            "stopPrice": 300.0,
+            "limitPrice": 0.0,
+            "pricePaid": 0.0,
+            "stockExchange": "US Stock Exchange",
+            "accountType": "Margin Account",
+            "orderType": "Stop Order",
+            "pmId": 0,
+            "assignedTo": 0
+    }]
+}

@@ -1,7 +1,7 @@
 -- Broker
 create table IF NOT EXISTS broker (
    b_id BIGINT not null AUTO_INCREMENT,
-   name VARCHAR (8) not null,
+   name VARCHAR (40) not null,
    email VARCHAR (254) not null,
    PRIMARY KEY (b_id)
 );

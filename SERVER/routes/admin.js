@@ -6,7 +6,7 @@ var router = express.Router();
 router.route('/')
     .get(function (req, res) {
         console.log('GET request on /admin');
-        db.connect();
+
         db.query('SELECT * from user', function (err, rows, fields) {
             if (!err) {
                 console.log(rows);
@@ -15,15 +15,13 @@ router.route('/')
                 console.log('Error performing the query');
 
         });
-        db.end();
+        // db.end();
 
     })
     .post(function (req, res) {
         console.log('Inserting new user...');
         console.log(req.body);
 
-
-        db.connect();
         db.query({
                 sql: 'INSERT INTO user (name, username, password) VALUES (?, ?, ?)'
             }, [req.body.name, req.body.username, req.body.password],
@@ -38,7 +36,7 @@ router.route('/')
                     res.status(201).send(results);
                 }
             });
-        db.end();
+        // db.end();
     });
 
 
