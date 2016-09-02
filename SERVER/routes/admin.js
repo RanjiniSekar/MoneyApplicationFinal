@@ -8,11 +8,14 @@ router.route('/')
         console.log('GET request on /admin');
         db.connect();
         db.query('SELECT * from user', function (err, rows, fields) {
-            if (!err)
+            if (!err) {
                 console.log(rows);
-            else
+                res.json(rows);
+            } else
                 console.log('Error performing the query');
+
         });
+        db.disconnect();
 
     })
     .post(function () {
