@@ -21,6 +21,7 @@ import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableColumn;
 import javax.swing.table.TableModel;
 import javax.swing.table.TableRowSorter;
+import static javax.swing.JOptionPane.showMessageDialog;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -32,12 +33,12 @@ import javax.swing.table.TableRowSorter;
  *
  * @author csavas
  */
-public class PortfolioManager extends javax.swing.JFrame {
+public class PortfolioManagerWindow extends javax.swing.JFrame {
 
     /**
      * Creates new form MainJFrame
      */
-    public PortfolioManager() {
+    public PortfolioManagerWindow() {
         initComponents();
     }
 
@@ -650,21 +651,23 @@ private class MyComboBoxRenderer extends JComboBox implements TableCellRenderer 
                 }
             }*/
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(PortfolioManager.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PortfolioManagerWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(PortfolioManager.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PortfolioManagerWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(PortfolioManager.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PortfolioManagerWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(PortfolioManager.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(PortfolioManagerWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new PortfolioManager().setVisible(true);
+                new PortfolioManagerWindow().setVisible(true);
             }
         });
     }

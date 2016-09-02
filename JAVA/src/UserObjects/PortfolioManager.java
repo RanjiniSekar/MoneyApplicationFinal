@@ -14,8 +14,8 @@ public class PortfolioManager extends User {
 	ArrayList<Order> orderList;
 	ArrayList<Trader> traderList;
 
-    public PortfolioManager(String name, String username, String usertype) {
-        super(name, username, usertype);
+    public PortfolioManager(String name, String username, String temppass, String usertype) {
+        super(name, username, temppass, usertype);
     }
 	
 	public ArrayList<PMPortfolio> getPortfolioList() {

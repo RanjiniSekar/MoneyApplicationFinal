@@ -9,8 +9,8 @@ public class Trader extends User{
 	ArrayList<Block> BlockListGenerated ;
 	ArrayList<Block> BlockListSent ;
 
-    public Trader(String name, String username, String usertype) {
-        super(name, username, usertype);
+    public Trader(String name, String username, String temppass, String usertype) {
+        super(name, username, temppass, usertype);
     }
 
 

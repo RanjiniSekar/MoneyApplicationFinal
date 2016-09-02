@@ -5,6 +5,11 @@
  */
 package com.view;
 
+import UserObjects.PortfolioManager;
+import UserObjects.User;
+import com.controller.CAdmin;
+import com.controller.ControllerPMCreatedOrders;
+
 /**
  *
  * @author csavas
@@ -30,7 +35,7 @@ public class AdminWindow extends javax.swing.JFrame {
 
         jTabbedPane1 = new javax.swing.JTabbedPane();
         AddPortfMan = new javax.swing.JPanel();
-        button1 = new java.awt.Button();
+        CreatePMButton = new java.awt.Button();
         CreatePortfolioNameText = new javax.swing.JTextField();
         CreatePortfolioUsernameText = new javax.swing.JTextField();
         CreatePortfolioPasswordText = new javax.swing.JTextField();
@@ -40,7 +45,7 @@ public class AdminWindow extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         label4 = new java.awt.Label();
         AddTrader = new javax.swing.JPanel();
-        button2 = new java.awt.Button();
+        createTraderButton = new java.awt.Button();
         CreateTraderNameText = new javax.swing.JTextField();
         CreateTraderUsernameText = new javax.swing.JTextField();
         CreateTraderPasswordText = new javax.swing.JTextField();
@@ -50,7 +55,7 @@ public class AdminWindow extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         label5 = new java.awt.Label();
         AddBroker = new javax.swing.JPanel();
-        button3 = new java.awt.Button();
+        createBrokerButton = new java.awt.Button();
         CreateBrokerNameText = new javax.swing.JTextField();
         CreateBrokerEmailText = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
@@ -61,13 +66,13 @@ public class AdminWindow extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new java.awt.GridBagLayout());
 
-        button1.setBackground(new java.awt.Color(51, 51, 51));
-        button1.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        button1.setForeground(new java.awt.Color(240, 240, 240));
-        button1.setLabel("Create Portfolio Manager");
-        button1.addActionListener(new java.awt.event.ActionListener() {
+        CreatePMButton.setBackground(new java.awt.Color(51, 51, 51));
+        CreatePMButton.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        CreatePMButton.setForeground(new java.awt.Color(240, 240, 240));
+        CreatePMButton.setLabel("Create Portfolio Manager");
+        CreatePMButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                button1ActionPerformed(evt);
+                CreatePMButtonActionPerformed(evt);
             }
         });
 
@@ -129,7 +134,7 @@ public class AdminWindow extends javax.swing.JFrame {
                         .addGap(0, 152, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AddPortfManLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(CreatePMButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -151,19 +156,19 @@ public class AdminWindow extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(CreatePortfolioPasswordText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
-                .addComponent(button1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(CreatePMButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
         jTabbedPane1.addTab("Add Portfolio Manager", AddPortfMan);
 
-        button2.setBackground(new java.awt.Color(51, 51, 51));
-        button2.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        button2.setForeground(new java.awt.Color(240, 240, 240));
-        button2.setLabel("Create Trader");
-        button2.addActionListener(new java.awt.event.ActionListener() {
+        createTraderButton.setBackground(new java.awt.Color(51, 51, 51));
+        createTraderButton.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        createTraderButton.setForeground(new java.awt.Color(240, 240, 240));
+        createTraderButton.setLabel("Create Trader");
+        createTraderButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                button2ActionPerformed(evt);
+                createTraderButtonActionPerformed(evt);
             }
         });
 
@@ -219,7 +224,7 @@ public class AdminWindow extends javax.swing.JFrame {
                         .addGap(0, 152, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AddTraderLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(createTraderButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -241,19 +246,19 @@ public class AdminWindow extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(CreateTraderPasswordText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
-                .addComponent(button2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(createTraderButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
         jTabbedPane1.addTab("Add Trader", AddTrader);
 
-        button3.setBackground(new java.awt.Color(51, 51, 51));
-        button3.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
-        button3.setForeground(new java.awt.Color(240, 240, 240));
-        button3.setLabel("Create Broker");
-        button3.addActionListener(new java.awt.event.ActionListener() {
+        createBrokerButton.setBackground(new java.awt.Color(51, 51, 51));
+        createBrokerButton.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        createBrokerButton.setForeground(new java.awt.Color(240, 240, 240));
+        createBrokerButton.setLabel("Create Broker");
+        createBrokerButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                button3ActionPerformed(evt);
+                createBrokerButtonActionPerformed(evt);
             }
         });
 
@@ -305,7 +310,7 @@ public class AdminWindow extends javax.swing.JFrame {
                         .addGap(0, 187, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AddBrokerLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(button3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(createBrokerButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
             .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
@@ -323,7 +328,7 @@ public class AdminWindow extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(CreateBrokerEmailText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 32, Short.MAX_VALUE)
-                .addComponent(button3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(createBrokerButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -340,25 +345,24 @@ public class AdminWindow extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void button1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button1ActionPerformed
+    private void CreatePMButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CreatePMButtonActionPerformed
         String nameText = CreatePortfolioNameText.getText();
         String usernameText = CreatePortfolioUsernameText.getText();
         String passwordText = CreatePortfolioPasswordText.getText();
-        
-        
-        
-    }//GEN-LAST:event_button1ActionPerformed
+        //SEND TO CONTROLLER TO CREATE PM AND SEND TO DB
+        CAdmin.addPortfolioManager(nameText, usernameText, passwordText); 
+    }//GEN-LAST:event_CreatePMButtonActionPerformed
 
-    private void button2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button2ActionPerformed
+    private void createTraderButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createTraderButtonActionPerformed
         String nameText = CreateTraderNameText.getText();
         String usernameText = CreateTraderUsernameText.getText();
         String passwordText = CreateTraderPasswordText.getText();
-    }//GEN-LAST:event_button2ActionPerformed
+    }//GEN-LAST:event_createTraderButtonActionPerformed
 
-    private void button3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_button3ActionPerformed
+    private void createBrokerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createBrokerButtonActionPerformed
         String nameText = CreateBrokerNameText.getText();
         String usernameText = CreateBrokerEmailText.getText();
-    }//GEN-LAST:event_button3ActionPerformed
+    }//GEN-LAST:event_createBrokerButtonActionPerformed
 
     private void CreatePortfolioNameTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CreatePortfolioNameTextActionPerformed
         // TODO add your handling code here:
@@ -409,15 +413,15 @@ public class AdminWindow extends javax.swing.JFrame {
     private javax.swing.JPanel AddTrader;
     private javax.swing.JTextField CreateBrokerEmailText;
     private javax.swing.JTextField CreateBrokerNameText;
+    private java.awt.Button CreatePMButton;
     private javax.swing.JTextField CreatePortfolioNameText;
     private javax.swing.JTextField CreatePortfolioPasswordText;
     private javax.swing.JTextField CreatePortfolioUsernameText;
     private javax.swing.JTextField CreateTraderNameText;
     private javax.swing.JTextField CreateTraderPasswordText;
     private javax.swing.JTextField CreateTraderUsernameText;
-    private java.awt.Button button1;
-    private java.awt.Button button2;
-    private java.awt.Button button3;
+    private java.awt.Button createBrokerButton;
+    private java.awt.Button createTraderButton;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
