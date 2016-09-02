@@ -29,7 +29,16 @@ public class PMOrderHistoryTableModel extends AbstractTableModel{
     public int getColumnCount() {
         return 11;
     }
+    
+    @Override
+    public String getColumnName(int index) {
+        String[] indexName = new String [] {
+            "Order ID", "Portfolio ID", "Symbol", "Quantity", "Action", "Stop Price", "Limit Price", "Stock Exchange", "Account Type", "Order Type", "Assigned To"
+         }; 
 
+        return indexName[index];
+    }
+    
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {
         SingleOrder widget = (SingleOrder) objList.get(rowIndex);
