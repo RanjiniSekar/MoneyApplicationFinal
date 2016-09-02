@@ -4,14 +4,14 @@ import java.util.List;
 
 public class Block {
     //CONSTRUCTOR FOR CREATING BLOCKS IN TRADER WINDOW
-    public Block(String symbol, int quantity, int orderType, double stopPrice, double limitPrice, int status, List<SingleOrder> holdingOrders) {
+    public Block(String symbol, int quantity, int orderType, double stopPrice, double limitPrice, int status, List<SingleOrder> holdingOrders,String stockExchange) {
         this.symbol = symbol;
         this.quantity = quantity;
         this.orderType = orderType;
         this.stopPrice = stopPrice;
         this.limitPrice = limitPrice;
         this.status = status;
-       this.holdingOrders = holdingOrders;
+        this.holdingOrders = holdingOrders;
     }
 	
 	long blockId;
@@ -22,7 +22,9 @@ public class Block {
 	int orderType;
 	double stopPrice;
 	double limitPrice;
+        String stockExchange;
         List<SingleOrder> holdingOrders;
+        int status;
 
     public void setHoldingOrders(List<SingleOrder> holdingOrders) {
         this.holdingOrders = holdingOrders;
@@ -31,7 +33,7 @@ public class Block {
     public List<SingleOrder> getHoldingOrders() {
         return holdingOrders;
     }
-	int status;
+	
 	
 	public long getBlockId() {
 		return blockId;
@@ -75,4 +77,29 @@ public class Block {
 	public void setStatus(int status) {
 		this.status = status;
 	}
+
+        public void setBrokerID(long brokerId) {
+            this.brokerId = brokerId;
+        }
+        
+        public long getBrokerID() {
+            return this.brokerId;
+        }
+
+    public long getTraderId() {
+        return traderId;
+    }
+
+    public void setTraderId(long traderId) {
+        this.traderId = traderId;
+    }
+
+    public long getBrokerId() {
+        return brokerId;
+    }
+
+    public void setBrokerId(long brokerId) {
+        this.brokerId = brokerId;
+    }
+       
 }
