@@ -104,7 +104,7 @@ create table IF NOT EXISTS single_order (
    date_trequest TIMESTAMP DEFAULT '0000-00-00 00:00:00',
    date_bexecuted TIMESTAMP DEFAULT '0000-00-00 00:00:00',
    PRIMARY KEY(sorder_id),
-   FOREIGN KEY(p_id) REFERENCES pm_order(p_id),
+   FOREIGN KEY(p_id) REFERENCES portfolio(p_id),
    FOREIGN KEY(order_id) REFERENCES pm_order(order_id),
    FOREIGN KEY(block_id) REFERENCES trader_block(block_id)
 );

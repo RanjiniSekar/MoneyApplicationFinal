@@ -29,6 +29,16 @@ public class PMEndOfDayTableModel extends AbstractTableModel{
     public int getColumnCount() {
         return 11;
     }
+    
+     @Override
+    public String getColumnName(int index) {
+        String[] indexName = new String [] {
+            "Portfolio ID", "Symbol", "Quantity", "Price"
+         }; 
+
+        return indexName[index];
+    }
+     
 
     @Override
     public Object getValueAt(int rowIndex, int columnIndex) {

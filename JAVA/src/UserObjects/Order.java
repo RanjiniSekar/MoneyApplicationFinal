@@ -1,10 +1,21 @@
 package UserObjects;
 
+import java.util.List;
+
 public class Order {
+    long orderId;
+    long portfolioManagerId ;
+    long assignedTo;
+    String assignedTrader;
+    List<SingleOrder> containedSingleOrders;
+        
+        
+    public Order(String assignedTrader, List<SingleOrder> containedSingleOrders) {
+        this.assignedTrader = assignedTrader;
+        this.containedSingleOrders = containedSingleOrders;
+    }
 	
-	long orderId;
-	long portfolioManagerId ;
-	long assignedTo;
+	
 
 
 	public long getOrderId() {

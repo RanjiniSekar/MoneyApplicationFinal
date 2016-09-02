@@ -13,6 +13,10 @@ public class PortfolioManager extends User {
 	ArrayList<PMPortfolio> portfolioList;
 	ArrayList<Order> orderList;
 	ArrayList<Trader> traderList;
+
+    public PortfolioManager(String name, String username, String temppass, String usertype) {
+        super(name, username, temppass, usertype);
+    }
 	
 	public ArrayList<PMPortfolio> getPortfolioList() {
 		return portfolioList;
