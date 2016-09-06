@@ -48,8 +48,11 @@ function insert_order(req, res, assignedTo) {
                 console.log(results);
                 var orderId = results.insertId;
                 console.log("orderId: " + orderId);
+
                 /* Insert each single_order info into single_order table */
-                for (var singleOrder in req.body.containedSingleOrders) {
+                var i;
+                for (i = 0; i < req.body.containedSingleOrders.size(); i++) {
+                    var singleOrder = req.body.containedSingleOrders[i];
                     console.log(singleOrder);
 
                     db.query({
@@ -79,7 +82,7 @@ function insert_order(req, res, assignedTo) {
                             }
                         });
                 }
-                res.status(201).send(results);
+                res.status(201).send('Successfully created all the orders');
             }
         });
 }
