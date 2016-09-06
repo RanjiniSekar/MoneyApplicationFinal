@@ -72,16 +72,16 @@ function insert_order(req, res, assignedTo) {
                     db.query({
                             sql: 'INSERT INTO single_order (p_id, order_id, symbol, quantity, action_type, order_type, account_type, stock_exchange, price_stop, price_limit) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'
                         }, [
-                                singleOrder.portfolioId,
+                                singleOrder.p_id,
                                 orderId,
                                 singleOrder.symbol,
                                 singleOrder.quantity,
-                                singleOrder.action,
-                                singleOrder.orderType,
-                                singleOrder.accountType,
-                                singleOrder.stockExchange,
-                                singleOrder.stopPrice,
-                                singleOrder.limitPrice
+                                singleOrder.action_type,
+                                singleOrder.order_type,
+                                singleOrder.account_type,
+                                singleOrder.stock_exchange,
+                                singleOrder.price_stop,
+                                singleOrder.price_limit
                             ],
                         function (error, results, fields) {
                             // error will be an Error if one occurred during the query 
