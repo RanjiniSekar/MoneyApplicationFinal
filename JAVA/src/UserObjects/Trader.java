@@ -3,6 +3,10 @@ package UserObjects;
 import java.util.ArrayList;
 
 public class Trader extends User{
+
+    public void setTraderId(long TraderId) {
+        this.TraderId = TraderId;
+    }
 	
 	long TraderId;
 	ArrayList<Order> OrderList;
