@@ -67,7 +67,6 @@ public class CPMOrderHistory {
                 }
             }
             
-            System.out.println("ARRAY OF ORDERS RETURNED FROM SERVER.");
             return arrayOrders;
         } catch (UnirestException | JSONException ex) {
             Logger.getLogger(CPMOrderHistory.class.getName()).log(Level.SEVERE, null, ex);

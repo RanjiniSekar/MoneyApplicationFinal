@@ -24,6 +24,7 @@ import static javax.swing.JOptionPane.showMessageDialog;
 import javax.swing.Timer;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Arrays;
 import javax.swing.JTabbedPane;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
@@ -44,20 +45,20 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
      */
     public PortfolioManagerWindow() {
         initComponents();
-        
+
         //START TIMER TO UPDATE ORDERS
         Timer timer = new Timer(5000, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ArrayList<SingleOrder> ordersDone = (ArrayList)CPMOrderHistory.updateOrders();
+                ArrayList<SingleOrder> ordersDone = (ArrayList) CPMOrderHistory.updateOrders();
 
-                if(null != ordersDone){
+                if (null != ordersDone) {
                     PMOrderHistoryTable.setModel(CPMOrderHistory.getTableModel());
                     PMPendingOrdersTable.setModel(CPMPendingRequest.getTableModel());
                 } else {
                     System.out.println("ERROR UPDATING ORDERS");
                 }
-                
+
             }
         });
         timer.start();
@@ -296,7 +297,7 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
 
         PMPlatformTabbedPane.addTab("EOD", PMEOD);
 
-        PMSelectTraderOptions.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Automatic", "Trader 1", "Trader 2", "Trader 3", "Trader 4" }));
+        PMSelectTraderOptions.setModel(new javax.swing.DefaultComboBoxModel<>(TraderNames));
         PMSelectTraderOptions.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 PMSelectTraderOptionsActionPerformed(evt);
@@ -665,9 +666,29 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
 
     }
 
+//    public void addAuto(ArrayList<String> t) {
+//        t.add("Automatic");
+//    }
+
+    public String[] tlist() {
+        ArrayList<String> TList = new ArrayList<>();
+        TList.add("Automatic");
+        
+       // this.addAuto(TList);
+        List<String> listOTraders = ControllerPMCreatedOrders.getTraderList();
+        System.out.println("SIZE OF LIST OF TRADERS: " + listOTraders.size());
+        for(int i = 0 ; i<listOTraders.size();i++)
+        {
+           TList.add(listOTraders.get(i));
+        } 
+        String[] t = new String[TList.size()];
+        t = TList.toArray(t);
+        System.out.println("STRING ARRAY: " + Arrays.toString(t));
+        return t;
+    }
+
     //Trader Names and Currency Strings
-    List<Trader> listOTraders = ControllerPMCreatedOrders.getTraderList();
-    String[] TraderNames = {"Trader 1", "Trader 2"};
+    String[] TraderNames = tlist();
     String[] ActionItems = {"Buy", "Sell"};
     String[] StockExchange = {"NYSE", "LSE"};
     String[] AccountType = {"Margin", "Cash"};
