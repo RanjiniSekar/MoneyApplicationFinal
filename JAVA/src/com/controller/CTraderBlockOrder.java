@@ -17,9 +17,9 @@ import javax.swing.table.TableModel;
  */
 public class CTraderBlockOrder {
     
-    public static TableModel getTableModel(Block block){
+    public static TableModel getTableModel(ArrayList<SingleOrder> orderList){
         
-        ArrayList<SingleOrder> objList = (ArrayList<SingleOrder>) block.getHoldingOrders();
+        ArrayList<SingleOrder> objList = orderList;
         System.out.println(objList);
         return new TraderBlockOrderTableModel(objList);
     }
