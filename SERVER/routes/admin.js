@@ -42,6 +42,8 @@ router.route('/')
                     } else if (req.body.user_type === "admin") {
                         query = 'INSERT INTO admin (adm_id) VALUES (?)'
                     }
+
+		   userId = results.insertId;
                     db.query(query, [userId],
                         function (error, results, fields) {
                             // error will be an Error if one occurred during the query 
