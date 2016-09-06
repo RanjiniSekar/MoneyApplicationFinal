@@ -2,7 +2,9 @@ package com.view;
 
 import UserObjects.Order;
 import UserObjects.SingleOrder;
+import UserObjects.Trader;
 import com.controller.CPMOrderHistory;
+import com.controller.CPMPendingRequest;
 import com.controller.ControllerPMCreatedOrders;
 import java.awt.Component;
 import java.awt.event.ActionEvent;
@@ -47,10 +49,11 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
         Timer timer = new Timer(5000, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println("INSIDE ACTION PERFORMED");
                 ArrayList<SingleOrder> ordersDone = (ArrayList)CPMOrderHistory.updateOrders();
+
                 if(null != ordersDone){
-                    System.out.println("UPDATE ORDERS EXECUTED FOR CPM ORDER HISTORY");
+                    PMOrderHistoryTable.setModel(CPMOrderHistory.getTableModel());
+                    PMPendingOrdersTable.setModel(CPMPendingRequest.getTableModel());
                 } else {
                     System.out.println("ERROR UPDATING ORDERS");
                 }
@@ -58,13 +61,10 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
             }
         });
         timer.start();
-        System.out.println("TIMER STARTED");
         try {
             Thread.sleep(1000);
-            System.out.println("Timer slept");
         } catch (InterruptedException e) {
         }
-        System.out.println("TIMER STOPPING");
         timer.restart();
     }
 
@@ -120,31 +120,7 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
         PMPendingOrdersTable.setBackground(new java.awt.Color(240, 240, 240));
         PMPendingOrdersTable.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         String[] CurrencyValues = {"USD", "GBP"};
-        PMPendingOrdersTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null}
-            },
-            new String [] {
-                "Order ID", "Portfolio ID", "Stock Exchange", "Symbol", "Quantity", "Action", "Stop Price", "Limit Price", "Account Type", "Order Type", "Assigned To", "Status"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.Object.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.Double.class, java.lang.Double.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-        });
+        PMPendingOrdersTable.setModel(CPMPendingRequest.getTableModel());
         PMPendingOrdersTable.setGridColor(new java.awt.Color(255, 255, 255));
         PMPendingOrdersTable.getTableHeader().setReorderingAllowed(false);
         PendingOrderRequests.setViewportView(PMPendingOrdersTable);
@@ -690,6 +666,7 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
     }
 
     //Trader Names and Currency Strings
+    List<Trader> listOTraders = ControllerPMCreatedOrders.getTraderList();
     String[] TraderNames = {"Trader 1", "Trader 2"};
     String[] ActionItems = {"Buy", "Sell"};
     String[] StockExchange = {"NYSE", "LSE"};

@@ -1,12 +1,12 @@
 {
     "orderId": 0,
-    "portfolioManagerId": 0,
+    "portfolioManagerId": 41,
     "assignedTo": 0,
     "assignedTrader": "Automatic",
     "containedSingleOrders": [
         {
             "singleOrderId": 0,
-            "portfolioId": 500,
+            "portfolioId": 3,
             "OrderId": 0,
             "BlockId": 0,
             "symbol": "GOOGL",
@@ -23,7 +23,7 @@
     },
         {
             "singleOrderId": 0,
-            "portfolioId": 300,
+            "portfolioId": 3,
             "OrderId": 0,
             "BlockId": 0,
             "symbol": "APPL",

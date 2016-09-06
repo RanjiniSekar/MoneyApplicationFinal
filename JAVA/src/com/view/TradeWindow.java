@@ -5,13 +5,16 @@ import UserObjects.SingleOrder;
 
 import com.controller.CTraderBlockOrder;
 import com.controller.ControllerBlockOrders;
+import com.google.gson.Gson;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import static javax.swing.JOptionPane.showMessageDialog;
 
@@ -24,6 +27,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+import javax.swing.JViewport;
 import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
@@ -80,7 +84,7 @@ public class TradeWindow extends javax.swing.JFrame {
         FilterOptionsTraderBlockHistory = new javax.swing.JComboBox<>();
         TraderBlockHistoryFilter = new javax.swing.JButton();
         ChangePassword = new javax.swing.JButton();
-
+        blockMap = new HashMap<Integer,ArrayList<SingleOrder>>();
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Trader Platform");
         setName("TraderPlatformFrame"); // NOI18N
@@ -92,6 +96,8 @@ public class TradeWindow extends javax.swing.JFrame {
 
         TraderIncomingRequestsTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
+                {null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
@@ -341,13 +347,43 @@ public class TradeWindow extends javax.swing.JFrame {
         pack();
     }// </editor-fold>                        
  
-    public void SplitBlockActionPerformed(ActionEvent e) {            
-    	System.out.println(singleOrderLists.get(Integer.parseInt(((JComponent)e.getSource()).getName())));
+    /*public void SplitBlockActionPerformed(ActionEvent e, ArrayList<Integer> index,JPanel tempPane, JPanel tempPanel) {            
+    	ArrayList<SingleOrder> temp = singleOrderLists.get(Integer.parseInt(((JComponent)e.getSource()).getName()));
+    	ArrayList<SingleOrder> selected = new ArrayList<SingleOrder>();
+    	//System.out.println(index);
+    	for(int i=0;i<index.size();i++){
+    		selected.add(temp.get(index.get(i)));
+    		temp.remove(temp.get(index.get(i)));
+    	}
+    	tempPanel.remove(tempPane);
+    	tempPanel.validate();
     	
+    	JTable jTable = new JTable();
+        jTable.setModel(CTraderBlockOrder.getTableModel(selected));
+        Dimension d = jTable.getPreferredSize();
+       // System.out.println(d);
+        int rows = jTable.getRowCount();
+       // System.out.println(rows);
+        JScrollPane jPane=new JScrollPane();
+        jPane.setPreferredSize(new Dimension(d.width,jTable.getRowHeight()*rows + 50));
+        jPane.add(jTable);
+        jPane.setViewportView(jTable);
+        jPane.validate();
+        JPanel tempPanel2 = new JPanel();
+        tempPanel2.add(jTable);
+        tempPanel2.validate();
+    	tempPanel.add(tempPanel2);
+    	tempPanel.validate();
+    	System.out.println(selected);
+    	System.out.println(temp);
     }
-    
-    public void SelectBlockActionPerformed(ActionEvent e) {            
-    	System.out.println(((JComponent)e.getSource()).getName());
+   */ 
+    public void SelectBlockActionPerformed(ActionEvent e) {  
+    	int n = Integer.parseInt(((JComponent)e.getSource()).getName());
+    	if(blockMap.containsKey(n))
+    		blockMap.remove(n);
+    	else
+    		blockMap.put(n,singleOrderLists.get(n));
     }
     
     private void FilterTextTraderBlockHistoryActionPerformed(java.awt.event.ActionEvent evt) {                                                             
@@ -407,18 +443,28 @@ public class TradeWindow extends javax.swing.JFrame {
             count++;
         }
         
-        JPanel test = new JPanel();
+        final JPanel test = new JPanel();
         test.add(blockOptions);
         int i=0;
-        for(JScrollPane j:paneList){          
-        	JButton btn = new JButton();
-            btn.setText("Split Block");
-            btn.setName(""+i);
-            btn.addActionListener(new java.awt.event.ActionListener() {
-              	public void actionPerformed(java.awt.event.ActionEvent evt) {
-               		SplitBlockActionPerformed(evt);
+        for(final JScrollPane j:paneList){          
+        //	JButton btn = new JButton();
+          //  btn.setText("Split Block");
+       //     btn.setName(""+i);
+           
+            final JPanel cPanel = new JPanel();
+          /*  btn.addActionListener(new java.awt.event.ActionListener() {
+             	public void actionPerformed(java.awt.event.ActionEvent evt) {
+              		JViewport viewport = j.getViewport(); 
+                    final JTable mytable = (JTable)viewport.getView();
+                    final ArrayList<Integer> index = new ArrayList<Integer>();
+                    for(int row = 0;row<mytable.getRowCount();row++){
+                    		if((boolean)mytable.getValueAt(row, 11)){
+                    			index.add(row);
+                    		}
+                    }
+               		SplitBlockActionPerformed(evt,index,cPanel,test);
               	}
-            });
+            });*/
             JCheckBox check = new JCheckBox();  
             JLabel label = new JLabel();
             label.setText("Selelct");
@@ -431,9 +477,12 @@ public class TradeWindow extends javax.swing.JFrame {
             JPanel splitOptions = new JPanel();
             splitOptions.add(label);
             splitOptions.add(check);
-            splitOptions.add(btn);
-            test.add(splitOptions);
-            test.add(j);
+          //  splitOptions.add(btn);
+            
+            cPanel.add(splitOptions);
+            cPanel.add(j);
+            cPanel.setLayout(new BoxLayout(cPanel,BoxLayout.Y_AXIS));
+            test.add(cPanel);
             i++;
         } 
        
@@ -489,6 +538,21 @@ public class TradeWindow extends javax.swing.JFrame {
 
     private void TraderSubmitBlocksActionPerformed(java.awt.event.ActionEvent evt) {                                                   
         // TODO add your handling code here:
+    	//System.out.println(blockMap);
+    	Gson gson = new Gson();
+    	String json = "";
+    	for (Map.Entry<Integer, ArrayList<SingleOrder>> entry : blockMap.entrySet()){
+    		ArrayList<SingleOrder> temp = entry.getValue();
+    		int quantity=0;
+    		for(SingleOrder a : temp){
+    			quantity = quantity + a.getQuantity();
+    		}
+    		Block b = new Block(temp.get(0).getSymbol(),quantity,temp.get(0).getOrderType(),temp.get(0).getStatus(),temp,temp.get(0).getStockExchange());
+    		
+    		json += gson.toJson(b) + " ";
+    		
+    	}
+    	System.out.println(json);
     }                                                  
 
     /**
@@ -552,5 +616,6 @@ public class TradeWindow extends javax.swing.JFrame {
     private javax.swing.JLabel selectBrokerLabel;
     private javax.swing.JPanel blockOptions;
     private ArrayList<ArrayList<SingleOrder>> singleOrderLists;
+    private Map<Integer,ArrayList<SingleOrder>> blockMap;
     // End of variables declaration                   
 }

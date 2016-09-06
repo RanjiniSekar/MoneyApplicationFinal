@@ -10,11 +10,11 @@ router.get('/', function (req, res, next) {
     res.send('Welcome to pm page');
 });
 
-router.route('/orders/:username')
+router.route('/eod/:username')
     .get(function (req, res) {
-        console.log('GET request on /pm/orders/:pmId');
+        console.log('GET request on /pm/eod/:username');
 
-        db.query('SELECT s.sorder_id, s.order_id, s.block_id , s.symbol FROM single_order s RIGHT JOIN pm_order p ON s.order_id = p.order_id WHERE p.pm_id = (SELECT u_id FROM user WHERE username= ?) ORDER BY s.sorder_id;',
+        db.query('',
             req.params.username,
             function (err, rows, fields) {
                 if (!err) {
@@ -24,8 +24,22 @@ router.route('/orders/:username')
                     console.log('Error performing the query');
 
             });
-        // db.end();
+    });
 
+router.route('/orders/:username')
+    .get(function (req, res) {
+        console.log('GET request on /pm/orders/:username');
+
+        db.query('SELECT s.*, p.assigned_to FROM single_order s INNER JOIN pm_order p ON s.order_id = p.order_id WHERE p.pm_id = (SELECT u_id FROM user WHERE username= ?) ORDER BY s.sorder_id;',
+            req.params.username,
+            function (err, rows, fields) {
+                if (!err) {
+                    //console.log(rows);
+                    res.json(rows);
+                } else
+                    console.log('Error performing the query');
+
+            });
     });
 
 
@@ -58,16 +72,16 @@ function insert_order(req, res, assignedTo) {
                     db.query({
                             sql: 'INSERT INTO single_order (p_id, order_id, symbol, quantity, action_type, order_type, account_type, stock_exchange, price_stop, price_limit) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'
                         }, [
-                                singleOrder.portfolioId,
+                                singleOrder.p_id,
                                 orderId,
                                 singleOrder.symbol,
                                 singleOrder.quantity,
-                                singleOrder.action,
-                                singleOrder.orderType,
-                                singleOrder.accountType,
-                                singleOrder.stockExchange,
-                                singleOrder.stopPrice,
-                                singleOrder.limitPrice
+                                singleOrder.action_type,
+                                singleOrder.order_type,
+                                singleOrder.account_type,
+                                singleOrder.stock_exchange,
+                                singleOrder.price_stop,
+                                singleOrder.price_limit
                             ],
                         function (error, results, fields) {
                             // error will be an Error if one occurred during the query 
@@ -86,7 +100,6 @@ function insert_order(req, res, assignedTo) {
             }
         });
 }
-
 
 router.route('/orders')
     .post(function (req, res) {
@@ -126,6 +139,9 @@ router.route('/orders')
     });
 
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> origin/master
 module.exports = router;

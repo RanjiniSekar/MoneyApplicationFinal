@@ -14,8 +14,6 @@ router.route('/')
             } else
                 console.log('Error performing the query');
         });
-        // db.end();
-
     })
     .post(function (req, res) {
         console.log('Inserting new user...');
@@ -94,5 +92,19 @@ router.route('/:username')
             });
     });
 
+
+router.route('/traders')
+    .get(function (req, res) {
+        console.log('GET request on /admin');
+
+        db.query('SELECT * from user where user_type = "trader"', function (err, rows, fields) {
+            if (!err) {
+                console.log(rows);
+                res.json(rows);
+            } else
+                console.log('Error performing the query');
+        });
+
+    })
 
 module.exports = router;
