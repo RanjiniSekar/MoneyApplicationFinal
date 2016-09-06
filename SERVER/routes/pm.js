@@ -105,7 +105,7 @@ router.route('/orders')
             */
 
             db.query({
-                    sql: 'select t.t_id, p.*, count(p.order_id) from trader t LEFT OUTER JOIN pm_order p ON t.t_id = p.assigned_to LEFT OUTER JOIN single_order s ON p.order_id = s.order_id GROUP BY p.order_id ORDER BY COUNT(p.order_id) ASC LIMIT 1;'
+                    sql: 'select p.order_id, t.t_id, count(p.order_id) from trader t LEFT OUTER JOIN pm_order p ON t.t_id = p.assigned_to LEFT OUTER JOIN single_order s ON p.order_id = s.order_id GROUP BY p.order_id ORDER BY COUNT(p.order_id) ASC LIMIT 1;'
                 },
                 function (error, results, fields) {
                     // error will be an Error if one occurred during the query 
