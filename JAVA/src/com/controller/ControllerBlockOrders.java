@@ -19,11 +19,11 @@ import java.util.Map;
  */
 public class ControllerBlockOrders {
 
-    public void MakeBlock(List<SingleOrder> parsedOrders) {
+    public ArrayList<Block> MakeBlock(List<SingleOrder> parsedOrders) {
         //List<SingleOrder> common = new ArrayList();
         //List<SingleOrder> parsedOrders = new ArrayList();
         
-        List<Block> blocks = new ArrayList();
+        ArrayList<Block> blocks = new ArrayList();
         //parsedOrders = parsedOrders;
         for(int i=0;i<parsedOrders.size();i++){
             List<SingleOrder> common = new ArrayList();
@@ -62,6 +62,7 @@ public class ControllerBlockOrders {
                     }
                 }
             }
+            
             if(common.size()>0){
                 ArrayList c = (ArrayList) common;
                 String commonSymbol = common.get(0).getSymbol();
@@ -106,6 +107,7 @@ public class ControllerBlockOrders {
             //QUERY TO SEND TO DB GOES HERE
             
         }
+        return blocks;
   }
 }
    

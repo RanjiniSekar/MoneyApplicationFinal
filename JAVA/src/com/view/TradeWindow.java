@@ -1,10 +1,15 @@
 package com.view;
 
+import UserObjects.Block;
 import UserObjects.SingleOrder;
+import com.controller.CTraderBlockOrder;
 import com.controller.ControllerBlockOrders;
+import java.awt.BorderLayout;
 import java.util.ArrayList;
 import java.util.List;
 import static javax.swing.JOptionPane.showMessageDialog;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
 import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
@@ -48,12 +53,6 @@ public class TradeWindow extends javax.swing.JFrame {
         FilterTextTraderRequests = new javax.swing.JTextField();
         TraderRequestsFilter = new javax.swing.JButton();
         TraderPlatformBlockedRequests = new javax.swing.JPanel();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        jTable4 = new javax.swing.JTable();
-        jScrollPane5 = new javax.swing.JScrollPane();
-        jTable5 = new javax.swing.JTable();
-        jScrollPane6 = new javax.swing.JScrollPane();
-        jTable6 = new javax.swing.JTable();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -86,7 +85,6 @@ public class TradeWindow extends javax.swing.JFrame {
 
         TraderIncomingRequestsTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null, null, null, null}
             },
@@ -163,49 +161,10 @@ public class TradeWindow extends javax.swing.JFrame {
                         .addComponent(FilterOptionsTraderRequests, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(TraderRequestsFilter, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(TraderBlockOrders))
-                .addContainerGap(318, Short.MAX_VALUE))
+                .addContainerGap(200, Short.MAX_VALUE))
         );
 
         TraderPlatformTabbedPane.addTab("Requests", TraderPlatformRequestsTab);
-
-        jTable4.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null}
-            },
-            new String [] {
-                "Order ID", "Portfolio ID", "Symbol", "Quantity", "Action", "Stop Price", "Limit Price", "Account Type", "Order Type", "Assigned By"
-            }
-        ));
-        jScrollPane4.setViewportView(jTable4);
-
-        jTable5.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null}
-            },
-            new String [] {
-                "Order ID", "Portfolio ID", "Symbol", "Quantity", "Action", "Stop Price", "Limit Price", "Account Type", "Order Type", "Assigned By"
-            }
-        ));
-        jScrollPane5.setViewportView(jTable5);
-
-        jTable6.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null}
-            },
-            new String [] {
-                "Order ID", "Portfolio ID", "Symbol", "Quantity", "Action", "Stop Price", "Limit Price", "Account Type", "Order Type", "Assigned By"
-            }
-        ));
-        jScrollPane6.setViewportView(jTable6);
 
         jLabel2.setText("Block 1");
 
@@ -241,11 +200,6 @@ public class TradeWindow extends javax.swing.JFrame {
         });
 
         TraderSubmitBlocks.setText("Submit Selected Blocks");
-        TraderSubmitBlocks.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TraderSubmitBlocksActionPerformed(evt);
-            }
-        });
 
         TraderSelectAllBlocks.setText("Select All");
         TraderSelectAllBlocks.addActionListener(new java.awt.event.ActionListener() {
@@ -270,8 +224,6 @@ public class TradeWindow extends javax.swing.JFrame {
             .addGroup(TraderPlatformBlockedRequestsLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(TraderPlatformBlockedRequestsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane6)
-                    .addComponent(jScrollPane4)
                     .addGroup(TraderPlatformBlockedRequestsLayout.createSequentialGroup()
                         .addComponent(jLabel4)
                         .addGap(18, 18, 18)
@@ -298,8 +250,7 @@ public class TradeWindow extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(TraderSelectBrokerOptions, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 147, Short.MAX_VALUE)
-                                .addComponent(TraderSubmitBlocks))))
-                    .addComponent(jScrollPane5))
+                                .addComponent(TraderSubmitBlocks)))))
                 .addContainerGap())
         );
         TraderPlatformBlockedRequestsLayout.setVerticalGroup(
@@ -316,23 +267,17 @@ public class TradeWindow extends javax.swing.JFrame {
                     .addComponent(jCheckBox1)
                     .addComponent(jLabel2)
                     .addComponent(jButton2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(134, 134, 134)
                 .addGroup(TraderPlatformBlockedRequestsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(jCheckBox2)
                     .addComponent(jButton3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(TraderPlatformBlockedRequestsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(jCheckBox3)
                     .addComponent(jButton1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(140, 140, 140))
+                .addGap(263, 263, 263))
         );
 
         TraderPlatformTabbedPane.addTab("Blocked Orders", TraderPlatformBlockedRequests);
@@ -405,7 +350,7 @@ public class TradeWindow extends javax.swing.JFrame {
                     .addComponent(FilterTextTraderBlockHistory, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(FilterOptionsTraderBlockHistory, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(TraderBlockHistoryFilter, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(388, Short.MAX_VALUE))
+                .addContainerGap(270, Short.MAX_VALUE))
         );
 
         TraderPlatformTabbedPane.addTab("Block Order History", TraderPlatformBlockOrderHistory);
@@ -436,36 +381,6 @@ public class TradeWindow extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jCheckBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox2ActionPerformed
-
-    private void jCheckBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jCheckBox3ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void TraderSelectAllBlocksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TraderSelectAllBlocksActionPerformed
-        if(TraderSelectAllBlocks.isSelected()){
-            jCheckBox1.setSelected(true);
-            jCheckBox2.setSelected(true);
-            jCheckBox3.setSelected(true);     
-        }
-        else{
-            jCheckBox1.setSelected(false);
-            jCheckBox2.setSelected(false);
-            jCheckBox3.setSelected(false);     
-        }
-            
-    }//GEN-LAST:event_TraderSelectAllBlocksActionPerformed
-
-    private void TraderSelectBrokerOptionsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TraderSelectBrokerOptionsActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_TraderSelectBrokerOptionsActionPerformed
 
     private void FilterTextTraderBlockHistoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FilterTextTraderBlockHistoryActionPerformed
         // TODO add your handling code here:
@@ -503,11 +418,30 @@ public class TradeWindow extends javax.swing.JFrame {
             o.SingleOrderMakeBlocks(tableData[i]);
             parsedOrders.add(o);                   
         }
-        control.MakeBlock(parsedOrders);
+        ArrayList<Block> blocks = control.MakeBlock(parsedOrders);
         showMessageDialog(null, "Blocks have been successfully completed."); 
         dtm.setRowCount(0);
+        TraderPlatformBlockedRequests.setLayout(new BorderLayout());
+        //int si = blocks.size();
+        
+        
+        JScrollPane jPane=new JScrollPane();
+       
+        
+        for(Block b:blocks){
+            JTable jTable = new JTable();
+            System.out.println(blocks.get(0));
+            jTable.setModel(CTraderBlockOrder.getTableModel(b));
+            
+            TraderPlatformBlockedRequests.add(jTable, BorderLayout.CENTER);
+            
+        }
+   
+        System.out.println( TraderPlatformBlockedRequests.getComponentCount());        
+        
+        
     }//GEN-LAST:event_TraderBlockOrdersActionPerformed
-
+           
     private void TraderRequestsFilterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TraderRequestsFilterActionPerformed
             // TODO add your handling code here:
         final TableRowSorter<TableModel> sorter = new TableRowSorter<TableModel>(TraderIncomingRequestsTable.getModel());
@@ -532,9 +466,35 @@ public class TradeWindow extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_TraderBlockHistoryFilterActionPerformed
 
-    private void TraderSubmitBlocksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TraderSubmitBlocksActionPerformed
+    private void TraderSelectBrokerOptionsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TraderSelectBrokerOptionsActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_TraderSubmitBlocksActionPerformed
+    }//GEN-LAST:event_TraderSelectBrokerOptionsActionPerformed
+
+    private void TraderSelectAllBlocksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TraderSelectAllBlocksActionPerformed
+       /* if(TraderSelectAllBlocks.isSelected()){
+            jCheckBox1.setSelected(true);
+            jCheckBox2.setSelected(true);
+            jCheckBox3.setSelected(true);
+        }
+        else{
+            jCheckBox1.setSelected(false);
+            jCheckBox2.setSelected(false);
+            jCheckBox3.setSelected(false);
+        }
+*/
+    }//GEN-LAST:event_TraderSelectAllBlocksActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void jCheckBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBox2ActionPerformed
+
+    private void jCheckBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jCheckBox3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -603,11 +563,5 @@ public class TradeWindow extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JScrollPane jScrollPane5;
-    private javax.swing.JScrollPane jScrollPane6;
-    private javax.swing.JTable jTable4;
-    private javax.swing.JTable jTable5;
-    private javax.swing.JTable jTable6;
     // End of variables declaration//GEN-END:variables
 }

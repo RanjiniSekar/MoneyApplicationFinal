@@ -5,6 +5,7 @@
  */
 package com.controller;
 
+import UserObjects.Block;
 import UserObjects.SingleOrder;
 import com.model.PortfolioManagerDAO;
 import java.util.ArrayList;
@@ -16,15 +17,17 @@ import javax.swing.table.TableModel;
  */
 public class CTraderBlockOrder {
     
-    public static TableModel getTableModel(){
-        ArrayList<SingleOrder> objList = getData();
-        return new PMOrderHistoryTableModel(objList);
+    public static TableModel getTableModel(Block block){
+        
+        ArrayList<SingleOrder> objList = (ArrayList<SingleOrder>) block.getHoldingOrders();
+        System.out.println(objList);
+        return new TraderBlockOrderTableModel(objList);
     }
     
         
-    private static ArrayList<SingleOrder> getData(){
-        PortfolioManagerDAO pmDAO = new PortfolioManagerDAO();
-        return pmDAO.getOrderHistoryObjList();
-    }
+//    private static ArrayList<SingleOrder> getData(){
+//        PortfolioManagerDAO pmDAO = new PortfolioManagerDAO();
+//        return pmDAO.getOrderHistoryObjList();
+//    }
     
 }
