@@ -10,7 +10,7 @@ package UserObjects;
  * @author csavas
  */
 public class UnknownUser extends User{ 
-    public UnknownUser(String username, String tempPass) {
-        super(username, tempPass);
+    public UnknownUser(String username, String password) {
+        super(username, password);
     }   
 }

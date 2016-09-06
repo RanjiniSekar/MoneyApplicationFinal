@@ -5,6 +5,10 @@
  */
 package com.view;
 
+import UserObjects.User;
+import com.controller.CMAIN;
+import com.mashape.unirest.http.Unirest;
+import com.mashape.unirest.http.exceptions.UnirestException;
 import static javax.swing.JOptionPane.showMessageDialog;
 
 /**
@@ -144,6 +148,19 @@ public class ChangePassword extends javax.swing.JFrame {
         if(oldPassText.equals(receivedPasswordForUser)){ //CHECK IF OLD PASSWORD ENTERED CORRECTLY
             if(newPassText.equals(confirmPassText)){  //CHECK IF CONFIRM AND NEW PASS ARE SAME
                 //SEND JSON
+                try {
+                Unirest.put("http://139.59.17.119:8080/api/admin")
+                .header("content-type", "application/json")
+                .queryString("username", "retrieved username")
+                .field("password", confirmPassText)
+                .asJson();     
+                
+                //HERE YOU MUST GET THE USER OBJECT, RETRIEVED FROM MAIN   
+                //currentUser = CMAIN.reportUser();
+                } 
+                catch (UnirestException e) {
+                System.err.println("Unirest Exception: " + e.getMessage());
+                }
             } else {
                 showMessageDialog(null, "Please enter the same password in the new password and confirm password fields."); 
                 //DONT SEND JSON

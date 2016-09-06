@@ -2,6 +2,12 @@ package com.view;
 
 import com.controller.CAdmin;
 import com.controller.CLogin;
+import com.controller.CMAIN;
+import com.mashape.unirest.http.exceptions.UnirestException;
+import java.awt.Window;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import org.json.JSONException;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -112,8 +118,31 @@ public class UserLogin extends javax.swing.JFrame {
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
         String nameText = usernameText.getText();
         String passText = passwordText.getText();
-        //SEND TO CONTROLLER TO CREATE BROKER AND SEND TO DB
-        CLogin.handleLogin(nameText,passText);
+        try {
+            //SEND TO CONTROLLER TO CREATE BROKER AND SEND TO DB
+            CLogin.handleLogin(nameText,passText);
+            String trigger = CMAIN.triggerWindow();
+            switch(trigger){
+                case "pm":
+                    System.out.println("PM triggered.");
+                    new PortfolioManagerWindow().setVisible(true);
+                    this.dispose();
+                    break;
+                case "trader":
+                    System.out.println("Trader triggered.");
+                    new TradeWindow().setVisible(true);
+                    this.dispose();
+                    break;
+                case "admin":
+                    System.out.println("Admin triggered.");
+                    new AdminWindow().setVisible(true);
+                    this.dispose();
+                    break;
+            }
+            
+        } catch (JSONException | UnirestException ex) {
+            Logger.getLogger(UserLogin.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_loginButtonActionPerformed
 
     /**
