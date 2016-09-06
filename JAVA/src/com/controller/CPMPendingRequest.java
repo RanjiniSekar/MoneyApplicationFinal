@@ -49,24 +49,19 @@ public class CPMPendingRequest {
 
             //THIS IS THE JSONRESPONSE TURNED INTO JSONOBJECT  
             JSONObject myRespO = new JSONObject(resp.getBody());
-            System.out.println("JSON OBJECT RESPONSE: " + myRespO.toString());
             JSONArray arrJson = myRespO.getJSONArray("array");
-            System.out.println("JSON ARRAY: " + arrJson.toString());
             //GET ORDERS FROM ARRAY
             List<SingleOrder> arrayOrders = new ArrayList<>();
 
             for (int i = 0; i < arrJson.length(); i++) {
                 JSONObject currentOrder = arrJson.getJSONObject(i);
                 SingleOrder currentSingleOrder = JsonParsing.parseJsonToSingleOrderObject(currentOrder.toString());
-                System.out.println("CURRENT ORDER IS: " + currentSingleOrder.toString());
                 if(currentSingleOrder.getStatus().equals("Pending") || currentSingleOrder.getStatus().equals("pending")){
                     arrayOrders.add(currentSingleOrder);
                 } else {
                     System.out.println("ORDER NOT VALID!!!!!!");
                 }
             }
-
-            System.out.println("ARRAY OF ORDERS RETURNED FROM SERVER.");
             return arrayOrders;
         } catch (UnirestException | JSONException ex) {
             Logger.getLogger(CPMOrderHistory.class.getName()).log(Level.SEVERE, null, ex);
