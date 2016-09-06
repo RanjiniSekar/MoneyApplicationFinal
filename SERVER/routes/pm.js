@@ -10,12 +10,12 @@ router.get('/', function (req, res, next) {
     res.send('Welcome to pm page');
 });
 
-router.route('/orders/:pmId')
+router.route('/orders/:username')
     .get(function (req, res) {
         console.log('GET request on /pm/orders/:pmId');
 
-        db.query('SELECT s.sorder_id, s.order_id, s.block_id , s.symbol FROM single_order s RIGHT JOIN pm_order p ON s.order_id = p.order_id WHERE p.pm_id = ? ORDER BY s.sorder_id;',
-            req.params.pmId,
+        db.query('SELECT s.sorder_id, s.order_id, s.block_id , s.symbol FROM single_order s RIGHT JOIN pm_order p ON s.order_id = p.order_id WHERE p.pm_id = (SELECT u_id FROM user WHERE username= ?) ORDER BY s.sorder_id;',
+            req.params.username,
             function (err, rows, fields) {
                 if (!err) {
                     console.log(rows);
@@ -51,7 +51,7 @@ function insert_order(req, res, assignedTo) {
 
                 /* Insert each single_order info into single_order table */
                 var i;
-                for (i = 0; i < req.body.containedSingleOrders.size(); i++) {
+                for (i = 0; i < req.body.containedSingleOrders.length; i++) {
                     var singleOrder = req.body.containedSingleOrders[i];
                     console.log(singleOrder);
 
