@@ -543,8 +543,14 @@ public class TradeWindow extends javax.swing.JFrame {
     	String json = "";
     	for (Map.Entry<Integer, ArrayList<SingleOrder>> entry : blockMap.entrySet()){
     		ArrayList<SingleOrder> temp = entry.getValue();
-    		for(SingleOrder a : temp)
-    			json += gson.toJson(a) + " ";
+    		int quantity=0;
+    		for(SingleOrder a : temp){
+    			quantity = quantity + a.getQuantity();
+    		}
+    		Block b = new Block(temp.get(0).getSymbol(),quantity,temp.get(0).getOrderType(),temp.get(0).getStatus(),temp,temp.get(0).getStockExchange());
+    		
+    		json += gson.toJson(b) + " ";
+    		
     	}
     	System.out.println(json);
     }                                                  
