@@ -6,6 +6,7 @@
 package TestModules.JTableDataPopulation;
 
 import UserObjects.SingleOrder;
+import UserObjects.Trader;
 import UserObjects.User;
 import com.google.gson.Gson;
 
@@ -44,5 +45,14 @@ public class JsonParsing {
         SingleOrder singleO = gson.fromJson(json, SingleOrder.class);
         return singleO;
     }
+    
+    // parse Json input into Trade class object.
+    public static Trader parseJsonToTraderObject(String json){
+        Gson gson = new Gson();
+        // Just Specify the class the json is need to be parsed into.
+        Trader t = gson.fromJson(json, Trader.class);
+        return t;
+    }
+    
     
 }
