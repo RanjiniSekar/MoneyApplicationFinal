@@ -48,8 +48,8 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 System.out.println("INSIDE ACTION PERFORMED");
-                boolean ordersDone = CPMOrderHistory.updateOrders();
-                if(ordersDone == true){
+                ArrayList<SingleOrder> ordersDone = (ArrayList)CPMOrderHistory.updateOrders();
+                if(null != ordersDone){
                     System.out.println("UPDATE ORDERS EXECUTED FOR CPM ORDER HISTORY");
                 } else {
                     System.out.println("ERROR UPDATING ORDERS");
@@ -409,31 +409,7 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
 
         PMOrderHistoryTable.setBackground(new java.awt.Color(240, 240, 240));
         PMOrderHistoryTable.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        PMOrderHistoryTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null}
-            },
-            new String [] {
-                "Order ID", "Portfolio ID", "Symbol", "Quantity", "Action", "Stop Price", "Limit Price", "Stock Exchange", "Account Type", "Order Type", "Assigned To"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.Double.class, java.lang.Double.class, java.lang.Object.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-        });
+        PMOrderHistoryTable.setModel(CPMOrderHistory.getTableModel());
         PMOrderHistoryTable.setGridColor(new java.awt.Color(255, 255, 255));
         PMOrderHistoryTable.getTableHeader().setReorderingAllowed(false);
         PMOrderHistoryScrollPane.setViewportView(PMOrderHistoryTable);

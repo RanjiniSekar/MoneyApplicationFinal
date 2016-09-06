@@ -50,15 +50,17 @@ public class CLogin {
         
         //NAME
         String thisName = arrJson.getJSONObject(0).getString("name");
-        System.out.println("ACCESSED NAME: \n" + thisName);
 
         //TYPE
         String thisType = arrJson.getJSONObject(0).getString("user_type");
-            
+        
+        long thisID = arrJson.getJSONObject(0).getLong("u_id");
+        System.out.println("ACCESSED USERID: \n" + thisName);
+        
         if(thisPassword.equals(passText)){
            //PASSWORD MATCHES: SAVE USER IN SESSION
            System.out.println("Now we can handle persistence");
-           CMAIN.handleUserPersistence(thisUsername,thisName, thisPassword,thisType);     
+           CMAIN.handleUserPersistence(thisID, thisUsername,thisName, thisPassword,thisType);     
         } 
         else {
             showMessageDialog(null, "Your password is incorrect."); 
