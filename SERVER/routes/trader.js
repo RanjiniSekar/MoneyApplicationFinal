@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var nodemailer = require('../mailer/mailer.js')
 
 /* GET users listing. */
 router.get('/', function (req, res) {
@@ -37,5 +38,21 @@ router.route('/blocks')
 
     });
 
+
+router.route('/sendMail')
+    .get(function (req, res) {
+        nodemailer.send_mail({
+            sender: 'info@moneytree.com',
+            to: 'otorrillas@gmail.com',
+            subject: 'Govind is a pussy',
+            body: 'Hey there I am using WhatsApp'
+        }, function (error, success) {
+            if (error)
+                console.log(error);
+            else
+                console.log(success);
+        });
+
+    })
 
 module.exports = router;
