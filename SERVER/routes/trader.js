@@ -7,8 +7,8 @@ router.get('/', function (req, res) {
     res.send('Welcome to trader page');
 });
 
-router.get('/Users/:userId', function(req, res) {
-   res.send(req.params.userId); 
+router.get('/Users/:userId', function (req, res) {
+    res.send(req.params.userId);
 });
 
 
@@ -17,8 +17,8 @@ function insert_block(req) {
     var blockId = 0;
 
     db.query({
-            sql: 'INSERT INTO trader_block (block_id, t_id, b_id, symbol, quantity, order_type, price_executed, status) VALUES (?, ?, ?, ?, ?, ?, ?, ?)'
-        }, [blockId, req.body.traderId, req.body.brokerId, req.body.symbol, req.body.quantity, req.body.orderType, req.body.executedPrice, req.body.status],
+            sql: 'INSERT INTO trader_block (block_id, t_id, b_id, symbol, quantity, order_type) VALUES (?, ?, ?, ?, ?, ?)'
+        }, [blockId, req.body.traderId, req.body.brokerId, req.body.symbol, req.body.quantity, req.body.orderType],
         function (error, results, fields) {
             // error will be an Error if one occurred during the query 
             // results will contain the results of the query 
@@ -37,7 +37,7 @@ function insert_block(req) {
                     console.log(singleOrder);
 
                     db.query({
-                            sql: 'UPDATE single_order SET blockId=12 WHERE id=?' 
+                            sql: 'UPDATE single_order SET blockId=12 WHERE id=?'
                         }, blockId,
                         function (error, results, fields) {
                             // error will be an Error if one occurred during the query 
