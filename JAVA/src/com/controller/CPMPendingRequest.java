@@ -57,9 +57,13 @@ public class CPMPendingRequest {
 
             for (int i = 0; i < arrJson.length(); i++) {
                 JSONObject currentOrder = arrJson.getJSONObject(i);
+                System.out.println(currentOrder.toString());
                 SingleOrder currentSingleOrder = JsonParsing.parseJsonToSingleOrderObject(currentOrder.toString());
+                System.out.println(currentSingleOrder.toString());
                 if(currentSingleOrder.getStatus().equals("Pending")){
                     arrayOrders.add(currentSingleOrder);
+                } else {
+                    System.out.println("ORDER NOT VALID!!!!!!");
                 }
             }
 
