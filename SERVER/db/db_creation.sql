@@ -86,7 +86,7 @@ create table IF NOT EXISTS pm_order (
 );
 
 create table IF NOT EXISTS single_order (
-   sorder_id BIGINT not null,
+   sorder_id BIGINT not null AUTO_INCREMENT,
    p_id BIGINT not null,
    order_id BIGINT not null,
    block_id BIGINT,

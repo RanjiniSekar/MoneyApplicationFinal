@@ -5,6 +5,7 @@
  */
 package TestModules.JTableDataPopulation;
 
+import UserObjects.User;
 import com.google.gson.Gson;
 
 /**
@@ -27,4 +28,12 @@ public class JsonParsing {
         Trade trade = gson.fromJson(json, Trade.class);
         return trade;
     }
+    // parse Json input into Trade class object.
+    public static User parseJsonToUserObject(String json){
+        Gson gson = new Gson();
+        // Just Specify the class the json is need to be parsed into.
+        User u = gson.fromJson(json, User.class);
+        return u;
+    }
+    
 }
