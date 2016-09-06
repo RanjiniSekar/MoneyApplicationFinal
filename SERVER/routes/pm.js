@@ -47,7 +47,7 @@ function insert_order(req, res, assignedTo) {
                 console.log("ORDER insert successful");
                 console.log(results);
                 var orderId = results.insertId;
-		console.log("orderId: " + orderId);
+                console.log("orderId: " + orderId);
                 /* Insert each single_order info into single_order table */
                 for (var singleOrder in req.body.containedSingleOrders) {
                     console.log(singleOrder);
@@ -78,12 +78,10 @@ function insert_order(req, res, assignedTo) {
                                 res.status(500).send(error);
                             } else {
                                 console.log("SINGLE_ORDER insert successful");
-                                res.status(201).send(results);
                             }
                         });
-
-                    res.status(201).send(results);
                 }
+                res.status(201).send(results);
             }
         });
 }
