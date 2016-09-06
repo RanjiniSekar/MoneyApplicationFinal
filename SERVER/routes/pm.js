@@ -92,31 +92,33 @@ function insert_order(req) {
 
 router.route('/orders')
     .post(function (req, res) {
-        console.log('Inserting new order...');
-        console.log(req.body);
+            console.log('Inserting new order...');
+            console.log(req.body);
 
-        /* Check if the trader is set or should be automatically set */
-        if (req.body.assignedTrader == "Automatic") {
-            // query the database for finding the less busy one
-            var assignedTo = 25;
+            /* Check if the trader is set or should be automatically set */
+            if (req.body.assignedTrader == "Automatic") {
+                // query the database for finding the less busy one
+                var traderId = 0;
+                db.query({
+                        sql: 'select t.t_id, p.*, count(p.order_id) from trader t LEFT OUTER JOIN pm_order p ON t.t_id = p.assigned_to LEFT OUTER JOIN single_order s ON p.order_id = s.order_id GROUP BY p.order_id ORDER BY COUNT(p.order_id) ASC LIMIT 1;'
+                    },
+                    function (error, results, fields) {
+                        // error will be an Error if one occurred during the query 
+                        // results will contain the results of the query 
+                        // fields will contain information about the returned results fields (if any)
+                        if (error) {
+                            console.log('Error performing the query:');
+                            console.log(error);
+                            res.status(500).send(error);
+                        } else {
+                            console.log(results);
+                            //req.body.assignedTo = ;
+                            //insert_order(req);
+                        }
+                    });
 
-            db.query({
-                    sql: 'SELECT assigned_to FROM pm_order WHERE assigned_to = (SELECT order_id, COUNT(order_id) FROM single_order WHERE status="Pending" GROUP BY order_id ORDER BY COUNT(order_id) ASC LIMIT 1);'
-                },
-                function (error, results, fields) {
-                    // error will be an Error if one occurred during the query 
-                    // results will contain the results of the query 
-                    // fields will contain information about the returned results fields (if any)
-                    if (error) {
-                        console.log('Error performing the query:');
-                        console.log(error);
-                        res.status(500).send(error);
-                    } else {
-                        console.log(results);
-                        req.body.assignedTo = assignedTo;
-                        insert_order(req);
-                    }
-                });
+                return traderId;
+            }
         } else {
             insert_order(req);
         }
