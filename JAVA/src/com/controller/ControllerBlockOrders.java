@@ -19,10 +19,13 @@ import java.util.Map;
  */
 public class ControllerBlockOrders {
 
+	
     public  ArrayList<ArrayList<SingleOrder>> MakeBlock(ArrayList<SingleOrder> parsedOrders) {
-
+    	
         ArrayList<ArrayList<SingleOrder>> singleOrderLists = new ArrayList<ArrayList<SingleOrder>>();
         for(int i=0;i<parsedOrders.size();i++){
+        	//System.out.println(parsedOrders.size());
+        	//s = parsedOrders.size();
             ArrayList<SingleOrder> common = new ArrayList();
             common.add(parsedOrders.get(i));
             for(int j=i+1;j<parsedOrders.size();j++){
