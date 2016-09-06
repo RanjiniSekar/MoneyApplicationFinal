@@ -28,6 +28,7 @@ router.route('/')
                     res.status(500).send(error);
                 } else {
                     console.log("INSERT broker successfully");
+                    res.status(201).send(results);
                 }
             }
         );
