@@ -22,12 +22,13 @@ public class TraderBlockOrderTableModel extends AbstractTableModel{
       
     @Override
     public int getRowCount() {
+        
         return objList.size();
     }
 
     @Override
     public int getColumnCount() {
-        return 11;
+        return 9;
     }
     
     @Override

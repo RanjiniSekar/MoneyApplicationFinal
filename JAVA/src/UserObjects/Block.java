@@ -1,5 +1,6 @@
 package UserObjects;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Block {
@@ -13,7 +14,18 @@ public class Block {
         this.status = status;
         this.holdingOrders = holdingOrders;
     }
-	
+
+    public Block(String commonSymbol, int totalQuantity, int commonOrderType,
+			double commonStop, double commonLimit, int i, ArrayList c) {
+		this.symbol = commonSymbol;
+		this.quantity = totalQuantity;
+		this.orderType = commonOrderType;
+		this.stopPrice = commonStop;
+		this.limitPrice = commonLimit;
+		this.status = i;
+		this.holdingOrders = c;
+	}
+
 	long blockId;
 	long traderId;
 	long brokerId;
@@ -22,9 +34,9 @@ public class Block {
 	int orderType;
 	double stopPrice;
 	double limitPrice;
-        String stockExchange;
-        List<SingleOrder> holdingOrders;
-        int status;
+    String stockExchange;
+    List<SingleOrder> holdingOrders;
+    int status;
 
     public void setHoldingOrders(List<SingleOrder> holdingOrders) {
         this.holdingOrders = holdingOrders;
