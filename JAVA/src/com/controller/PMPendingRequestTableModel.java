@@ -35,7 +35,7 @@ class PMPendingRequestTableModel extends AbstractTableModel {
     @Override
     public String getColumnName(int index) {
         String[] indexName = new String [] {
-            "Order ID", "Portfolio ID", "Symbol", "Quantity", "Action", "Stop Price", "Limit Price", "Account Type", "Order Type", "Assigned By"
+            "Order ID", "Portfolio ID", "Symbol", "Quantity", "Action", "Stop Price", "Limit Price", "Account Type", "Order Type", "Assigned By", "Status", "Stock Exchange"
         };
         return indexName[index];
     }

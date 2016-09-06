@@ -18,21 +18,24 @@ import javax.swing.table.AbstractTableModel;
  */
 public class TraderBlockOrderTableModel extends AbstractTableModel{
     private ArrayList objList = new ArrayList();
-    private Boolean select;
+    private Boolean[] select;
 
     public TraderBlockOrderTableModel(ArrayList datalist) {
         this.objList = datalist;
-        this.select = false;
+        this.select = new Boolean[datalist.size()];
+        for(int i=0;i<datalist.size();i++){
+        	this.select[i] = false;
+        }
     }
       
     
-    public Boolean getSelect() {
-		return select;
+    public Boolean getSelect(int row) {
+		return select[row];
 	}
 
 
-	public void setSelect(Boolean select) {
-		this.select = select;
+	public void setSelect(Boolean select,int row) {
+		this.select[row] = select;
 	}
 
 
@@ -43,13 +46,13 @@ public class TraderBlockOrderTableModel extends AbstractTableModel{
 
     @Override
     public int getColumnCount() {
-        return 12;
+        return 11;
     }
     
     @Override
     public String getColumnName(int index) {
         String[] indexName = new String [] {
-            "Order ID", "Portfolio ID", "Symbol", "Quantity", "Action", "Stop Price", "Limit Price", "Account Type", "Order Type", "Assigned By", "Stock Exchange", "Select"
+            "Order ID", "Portfolio ID", "Symbol", "Quantity", "Action", "Stop Price", "Limit Price", "Account Type", "Order Type", "Assigned By", "Stock Exchange"
         };
         return indexName[index];
     }
@@ -81,8 +84,8 @@ public class TraderBlockOrderTableModel extends AbstractTableModel{
           return widget.getPmId();
          case 10:
           return widget.getStockExchange();
-         case 11:
-        	 return this.getSelect();
+ //        case 11:
+ //       	 return this.getSelect(rowIndex);
          default:
           return null;
         }
@@ -90,7 +93,8 @@ public class TraderBlockOrderTableModel extends AbstractTableModel{
     
     @Override
     public void setValueAt(Object value, int row, int col) {
-    	this.select = (Boolean)value;
+    	this.select[row] = (Boolean)value;
+    	//System.out.println(select[row]);
     }
     
     @Override
