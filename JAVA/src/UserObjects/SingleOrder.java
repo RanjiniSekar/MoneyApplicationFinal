@@ -17,8 +17,8 @@ public class SingleOrder {
 	private String account_type;
 	private String order_type;
 	private String status;
-        private long pmId;
-        private long assignedTo;
+    private long pmId;
+    private long assignedTo;
 
     
     public SingleOrder(long SingleOrderId, long portfolioId, long OrderId, long BlockId, String symbol, int quantity, String action, double stopPrice, double limitPrice, double pricePaid, String stockExchange, String accountType, String orderType, String status) {
