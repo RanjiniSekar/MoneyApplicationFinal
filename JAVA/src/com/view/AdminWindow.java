@@ -5,10 +5,8 @@
  */
 package com.view;
 
-import UserObjects.PortfolioManager;
-import UserObjects.User;
+
 import com.controller.CAdmin;
-import com.controller.ControllerPMCreatedOrders;
 import com.mashape.unirest.http.exceptions.UnirestException;
 
 import static javax.swing.JOptionPane.showMessageDialog;
@@ -515,20 +513,18 @@ public class AdminWindow extends javax.swing.JFrame {
                 }
             }*/
             
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(AdminWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(AdminWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(AdminWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(AdminWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
         
+        //</editor-fold>
+        //</editor-fold>
+        
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new AdminWindow().setVisible(true);
             }
