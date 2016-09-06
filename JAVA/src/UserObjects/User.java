@@ -38,5 +38,9 @@ public abstract class User {
     public String getUserType() {
         return this.user_type; //To change body of generated methods, choose Tools | Templates.
     }
+
+    public String getUsername() {
+        return this.username;
+    }
 	
 }
