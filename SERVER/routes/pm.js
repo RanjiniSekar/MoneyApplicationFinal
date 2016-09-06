@@ -53,20 +53,18 @@ function insert_order(req, res, assignedTo) {
                     console.log(singleOrder);
 
                     db.query({
-                            sql: 'INSERT INTO single_order (pm_id, assigned_to) VALUES (?, ?)'
+                            sql: 'INSERT INTO single_order (p_id, order_id, symbol, quantity, action_type, order_type, account_type, stock_exchange, price_stop, price_limit) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'
                         }, [
                                 singleOrder.portfolioId,
                                 orderId,
                                 singleOrder.symbol,
                                 singleOrder.quantity,
                                 singleOrder.action,
-                                singleOrder.stopPrice,
-                                singleOrder.limitPrice,
-                                singleOrder.stockExchange,
-                                singleOrder.accountType,
                                 singleOrder.orderType,
-                                req.body.portfolioManagerId,
-                                req.body.assignedTo
+                                singleOrder.accountType,
+                                singleOrder.stockExchange,
+                                singleOrder.stopPrice,
+                                singleOrder.limitPrice
                             ],
                         function (error, results, fields) {
                             // error will be an Error if one occurred during the query 
