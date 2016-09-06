@@ -20,7 +20,7 @@ public class CTraderBlockOrder {
     public static TableModel getTableModel(ArrayList<SingleOrder> orderList){
         
         ArrayList<SingleOrder> objList = orderList;
-        System.out.println(objList);
+        //System.out.println(objList);
         return new TraderBlockOrderTableModel(objList);
     }
     

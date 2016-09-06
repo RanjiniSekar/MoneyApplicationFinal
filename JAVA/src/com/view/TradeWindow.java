@@ -13,6 +13,7 @@ import java.util.List;
 
 import static javax.swing.JOptionPane.showMessageDialog;
 
+import javax.swing.BoxLayout;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -62,7 +63,7 @@ public class TradeWindow extends javax.swing.JFrame {
         TraderPlatformBlockedRequests = new javax.swing.JPanel();
         blockOptions = new javax.swing.JPanel();
         TraderSubmitBlocks = new javax.swing.JButton();
-        jLabel5 = new javax.swing.JLabel();
+        selectBrokerLabel = new javax.swing.JLabel();
         TraderSelectAllBlocks = new javax.swing.JCheckBox();
         TraderSelectBrokerOptions = new javax.swing.JComboBox<>();
         TraderPlatformBlockOrderHistory = new javax.swing.JPanel();
@@ -173,7 +174,7 @@ public class TradeWindow extends javax.swing.JFrame {
             }
         });
 
-        jLabel5.setText("Select Broker");
+        selectBrokerLabel.setText("Select Broker");
 
         TraderSelectAllBlocks.setText("Select All");
         TraderSelectAllBlocks.addActionListener(new java.awt.event.ActionListener() {
@@ -197,7 +198,7 @@ public class TradeWindow extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(TraderSelectAllBlocks)
                 .addGap(136, 136, 136)
-                .addComponent(jLabel5)
+                .addComponent(selectBrokerLabel)
                 .addGap(18, 18, 18)
                 .addComponent(TraderSelectBrokerOptions, javax.swing.GroupLayout.PREFERRED_SIZE, 137, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 156, Short.MAX_VALUE)
@@ -211,7 +212,7 @@ public class TradeWindow extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(TraderSubmitBlocks)
                     .addComponent(TraderSelectAllBlocks)
-                    .addComponent(jLabel5)
+                    .addComponent(selectBrokerLabel)
                     .addComponent(TraderSelectBrokerOptions, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
@@ -360,7 +361,7 @@ public class TradeWindow extends javax.swing.JFrame {
         int nRow = dtm.getRowCount();
         int nCol = dtm.getColumnCount();
         Object[][] tableData = new Object[nRow][nCol];
-        List<SingleOrder> parsedOrders = new ArrayList();
+        ArrayList<SingleOrder> parsedOrders = new ArrayList();
         ControllerBlockOrders control = new ControllerBlockOrders();
         
         for(int i = 0; i < nRow; i++){
@@ -381,27 +382,26 @@ public class TradeWindow extends javax.swing.JFrame {
             JTable jTable = new JTable();
             jTable.setModel(CTraderBlockOrder.getTableModel(b));
             Dimension d = jTable.getPreferredSize();
+           // System.out.println(d);
             int rows = jTable.getRowCount();
+           // System.out.println(rows);
             JScrollPane jPane=new JScrollPane();
-            jPane.setPreferredSize(new Dimension(d.width,jTable.getRowHeight()*rows+1));
-            jPane.setAlignmentY(10*count);
+            jPane.setPreferredSize(new Dimension(d.width,jTable.getRowHeight()*rows + 50));
             jPane.add(jTable);
             jPane.setViewportView(jTable);
             paneList.add(jPane);
             count++;
-            //TraderPlatformBlockedRequests.add(jPane);
         }
         
         JPanel test = new JPanel();
-        for(JScrollPane j:paneList){
-            
+        test.add(blockOptions);
+        for(JScrollPane j:paneList){          
         	test.add(j);
-        	test.validate();
-        	test.setVisible(true);
         } 
-        
-        
-        TraderPlatformBlockedRequests.add(test);
+       
+        test.setLayout(new BoxLayout(test,BoxLayout.Y_AXIS));
+        JScrollPane p = new JScrollPane(test);
+        TraderPlatformBlockedRequests.add(p);
         TraderPlatformBlockedRequests.validate();
         
         
@@ -513,7 +513,7 @@ public class TradeWindow extends javax.swing.JFrame {
     private javax.swing.JCheckBox TraderSelectAllBlocks;
     private javax.swing.JComboBox<String> TraderSelectBrokerOptions;
     private javax.swing.JButton TraderSubmitBlocks;
-    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel selectBrokerLabel;
     private javax.swing.JPanel blockOptions;
     // End of variables declaration                   
 }

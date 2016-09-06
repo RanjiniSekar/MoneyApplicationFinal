@@ -19,39 +19,35 @@ import java.util.Map;
  */
 public class ControllerBlockOrders {
 
-    public  ArrayList<ArrayList<SingleOrder>> MakeBlock(List<SingleOrder> parsedOrders) {
-        //List<SingleOrder> common = new ArrayList();
-        //List<SingleOrder> parsedOrders = new ArrayList();
-        
+    public  ArrayList<ArrayList<SingleOrder>> MakeBlock(ArrayList<SingleOrder> parsedOrders) {
+
         ArrayList<ArrayList<SingleOrder>> singleOrderLists = new ArrayList<ArrayList<SingleOrder>>();
-        //parsedOrders = parsedOrders;
         for(int i=0;i<parsedOrders.size();i++){
             ArrayList<SingleOrder> common = new ArrayList();
             common.add(parsedOrders.get(i));
             for(int j=i+1;j<parsedOrders.size();j++){
-                if(!parsedOrders.get(j).equals(parsedOrders.get(i))){
                     if(parsedOrders.get(j).getSymbol().equals(parsedOrders.get(i).getSymbol()) && parsedOrders.get(j).getAction().equals(parsedOrders.get(i).getAction())){
                         if(parsedOrders.get(j).getOrderType().equals(parsedOrders.get(i).getOrderType())){
-                            if(parsedOrders.get(j).getOrderType().equals("Market")){
+                            if(parsedOrders.get(j).getOrderType().equals("Market Order")){
                                // common.add(parsedOrders.get(i));
                                 common.add(parsedOrders.get(j));
                                 parsedOrders.remove(parsedOrders.get(j));
                             }
-                            else if(parsedOrders.get(j).getOrderType().equals("Stop")){
+                            else if(parsedOrders.get(j).getOrderType().equals("Stop Order")){
                                 if(parsedOrders.get(j).getStopPrice()==parsedOrders.get(i).getStopPrice()){
                                    // common.add(parsedOrders.get(i));
                                     common.add(parsedOrders.get(j));
                                     parsedOrders.remove(parsedOrders.get(j));
                                 }
                             }
-                            else if(parsedOrders.get(j).getOrderType().equals("Limit")){
+                            else if(parsedOrders.get(j).getOrderType().equals("Limit Order")){
                                 if(parsedOrders.get(j).getLimitPrice()==parsedOrders.get(i).getLimitPrice()){
                                    // common.add(parsedOrders.get(i));
                                     common.add(parsedOrders.get(j));
                                     parsedOrders.remove(parsedOrders.get(j));
                                 }
                             }
-                            else if(parsedOrders.get(j).getOrderType().equals("Stop Limit")){
+                            else if(parsedOrders.get(j).getOrderType().equals("Stop Limit Order")){
                                 if(parsedOrders.get(j).getStopPrice()==parsedOrders.get(i).getStopPrice() && parsedOrders.get(j).getLimitPrice()==parsedOrders.get(i).getLimitPrice()){
                                    
                                     common.add(parsedOrders.get(j));
@@ -60,45 +56,10 @@ public class ControllerBlockOrders {
                             }
                         }
                     }
-                }
+  
             }
             singleOrderLists.add(common);
-            
-//            if(common.size()>0){
-//                ArrayList c = (ArrayList) common;
-//                String commonSymbol = common.get(0).getSymbol();
-//                int totalQuantity = 0;
-//                        
-//                for(int k = 0; k < c.size(); k++){
-//                    totalQuantity += common.get(k).getQuantity();
-//                }
-//
-//                String getOrderTy = common.get(0).getOrderType();
-//                int commonOrderType = -1;
-//                switch (getOrderTy) {
-//                    case "Market":
-//                        commonOrderType = 0;
-//                        break;
-//                    case "Stop":
-//                        commonOrderType = 1;
-//                        break;
-//                    case "Limit":
-//                        commonOrderType = 2;
-//                        break;
-//                    case "Stop Limit":
-//                        commonOrderType = 3;
-//                        break;
-//                    default:
-//                        break;
-//                }
-//                
-//                double commonStop = common.get(0).getStopPrice();
-//                double commonLimit = common.get(0).getLimitPrice();
-//
-//                //STATUS: 1 for SENT TO BROKER, 0 for WAITING AT TRADER SIDE STILL
-//                Block block = new Block(commonSymbol, totalQuantity, commonOrderType, commonStop, commonLimit, 1, c);           
-//                blocks.add(block);
-      
+            System.out.println(common);
         }
         System.out.println(singleOrderLists);
         return singleOrderLists;
