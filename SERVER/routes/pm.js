@@ -45,7 +45,7 @@ function insert_order(req, assignedTo) {
                 res.status(500).send(error);
             } else {
                 console.log("ORDER insert successful");
-                console.log(fields);
+                console.log(results);
                 var orderId = results.insertId;
 
                 /* Insert each single_order info into single_order table */
