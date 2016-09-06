@@ -8,13 +8,19 @@ import com.controller.ControllerBlockOrders;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
 
 import static javax.swing.JOptionPane.showMessageDialog;
 
 import javax.swing.BoxLayout;
+import javax.swing.JButton;
+import javax.swing.JCheckBox;
+import javax.swing.JComponent;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
@@ -24,15 +30,15 @@ import javax.swing.table.TableModel;
 import javax.swing.table.TableRowSorter;
 
 /*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+* To change this license header, choose License Headers in Project Properties.
+* To change this template file, choose Tools | Templates
+* and open the template in the editor.
+*/
 
 /**
- *
- * @author agopa3
- */
+*
+* @author agopa3
+*/
 public class TradeWindow extends javax.swing.JFrame {
 
     /**
@@ -335,7 +341,15 @@ public class TradeWindow extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>                        
-
+ 
+    public void SplitBlockActionPerformed(ActionEvent e) {            
+    	System.out.println(singleOrderLists.get(Integer.parseInt(((JComponent)e.getSource()).getName())));
+    }
+    
+    public void SelectBlockActionPerformed(ActionEvent e) {            
+    	System.out.println(((JComponent)e.getSource()).getName());
+    }
+    
     private void FilterTextTraderBlockHistoryActionPerformed(java.awt.event.ActionEvent evt) {                                                             
         // TODO add your handling code here:
     }                                                            
@@ -372,7 +386,7 @@ public class TradeWindow extends javax.swing.JFrame {
             o.SingleOrderMakeBlocks(tableData[i]);
             parsedOrders.add(o);                   
         }
-        ArrayList<ArrayList<SingleOrder>> singleOrderLists = control.MakeBlock(parsedOrders);
+        singleOrderLists = control.MakeBlock(parsedOrders);
         showMessageDialog(null, "Blocks have been successfully completed."); 
         dtm.setRowCount(0);
         TraderPlatformBlockedRequests.setLayout(new BorderLayout());
@@ -395,8 +409,32 @@ public class TradeWindow extends javax.swing.JFrame {
         
         JPanel test = new JPanel();
         test.add(blockOptions);
+        int i=0;
         for(JScrollPane j:paneList){          
-        	test.add(j);
+        	JButton btn = new JButton();
+            btn.setText("Split Block");
+            btn.setName(""+i);
+            btn.addActionListener(new java.awt.event.ActionListener() {
+              	public void actionPerformed(java.awt.event.ActionEvent evt) {
+               		SplitBlockActionPerformed(evt);
+              	}
+            });
+            JCheckBox check = new JCheckBox();  
+            JLabel label = new JLabel();
+            label.setText("Selelct");
+            check.setName(""+i);
+            check.addActionListener(new java.awt.event.ActionListener() {
+              	public void actionPerformed(java.awt.event.ActionEvent evt) {
+               		SelectBlockActionPerformed(evt);
+              	}
+            });
+            JPanel splitOptions = new JPanel();
+            splitOptions.add(label);
+            splitOptions.add(check);
+            splitOptions.add(btn);
+            test.add(splitOptions);
+            test.add(j);
+            i++;
         } 
        
         test.setLayout(new BoxLayout(test,BoxLayout.Y_AXIS));
@@ -491,7 +529,7 @@ public class TradeWindow extends javax.swing.JFrame {
             }
         });
     }
-    //static private JFrame jf;
+    
     // Variables declaration - do not modify                     
     private javax.swing.JButton ChangePassword;
     
@@ -515,5 +553,6 @@ public class TradeWindow extends javax.swing.JFrame {
     private javax.swing.JButton TraderSubmitBlocks;
     private javax.swing.JLabel selectBrokerLabel;
     private javax.swing.JPanel blockOptions;
+    private ArrayList<ArrayList<SingleOrder>> singleOrderLists;
     // End of variables declaration                   
 }
