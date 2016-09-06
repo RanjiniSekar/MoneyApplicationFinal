@@ -79,7 +79,8 @@ router.route('/:username')
             });
     })
     .put(function (req, res) {
-        db.query('UPDATE user SET password = ? WHERE username = ?', [req.params.username, req.body.password],
+
+        db.query('UPDATE user SET password = ? WHERE username = ?', [req.body.password, req.params.username],
             function (error, results, fields) {
                 // error will be an Error if one occurred during the query 
                 // results will contain the results of the query 
