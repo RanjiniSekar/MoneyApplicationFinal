@@ -10,12 +10,12 @@ router.get('/', function (req, res, next) {
     res.send('Welcome to pm page');
 });
 
-router.route('/orders/:traderId')
+router.route('/orders/:pmId')
     .get(function (req, res) {
-        console.log('GET request on /pm/orders/:traderId');
+        console.log('GET request on /pm/orders/:pmId');
 
-        db.query('SELECT * from orders WHERE assigned_to = ?',
-            req.params.traderId,
+        db.query('SELECT s.sorder_id, s.order_id, s.block_id , s.symbol FROM single_order s RIGHT JOIN pm_order p ON s.order_id = p.order_id WHERE p.pm_id = ? ORDER BY s.sorder_id;',
+            req.params.pmId,
             function (err, rows, fields) {
                 if (!err) {
                     console.log(rows);
@@ -29,13 +29,12 @@ router.route('/orders/:traderId')
     });
 
 
-function insert_order(req) {
+function insert_order(req, assignedTo) {
     /* Insert general order info into pm_order table */
-    var orderId = 0;
 
     db.query({
             sql: 'INSERT INTO pm_order (pm_id, assigned_to) VALUES (?, ?)'
-        }, [req.body.portfolioManagerId, req.body.assignedTo],
+        }, [req.body.portfolioManagerId, assignedTo],
         function (error, results, fields) {
             // error will be an Error if one occurred during the query 
             // results will contain the results of the query 
@@ -47,7 +46,7 @@ function insert_order(req) {
             } else {
                 console.log("ORDER insert successful");
                 console.log(fields);
-                orderId = results.insertId;
+                var orderId = results.insertId;
 
                 /* Insert each single_order info into single_order table */
                 for (var singleOrder in req.body.containedSingleOrders) {
@@ -117,8 +116,7 @@ router.route('/orders')
                         res.status(500).send(error);
                     } else {
                         console.log(results);
-                        req.body.assignedTo = results.t_id;
-                        insert_order(req);
+                        insert_order(req, results.t_id);
                     }
                 });
 
