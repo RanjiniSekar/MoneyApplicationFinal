@@ -30,7 +30,7 @@ router.route('/orders/:username')
     .get(function (req, res) {
         console.log('GET request on /pm/orders/:username');
 
-        db.query('SELECT s.*, p.assigned_to FROM single_order s RIGHT JOIN pm_order p ON s.order_id = p.order_id WHERE p.pm_id = (SELECT u_id FROM user WHERE username= ?) ORDER BY s.sorder_id;',
+        db.query('SELECT s.*, p.assigned_to FROM single_order s INNER JOIN pm_order p ON s.order_id = p.order_id WHERE p.pm_id = (SELECT u_id FROM user WHERE username= ?) ORDER BY s.sorder_id;',
             req.params.username,
             function (err, rows, fields) {
                 if (!err) {
