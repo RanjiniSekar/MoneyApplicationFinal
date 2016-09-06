@@ -47,10 +47,9 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
         Timer timer = new Timer(5000, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                System.out.println("INSIDE ACTION PERFORMED");
                 ArrayList<SingleOrder> ordersDone = (ArrayList)CPMOrderHistory.updateOrders();
                 if(null != ordersDone){
-                    System.out.println("UPDATE ORDERS EXECUTED FOR CPM ORDER HISTORY");
+                    PMOrderHistoryTable.setModel(CPMOrderHistory.getTableModel());
                 } else {
                     System.out.println("ERROR UPDATING ORDERS");
                 }
@@ -58,13 +57,10 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
             }
         });
         timer.start();
-        System.out.println("TIMER STARTED");
         try {
             Thread.sleep(1000);
-            System.out.println("Timer slept");
         } catch (InterruptedException e) {
         }
-        System.out.println("TIMER STOPPING");
         timer.restart();
     }
 

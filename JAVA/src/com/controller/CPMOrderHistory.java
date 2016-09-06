@@ -44,10 +44,8 @@ public class CPMOrderHistory {
     }
 
     public static List<SingleOrder> updateOrders() {
-        System.out.println("UPDATE ORDERS TRIGGERED");
         String currUsername = CMAIN.reportUser().getUsername();
         HttpResponse<JsonNode> resp;
-        System.out.println("GOT USERNAME IN UPDATE ORDERS: " + currUsername);
         try {
             resp = Unirest.get("http://139.59.17.119:8080/api/pm/orders/" + currUsername)
                     .header("content-type", "application/json")
@@ -66,7 +64,8 @@ public class CPMOrderHistory {
                 SingleOrder currentSingleOrder = JsonParsing.parseJsonToSingleOrderObject(currentOrder.toString());
                 arrayOrders.add(currentSingleOrder);
             }
-
+            
+            System.out.println("ARRAY OF ORDERS RETURNED FROM SERVER.");
             return arrayOrders;
         } catch (UnirestException | JSONException ex) {
             Logger.getLogger(CPMOrderHistory.class.getName()).log(Level.SEVERE, null, ex);
