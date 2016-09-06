@@ -7,6 +7,14 @@ package UserObjects;
 
 public abstract class User {
 
+    public void setU_id(long u_id) {
+        this.u_id = u_id;
+    }
+
+    public long getU_id() {
+        return u_id;
+    }
+
     public User(String username, String tempPass) {
         this.username = username;
         this.password = tempPass;

@@ -29,7 +29,7 @@ class PMPendingRequestTableModel extends AbstractTableModel {
 
     @Override
     public int getColumnCount() {
-        return 11;
+        return 12;
     }
     
     @Override
