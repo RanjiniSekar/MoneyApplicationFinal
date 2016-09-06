@@ -19,14 +19,14 @@ import java.util.Map;
  */
 public class ControllerBlockOrders {
 
-    public ArrayList<Block> MakeBlock(List<SingleOrder> parsedOrders) {
+    public  ArrayList<ArrayList<SingleOrder>> MakeBlock(List<SingleOrder> parsedOrders) {
         //List<SingleOrder> common = new ArrayList();
         //List<SingleOrder> parsedOrders = new ArrayList();
         
-        ArrayList<Block> blocks = new ArrayList();
+        ArrayList<ArrayList<SingleOrder>> singleOrderLists = new ArrayList<ArrayList<SingleOrder>>();
         //parsedOrders = parsedOrders;
         for(int i=0;i<parsedOrders.size();i++){
-            List<SingleOrder> common = new ArrayList();
+            ArrayList<SingleOrder> common = new ArrayList();
             common.add(parsedOrders.get(i));
             for(int j=i+1;j<parsedOrders.size();j++){
                 if(!parsedOrders.get(j).equals(parsedOrders.get(i))){
@@ -62,52 +62,46 @@ public class ControllerBlockOrders {
                     }
                 }
             }
+            singleOrderLists.add(common);
             
-            if(common.size()>0){
-                ArrayList c = (ArrayList) common;
-                String commonSymbol = common.get(0).getSymbol();
-                int totalQuantity = 0;
-                        
-                for(int k = 0; k < c.size(); k++){
-                    totalQuantity += common.get(k).getQuantity();
-                }
-
-                String getOrderTy = common.get(0).getOrderType();
-                int commonOrderType = -1;
-                switch (getOrderTy) {
-                    case "Market":
-                        commonOrderType = 0;
-                        break;
-                    case "Stop":
-                        commonOrderType = 1;
-                        break;
-                    case "Limit":
-                        commonOrderType = 2;
-                        break;
-                    case "Stop Limit":
-                        commonOrderType = 3;
-                        break;
-                    default:
-                        break;
-                }
-                
-                double commonStop = common.get(0).getStopPrice();
-                double commonLimit = common.get(0).getLimitPrice();
-
-                //STATUS: 1 for SENT TO BROKER, 0 for WAITING AT TRADER SIDE STILL
-                Block block = new Block(commonSymbol, totalQuantity, commonOrderType, commonStop, commonLimit, 1, c);           
-                blocks.add(block);
-            }
+//            if(common.size()>0){
+//                ArrayList c = (ArrayList) common;
+//                String commonSymbol = common.get(0).getSymbol();
+//                int totalQuantity = 0;
+//                        
+//                for(int k = 0; k < c.size(); k++){
+//                    totalQuantity += common.get(k).getQuantity();
+//                }
+//
+//                String getOrderTy = common.get(0).getOrderType();
+//                int commonOrderType = -1;
+//                switch (getOrderTy) {
+//                    case "Market":
+//                        commonOrderType = 0;
+//                        break;
+//                    case "Stop":
+//                        commonOrderType = 1;
+//                        break;
+//                    case "Limit":
+//                        commonOrderType = 2;
+//                        break;
+//                    case "Stop Limit":
+//                        commonOrderType = 3;
+//                        break;
+//                    default:
+//                        break;
+//                }
+//                
+//                double commonStop = common.get(0).getStopPrice();
+//                double commonLimit = common.get(0).getLimitPrice();
+//
+//                //STATUS: 1 for SENT TO BROKER, 0 for WAITING AT TRADER SIDE STILL
+//                Block block = new Block(commonSymbol, totalQuantity, commonOrderType, commonStop, commonLimit, 1, c);           
+//                blocks.add(block);
+      
         }
-        for(Block b : blocks){          
-            System.out.println("Blocks :\n"+ b);
-            //PARSING BLOCK TO SEND TO DB
-            JsonParsing.parseJsonFromObject(b);
-            
-            //QUERY TO SEND TO DB GOES HERE
-            
-        }
-        return blocks;
+        System.out.println(singleOrderLists);
+        return singleOrderLists;
   }
 }
    

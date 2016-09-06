@@ -34,6 +34,8 @@ public class Block {
 	int orderType;
 	double stopPrice;
 	double limitPrice;
+        long executedPrice;
+        
     String stockExchange;
     List<SingleOrder> holdingOrders;
     int status;

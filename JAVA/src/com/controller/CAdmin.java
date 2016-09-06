@@ -44,13 +44,13 @@ public class CAdmin {
     
     public static boolean addBroker(String name, String email) throws UnirestException{
         Broker b1 = new Broker(name, email);
-        String jsonifiedPM = JsonParsing.parseJsonFromObject(b1);
+        String jsonifiedbroker = JsonParsing.parseJsonFromObject(b1);
         // send query to db.
                 
         try {
-        Unirest.post("http://139.59.17.119:8080/api/admin")
+        Unirest.post("http://139.59.17.119:8080/api/broker")
         .header("content-type", "application/json")
-        .body(jsonifiedPM)
+        .body(jsonifiedbroker)
         .asString();     
         } 
         catch (UnirestException e) {
