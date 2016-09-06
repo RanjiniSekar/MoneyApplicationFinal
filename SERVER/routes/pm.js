@@ -29,9 +29,9 @@ router.route('/orders/:pmId')
     });
 
 
-function insert_order(req, assignedTo) {
+function insert_order(req, res, assignedTo) {
     /* Insert general order info into pm_order table */
-
+    console.log(assignedTo);
     db.query({
             sql: 'INSERT INTO pm_order (pm_id, assigned_to) VALUES (?, ?)'
         }, [req.body.portfolioManagerId, assignedTo],
@@ -45,9 +45,9 @@ function insert_order(req, assignedTo) {
                 res.status(500).send(error);
             } else {
                 console.log("ORDER insert successful");
-                console.log(fields);
+                console.log(results);
                 var orderId = results.insertId;
-
+		console.log("orderId: " + orderId);
                 /* Insert each single_order info into single_order table */
                 for (var singleOrder in req.body.containedSingleOrders) {
                     console.log(singleOrder);
@@ -116,12 +116,12 @@ router.route('/orders')
                         res.status(500).send(error);
                     } else {
                         console.log(results);
-                        insert_order(req, results.t_id);
+                        insert_order(req, res, results[0].t_id);
                     }
                 });
 
         } else {
-            insert_order(req);
+            insert_order(req, res, req.body.assignedTo);
         }
 
     });
