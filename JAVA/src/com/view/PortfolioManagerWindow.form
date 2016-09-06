@@ -103,21 +103,8 @@
                         <BevelBorder/>
                       </Border>
                     </Property>
-                    <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                      <Table columnCount="12" rowCount="10">
-                        <Column editable="true" title="Order ID" type="java.lang.Integer"/>
-                        <Column editable="true" title="Portfolio ID" type="java.lang.String"/>
-                        <Column editable="true" title="Stock Exchange" type="java.lang.Object"/>
-                        <Column editable="true" title="Symbol" type="java.lang.String"/>
-                        <Column editable="true" title="Quantity" type="java.lang.Integer"/>
-                        <Column editable="true" title="Action" type="java.lang.String"/>
-                        <Column editable="true" title="Stop Price" type="java.lang.Double"/>
-                        <Column editable="true" title="Limit Price" type="java.lang.Double"/>
-                        <Column editable="true" title="Account Type" type="java.lang.String"/>
-                        <Column editable="true" title="Order Type" type="java.lang.String"/>
-                        <Column editable="true" title="Assigned To" type="java.lang.String"/>
-                        <Column editable="true" title="Status" type="java.lang.String"/>
-                      </Table>
+                    <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
+                      <Connection code="CPMPendingRequest.getTableModel()" type="code"/>
                     </Property>
                     <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                       <TableColumnModel selectionModel="0">
