@@ -50,7 +50,7 @@ public class CPMOrderHistory {
         HttpResponse<JsonNode> resp;
         System.out.println("GOT USERNAME IN UPDATE ORDERS: " + currUsername);
         try {
-            resp = Unirest.get("http://139.59.17.119:8080/api/orders/" + currUsername)
+            resp = Unirest.get("http://139.59.17.119:8080/api/pm/orders/" + currUsername)
                     .header("content-type", "application/json")
                     .asJson();
 
