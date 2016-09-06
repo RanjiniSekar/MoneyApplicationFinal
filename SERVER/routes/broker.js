@@ -5,12 +5,6 @@ var db = require('../db/config');
 var router = express.Router();
 
 
-/* GET users listing. */
-router.get('/', function (req, res, next) {
-    console.log("GET request on /broker");
-    res.send('Welcome to broker page');
-});
-
 router.route('/')
     .post(function (req, res) {
         console.log('Inserting new broker...');
