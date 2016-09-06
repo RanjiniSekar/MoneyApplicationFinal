@@ -26,6 +26,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableColumn;
 import javax.swing.table.TableModel;
 import javax.swing.table.TableRowSorter;
 
@@ -91,8 +92,6 @@ public class TradeWindow extends javax.swing.JFrame {
 
         TraderIncomingRequestsTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
@@ -344,6 +343,7 @@ public class TradeWindow extends javax.swing.JFrame {
  
     public void SplitBlockActionPerformed(ActionEvent e) {            
     	System.out.println(singleOrderLists.get(Integer.parseInt(((JComponent)e.getSource()).getName())));
+    	
     }
     
     public void SelectBlockActionPerformed(ActionEvent e) {            
@@ -441,9 +441,7 @@ public class TradeWindow extends javax.swing.JFrame {
         JScrollPane p = new JScrollPane(test);
         TraderPlatformBlockedRequests.add(p);
         TraderPlatformBlockedRequests.validate();
-        
-        
-        //TraderPlatformBlockedRequests.validate();
+        TraderPlatformTabbedPane.setSelectedIndex(TraderPlatformTabbedPane.getSelectedIndex()+1);
         
     }                                                 
            
