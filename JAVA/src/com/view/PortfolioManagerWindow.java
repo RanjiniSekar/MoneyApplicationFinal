@@ -48,8 +48,13 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 System.out.println("INSIDE ACTION PERFORMED");
-                CPMOrderHistory.updateOrders();
-                System.out.println("UPDATE ORDERS EXECUTED FOR CPM ORDER HISTORY");
+                boolean ordersDone = CPMOrderHistory.updateOrders();
+                if(ordersDone == true){
+                    System.out.println("UPDATE ORDERS EXECUTED FOR CPM ORDER HISTORY");
+                } else {
+                    System.out.println("ERROR UPDATING ORDERS");
+                }
+                
             }
         });
         timer.start();

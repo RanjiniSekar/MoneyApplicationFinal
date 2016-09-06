@@ -5,6 +5,7 @@
  */
 package com.controller;
 
+import TestModules.JTableDataPopulation.JsonParsing;
 import UserObjects.SingleOrder;
 import com.mashape.unirest.http.HttpResponse;
 import com.mashape.unirest.http.JsonNode;
@@ -14,6 +15,7 @@ import com.model.PortfolioManagerDAO;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.TimerTask;
 import java.util.logging.Handler;
 import java.util.logging.Level;
@@ -44,7 +46,7 @@ public class CPMOrderHistory {
     }
     
     
-    public static void updateOrders() {
+    public static boolean updateOrders() {
         System.out.println("UPDATE ORDERS TRIGGERED");
         String currUsername = CMAIN.reportUser().getUsername();
         HttpResponse<JsonNode> resp;
@@ -58,13 +60,23 @@ public class CPMOrderHistory {
             JSONObject myRespO = new JSONObject(resp.getBody());
             System.out.println("JSON OBJECT BODY: \n" + myRespO.toString());
 
-            //JSONArray arrJson = myRespO.getJSONArray("array");
-
-            //GET USERNAME FROM THE DATA ABOVE
-            //String orders = arrJson.getJSONObject(0).getString("orders");
-            //System.out.println("ACCESSED ORDERS IN ORDER HISTORY CONTROLLER: \n");
-        } catch (UnirestException ex) {
+            JSONArray arrJson = myRespO.getJSONArray("array");
+            System.out.println("JSON ARRAY IS PARSED.");
+            //GET ORDERS FROM ARRAY
+            
+            List<SingleOrder> arrayOrders = new ArrayList<>();
+            
+            for(int i = 0 ; i < arrJson.length() ; i++){
+                JSONObject currentOrder = arrJson.getJSONObject(i);
+                SingleOrder currentSingleOrder = JsonParsing.parseJsonToSingleOrderObject(currentOrder.toString());
+                arrayOrders.add(currentSingleOrder);
+                System.out.println("Adding single order to array: " + currentSingleOrder.toString());
+            }
+            
+            return true;
+        } catch (UnirestException | JSONException ex) {
             Logger.getLogger(CPMOrderHistory.class.getName()).log(Level.SEVERE, null, ex);
+            return false;
         }
     }
 }
