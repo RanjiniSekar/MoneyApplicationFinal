@@ -1,19 +1,16 @@
 package com.view;
 
-import TestModules.JTableDataPopulation.JsonParsing;
 import UserObjects.Order;
 import UserObjects.SingleOrder;
+import com.controller.CPMOrderHistory;
 import com.controller.ControllerPMCreatedOrders;
 import java.awt.Component;
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.DefaultCellEditor;
 import javax.swing.JComboBox;
-import static javax.swing.JOptionPane.showMessageDialog;
 import javax.swing.JTable;
 import javax.swing.RowFilter;
 import javax.swing.table.DefaultTableModel;
@@ -22,13 +19,18 @@ import javax.swing.table.TableColumn;
 import javax.swing.table.TableModel;
 import javax.swing.table.TableRowSorter;
 import static javax.swing.JOptionPane.showMessageDialog;
+import javax.swing.Timer;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.swing.JTabbedPane;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author csavas
@@ -40,6 +42,25 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
      */
     public PortfolioManagerWindow() {
         initComponents();
+        
+        //START TIMER TO UPDATE ORDERS
+        Timer timer = new Timer(5000, new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                System.out.println("INSIDE ACTION PERFORMED");
+                CPMOrderHistory.updateOrders();
+                System.out.println("UPDATE ORDERS EXECUTED FOR CPM ORDER HISTORY");
+            }
+        });
+        timer.start();
+        System.out.println("TIMER STARTED");
+        try {
+            Thread.sleep(1000);
+            System.out.println("Timer slept");
+        } catch (InterruptedException e) {
+        }
+        System.out.println("TIMER STOPPING");
+        timer.restart();
     }
 
     /**
@@ -488,77 +509,86 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
         List<SingleOrder> parsedOrders = new ArrayList();
         String selectedTrader = String.valueOf(PMSelectTraderOptions.getSelectedItem());
         boolean thereAreOrders = false;
-        
-        for(int i = 0; i < nRow; i++){
-            for (int j = 0 ; j < nCol ; j++){
-                tableData[i][j] = dtm.getValueAt(i,j);
+
+        for (int i = 0; i < nRow; i++) {
+            for (int j = 0; j < nCol; j++) {
+                tableData[i][j] = dtm.getValueAt(i, j);
             }
             System.out.println("Retrieved all table data");
             boolean trigg = true;
             //System.out.println(tableData[i][1]);
-            if(tableData[i][0] != null && tableData[i][1] != null && tableData[i][2] != null && tableData[i][3] != null && tableData[i][4] != null){
-                if(tableData[i][0] != null){
-                    long portIDC = (long)tableData[i][0];
-                    if(portIDC < 0){
+            if (tableData[i][0] != null && tableData[i][1] != null && tableData[i][2] != null && tableData[i][3] != null && tableData[i][4] != null) {
+                if (tableData[i][0] != null) {
+                    long portIDC = (long) tableData[i][0];
+                    if (portIDC < 0) {
                         showMessageDialog(null, "You have entered a negative portfolio ID value. Please fix this value before submitting the order.");
                         trigg = false;
                     }
                 }
-                if(tableData[i][3] != null){
-                    int quantityC = (int)tableData[i][3];
-                    if(quantityC < 0){
+                if (tableData[i][3] != null) {
+                    int quantityC = (int) tableData[i][3];
+                    if (quantityC < 0) {
                         showMessageDialog(null, "You have entered a negative quantity value. Please fix this value before submitting the order.");
                         trigg = false;
                     }
                 }
-                if(tableData[i][5] != null){
-                    double stopC = (double)tableData[i][5];
-                    if(stopC < 0){
+                if (tableData[i][5] != null) {
+                    double stopC = (double) tableData[i][5];
+                    if (stopC < 0) {
                         showMessageDialog(null, "You have entered a negative stop price value. Please fix this value before submitting the order.");
                         trigg = false;
                     }
-                }                            
-                if(tableData[i][6] != null){
-                    double limitC = (double)tableData[i][6];
-                    if(limitC < 0){
+                }
+                if (tableData[i][6] != null) {
+                    double limitC = (double) tableData[i][6];
+                    if (limitC < 0) {
                         showMessageDialog(null, "You have entered a negative limit price value. Please fix this value before submitting the order.");
                         trigg = false;
                     }
                 }
-                if(trigg == true){
+                if (trigg == true) {
                     thereAreOrders = true;
                     SingleOrder o = new SingleOrder(tableData[i]);
                     //System.out.println(o.toString());
                     parsedOrders.add(o);
-                }             
-            }
-            else {
-                String a,b,c,d,e;
-                if(tableData[i][0] == null){
+                }
+            } else {
+                String a, b, c, d, e;
+                if (tableData[i][0] == null) {
                     a = "Portfolio ID";
-                } else { a = ""; } 
-                if(tableData[i][1] == null){
+                } else {
+                    a = "";
+                }
+                if (tableData[i][1] == null) {
                     b = "Stock Exchange";
-                } else { b = ""; } 
-                if(tableData[i][2] == null){
+                } else {
+                    b = "";
+                }
+                if (tableData[i][2] == null) {
                     c = "Symbol";
-                } else { c = ""; } 
-                if(tableData[i][3] == null){
+                } else {
+                    c = "";
+                }
+                if (tableData[i][3] == null) {
                     d = "Quantity";
-                } else { d = ""; } 
-                if(tableData[i][4] == null){
+                } else {
+                    d = "";
+                }
+                if (tableData[i][4] == null) {
                     e = "Action";
-                } else { e = ""; } 
-                showMessageDialog(null, "You need to fill in the necessary fields before sending the order:\n" + a + "\n" + b + "\n" + c +  "\n" + d +  "\n" + e); 
+                } else {
+                    e = "";
+                }
+                showMessageDialog(null, "You need to fill in the necessary fields before sending the order:\n" + a + "\n" + b + "\n" + c + "\n" + d + "\n" + e);
             }
-       }
-       if(thereAreOrders){
-        showMessageDialog(null, "You have successfully sent your trades."); 
-        dtm.setRowCount(0);
-        dtm.addRow(new Object[]{null,null,null,null,null,null,null,null,null}); 
-        Order toSend = new Order(selectedTrader, parsedOrders);
-        ControllerPMCreatedOrders.handleOrder(toSend); 
-       }
+        }
+        if (thereAreOrders) {
+            showMessageDialog(null, "You have successfully sent your trades.");
+            dtm.setRowCount(0);
+            dtm.addRow(new Object[]{null, null, null, null, null, null, null, null, null});
+            Order toSend = new Order(selectedTrader, parsedOrders);
+            ControllerPMCreatedOrders.handleOrder(toSend);
+        }
     }//GEN-LAST:event_PMSendOrderActionPerformed
 
     private void ChangePasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChangePasswordActionPerformed
@@ -574,9 +604,9 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
         PMPendingOrdersTable.setRowSorter(sorter);
         String text = FilterTextPMPending.getText();
         if (text.length() == 0) {
-          sorter.setRowFilter(null);
+            sorter.setRowFilter(null);
         } else {
-          sorter.setRowFilter(RowFilter.regexFilter(text));
+            sorter.setRowFilter(RowFilter.regexFilter(text));
         }
     }//GEN-LAST:event_PMPendingOrderFilterActionPerformed
 
@@ -587,11 +617,11 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
         PMEODSoldTable.setRowSorter(sorter2);
         String text = FilterTextPMEOD.getText();
         if (text.length() == 0) {
-          sorter.setRowFilter(null);
-          sorter2.setRowFilter(null);
+            sorter.setRowFilter(null);
+            sorter2.setRowFilter(null);
         } else {
-          sorter.setRowFilter(RowFilter.regexFilter(text));
-          sorter2.setRowFilter(RowFilter.regexFilter(text));
+            sorter.setRowFilter(RowFilter.regexFilter(text));
+            sorter2.setRowFilter(RowFilter.regexFilter(text));
         }
     }//GEN-LAST:event_PMEODFilterActionPerformed
 
@@ -600,39 +630,44 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
         PMOrderHistoryTable.setRowSorter(sorter);
         String text = FilterTextPMOrderHistory.getText();
         if (text.length() == 0) {
-          sorter.setRowFilter(null);
+            sorter.setRowFilter(null);
         } else {
-          sorter.setRowFilter(RowFilter.regexFilter(text));
+            sorter.setRowFilter(RowFilter.regexFilter(text));
         }
     }//GEN-LAST:event_PMOrderHistoryFilterActionPerformed
 
     private void PMAddOrderRowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PMAddOrderRowActionPerformed
-        DefaultTableModel m =(DefaultTableModel)PMSendOrderTable.getModel(); 
-        m.addRow(new Object[]{null,null,null,null,null,null,null,null,null});                       
+        DefaultTableModel m = (DefaultTableModel) PMSendOrderTable.getModel();
+        m.addRow(new Object[]{null, null, null, null, null, null, null, null, null});
     }//GEN-LAST:event_PMAddOrderRowActionPerformed
-private class myComboBoxEditor extends DefaultCellEditor {
-    myComboBoxEditor(String[] items) {
-        super(new JComboBox(items));
-    }
-}
-private class MyComboBoxRenderer extends JComboBox implements TableCellRenderer {
-    public MyComboBoxRenderer(String[] items) {
-        super(items);
-    }
-    @Override
-    public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected,
-            boolean hasFocus, int row, int column) {
-        if (isSelected) {
-            setForeground(table.getSelectionForeground());
-            super.setBackground(table.getSelectionBackground());
-        } else {
-            setForeground(table.getForeground());
-            setBackground(table.getBackground());
+    private class myComboBoxEditor extends DefaultCellEditor {
+
+        myComboBoxEditor(String[] items) {
+            super(new JComboBox(items));
         }
-        setSelectedItem(value);
-        return this;
     }
-}
+
+    private class MyComboBoxRenderer extends JComboBox implements TableCellRenderer {
+
+        public MyComboBoxRenderer(String[] items) {
+            super(items);
+        }
+
+        @Override
+        public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected,
+                boolean hasFocus, int row, int column) {
+            if (isSelected) {
+                setForeground(table.getSelectionForeground());
+                super.setBackground(table.getSelectionBackground());
+            } else {
+                setForeground(table.getForeground());
+                setBackground(table.getBackground());
+            }
+            setSelectedItem(value);
+            return this;
+        }
+    }
+
     /**
      * @param args the command line arguments
      */
@@ -670,14 +705,16 @@ private class MyComboBoxRenderer extends JComboBox implements TableCellRenderer 
                 new PortfolioManagerWindow().setVisible(true);
             }
         });
+
     }
+
     //Trader Names and Currency Strings
-    String[] TraderNames = {"Trader 1","Trader 2"};
-    String[] ActionItems = {"Buy","Sell"};
-        String[] StockExchange = {"NASDAQ","LSE"};
-    String[] AccountType = {"Margin","Cash"};
-    String[] OrderType = {"Market","Stop","Limit","Stop Limit"};
-    
+    String[] TraderNames = {"Trader 1", "Trader 2"};
+    String[] ActionItems = {"Buy", "Sell"};
+    String[] StockExchange = {"NYSE", "LSE"};
+    String[] AccountType = {"Margin", "Cash"};
+    String[] OrderType = {"Market", "Stop", "Limit", "Stop Limit"};
+
     /*
     public void readNasdaq() throws IOException {
         try {
@@ -700,8 +737,8 @@ private class MyComboBoxRenderer extends JComboBox implements TableCellRenderer 
             System.out.println("File to read NASDAQ data not found");  
         }
     }
-    */
-    
+     */
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ChangePassword;
     private javax.swing.JPanel CreateOrder;
