@@ -53,21 +53,17 @@ VALUES(0, 1, 6, 4, "AAPL", 150, "Sell", "Market", "credit", "nyse", 0, 0, 0, "Ex
 
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-SELECT single_order.sorder_id, single_order.order_id, single_order.block_id , single_order.symbol
-FROM single_order
-RIGHT JOIN pm_order
-ON single_order.order_id = pm_order.order_id 
-WHERE pm_order.pm_id = (SELECT u_id FROM user WHERE username= "oriol")
-ORDER BY single_order.sorder_id;
+SELECT s.*, p.assigned_to
+FROM single_order s
+INNER JOIN pm_order p
+ON s.order_id = p.order_id 
+WHERE p.pm_id = (SELECT u_id FROM user WHERE username= "oriol")
+ORDER BY s.sorder_id;
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 This code looks for all the orders placed by a particular pm using his PM_ID.
 
 //////////////////////////////////////////////////////////////////////
-SELECT p_id, symbol, quantity, price_executed 
-FROM single_order
-WHERE action_type="Buy" 
-AND status="Executed"
-AND date_pmorder=CURDATE();
+
 
 For Buy EOD:
 /////////////////////////////////////////////////////////////////////////////////////////////////
