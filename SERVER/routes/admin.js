@@ -74,7 +74,7 @@ router.route('/:username')
                     console.log('Error performing the query');
                     res.status(500).send(error);
                 } else {
-                    res.json(fields);
+                    res.json(results);
                 }
             });
     })
@@ -88,7 +88,7 @@ router.route('/:username')
                     console.log('Error performing the query');
                     res.status(500).send(error);
                 } else {
-                    res.json(fields);
+                    res.json(results);
                 }
             });
     });
