@@ -139,9 +139,4 @@ router.route('/orders')
     });
 
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> origin/master
 module.exports = router;
