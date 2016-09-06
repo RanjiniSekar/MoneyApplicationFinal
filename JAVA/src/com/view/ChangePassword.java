@@ -5,15 +5,10 @@
  */
 package com.view;
 
-import UserObjects.User;
 import com.controller.CChangePassword;
-import com.controller.CLogin;
-import com.controller.CMAIN;
-import com.mashape.unirest.http.Unirest;
 import com.mashape.unirest.http.exceptions.UnirestException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import static javax.swing.JOptionPane.showMessageDialog;
 import org.json.JSONException;
 
 /**
@@ -201,6 +196,7 @@ public class ChangePassword extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new ChangePassword().setVisible(true);
             }
