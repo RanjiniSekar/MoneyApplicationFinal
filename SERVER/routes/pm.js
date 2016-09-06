@@ -10,59 +10,52 @@ router.get('/', function (req, res, next) {
     res.send('Welcome to pm page');
 });
 
-router.route('/orders')
+router.route('/orders/:traderId')
     .get(function (req, res) {
-        console.log('GET request on /pm/orders');
+        console.log('GET request on /pm/orders/:traderId');
 
-        db.query('SELECT * from orders', function (err, rows, fields) {
-            if (!err) {
-                console.log(rows);
-                res.json(rows);
-            } else
-                console.log('Error performing the query');
+        db.query('SELECT * from orders WHERE assigned_to = ?',
+            req.params.traderId,
+            function (err, rows, fields) {
+                if (!err) {
+                    console.log(rows);
+                    res.json(rows);
+                } else
+                    console.log('Error performing the query');
 
-        });
+            });
         // db.end();
 
-    })
-    .post(function (req, res) {
-        console.log('Inserting new order...');
-        console.log(req.body);
+    });
 
-        /* Check if the trader is set or should be automatically set */
-        if (req.body.assignedTrader == "Automatic") {
-            // query the database for finding the less busy one
-            var assignedTo = 0;
 
-            req.body.assignedTo = assignedTo;
-        }
+function insert_order(req) {
+    /* Insert general order info into pm_order table */
+    var orderId = 0;
 
-        /* Insert general order info into pm_order table */
-        var orderId = 0;
+    db.query({
+            sql: 'INSERT INTO pm_order (pm_id, assigned_to) VALUES (?, ?)'
+        }, [req.body.portfolioManagerId, req.body.assignedTo],
+        function (error, results, fields) {
+            // error will be an Error if one occurred during the query 
+            // results will contain the results of the query 
+            // fields will contain information about the returned results fields (if any)
+            if (error) {
+                console.log('Error performing the query:');
+                console.log(error);
+                res.status(500).send(error);
+            } else {
+                console.log("ORDER insert successful");
+                console.log(fields);
+                orderId = results.insertId;
 
-        db.query({
-                sql: 'INSERT INTO pm_order (pm_id, assigned_to) VALUES (?, ?)'
-            }, [req.body.portfolioManagerId, req.body.assignedTo],
-            function (error, results, fields) {
-                // error will be an Error if one occurred during the query 
-                // results will contain the results of the query 
-                // fields will contain information about the returned results fields (if any)
-                if (error) {
-                    console.log('Error performing the query:');
-                    console.log(error);
-                    res.status(500).send(error);
-                } else {
-                    console.log("ORDER insert successful");
-                    console.log(fields);
-                    orderId = results.insertId;
+                /* Insert each single_order info into single_order table */
+                for (var singleOrder in req.body.containedSingleOrders) {
+                    console.log(singleOrder);
 
-                    /* Insert each single_order info into single_order table */
-                    for (var singleOrder in req.body.containedSingleOrders) {
-                        console.log(singleOrder);
-
-                        db.query({
-                                sql: 'INSERT INTO single_order (pm_id, assigned_to) VALUES (?, ?)'
-                            }, [
+                    db.query({
+                            sql: 'INSERT INTO single_order (pm_id, assigned_to) VALUES (?, ?)'
+                        }, [
                                 singleOrder.portfolioId,
                                 orderId,
                                 singleOrder.symbol,
@@ -76,24 +69,58 @@ router.route('/orders')
                                 req.body.portfolioManagerId,
                                 req.body.assignedTo
                             ],
-                            function (error, results, fields) {
-                                // error will be an Error if one occurred during the query 
-                                // results will contain the results of the query 
-                                // fields will contain information about the returned results fields (if any)
-                                if (error) {
-                                    console.log('Error performing the query:');
-                                    console.log(error);
-                                    res.status(500).send(error);
-                                } else {
-                                    console.log("SINGLE_    ORDER insert successful");
-                                    res.status(201).send(results);
-                                }
-                            });
+                        function (error, results, fields) {
+                            // error will be an Error if one occurred during the query 
+                            // results will contain the results of the query 
+                            // fields will contain information about the returned results fields (if any)
+                            if (error) {
+                                console.log('Error performing the query:');
+                                console.log(error);
+                                res.status(500).send(error);
+                            } else {
+                                console.log("SINGLE_ORDER insert successful");
+                                res.status(201).send(results);
+                            }
+                        });
 
-                        res.status(201).send(results);
-                    }
+                    res.status(201).send(results);
                 }
-            });
+            }
+        });
+}
+
+
+router.route('/orders')
+    .post(function (req, res) {
+        console.log('Inserting new order...');
+        console.log(req.body);
+
+        /* Check if the trader is set or should be automatically set */
+        if (req.body.assignedTrader == "Automatic") {
+            // query the database for finding the less busy one
+            var assignedTo = 25;
+
+            db.query({
+                    sql: 'SELECT assigned_to FROM pm_order WHERE assigned_to = (SELECT order_id, COUNT(order_id) FROM single_order GROUP BY order_id ORDER BY COUNT(order_id) ASC LIMIT 1);'
+                }, [req.body.portfolioManagerId, req.body.assignedTo],
+                function (error, results, fields) {
+                    // error will be an Error if one occurred during the query 
+                    // results will contain the results of the query 
+                    // fields will contain information about the returned results fields (if any)
+                    if (error) {
+                        console.log('Error performing the query:');
+                        console.log(error);
+                        res.status(500).send(error);
+                    } else {
+                        console.log(results);
+                        req.body.assignedTo = assignedTo;
+
+                        insert_order(req);
+                    }
+                });
+        } else {
+            insert_order(req);
+        }
 
     });
 

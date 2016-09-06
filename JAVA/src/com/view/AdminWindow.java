@@ -9,6 +9,7 @@ import UserObjects.PortfolioManager;
 import UserObjects.User;
 import com.controller.CAdmin;
 import com.controller.ControllerPMCreatedOrders;
+import com.mashape.unirest.http.exceptions.UnirestException;
 
 import static javax.swing.JOptionPane.showMessageDialog;
 /**
@@ -456,7 +457,12 @@ public class AdminWindow extends javax.swing.JFrame {
         String nameText = CreateBrokerNameText.getText();
         String usernameText = CreateBrokerEmailText.getText();
         //SEND TO CONTROLLER TO CREATE BROKER AND SEND TO DB
+        try {
         CAdmin.addBroker(nameText, usernameText); 
+        }
+        catch (UnirestException e) {
+            System.err.println("Unirest Exception in the View: " + e.getMessage());
+        }
     }//GEN-LAST:event_createBrokerButtonActionPerformed
 
     private void CreatePortfolioNameTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CreatePortfolioNameTextActionPerformed

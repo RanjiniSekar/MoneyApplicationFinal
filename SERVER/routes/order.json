@@ -15,9 +15,9 @@
             "stopPrice": 500.0,
             "limitPrice": 0.0,
             "pricePaid": 0.0,
-            "stockExchange": "London Stock Exchange",
-            "accountType": "Cash Account",
-            "orderType": "Stop Order",
+            "stockExchange": "LSE",
+            "accountType": "Cash",
+            "orderType": "Stop",
             "pmId": 0,
             "assignedTo": 0
     },
@@ -32,9 +32,9 @@
             "stopPrice": 300.0,
             "limitPrice": 0.0,
             "pricePaid": 0.0,
-            "stockExchange": "US Stock Exchange",
-            "accountType": "Margin Account",
-            "orderType": "Stop Order",
+            "stockExchange": "US",
+            "accountType": "Margin",
+            "orderType": "Stop",
             "pmId": 0,
             "assignedTo": 0
     }]

@@ -10,6 +10,8 @@ import UserObjects.Broker;
 import UserObjects.PortfolioManager;
 import UserObjects.Trader;
 import UserObjects.User;
+import com.mashape.unirest.http.Unirest;
+import com.mashape.unirest.http.exceptions.UnirestException;
 
 /**
  *
@@ -24,16 +26,36 @@ public class CAdmin {
     }
     
     public static boolean addTrader(String name, String username, String password){
-        User t1 = new Trader(name, username, password, "Trader");
-        String jsonifiedPM = JsonParsing.parseJsonFromObject(t1);
+        Trader t1 = new Trader(name, username, password, "Trader");
+        String jsonifiedTrader = JsonParsing.parseJsonFromObject(t1);
+        System.out.println(jsonifiedTrader);
         // send query to db.
+        try {
+        Unirest.post("http://139.59.17.119:8080/api/admin")
+        .header("content-type", "application/json")
+        .body(jsonifiedTrader)
+        .asString();     
+        } 
+        catch (UnirestException e) {
+            System.err.println("Unirest Exception: " + e.getMessage());
+        }
         return true;
     }
     
-    public static boolean addBroker(String name, String email){
+    public static boolean addBroker(String name, String email) throws UnirestException{
         Broker b1 = new Broker(name, email);
         String jsonifiedPM = JsonParsing.parseJsonFromObject(b1);
         // send query to db.
+                
+        try {
+        Unirest.post("http://139.59.17.119:8080/api/admin")
+        .header("content-type", "application/json")
+        .body(jsonifiedPM)
+        .asString();     
+        } 
+        catch (UnirestException e) {
+            System.err.println("Unirest Exception: " + e.getMessage());
+        }
         return true;
     }
 }
