@@ -117,8 +117,8 @@ router.route('/orders')
                         res.status(500).send(error);
                     } else {
                         console.log(results);
-                        //req.body.assignedTo = ;
-                        //insert_order(req);
+                        req.body.assignedTo = results.t_id;
+                        insert_order(req);
                     }
                 });
 
