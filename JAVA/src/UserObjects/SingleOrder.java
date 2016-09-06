@@ -3,38 +3,38 @@ package UserObjects;
 public class SingleOrder {
 	
     
-	private long singleOrderId;
-	private long portfolioId ;
-	private long OrderId;
-	private long BlockId;
+	private long sorder_id;
+	private long p_id;
+	private long order_id;
+	private long block_id;
 	private String symbol;
 	private int quantity;
-	private String action;
-	private double stopPrice;
-	private double limitPrice;
-	private double pricePaid;
-	private String stockExchange;
-	private String accountType;
-	private String orderType;
+	private String action_type;
+	private double price_stop;
+	private double price_limit;
+	private double price_executed;
+	private String stock_exchange;
+	private String account_type;
+	private String order_type;
 	private String status;
-    private long pmId;
-    private long assignedTo;
+        private long pmId;
+        private long assignedTo;
 
     
-    public SingleOrder(long SingleOrderId, long portfolioId, long OrderId, long BlockId, String symbol, int quantitiy, String action, double stopPrice, double limitPrice, double pricePaid, String stockExchange, String accountType, String orderType, String status) {
-        this.singleOrderId = SingleOrderId;
-        this.portfolioId = portfolioId;
-        this.OrderId = OrderId;
-        this.BlockId = BlockId;
+    public SingleOrder(long SingleOrderId, long portfolioId, long OrderId, long BlockId, String symbol, int quantity, String action, double stopPrice, double limitPrice, double pricePaid, String stockExchange, String accountType, String orderType, String status) {
+        this.sorder_id = SingleOrderId;
+        this.p_id = portfolioId;
+        this.order_id = OrderId;
+        this.block_id = BlockId;
         this.symbol = symbol;
-        this.quantity = quantitiy;
-        this.action = action;
-        this.stopPrice = stopPrice;
-        this.limitPrice = limitPrice;
-        this.pricePaid = pricePaid;
-        this.stockExchange = stockExchange;
-        this.accountType = accountType;
-        this.orderType = orderType;
+        this.quantity = quantity;
+        this.action_type = action;
+        this.price_stop = stopPrice;
+        this.price_limit = limitPrice;
+        this.price_executed = pricePaid;
+        this.stock_exchange = stockExchange;
+        this.account_type = accountType;
+        this.order_type = orderType;
         this.status = status;
     }
 
@@ -44,36 +44,36 @@ public class SingleOrder {
 
     public void SingleOrderMakeBlocks(Object[] object){
         
-        this.OrderId = (long)object[0];
-        this.portfolioId = (long)object[1];    
+        this.order_id = (long)object[0];
+        this.p_id = (long)object[1];    
         this.symbol = (String)object[2];
         this.quantity = (int)object[3];
         
-        this.action = (String)object[4];
+        this.action_type = (String)object[4];
         if(object[5] != null){
-            this.stopPrice = (double)object[5];
+            this.price_stop = (double)object[5];
         }
         if(object[6] != null){
-            this.limitPrice = (double)object[6];
+            this.price_limit = (double)object[6];
         }
-        this.stockExchange = (String)object[7];
+        this.stock_exchange = (String)object[7];
         
             
         if(object[8] != null){
-            this.accountType = (String)object[8];
+            this.account_type = (String)object[8];
             
         }
         if(object[5] == null && object[6] == null){
-            this.orderType = "Market Order"; //MARKET ORDER
+            this.order_type = "Market Order"; //MARKET ORDER
         }
         if(object[5] != null && object[6] == null){
-            this.orderType = "Stop Order"; //STOP ORDER
+            this.order_type = "Stop Order"; //STOP ORDER
         }
         if(object[5] == null && object[6] != null){
-            this.orderType = "Limit Order"; //LIMIT ORDER
+            this.order_type = "Limit Order"; //LIMIT ORDER
         }
         if(object[5] != null && object[6] != null){
-            this.orderType = "Stop Limit Order"; //STOP LIMIT ORDER
+            this.order_type = "Stop Limit Order"; //STOP LIMIT ORDER
         }
         this.pmId = (long)object[10];
     }
@@ -81,83 +81,83 @@ public class SingleOrder {
     //SINGLE ORDER PARSED FROM TABLE - AT POINT OF SUBMITTING BY PM
     public SingleOrder(Object[] object) {
         
-            this.portfolioId = (long)object[0];
+            this.p_id = (long)object[0];
             
             //COLUMN 1: STOCK EXCHANGE: REQUIRED
-            this.stockExchange = (String)object[1];
+            this.stock_exchange = (String)object[1];
             
             this.symbol = (String)object[2];
             this.quantity = (int)object[3];
             
-            this.action = (String)object[4];
+            this.action_type = (String)object[4];
             
             
             if(object[5] != null){
-                this.stopPrice = (double)object[5];
+                this.price_stop = (double)object[5];
             }
             if(object[6] != null){
-                this.limitPrice = (double)object[6];
+                this.price_limit = (double)object[6];
             }
             //this.pricePaid = (double)pricePaid;
             
             
             
             if(object[7] != null){
-                this.accountType = (String)object[7];
+                this.account_type = (String)object[7];
                 
             }
             
             
             if(object[5] == null && object[6] == null){
-                this.orderType = "Market Order"; //MARKET ORDER
+                this.order_type = "Market Order"; //MARKET ORDER
             }
             if(object[5] != null && object[6] == null){
-                this.orderType = "Stop Order"; //STOP ORDER
+                this.order_type = "Stop Order"; //STOP ORDER
             }
             if(object[5] == null && object[6] != null){
-                this.orderType = "Limit Order"; //LIMIT ORDER
+                this.order_type = "Limit Order"; //LIMIT ORDER
             }
             if(object[5] != null && object[6] != null){
-                this.orderType = "Stop Limit Order"; //STOP LIMIT ORDER
+                this.order_type = "Stop Limit Order"; //STOP LIMIT ORDER
             }
             
     }
-
+    
     @Override
     public String toString() {
-        return "SingleOrder{" + "SingleOrderId=" + singleOrderId + ", portfolioId=" + portfolioId + ", OrderId=" + OrderId + ", BlockId=" + BlockId + ", symbol=" + symbol + ", quantitiy=" + quantity + ", action=" + action + ", stopPrice=" + stopPrice + ", limitPrice=" + limitPrice + ", pricePaid=" + pricePaid + ", stockExchange=" + stockExchange + ", accountType=" + accountType + ", orderType=" + orderType + ", status=" + status + '}';
+        return "SingleOrder{" + "SingleOrderId=" + sorder_id + ", portfolioId=" + p_id + ", OrderId=" + order_id + ", BlockId=" + block_id + ", symbol=" + symbol + ", quantitiy=" + quantity + ", action=" + action_type + ", stopPrice=" + price_stop + ", limitPrice=" + price_limit + ", pricePaid=" + price_executed + ", stockExchange=" + stock_exchange + ", accountType=" + account_type + ", orderType=" + order_type + ", status=" + status + '}';
     } 
 
     public long getSingleOrderId() {
-        return singleOrderId;
+        return sorder_id;
     }
 
     public void setSingleOrderId(long SingleOrderId) {
-        this.singleOrderId = SingleOrderId;
+        this.sorder_id = SingleOrderId;
     }
 
     public long getPortfolioId() {
-        return portfolioId;
+        return p_id;
     }
 
     public void setPortfolioId(long portfolioId) {
-        this.portfolioId = portfolioId;
+        this.p_id = portfolioId;
     }
 
     public long getOrderId() {
-        return OrderId;
+        return order_id;
     }
 
     public void setOrderId(long OrderId) {
-        this.OrderId = OrderId;
+        this.order_id = OrderId;
     }
 
     public long getBlockId() {
-        return BlockId;
+        return block_id;
     }
 
     public void setBlockId(long BlockId) {
-        this.BlockId = BlockId;
+        this.block_id = BlockId;
     }
 
     public String getSymbol() {
@@ -177,59 +177,59 @@ public class SingleOrder {
     }
 
     public String getAction() {
-        return action;
+        return action_type;
     }
 
     public void setAction(String action) {
-        this.action = action;
+        this.action_type = action;
     }
 
     public double getStopPrice() {
-        return stopPrice;
+        return price_stop;
     }
 
     public void setStopPrice(double stopPrice) {
-        this.stopPrice = stopPrice;
+        this.price_stop = stopPrice;
     }
 
     public double getLimitPrice() {
-        return limitPrice;
+        return price_limit;
     }
 
     public void setLimitPrice(double limitPrice) {
-        this.limitPrice = limitPrice;
+        this.price_limit = limitPrice;
     }
 
     public double getPricePaid() {
-        return pricePaid;
+        return price_executed;
     }
 
     public void setPricePaid(double pricePaid) {
-        this.pricePaid = pricePaid;
+        this.price_executed = pricePaid;
     }
 
     public String getStockExchange() {
-        return stockExchange;
+        return stock_exchange;
     }
 
     public void setStockExchange(String stockExchange) {
-        this.stockExchange = stockExchange;
+        this.stock_exchange = stockExchange;
     }
 
     public String getAccountType() {
-        return accountType;
+        return account_type;
     }
 
     public void setAccountType(String accountType) {
-        this.accountType = accountType;
+        this.account_type = accountType;
     }
 
     public String getOrderType() {
-        return orderType;
+        return order_type;
     }
 
     public void setOrderType(String orderType) {
-        this.orderType = orderType;
+        this.order_type = orderType;
     }
 
     public String getStatus() {
