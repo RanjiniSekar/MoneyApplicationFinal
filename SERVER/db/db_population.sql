@@ -93,9 +93,15 @@ AND CAST(single_order.date_pmorder AS DATE) = CURDATE();
 
 
 
+create table IF NOT EXISTS temp_link (
+   uid varchar(32) not null,
+   block_id BIGINT not null,
+   PRIMARY KEY  (block_id),
+   FOREIGN KEY (block_id) REFERENCES trader_block(block_id)
+);
 
-
-
+Insert into temp_link values("1234", 3);
+Insert into temp_link values("qwer", 4);
 
 
 

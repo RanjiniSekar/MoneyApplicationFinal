@@ -34,7 +34,6 @@ router.route('/')
         );
     });
 
-router.route('/updateTrade')
     .post(function (req, res) {
         console.log('Updating Trade...');
         console.log(req.body);
