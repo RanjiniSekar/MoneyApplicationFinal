@@ -23,10 +23,13 @@ public class CMAIN {
         switch(type){
             case "trader":
                  curr = new Trader(uname, name, pass, type);
+                 break;
             case "pm":
                  curr = new PortfolioManager(uname, name, pass, type);
+                 break;
             case "admin":
                  curr = new Admin(uname, name, pass, type);
+                 break;
         }
         CMAIN.currentUser = curr;
         
