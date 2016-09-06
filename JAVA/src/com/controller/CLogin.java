@@ -54,11 +54,9 @@ public class CLogin {
         String thisType = arrJson.getJSONObject(0).getString("user_type");
         
         long thisID = arrJson.getJSONObject(0).getLong("u_id");
-        System.out.println("ACCESSED USERID: \n" + thisName);
         
         if(thisPassword.equals(passText)){
            //PASSWORD MATCHES: SAVE USER IN SESSION
-           System.out.println("Now we can handle persistence");
            CMAIN.handleUserPersistence(thisID, thisUsername,thisName, thisPassword,thisType);     
         } 
         else {

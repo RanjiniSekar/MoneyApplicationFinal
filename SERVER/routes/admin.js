@@ -95,9 +95,9 @@ router.route('/:username')
 
 router.route('/traders')
     .get(function (req, res) {
-        console.log('GET request on /admin');
+        console.log('GET request on /admin/traders');
 
-        db.query('SELECT * from user where user_type = "trader"', function (err, rows, fields) {
+        db.query('SELECT * from user where user_type = ?', "trader", function (err, rows, fields) {
             if (!err) {
                 console.log(rows);
                 res.json(rows);
