@@ -62,7 +62,9 @@ public class CPMOrderHistory {
             for (int i = 0; i < arrJson.length(); i++) {
                 JSONObject currentOrder = arrJson.getJSONObject(i);
                 SingleOrder currentSingleOrder = JsonParsing.parseJsonToSingleOrderObject(currentOrder.toString());
-                arrayOrders.add(currentSingleOrder);
+                if(currentSingleOrder.getStatus().equals("Executed")){
+                    arrayOrders.add(currentSingleOrder);
+                }
             }
             
             System.out.println("ARRAY OF ORDERS RETURNED FROM SERVER.");

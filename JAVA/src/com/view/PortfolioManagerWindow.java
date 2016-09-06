@@ -3,6 +3,7 @@ package com.view;
 import UserObjects.Order;
 import UserObjects.SingleOrder;
 import com.controller.CPMOrderHistory;
+import com.controller.CPMPendingRequest;
 import com.controller.ControllerPMCreatedOrders;
 import java.awt.Component;
 import java.awt.event.ActionEvent;
@@ -48,8 +49,10 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 ArrayList<SingleOrder> ordersDone = (ArrayList)CPMOrderHistory.updateOrders();
+
                 if(null != ordersDone){
                     PMOrderHistoryTable.setModel(CPMOrderHistory.getTableModel());
+                    PMPendingOrdersTable.setModel(CPMPendingRequest.getTableModel());
                 } else {
                     System.out.println("ERROR UPDATING ORDERS");
                 }
@@ -116,31 +119,7 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
         PMPendingOrdersTable.setBackground(new java.awt.Color(240, 240, 240));
         PMPendingOrdersTable.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         String[] CurrencyValues = {"USD", "GBP"};
-        PMPendingOrdersTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null}
-            },
-            new String [] {
-                "Order ID", "Portfolio ID", "Stock Exchange", "Symbol", "Quantity", "Action", "Stop Price", "Limit Price", "Account Type", "Order Type", "Assigned To", "Status"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.Object.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.Double.class, java.lang.Double.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-        });
+        PMPendingOrdersTable.setModel(CPMPendingRequest.getTableModel());
         PMPendingOrdersTable.setGridColor(new java.awt.Color(255, 255, 255));
         PMPendingOrdersTable.getTableHeader().setReorderingAllowed(false);
         PendingOrderRequests.setViewportView(PMPendingOrdersTable);
