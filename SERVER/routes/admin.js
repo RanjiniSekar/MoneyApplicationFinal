@@ -34,6 +34,8 @@ router.route('/')
                     res.status(500).send(error);
                 } else {
                     console.log("INSERT user successfully");
+                    userId = results.insertId;
+
                     var query = "";
                     if (req.body.user_type === "trader") {
                         query = 'INSERT INTO trader (t_id) VALUES (?)'
@@ -43,7 +45,6 @@ router.route('/')
                         query = 'INSERT INTO admin (adm_id) VALUES (?)'
                     }
 
-		   userId = results.insertId;
                     db.query(query, [userId],
                         function (error, results, fields) {
                             // error will be an Error if one occurred during the query 
