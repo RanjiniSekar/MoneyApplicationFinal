@@ -34,7 +34,7 @@ router.route('/orders/:username')
             req.params.username,
             function (err, rows, fields) {
                 if (!err) {
-                    console.log(rows);
+                    //console.log(rows);
                     res.json(rows);
                 } else
                     console.log('Error performing the query');

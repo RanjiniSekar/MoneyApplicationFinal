@@ -41,7 +41,7 @@ router.route('/blocks')
 
 router.route('/sendMail')
     .get(function (req, res) {
-        nodemailer.send_mail({
+        nodemailer.sendMail({
             sender: 'info@moneytree.com',
             to: 'otorrillas@gmail.com',
             subject: 'Govind is a pussy',
