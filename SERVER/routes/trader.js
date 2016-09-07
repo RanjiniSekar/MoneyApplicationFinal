@@ -103,7 +103,7 @@ router.route('/blocks')
                         });
 
                         conn.query({
-                                sql: 'INSERT INTO temp_link (block_id, url) VALUES (?, ?)'
+                                sql: 'INSERT INTO temp_link (block_id, uid) VALUES (?, ?)'
                             }, [blockId, url]),
                             function (error, results, fields) {
                                 if (error) {
