@@ -89,7 +89,7 @@ router.route('/blocks/')
                             var brokerEmail = single_block.b_email;
 
                             // Create the email content
-                            var orderTable = "<table style=\"table, th, td {border: 1 px solid black;}\"><tr><th>Symbol</th><th>Quantity</th><th>Action</th><th>Order type</th></tr><tr><td>" + single_block.symbol + "</td><td>" + single_block.quantity + "</td><td>" + single_block.order_type + "</td></tr></table>"
+                            var orderTable = "<table style=\"table, th, td {border: 1 px solid black;}\"><tr><th>Symbol</th><th>Quantity</th><th>Action</th><th>Order type</th><th>Stop price</th><th>Limit price</th></tr><tr><td>" + single_block.symbol + "</td><td>" + single_block.quantity + "</td><td>" + single_block.order_type + "</td><td>" + single_block.price_stop + "</td><td>" + single_block.price_limit + "</td></tr></table>"
 
                             var mailText = "A new order has been placed: <br/>" + orderTable + "<br/>Please, press the following button when executed:<br/><a href=\"" + link + "\"><button>Confirm</button></a>";
                             var mailOptions = {
