@@ -1,5 +1,8 @@
 package com.view;
 
+import Autocomplete.AutocompleteJComboBox;
+import Autocomplete.MyTableCellEditor;
+import Autocomplete.Searchable;
 import UserObjects.Order;
 import UserObjects.SingleOrder;
 import com.controller.CMAIN;
@@ -30,6 +33,7 @@ import javax.swing.JTabbedPane;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import static javax.swing.JOptionPane.showMessageDialog;
+import javax.swing.table.TableCellEditor;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -383,12 +387,17 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
         TableColumn col2 = PMSendOrderTable.getColumnModel().getColumn(1);
         col2.setCellEditor(new myComboBoxEditor(StockExchange));
         col2.setCellRenderer(new MyComboBoxRenderer(StockExchange));
+
         TableColumn col1 = PMSendOrderTable.getColumnModel().getColumn(4);
         col1.setCellEditor(new myComboBoxEditor(ActionItems));
         col1.setCellRenderer(new MyComboBoxRenderer(ActionItems));
+
         TableColumn col3 = PMSendOrderTable.getColumnModel().getColumn(7);
         col3.setCellEditor(new myComboBoxEditor(AccountType));
         col3.setCellRenderer(new MyComboBoxRenderer(AccountType));
+
+        TableColumn col4 = PMSendOrderTable.getColumnModel().getColumn(2);
+        col4.setCellEditor(new MyTableCellEditor());
         PMSendOrderScrollPane.setViewportView(PMSendOrderTable);
 
         PMSendOrder.setText("Send Order");
