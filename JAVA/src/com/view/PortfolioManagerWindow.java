@@ -57,7 +57,6 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 ArrayList<SingleOrder> ordersDone = (ArrayList) CPMOrderMANIAC.updateOrders();
-                System.out.println("ORDERS GOTTEN FROM MANIAC:   " + ordersDone.toString());
                 ArrayList<SingleOrder> ordersPending = new ArrayList<>();
                 ArrayList<SingleOrder> ordersExecuted = new ArrayList<>();
 
@@ -66,18 +65,13 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
                         String currStatus = ordersDone.get(i).getStatus();
                         if (currStatus.equals("Pending")) {
                             ordersPending.add(ordersDone.get(i));
-                            System.out.println("ADDED TO PENDING");
                         }
                         if (currStatus.equals("Executed")) {
                             ordersExecuted.add(ordersDone.get(i));
-                            System.out.println("ADDED TO EXECUTED");
                         }
                     }
-                    System.out.println("ABOUT TO SET PENDINGS AND EXECUTED IN CPM MANIAC");
                     CPMOrderMANIAC.setPendings(ordersPending);
                     CPMOrderMANIAC.setExecuted(ordersExecuted);
-                    System.out.println("EXECUTED HAS: " + CPMOrderMANIAC.getExecuted().size());
-                    System.out.println("PENDINGS HAS: " + CPMOrderMANIAC.getPendings().size());
                     PMOrderHistoryTable.setModel(CPMOrderMANIAC.getOHTableModel());
                     PMPendingOrdersTable.setModel(CPMOrderMANIAC.getPRTableModel());
                 } else {
@@ -366,14 +360,14 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
 
         PMSendOrderTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Portfolio ID", "Stock Exchange", "Symbol", "Quantity", "Action", "Stop Price", "Limit Price", "Account Type"
+                "Portfolio ID", "Stock Exchange", "Symbol", "Quantity", "Action", "Order Type", "Stop Price", "Limit Price", "Account Type"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.Long.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.Double.class, java.lang.Double.class, java.lang.String.class
+                java.lang.Long.class, java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.Double.class, java.lang.Double.class, java.lang.String.class
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -386,7 +380,10 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
         TableColumn col1 = PMSendOrderTable.getColumnModel().getColumn(4);
         col1.setCellEditor(new myComboBoxEditor(ActionItems));
         col1.setCellRenderer(new MyComboBoxRenderer(ActionItems));
-        TableColumn col3 = PMSendOrderTable.getColumnModel().getColumn(7);
+        TableColumn col5 = PMSendOrderTable.getColumnModel().getColumn(5);
+        col5.setCellEditor(new myComboBoxEditor(OrderType));
+        col5.setCellRenderer(new MyComboBoxRenderer(OrderType));
+        TableColumn col3 = PMSendOrderTable.getColumnModel().getColumn(8);
         col3.setCellEditor(new myComboBoxEditor(AccountType));
         col3.setCellRenderer(new MyComboBoxRenderer(AccountType));
         PMSendOrderScrollPane.setViewportView(PMSendOrderTable);
@@ -559,10 +556,14 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
                 if (tableData[i][2] == null) {
                     trigg = false;
                 } else if (tableData[i][2].toString().trim().equals("")) {
-                    showMessageDialog(null, "You enter non-empty Symbol.");
+                    showMessageDialog(null, "Please enter non-empty Symbol.");
+                    trigg = false;
+                } else if (!(tableData[i][2].toString().trim().equals(tableData[i][2].toString().trim().toUpperCase()))){
+                    showMessageDialog(null, "Please enter the Symbol in all capital letters.");
+                    trigg = false;
                 }
 
-                if (tableData[i][0] != null && tableData[i][1] != null && tableData[i][2] != null && tableData[i][3] != null && tableData[i][4] != null) {
+                if (tableData[i][0] != null && tableData[i][1] != null && tableData[i][2] != null && tableData[i][3] != null && tableData[i][4] != null && tableData[i][5] != null ) {
                     if (tableData[i][0] != null) {
                         long portIDC = (long) tableData[i][0];
                         if (portIDC < 0) {
@@ -578,27 +579,59 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
                         }
                     }
                     if (tableData[i][5] != null) {
-                        double stopC = (double) tableData[i][5];
+                        String orderType = (String) tableData[i][5];
+                        switch(orderType){
+                            case "Market":
+                              if((tableData[i][6] != null && tableData[i][7] != null) || (tableData[i][6] != null && tableData[i][7] == null) || (tableData[i][6] == null && tableData[i][7] != null)){
+                                 showMessageDialog(null, "A market order should have neither a stop price nor a limit price.");
+                                 trigg = false; 
+                              }
+                              break;
+                            case "Limit":
+                                if((tableData[i][6] != null && tableData[i][7] == null) || (tableData[i][6] != null && tableData[i][7] != null) || (tableData[i][6] == null && tableData[i][7] == null)){
+                                 showMessageDialog(null, "A limit order should have a limit price and no stop price.");
+                                 trigg = false; 
+                              }
+                              break;
+                            case "Stop":
+                              if((tableData[i][6] == null && tableData[i][7] != null) || (tableData[i][6] != null && tableData[i][7] != null) || (tableData[i][6] == null && tableData[i][7] == null)){
+                                 showMessageDialog(null, "A stop order should have a stop price and no limit price.");
+                                 trigg = false; 
+                              }
+                              break;
+                            case "Stop Limit":
+                              if((tableData[i][6] == null && tableData[i][7] == null) || (tableData[i][6] != null && tableData[i][7] == null) || (tableData[i][6] == null && tableData[i][7] != null)){
+                                 showMessageDialog(null, "A Stop Limit order should have both a stop price and a limit price.");
+                                 trigg = false; 
+                              }
+                              break;
+                            default:
+                                showMessageDialog(null, "Something messed up in cases for order type.");
+                        }
+                    }
+
+                    if (tableData[i][6] != null) {
+                        double stopC = (double) tableData[i][6];
                         if (stopC < 0) {
                             showMessageDialog(null, "You have entered a negative stop price value. Please fix this value before submitting the order.");
                             trigg = false;
                         }
                     }
-                    if (tableData[i][6] != null) {
-                        double limitC = (double) tableData[i][6];
+                    if (tableData[i][7] != null) {
+                        double limitC = (double) tableData[i][7];
                         if (limitC < 0) {
                             showMessageDialog(null, "You have entered a negative limit price value. Please fix this value before submitting the order.");
                             trigg = false;
                         }
                     }
+                                       
                     if (trigg == true) {
                         thereAreOrders = true;
                         SingleOrder o = new SingleOrder(tableData[i]);
-                        //System.out.println(o.toString());
                         parsedOrders.add(o);
                     }
                 } else {
-                    String a, b, c, d, e;
+                    String a, b, c, d, e,f;
                     if (tableData[i][0] == null) {
                         a = "Portfolio ID";
                     } else {
@@ -624,7 +657,13 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
                     } else {
                         e = "";
                     }
-                    showMessageDialog(null, "You need to fill in the necessary fields before sending the order:\n" + a + "\n" + b + "\n" + c + "\n" + d + "\n" + e);
+                    if (tableData[i][5] == null) {
+                        f = "Order Type";
+                    } else {
+                        f = "";
+                    }
+                    
+                    showMessageDialog(null, "You need to fill in the necessary fields before sending the order:\n" + a + "\n" + b + "\n" + c + "\n" + d + "\n" + e + "\n" + f);
                 }
             }
         }
@@ -634,6 +673,10 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
             dtm.setRowCount(0);
             dtm.addRow(new Object[]{null, null, null, null, null, null, null, null, null});
             Order toSend = new Order(selectedTrader, parsedOrders);
+            Long currID = CMAIN.reportUser().getU_id();
+            String currUname = CMAIN.reportUser().getUsername();
+            toSend.setPmId(currID);
+            toSend.setPmUsername(currUname);
             ControllerPMCreatedOrders.handleOrder(toSend);
         }
     }//GEN-LAST:event_PMSendOrderActionPerformed

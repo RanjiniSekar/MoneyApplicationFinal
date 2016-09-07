@@ -72,7 +72,7 @@ public class TraderPendingRequestsTableModel extends AbstractTableModel{
          case 9:
           return widget.getOrderType();
          case 10:
-          return widget.getPmId();
+          return widget.getPmUsername();
          default:
           return null;
         }
