@@ -5,8 +5,9 @@ import java.util.List;
 
 public class Block {
     //CONSTRUCTOR FOR CREATING BLOCKS IN TRADER WINDOW
-    public Block(String symbol, int quantity, String orderType, String status, List<SingleOrder> holdingOrders,String stockExchange) {
-        this.symbol = symbol;
+    public Block(long id,String symbol, int quantity, String orderType, String status, List<SingleOrder> holdingOrders,String stockExchange) {
+        this.b_id = id;
+    	this.symbol = symbol;
         this.quantity = quantity;
         this.order_type = orderType;
         //this.stopPrice = stopPrice;
