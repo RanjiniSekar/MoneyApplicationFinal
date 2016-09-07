@@ -106,7 +106,7 @@ router.route('/traders')
     .get(function (req, res) {
         console.log('GET request on /admin/traders');
         pool.getConnection(function (err, conn) {
-            conn.query('SELECT * from user where user_type = ?', "trader", function (err, rows, fields) {
+            conn.query('SELECT * from user where user_type = ?', ["trader"], function (err, rows, fields) {
                 if (!err) {
                     console.log(rows);
                     res.json(rows);
