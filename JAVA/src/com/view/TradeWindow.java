@@ -1,6 +1,8 @@
 package com.view;
 
+import TestModules.JTableDataPopulation.JsonParsing;
 import UserObjects.Block;
+import UserObjects.Broker;
 import UserObjects.SingleOrder;
 import com.controller.CMAIN;
 import com.controller.CPMOrderHistory;
@@ -47,6 +49,7 @@ import javax.swing.table.TableRowSorter;
 import static javax.swing.JOptionPane.showMessageDialog;
 import static javax.swing.JOptionPane.showMessageDialog;
 import static javax.swing.JOptionPane.showMessageDialog;
+import org.json.JSONObject;
 
 /*
 * To change this license header, choose License Headers in Project Properties.
@@ -58,7 +61,8 @@ import static javax.swing.JOptionPane.showMessageDialog;
  * @author agopa3
  */
 public class TradeWindow extends javax.swing.JFrame {
-
+    
+    
     /**
      * Creates new form TradeWindow
      */
@@ -124,6 +128,7 @@ private void initComponents() {
         FilterOptionsTraderBlockHistory = new javax.swing.JComboBox<>();
         TraderBlockHistoryFilter = new javax.swing.JButton();
         ChangePassword = new javax.swing.JButton();
+        brokerListForBox = new ArrayList<Broker>();
         blockMap = new HashMap<Integer,ArrayList<SingleOrder>>();
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Trader Platform");
@@ -524,9 +529,16 @@ private void initComponents() {
         // TODO add your handling code here:
     }                                                        
 
-    public String[] blist() {
-        ArrayList<String> listOfBrokers = (ArrayList) CTraderGetAllBrokers.getBrokerList();
-        String[] b = new String[listOfBrokers.size()];
+    public String[] blist() {    
+        ArrayList<Broker> listOfBrokers = (ArrayList) CTraderGetAllBrokers.getBrokerList();
+        brokerListForBox = listOfBrokers;
+        ArrayList<String> listOfNames = new ArrayList<>();
+        for (int i = 0; i < listOfBrokers.size(); i++) {
+                String currName = listOfBrokers.get(i).getName();
+                listOfNames.add(currName);
+        }
+        
+        String[] b = new String[listOfNames.size()];
         b = listOfBrokers.toArray(b);
         return b;
     }
@@ -800,5 +812,6 @@ private void initComponents() {
     private javax.swing.JButton logOutButton;
     private javax.swing.JButton clearFilterRequests;
     private javax.swing.JButton clearFilterBlockHistory;
-    // End of variables declaration                   
+    public ArrayList<Broker> brokerListForBox;
+    // End of variables declaration              ;     
 }

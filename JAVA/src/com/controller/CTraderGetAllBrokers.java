@@ -25,7 +25,7 @@ import org.json.JSONObject;
  * @author csavas
  */
 public class CTraderGetAllBrokers {
-     public static List<String> getBrokerList() {
+     public static List<Broker> getBrokerList() {
         String brokersString = "";
         try {
             HttpResponse<JsonNode> resp = Unirest.get("http://139.59.17.119:8080/api/admin/brokers")
@@ -35,13 +35,13 @@ public class CTraderGetAllBrokers {
             JSONObject myRespO = new JSONObject(resp.getBody());
             JSONArray arrJson = myRespO.getJSONArray("array");
             //GET ORDERS FROM ARRAY
-            List<String> brokerList = new ArrayList<>();
+            List<Broker> brokerList = new ArrayList<>();
 
             for (int i = 0; i < arrJson.length(); i++) {
                 JSONObject currentBr = arrJson.getJSONObject(i);
                 Broker currentBroker = JsonParsing.parseJsonToBrokerObject(currentBr.toString());
                 String currName = currentBroker.getName();
-                brokerList.add(currName);
+                brokerList.add(currentBroker);
                 brokersString += currName + ", ";
             }
             System.out.println("Added Brokers to dropdown-list: " + brokersString);

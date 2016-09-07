@@ -500,7 +500,7 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        PMPlatformTabbedPane.addTab("Order History", PMOrderHistory);
+        PMPlatformTabbedPane.addTab("Executed Order History", PMOrderHistory);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
