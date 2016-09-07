@@ -9,6 +9,7 @@ import com.controller.CChangePassword;
 import com.mashape.unirest.http.exceptions.UnirestException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import static javax.swing.JOptionPane.showMessageDialog;
 import org.json.JSONException;
 
 /**
@@ -161,6 +162,9 @@ public class ChangePassword extends javax.swing.JFrame {
             OldPassTextField.setText("");
             NewPassTextField.setText("");
             ConfirmPassTextField.setText("");
+            System.out.println("Fields cleared in change password.");
+            showMessageDialog(null, "You have successfully changed password."); 
+            
         } catch (UnirestException | JSONException ex) {
             Logger.getLogger(ChangePassword.class.getName()).log(Level.SEVERE, null, ex);
         }
