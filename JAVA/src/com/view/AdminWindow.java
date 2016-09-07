@@ -45,22 +45,26 @@ public class AdminWindow extends javax.swing.JFrame {
         CreatePMButton = new java.awt.Button();
         CreatePortfolioNameText = new javax.swing.JTextField();
         CreatePortfolioUsernameText = new javax.swing.JTextField();
-        CreatePortfolioPasswordText = new javax.swing.JPasswordField();
+        CreatePortfolioPasswordText = new JPasswordField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         label4 = new java.awt.Label();
+        jLabel4 = new javax.swing.JLabel();
+        CreatePortfolioConfirmPasswordText = new JPasswordField();
         AddTrader = new javax.swing.JPanel();
         createTraderButton = new java.awt.Button();
         CreateTraderNameText = new javax.swing.JTextField();
         CreateTraderUsernameText = new javax.swing.JTextField();
-        CreateTraderPasswordText = new javax.swing.JPasswordField();
+        CreateTraderPasswordText = new JPasswordField();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         label5 = new java.awt.Label();
+        CreateTraderConfirmPasswordText = new JPasswordField();
+        jLabel5 = new javax.swing.JLabel();
         AddBroker = new javax.swing.JPanel();
         createBrokerButton = new java.awt.Button();
         CreateBrokerNameText = new javax.swing.JTextField();
@@ -72,18 +76,13 @@ public class AdminWindow extends javax.swing.JFrame {
         ChangePassword = new javax.swing.JPanel();
         label2 = new java.awt.Label();
         label3 = new java.awt.Label();
-        NewPassText = new javax.swing.JPasswordField();
-        OldPassText = new javax.swing.JPasswordField();
         label7 = new java.awt.Label();
-        ConfirmPassText = new javax.swing.JPasswordField();
         submitButton = new java.awt.Button();
         jPanel5 = new javax.swing.JPanel();
         label8 = new java.awt.Label();
-        OldPassText.setEchoChar('*');
-        NewPassText.setEchoChar('*');
-        ConfirmPassText.setEchoChar('*');
-        CreatePortfolioPasswordText.setEchoChar('*');
-        CreateTraderPasswordText.setEchoChar('*');
+        NewPassText = new JPasswordField();
+        ConfirmPassText = new JPasswordField();
+        OldPassText = new JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new java.awt.GridBagLayout());
@@ -98,11 +97,19 @@ public class AdminWindow extends javax.swing.JFrame {
             }
         });
 
+        CreatePortfolioNameText.setBackground(new java.awt.Color(51, 51, 51));
+        CreatePortfolioNameText.setForeground(new java.awt.Color(255, 255, 255));
         CreatePortfolioNameText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 CreatePortfolioNameTextActionPerformed(evt);
             }
         });
+
+        CreatePortfolioUsernameText.setBackground(new java.awt.Color(51, 51, 51));
+        CreatePortfolioUsernameText.setForeground(new java.awt.Color(255, 255, 255));
+
+        CreatePortfolioPasswordText.setBackground(new java.awt.Color(51, 51, 51));
+        CreatePortfolioPasswordText.setForeground(new java.awt.Color(255, 255, 255));
 
         jLabel1.setText("Name:");
 
@@ -138,25 +145,37 @@ public class AdminWindow extends javax.swing.JFrame {
                     .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
+        jLabel4.setText("Confirm Password:");
+
+        CreatePortfolioConfirmPasswordText.setBackground(new java.awt.Color(51, 51, 51));
+        CreatePortfolioConfirmPasswordText.setForeground(new java.awt.Color(255, 255, 255));
+
         javax.swing.GroupLayout AddPortfManLayout = new javax.swing.GroupLayout(AddPortfMan);
         AddPortfMan.setLayout(AddPortfManLayout);
         AddPortfManLayout.setHorizontalGroup(
             AddPortfManLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(AddPortfManLayout.createSequentialGroup()
-                .addGap(0, 207, Short.MAX_VALUE)
-                .addComponent(CreatePMButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(AddPortfManLayout.createSequentialGroup()
-                .addGap(124, 124, 124)
-                .addGroup(AddPortfManLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel2)
-                    .addComponent(CreatePortfolioPasswordText)
-                    .addComponent(CreatePortfolioUsernameText)
-                    .addComponent(CreatePortfolioNameText, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(42, 42, 42)
+                .addGroup(AddPortfManLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(AddPortfManLayout.createSequentialGroup()
+                        .addGroup(AddPortfManLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(CreatePortfolioConfirmPasswordText, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 60, Short.MAX_VALUE)
+                        .addComponent(CreatePMButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(AddPortfManLayout.createSequentialGroup()
+                        .addGroup(AddPortfManLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(AddPortfManLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(CreatePortfolioPasswordText, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(AddPortfManLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jLabel2)
+                                .addComponent(CreatePortfolioUsernameText))
+                            .addComponent(jLabel1)
+                            .addComponent(CreatePortfolioNameText, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         AddPortfManLayout.setVerticalGroup(
             AddPortfManLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -167,17 +186,25 @@ public class AdminWindow extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(CreatePortfolioNameText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel2)
-                .addGap(7, 7, 7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(CreatePortfolioUsernameText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(CreatePortfolioPasswordText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(CreatePMButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addGroup(AddPortfManLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(AddPortfManLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(CreatePMButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())
+                    .addGroup(AddPortfManLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(CreatePortfolioConfirmPasswordText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap(44, Short.MAX_VALUE))))
         );
 
         jTabbedPane1.addTab("Add Portfolio Manager", AddPortfMan);
@@ -191,6 +218,15 @@ public class AdminWindow extends javax.swing.JFrame {
                 createTraderButtonActionPerformed(evt);
             }
         });
+
+        CreateTraderNameText.setBackground(new java.awt.Color(51, 51, 51));
+        CreateTraderNameText.setForeground(new java.awt.Color(255, 255, 255));
+
+        CreateTraderUsernameText.setBackground(new java.awt.Color(51, 51, 51));
+        CreateTraderUsernameText.setForeground(new java.awt.Color(255, 255, 255));
+
+        CreateTraderPasswordText.setBackground(new java.awt.Color(51, 51, 51));
+        CreateTraderPasswordText.setForeground(new java.awt.Color(255, 255, 255));
 
         jLabel9.setText("Name:");
 
@@ -226,25 +262,35 @@ public class AdminWindow extends javax.swing.JFrame {
                     .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
+        CreateTraderConfirmPasswordText.setBackground(new java.awt.Color(51, 51, 51));
+        CreateTraderConfirmPasswordText.setForeground(new java.awt.Color(255, 255, 255));
+
+        jLabel5.setText("Confirm Password:");
+
         javax.swing.GroupLayout AddTraderLayout = new javax.swing.GroupLayout(AddTrader);
         AddTrader.setLayout(AddTraderLayout);
         AddTraderLayout.setHorizontalGroup(
             AddTraderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(AddTraderLayout.createSequentialGroup()
-                .addGap(0, 270, Short.MAX_VALUE)
-                .addComponent(createTraderButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
             .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(AddTraderLayout.createSequentialGroup()
-                .addGap(126, 126, 126)
-                .addGroup(AddTraderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(42, 42, 42)
+                .addGroup(AddTraderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel9)
-                    .addComponent(jLabel10)
-                    .addComponent(CreateTraderPasswordText)
-                    .addComponent(CreateTraderUsernameText)
-                    .addComponent(CreateTraderNameText, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(CreateTraderNameText, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(AddTraderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jLabel10)
+                        .addComponent(CreateTraderUsernameText))
+                    .addGroup(AddTraderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(CreateTraderPasswordText))
+                    .addGroup(AddTraderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(CreateTraderConfirmPasswordText, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(228, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AddTraderLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(createTraderButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(50, 50, 50))
         );
         AddTraderLayout.setVerticalGroup(
             AddTraderLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -255,14 +301,18 @@ public class AdminWindow extends javax.swing.JFrame {
                 .addComponent(jLabel9)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(CreateTraderNameText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel10)
-                .addGap(7, 7, 7)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(CreateTraderUsernameText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel11)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(CreateTraderPasswordText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(CreateTraderConfirmPasswordText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(createTraderButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
@@ -279,6 +329,12 @@ public class AdminWindow extends javax.swing.JFrame {
                 createBrokerButtonActionPerformed(evt);
             }
         });
+
+        CreateBrokerNameText.setBackground(new java.awt.Color(51, 51, 51));
+        CreateBrokerNameText.setForeground(new java.awt.Color(255, 255, 255));
+
+        CreateBrokerEmailText.setBackground(new java.awt.Color(51, 51, 51));
+        CreateBrokerEmailText.setForeground(new java.awt.Color(255, 255, 255));
 
         jLabel13.setText("Name:");
 
@@ -356,21 +412,7 @@ public class AdminWindow extends javax.swing.JFrame {
 
         label3.setText("New Password:");
 
-        NewPassText.setBackground(new java.awt.Color(51, 51, 51));
-        NewPassText.setForeground(new java.awt.Color(255, 255, 255));
-
-        OldPassText.setBackground(new java.awt.Color(51, 51, 51));
-        OldPassText.setForeground(new java.awt.Color(255, 255, 255));
-        OldPassText.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                OldPassTextActionPerformed(evt);
-            }
-        });
-
         label7.setText("Confirm Password:");
-
-        ConfirmPassText.setBackground(new java.awt.Color(51, 51, 51));
-        ConfirmPassText.setForeground(new java.awt.Color(255, 255, 255));
 
         submitButton.setBackground(new java.awt.Color(51, 51, 51));
         submitButton.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
@@ -406,6 +448,15 @@ public class AdminWindow extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        NewPassText.setBackground(new java.awt.Color(51, 51, 51));
+        NewPassText.setForeground(new java.awt.Color(255, 255, 255));
+
+        ConfirmPassText.setBackground(new java.awt.Color(51, 51, 51));
+        ConfirmPassText.setForeground(new java.awt.Color(255, 255, 255));
+
+        OldPassText.setBackground(new java.awt.Color(51, 51, 51));
+        OldPassText.setForeground(new java.awt.Color(255, 255, 255));
+
         javax.swing.GroupLayout ChangePasswordLayout = new javax.swing.GroupLayout(ChangePassword);
         ChangePassword.setLayout(ChangePasswordLayout);
         ChangePasswordLayout.setHorizontalGroup(
@@ -422,9 +473,11 @@ public class AdminWindow extends javax.swing.JFrame {
                             .addComponent(label7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(ChangePasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(OldPassText, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(NewPassText, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ConfirmPassText, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(NewPassText)
+                            .addGroup(ChangePasswordLayout.createSequentialGroup()
+                                .addComponent(ConfirmPassText, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 1, Short.MAX_VALUE))
+                            .addComponent(OldPassText))))
                 .addContainerGap(77, Short.MAX_VALUE))
         );
         ChangePasswordLayout.setVerticalGroup(
@@ -437,16 +490,16 @@ public class AdminWindow extends javax.swing.JFrame {
                     .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(OldPassText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(ChangePasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(ChangePasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(label3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(NewPassText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addGroup(ChangePasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(ChangePasswordLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(label7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(ConfirmPassText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(34, 34, 34)
                 .addComponent(submitButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(45, Short.MAX_VALUE))
+                .addContainerGap(74, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Change Password", ChangePassword);
@@ -459,17 +512,35 @@ public class AdminWindow extends javax.swing.JFrame {
     private void CreatePMButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CreatePMButtonActionPerformed
         String nameText = CreatePortfolioNameText.getText();
         String usernameText = CreatePortfolioUsernameText.getText();
-        String passwordText = new String(CreatePortfolioPasswordText.getPassword());
+        String passwordText = CreatePortfolioPasswordText.getText();
+        String confirmPasswordText = CreatePortfolioConfirmPasswordText.getText();
         //SEND TO CONTROLLER TO CREATE PM AND SEND TO DB
-        CAdmin.addPortfolioManager(nameText, usernameText, passwordText); 
+         if(passwordText.equals(confirmPasswordText)){
+             CAdmin.addPortfolioManager(nameText, usernameText, passwordText); 
+             CreatePortfolioNameText.setText("");
+             CreatePortfolioUsernameText.setText("");
+             CreatePortfolioPasswordText.setText("");
+             CreatePortfolioConfirmPasswordText.setText("");
+        } else {
+            showMessageDialog(null, "Please check that the password you entered matches what you entered in the confirm password field.");
+        }  
     }//GEN-LAST:event_CreatePMButtonActionPerformed
 
     private void createTraderButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createTraderButtonActionPerformed
         String nameText = CreateTraderNameText.getText();
         String usernameText = CreateTraderUsernameText.getText();
-        String passwordText = new String(CreateTraderPasswordText.getPassword());
+        String passwordText = CreateTraderPasswordText.getText();
+        String confirmPasswordText = CreateTraderConfirmPasswordText.getText();
         //SEND TO CONTROLLER TO CREATE TRADER AND SEND TO DB
-        CAdmin.addTrader(nameText, usernameText, passwordText); 
+        if(passwordText.equals(confirmPasswordText)){
+             CAdmin.addTrader(nameText, usernameText, passwordText); 
+             CreateTraderNameText.setText("");
+             CreateTraderUsernameText.setText("");
+             CreateTraderPasswordText.setText("");
+             CreateTraderConfirmPasswordText.setText("");
+        } else {
+            showMessageDialog(null, "Please check that the password you entered matches what you entered in the confirm password field.");
+        }      
     }//GEN-LAST:event_createTraderButtonActionPerformed
 
     private void createBrokerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createBrokerButtonActionPerformed
@@ -477,7 +548,9 @@ public class AdminWindow extends javax.swing.JFrame {
         String usernameText = CreateBrokerEmailText.getText();
         //SEND TO CONTROLLER TO CREATE BROKER AND SEND TO DB
         try {
-        CAdmin.addBroker(nameText, usernameText); 
+            CAdmin.addBroker(nameText, usernameText); 
+            CreateBrokerNameText.setText("");
+            CreateBrokerEmailText.setText("");
         }
         catch (UnirestException e) {
             System.err.println("Unirest Exception in the View: " + e.getMessage());
@@ -488,19 +561,18 @@ public class AdminWindow extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_CreatePortfolioNameTextActionPerformed
 
-    private void OldPassTextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OldPassTextActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_OldPassTextActionPerformed
-
     private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButtonActionPerformed
         //ADD FIELDS
-        String oldPassText = new String(OldPassText.getPassword());
-        String newPassText = new String(NewPassText.getPassword());
-        String confirmPassText = new String(ConfirmPassText.getPassword());
+        String oldPassText = OldPassText.getText();
+        String newPassText = NewPassText.getText();
+        String confirmPassText = ConfirmPassText.getText();
 
         try {
             //GET THE OLD PASSWORD OF USER HERE
             CChangePassword.handleChange(oldPassText, newPassText, confirmPassText);
+            OldPassText.setText("");
+            NewPassText.setText("");
+            ConfirmPassText.setText("");
         } catch (JSONException | UnirestException ex) {
             Logger.getLogger(AdminWindow.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -549,18 +621,20 @@ public class AdminWindow extends javax.swing.JFrame {
     private javax.swing.JPanel AddPortfMan;
     private javax.swing.JPanel AddTrader;
     private javax.swing.JPanel ChangePassword;
-    private javax.swing.JPasswordField ConfirmPassText;
+    private javax.swing.JTextField ConfirmPassText;
     private javax.swing.JTextField CreateBrokerEmailText;
     private javax.swing.JTextField CreateBrokerNameText;
     private java.awt.Button CreatePMButton;
+    private javax.swing.JTextField CreatePortfolioConfirmPasswordText;
     private javax.swing.JTextField CreatePortfolioNameText;
-    private javax.swing.JPasswordField CreatePortfolioPasswordText;
+    private javax.swing.JTextField CreatePortfolioPasswordText;
     private javax.swing.JTextField CreatePortfolioUsernameText;
+    private javax.swing.JTextField CreateTraderConfirmPasswordText;
     private javax.swing.JTextField CreateTraderNameText;
-    private javax.swing.JPasswordField CreateTraderPasswordText;
+    private javax.swing.JTextField CreateTraderPasswordText;
     private javax.swing.JTextField CreateTraderUsernameText;
-    private javax.swing.JPasswordField NewPassText;
-    private javax.swing.JPasswordField OldPassText;
+    private javax.swing.JTextField NewPassText;
+    private javax.swing.JTextField OldPassText;
     private java.awt.Button createBrokerButton;
     private java.awt.Button createTraderButton;
     private javax.swing.JLabel jLabel1;
@@ -570,6 +644,8 @@ public class AdminWindow extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
