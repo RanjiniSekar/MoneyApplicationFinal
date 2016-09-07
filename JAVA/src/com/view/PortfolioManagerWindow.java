@@ -118,9 +118,10 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
 
         PMPlatformTabbedPane.setMinimumSize(new java.awt.Dimension(150, 65));
 
-        PMPendingOrdersTable.setBackground(new java.awt.Color(240, 240, 240));
+        PMPendingOrdersTable.setBackground(new java.awt.Color(102, 102, 102));
         PMPendingOrdersTable.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         String[] CurrencyValues = {"USD", "GBP"};
+        PMPendingOrdersTable.setForeground(new java.awt.Color(255, 255, 255));
         PMPendingOrdersTable.setModel(CPMPendingRequest.getTableModel());
         PMPendingOrdersTable.setGridColor(new java.awt.Color(255, 255, 255));
         PMPendingOrdersTable.getTableHeader().setReorderingAllowed(false);
@@ -384,8 +385,9 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
 
         PMPlatformTabbedPane.addTab("Create Order", CreateOrder);
 
-        PMOrderHistoryTable.setBackground(new java.awt.Color(240, 240, 240));
+        PMOrderHistoryTable.setBackground(new java.awt.Color(102, 102, 102));
         PMOrderHistoryTable.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        PMOrderHistoryTable.setForeground(new java.awt.Color(255, 255, 255));
         PMOrderHistoryTable.setModel(CPMOrderHistory.getTableModel());
         PMOrderHistoryTable.setGridColor(new java.awt.Color(255, 255, 255));
         PMOrderHistoryTable.getTableHeader().setReorderingAllowed(false);
