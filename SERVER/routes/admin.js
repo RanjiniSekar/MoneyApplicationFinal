@@ -1,6 +1,6 @@
 var express = require('express');
-var pool = require('../db/config');
 var router = express.Router();
+var pool = require('../db/config');
 
 router.route('/')
     .get(function (req, res) {
