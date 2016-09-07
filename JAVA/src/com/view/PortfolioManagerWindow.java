@@ -704,7 +704,7 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_logOutButtonActionPerformed
 
     private void ClearFilterPMPendingOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClearFilterPMPendingOrderActionPerformed
-        ClearFilterPMPendingOrder.setText("");
+        FilterTextPMPending.setText("");
         final TableRowSorter<TableModel> sorter = new TableRowSorter<TableModel>(PMPendingOrdersTable.getModel());
         PMPendingOrdersTable.setRowSorter(sorter);
         sorter.setRowFilter(null);
@@ -712,7 +712,7 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
 
     private void ClearFilterPMOrderHistoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClearFilterPMOrderHistoryActionPerformed
 
-        ClearFilterPMOrderHistory.setText("");
+        FilterTextPMOrderHistory.setText("");
         final TableRowSorter<TableModel> sorter = new TableRowSorter<TableModel>(PMOrderHistoryTable.getModel());
         PMOrderHistoryTable.setRowSorter(sorter);
         sorter.setRowFilter(null);        // TODO add your handling code here:
@@ -720,7 +720,7 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
 
     private void ClearFilterPMEODActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClearFilterPMEODActionPerformed
         // TODO add your handling code here:
-        ClearFilterPMEOD.setText("");
+        FilterTextPMEOD.setText("");
         final TableRowSorter<TableModel> sorter = new TableRowSorter<TableModel>(PMEODBoughtTable.getModel());
         PMEODBoughtTable.setRowSorter(sorter);
         final TableRowSorter<TableModel> sorter2 = new TableRowSorter<TableModel>(PMEODSoldTable.getModel());
