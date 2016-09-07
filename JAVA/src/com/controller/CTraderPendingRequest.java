@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.table.TableModel;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -25,7 +26,12 @@ import org.json.JSONObject;
  */
 public class CTraderPendingRequest {
     
-     public static List<SingleOrder> updateOrders() {
+    public static TraderPendingRequestsTableModel getTableModel() {
+        ArrayList objList = (ArrayList) updateOrders();
+        return new TraderPendingRequestsTableModel(objList);
+    }
+    
+    public static List<SingleOrder> updateOrders() {
         String currUsername = CMAIN.reportUser().getUsername();
         HttpResponse<JsonNode> resp;
         try {
@@ -54,7 +60,4 @@ public class CTraderPendingRequest {
             return null;
         }
     }
-    
-    
-    
 }
