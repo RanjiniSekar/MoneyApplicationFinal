@@ -708,6 +708,7 @@ private void initComponents() {
     	String b_email = br.getEmail();
     	Gson gson = new Gson();
     	String json = "";
+    	ArrayList<Block> blockList  = new ArrayList<Block>();
     	for (Map.Entry<Integer, ArrayList<SingleOrder>> entry : blockMap.entrySet()){
     		ArrayList<SingleOrder> temp = entry.getValue();
     		int quantity=0;
@@ -715,10 +716,9 @@ private void initComponents() {
     			quantity = quantity + a.getQuantity();
     		}
     		Block b = new Block(b_id,b_email,temp.get(0).getSymbol(),quantity,temp.get(0).getOrderType(),temp.get(0).getStatus(),temp,temp.get(0).getStockExchange());
-    		
-    		json += gson.toJson(b) + " ";
-    		
+    		blockList.add(b);
     	}
+    	json = gson.toJson(blockList);
     	System.out.println(json);
     }  
     
