@@ -3,6 +3,7 @@ package com.view;
 import UserObjects.Order;
 import UserObjects.SingleOrder;
 import UserObjects.Trader;
+import com.controller.CMAIN;
 import com.controller.CPMOrderHistory;
 import com.controller.CPMPendingRequest;
 import com.controller.ControllerPMCreatedOrders;
@@ -647,6 +648,7 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
         UserLogin u = new UserLogin();
         //u.setSize(300,300);
         u.setVisible (true);
+        CMAIN.handleLogout();
       this.dispose();
 
     }//GEN-LAST:event_logOutButtonActionPerformed

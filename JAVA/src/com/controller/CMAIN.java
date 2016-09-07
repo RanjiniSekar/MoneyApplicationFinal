@@ -38,6 +38,10 @@ public class CMAIN {
         
     }
     
+    static public void handleLogout(){
+        CMAIN.currentUser = new UnknownUser("Unkown", "Unknown");
+    }
+    
     static public User reportUser(){
         return currentUser;
     }
