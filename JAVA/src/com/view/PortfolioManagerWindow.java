@@ -47,7 +47,7 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
         initComponents();
 
         //START TIMER TO UPDATE ORDERS
-        Timer timer = new Timer(5000, new ActionListener() {
+        Timer timer = new Timer(10000, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 ArrayList<SingleOrder> ordersDone = (ArrayList) CPMOrderHistory.updateOrders();
@@ -63,7 +63,7 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
         });
         timer.start();
         try {
-            Thread.sleep(1000);
+            Thread.sleep(5000);
         } catch (InterruptedException e) {
         }
         timer.restart();
