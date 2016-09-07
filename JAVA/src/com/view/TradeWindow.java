@@ -716,6 +716,7 @@ private void initComponents() {
         long b_id = br.getBrokerId();
         String b_name = br.getName();
     	String b_email = br.getEmail();
+        System.out.println("Broker name: " + b_name + " and email: " + b_email );
     	Gson gson = new Gson();
     	String json = "";
     	ArrayList<Block> blockList  = new ArrayList<Block>();

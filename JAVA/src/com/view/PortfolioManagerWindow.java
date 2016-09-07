@@ -1,7 +1,9 @@
 package com.view;
 
+import UserObjects.Broker;
 import UserObjects.Order;
 import UserObjects.SingleOrder;
+import UserObjects.Trader;
 import com.controller.CMAIN;
 import com.controller.CPMOrderMANIAC;
 import com.controller.ControllerPMCreatedOrders;
@@ -87,7 +89,6 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
         }
         timer.restart();
     }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -528,10 +529,19 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
     private void PMSendOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PMSendOrderActionPerformed
         DefaultTableModel dtm = (DefaultTableModel) PMSendOrderTable.getModel();
         int nRow = dtm.getRowCount();
+        long currUID = 0;
         int nCol = dtm.getColumnCount();
         Object[][] tableData = new Object[nRow][nCol];
         List<SingleOrder> parsedOrders = new ArrayList();
         String selectedTrader = String.valueOf(PMSelectTraderOptions.getSelectedItem());
+        
+        for(int t = 0; t < traderListForBox.size(); t++){
+            if(traderListForBox.get(t).getUsername().equals(selectedTrader)){
+                currUID = traderListForBox.get(t).getU_id();
+                System.out.println("OUR TRADER WE ASSIGN TO IS: " + selectedTrader + " HIS ID IS: " + currUID);
+            }
+        }
+        
         boolean thereAreOrders = false;
         boolean ignoreRowFlag = false;
 
@@ -673,6 +683,7 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
             dtm.setRowCount(0);
             dtm.addRow(new Object[]{null, null, null, null, null, null, null, null, null});
             Order toSend = new Order(selectedTrader, parsedOrders);
+            toSend.setAssignedTo(currUID);
             Long currID = CMAIN.reportUser().getU_id();
             String currUname = CMAIN.reportUser().getUsername();
             toSend.setPmId(currID);
@@ -856,16 +867,20 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
 //        t.add("Automatic");
 //    }
     public String[] tlist() {
-        ArrayList<String> TList = new ArrayList<>();
-        TList.add("Automatic");
-
-        // this.addAuto(TList);
-        List<String> listOTraders = ControllerPMCreatedOrders.getTraderList();
-        for (int i = 0; i < listOTraders.size(); i++) {
-            TList.add(listOTraders.get(i));
+        ArrayList<String> NameList = new ArrayList<>();
+        ArrayList<Long> IDList = new ArrayList<>();
+        NameList.add("Automatic");
+        
+        List<Trader> listOfTraders = ControllerPMCreatedOrders.getTraderList();
+               
+        for (int i = 0; i < listOfTraders.size(); i++) {
+            traderListForBox.add(listOfTraders.get(i));
+            NameList.add(listOfTraders.get(i).getUsername());
+            IDList.add(listOfTraders.get(i).getU_id());
         }
-        String[] t = new String[TList.size()];
-        t = TList.toArray(t);
+        
+        String[] t = new String[NameList.size()];
+        t = NameList.toArray(t);
         return t;
     }
 
@@ -937,5 +952,5 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JButton logOutButton;
     // End of variables declaration//GEN-END:variables
-
+    static public ArrayList<Trader> traderListForBox = new ArrayList<>();
 }
