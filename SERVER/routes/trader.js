@@ -10,6 +10,36 @@ router.get('/', function (req, res) {
 });
 
 
+router.route('/orders/:username')
+    .get(function (req, res) {
+        console.log('Get request on order');
+        pool.getConnection(function (err, conn) {
+            conn.query({
+                    sql: 'SELECT s.*, p.assigned_to
+                    FROM single_order s
+                    INNER JOIN pm_order p
+                    ON s.order_id = p.order_id
+                    WHERE p.assigned_to = (SELECT u_id FROM user WHERE username = ? )
+                    ORDER BY s.sorder_id;
+                    '
+                }, [req.params.username],
+                function (error, results, fields) {
+                    // error will be an Error if one occurred during the query 
+                    // results will contain the results of the query 
+                    // fields will contain information about the returned results fields (if any)
+                    if (error) {
+                        console.log('Error performing the query:');
+                        console.log(error);
+                        res.status(500).send(error);
+                    } else {
+                        res.json(results);
+                    }
+                });
+            conn.release();
+        });
+    });
+
+
 router.route('/blocks')
     .post(function (req, res) {
         /* Insert general block info into trader_block table */
