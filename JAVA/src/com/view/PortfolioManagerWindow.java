@@ -48,8 +48,8 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
     public PortfolioManagerWindow() {
         super();
         //The following line is for the exit confirmation
-         
-        addWindowListener( new AreYouSure() );
+
+        addWindowListener(new AreYouSure());
         initComponents();
 
         //START TIMER TO UPDATE ORDERS
@@ -60,15 +60,15 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
                 System.out.println("ORDERS GOTTEN FROM MANIAC:   " + ordersDone.toString());
                 ArrayList<SingleOrder> ordersPending = new ArrayList<>();
                 ArrayList<SingleOrder> ordersExecuted = new ArrayList<>();
-                
+
                 if (null != ordersDone) {
-                    for(int i=0; i < ordersDone.size(); i++){
+                    for (int i = 0; i < ordersDone.size(); i++) {
                         String currStatus = ordersDone.get(i).getStatus();
-                        if(currStatus.equals("Pending")){
+                        if (currStatus.equals("Pending")) {
                             ordersPending.add(ordersDone.get(i));
                             System.out.println("ADDED TO PENDING");
                         }
-                        if(currStatus.equals("Executed")){
+                        if (currStatus.equals("Executed")) {
                             ordersExecuted.add(ordersDone.get(i));
                             System.out.println("ADDED TO EXECUTED");
                         }
@@ -536,6 +536,7 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
         List<SingleOrder> parsedOrders = new ArrayList();
         String selectedTrader = String.valueOf(PMSelectTraderOptions.getSelectedItem());
         boolean thereAreOrders = false;
+        boolean ignoreRowFlag = false;
 
         for (int i = 0; i < nRow; i++) {
             for (int j = 0; j < nCol; j++) {
@@ -544,78 +545,90 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
             System.out.println("Retrieved all table data");
             boolean trigg = true;
 
-            //double check symbol is not null
-            if(tableData[i][2] == null){
-                trigg = false;
-            } else if(tableData[i][2].toString().trim().equals("")){
-                showMessageDialog(null, "You enter non-empty Symbol.");
+            for (int k = 0; k < nCol; k++) {
+                if (tableData[i][k] != null) {
+                    ignoreRowFlag = false;
+                } else {
+                    ignoreRowFlag = true;
+                    System.out.println("IGNORING EMPTY ROW");
+                }
             }
-            
-            if (tableData[i][0] != null && tableData[i][1] != null && tableData[i][2] != null && tableData[i][3] != null && tableData[i][4] != null) {
-                if (tableData[i][0] != null) {
-                    long portIDC = (long) tableData[i][0];
-                    if (portIDC < 0) {
-                        showMessageDialog(null, "You have entered a negative portfolio ID value. Please fix this value before submitting the order.");
-                        trigg = false;
+
+            //double check symbol is not null
+            if (ignoreRowFlag == false) {
+                if (tableData[i][2] == null) {
+                    trigg = false;
+                } else if (tableData[i][2].toString().trim().equals("")) {
+                    showMessageDialog(null, "You enter non-empty Symbol.");
+                }
+
+                if (tableData[i][0] != null && tableData[i][1] != null && tableData[i][2] != null && tableData[i][3] != null && tableData[i][4] != null) {
+                    if (tableData[i][0] != null) {
+                        long portIDC = (long) tableData[i][0];
+                        if (portIDC < 0) {
+                            showMessageDialog(null, "You have entered a negative portfolio ID value. Please fix this value before submitting the order.");
+                            trigg = false;
+                        }
                     }
-                }
-                if (tableData[i][3] != null) {
-                    int quantityC = (int) tableData[i][3];
-                    if (quantityC < 0) {
-                        showMessageDialog(null, "You have entered a negative quantity value. Please fix this value before submitting the order.");
-                        trigg = false;
+                    if (tableData[i][3] != null) {
+                        int quantityC = (int) tableData[i][3];
+                        if (quantityC < 0) {
+                            showMessageDialog(null, "You have entered a negative quantity value. Please fix this value before submitting the order.");
+                            trigg = false;
+                        }
                     }
-                }
-                if (tableData[i][5] != null) {
-                    double stopC = (double) tableData[i][5];
-                    if (stopC < 0) {
-                        showMessageDialog(null, "You have entered a negative stop price value. Please fix this value before submitting the order.");
-                        trigg = false;
+                    if (tableData[i][5] != null) {
+                        double stopC = (double) tableData[i][5];
+                        if (stopC < 0) {
+                            showMessageDialog(null, "You have entered a negative stop price value. Please fix this value before submitting the order.");
+                            trigg = false;
+                        }
                     }
-                }
-                if (tableData[i][6] != null) {
-                    double limitC = (double) tableData[i][6];
-                    if (limitC < 0) {
-                        showMessageDialog(null, "You have entered a negative limit price value. Please fix this value before submitting the order.");
-                        trigg = false;
+                    if (tableData[i][6] != null) {
+                        double limitC = (double) tableData[i][6];
+                        if (limitC < 0) {
+                            showMessageDialog(null, "You have entered a negative limit price value. Please fix this value before submitting the order.");
+                            trigg = false;
+                        }
                     }
-                }
-                if (trigg == true) {
-                    thereAreOrders = true;
-                    SingleOrder o = new SingleOrder(tableData[i]);
-                    //System.out.println(o.toString());
-                    parsedOrders.add(o);
-                }
-            } else {
-                String a, b, c, d, e;
-                if (tableData[i][0] == null) {
-                    a = "Portfolio ID";
+                    if (trigg == true) {
+                        thereAreOrders = true;
+                        SingleOrder o = new SingleOrder(tableData[i]);
+                        //System.out.println(o.toString());
+                        parsedOrders.add(o);
+                    }
                 } else {
-                    a = "";
+                    String a, b, c, d, e;
+                    if (tableData[i][0] == null) {
+                        a = "Portfolio ID";
+                    } else {
+                        a = "";
+                    }
+                    if (tableData[i][1] == null) {
+                        b = "Stock Exchange";
+                    } else {
+                        b = "";
+                    }
+                    if (tableData[i][2] == null || tableData[i][2].toString().trim().equals("")) {
+                        c = "Symbol";
+                    } else {
+                        c = "";
+                    }
+                    if (tableData[i][3] == null) {
+                        d = "Quantity";
+                    } else {
+                        d = "";
+                    }
+                    if (tableData[i][4] == null) {
+                        e = "Action";
+                    } else {
+                        e = "";
+                    }
+                    showMessageDialog(null, "You need to fill in the necessary fields before sending the order:\n" + a + "\n" + b + "\n" + c + "\n" + d + "\n" + e);
                 }
-                if (tableData[i][1] == null) {
-                    b = "Stock Exchange";
-                } else {
-                    b = "";
-                }
-                if (tableData[i][2] == null || tableData[i][2].toString().trim().equals("")) {
-                    c = "Symbol";
-                } else {
-                    c = "";
-                }
-                if (tableData[i][3] == null) {
-                    d = "Quantity";
-                } else {
-                    d = "";
-                }
-                if (tableData[i][4] == null) {
-                    e = "Action";
-                } else {
-                    e = "";
-                }
-                showMessageDialog(null, "You need to fill in the necessary fields before sending the order:\n" + a + "\n" + b + "\n" + c + "\n" + d + "\n" + e);
             }
         }
+        
         if (thereAreOrders) {
             showMessageDialog(null, "You have successfully sent your trades.");
             dtm.setRowCount(0);
@@ -645,23 +658,23 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_PMPendingOrderFilterActionPerformed
 
     //Code for giving a pop up box for exit confirmation
-    private class AreYouSure extends WindowAdapter {  
-        public void windowClosing( WindowEvent e ) {  
-            int option = JOptionPane.showOptionDialog(  
-                    PortfolioManagerWindow.this,  
-                    "Are you sure you want to quit?",  
-                    "Exit Dialog", JOptionPane.YES_NO_OPTION,  
-                    JOptionPane.WARNING_MESSAGE, null, null,  
-                    null );  
-            if( option == JOptionPane.YES_OPTION ) {  
-                dispose();  
-            } 
-            else{
+    private class AreYouSure extends WindowAdapter {
+
+        public void windowClosing(WindowEvent e) {
+            int option = JOptionPane.showOptionDialog(
+                    PortfolioManagerWindow.this,
+                    "Are you sure you want to quit?",
+                    "Exit Dialog", JOptionPane.YES_NO_OPTION,
+                    JOptionPane.WARNING_MESSAGE, null, null,
+                    null);
+            if (option == JOptionPane.YES_OPTION) {
+                dispose();
+            } else {
                 setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
             }
-        }  
-    }  
-    
+        }
+    }
+
     private void PMEODFilterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PMEODFilterActionPerformed
         final TableRowSorter<TableModel> sorter = new TableRowSorter<TableModel>(PMEODBoughtTable.getModel());
         PMEODBoughtTable.setRowSorter(sorter);
@@ -687,19 +700,19 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
             sorter.setRowFilter(RowFilter.regexFilter(text));
         }
     }//GEN-LAST:event_PMOrderHistoryFilterActionPerformed
-                                                    
-    
+
+
     private void PMAddOrderRowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PMAddOrderRowActionPerformed
         DefaultTableModel m = (DefaultTableModel) PMSendOrderTable.getModel();
         m.addRow(new Object[]{null, null, null, null, null, null, null, null, null});
     }//GEN-LAST:event_PMAddOrderRowActionPerformed
 
     private void logOutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logOutButtonActionPerformed
-    	UserLogin u = new UserLogin();
+        UserLogin u = new UserLogin();
         //u.setSize(300,300);
-        u.setVisible (true);
+        u.setVisible(true);
         CMAIN.handleLogout();
-      this.dispose(); 
+        this.dispose();
 
     }//GEN-LAST:event_logOutButtonActionPerformed
 
@@ -799,17 +812,15 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
 //    public void addAuto(ArrayList<String> t) {
 //        t.add("Automatic");
 //    }
-
     public String[] tlist() {
         ArrayList<String> TList = new ArrayList<>();
         TList.add("Automatic");
-        
-       // this.addAuto(TList);
+
+        // this.addAuto(TList);
         List<String> listOTraders = ControllerPMCreatedOrders.getTraderList();
-        for(int i = 0 ; i<listOTraders.size();i++)
-        {
-           TList.add(listOTraders.get(i));
-        } 
+        for (int i = 0; i < listOTraders.size(); i++) {
+            TList.add(listOTraders.get(i));
+        }
         String[] t = new String[TList.size()];
         t = TList.toArray(t);
         return t;
