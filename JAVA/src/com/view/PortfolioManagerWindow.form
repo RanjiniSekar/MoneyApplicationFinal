@@ -22,7 +22,7 @@
     <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
     <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
-    <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,2,125,0,0,3,-113"/>
+    <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,2,49,0,0,3,-105"/>
   </AuxValues>
 
   <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridBagLayout"/>
@@ -78,6 +78,8 @@
                       <Component id="FilterOptionsPMPending" min="-2" pref="126" max="-2" attributes="0"/>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="PMPendingOrderFilter" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="ClearFilterPMPendingOrder" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
@@ -92,6 +94,7 @@
                           <Component id="FilterTextPMPending" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
                           <Component id="FilterOptionsPMPending" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
                           <Component id="PMPendingOrderFilter" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="ClearFilterPMPendingOrder" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
@@ -120,7 +123,7 @@
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                      <Connection code="CPMPendingRequest.getTableModel()" type="code"/>
+                      <Connection code="CPMPendingRequest.getPRTableModel()" type="code"/>
                     </Property>
                     <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                       <TableColumnModel selectionModel="0"/>
@@ -169,6 +172,14 @@
                 <Property name="text" type="java.lang.String" value="Filter Text"/>
               </Properties>
             </Component>
+            <Component class="javax.swing.JButton" name="ClearFilterPMPendingOrder">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Clear Filter"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ClearFilterPMPendingOrderActionPerformed"/>
+              </Events>
+            </Component>
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="PMEOD">
@@ -211,7 +222,9 @@
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace min="-2" pref="118" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="ClearFilterPMEOD" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="55" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -238,6 +251,7 @@
                           <Component id="PMEODFilter" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="FilterOptionsPMEOD" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
                           <Component id="FilterTextPMEOD" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
+                          <Component id="ClearFilterPMEOD" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
@@ -377,6 +391,14 @@
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PMEODFilterActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="ClearFilterPMEOD">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Clear Filter"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ClearFilterPMEODActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>
@@ -564,6 +586,8 @@
                               <Component id="FilterOptionsPMOrderHistory" min="-2" pref="126" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
                               <Component id="PMOrderHistoryFilter" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="ClearFilterPMOrderHistory" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
@@ -580,6 +604,7 @@
                           <Component id="FilterTextPMOrderHistory" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
                           <Component id="FilterOptionsPMOrderHistory" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
                           <Component id="PMOrderHistoryFilter" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="ClearFilterPMOrderHistory" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
@@ -608,7 +633,7 @@
                       <Color blue="ff" green="ff" red="ff" type="rgb"/>
                     </Property>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor">
-                      <Connection code="CPMOrderHistory.getTableModel()" type="code"/>
+                      <Connection code="CPMPendingRequest.getOHTableModel()" type="code"/>
                     </Property>
                     <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                       <TableColumnModel selectionModel="0"/>
@@ -658,6 +683,14 @@
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PMOrderHistoryFilterActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="ClearFilterPMOrderHistory">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Clear Filter"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ClearFilterPMOrderHistoryActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>

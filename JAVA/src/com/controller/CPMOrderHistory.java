@@ -32,45 +32,5 @@ import org.json.JSONObject;
  */
 public class CPMOrderHistory {
 
-    public static TableModel getTableModel() {
-        ArrayList<SingleOrder> objList = (ArrayList) updateOrders();
-        return new PMOrderHistoryTableModel(objList);
 
-    }
-
-    private static ArrayList<SingleOrder> getData() {
-        PortfolioManagerDAO pmDAO = new PortfolioManagerDAO();
-        return pmDAO.getOrderHistoryObjList();
-    }
-
-    public static List<SingleOrder> updateOrders() {
-        String currUsername = CMAIN.reportUser().getUsername();
-        HttpResponse<JsonNode> resp;
-        try {
-            resp = Unirest.get("http://139.59.17.119:8080/api/pm/orders/" + currUsername)
-                    .header("content-type", "application/json")
-                    .asJson();
-
-            //THIS IS THE JSONRESPONSE TURNED INTO JSONOBJECT  
-            JSONObject myRespO = new JSONObject(resp.getBody());
-
-            JSONArray arrJson = myRespO.getJSONArray("array");
-            
-            //GET ORDERS FROM ARRAY
-            List<SingleOrder> arrayOrders = new ArrayList<>();
-
-            for (int i = 0; i < arrJson.length(); i++) {
-                JSONObject currentOrder = arrJson.getJSONObject(i);
-                SingleOrder currentSingleOrder = JsonParsing.parseJsonToSingleOrderObject(currentOrder.toString());
-                if(currentSingleOrder.getStatus().equals("Executed")){
-                    arrayOrders.add(currentSingleOrder);
-                }
-            }
-            
-            return arrayOrders;
-        } catch (UnirestException | JSONException ex) {
-            Logger.getLogger(CPMOrderHistory.class.getName()).log(Level.SEVERE, null, ex);
-            return null;
-        }
-    }
 }

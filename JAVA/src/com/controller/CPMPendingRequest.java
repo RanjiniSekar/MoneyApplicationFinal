@@ -7,7 +7,6 @@ package com.controller;
 
 import TestModules.JTableDataPopulation.JsonParsing;
 import UserObjects.SingleOrder;
-import static com.controller.CPMOrderHistory.updateOrders;
 import com.mashape.unirest.http.HttpResponse;
 import com.mashape.unirest.http.JsonNode;
 import com.mashape.unirest.http.Unirest;
@@ -17,7 +16,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.table.AbstractTableModel;
 import javax.swing.table.TableModel;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -29,6 +27,28 @@ import org.json.JSONObject;
  */
 public class CPMPendingRequest {
 
+    static ArrayList<SingleOrder> pendings;
+    static ArrayList<SingleOrder> executed;
+            
+    static public void setPendings(ArrayList<SingleOrder> pendings) {
+        CPMPendingRequest.pendings = pendings;
+    }
+
+    static public void setExecuted(ArrayList<SingleOrder> executed) {
+        CPMPendingRequest.executed = executed;
+    }
+    
+    public static PMPendingRequestTableModel getPRTableModel() {
+        ArrayList objList = (ArrayList) pendings;
+        return new PMPendingRequestTableModel(objList);
+    }
+    
+    public static TableModel getOHTableModel() {
+        ArrayList<SingleOrder> objList = (ArrayList) executed;
+        return new PMOrderHistoryTableModel(objList);
+
+    }
+    
     public static TableModel getTableModel() {
         ArrayList objList = (ArrayList) updateOrders();
         return new PMPendingRequestTableModel(objList);
