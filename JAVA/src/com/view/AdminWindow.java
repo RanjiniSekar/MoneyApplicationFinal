@@ -9,10 +9,14 @@ package com.view;
 import com.controller.CAdmin;
 import com.controller.CChangePassword;
 import com.mashape.unirest.http.exceptions.UnirestException;
+
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
+import javax.swing.JPasswordField;
+
 import static javax.swing.JOptionPane.showMessageDialog;
+
 import org.json.JSONException;
 /**
  *
@@ -41,7 +45,7 @@ public class AdminWindow extends javax.swing.JFrame {
         CreatePMButton = new java.awt.Button();
         CreatePortfolioNameText = new javax.swing.JTextField();
         CreatePortfolioUsernameText = new javax.swing.JTextField();
-        CreatePortfolioPasswordText = new javax.swing.JTextField();
+        CreatePortfolioPasswordText = new javax.swing.JPasswordField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -51,7 +55,7 @@ public class AdminWindow extends javax.swing.JFrame {
         createTraderButton = new java.awt.Button();
         CreateTraderNameText = new javax.swing.JTextField();
         CreateTraderUsernameText = new javax.swing.JTextField();
-        CreateTraderPasswordText = new javax.swing.JTextField();
+        CreateTraderPasswordText = new javax.swing.JPasswordField();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
@@ -68,13 +72,18 @@ public class AdminWindow extends javax.swing.JFrame {
         ChangePassword = new javax.swing.JPanel();
         label2 = new java.awt.Label();
         label3 = new java.awt.Label();
-        NewPassText = new java.awt.TextField();
-        OldPassText = new java.awt.TextField();
+        NewPassText = new javax.swing.JPasswordField();
+        OldPassText = new javax.swing.JPasswordField();
         label7 = new java.awt.Label();
-        ConfirmPassText = new java.awt.TextField();
+        ConfirmPassText = new javax.swing.JPasswordField();
         submitButton = new java.awt.Button();
         jPanel5 = new javax.swing.JPanel();
         label8 = new java.awt.Label();
+        OldPassText.setEchoChar('*');
+        NewPassText.setEchoChar('*');
+        ConfirmPassText.setEchoChar('*');
+        CreatePortfolioPasswordText.setEchoChar('*');
+        CreateTraderPasswordText.setEchoChar('*');
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new java.awt.GridBagLayout());
@@ -450,7 +459,7 @@ public class AdminWindow extends javax.swing.JFrame {
     private void CreatePMButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CreatePMButtonActionPerformed
         String nameText = CreatePortfolioNameText.getText();
         String usernameText = CreatePortfolioUsernameText.getText();
-        String passwordText = CreatePortfolioPasswordText.getText();
+        String passwordText = new String(CreatePortfolioPasswordText.getPassword());
         //SEND TO CONTROLLER TO CREATE PM AND SEND TO DB
         CAdmin.addPortfolioManager(nameText, usernameText, passwordText); 
     }//GEN-LAST:event_CreatePMButtonActionPerformed
@@ -458,7 +467,7 @@ public class AdminWindow extends javax.swing.JFrame {
     private void createTraderButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createTraderButtonActionPerformed
         String nameText = CreateTraderNameText.getText();
         String usernameText = CreateTraderUsernameText.getText();
-        String passwordText = CreateTraderPasswordText.getText();
+        String passwordText = new String(CreateTraderPasswordText.getPassword());
         //SEND TO CONTROLLER TO CREATE TRADER AND SEND TO DB
         CAdmin.addTrader(nameText, usernameText, passwordText); 
     }//GEN-LAST:event_createTraderButtonActionPerformed
@@ -485,9 +494,9 @@ public class AdminWindow extends javax.swing.JFrame {
 
     private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButtonActionPerformed
         //ADD FIELDS
-        String oldPassText = OldPassText.getText();
-        String newPassText = NewPassText.getText();
-        String confirmPassText = ConfirmPassText.getText();
+        String oldPassText = new String(OldPassText.getPassword());
+        String newPassText = new String(NewPassText.getPassword());
+        String confirmPassText = new String(ConfirmPassText.getPassword());
 
         try {
             //GET THE OLD PASSWORD OF USER HERE
@@ -540,18 +549,18 @@ public class AdminWindow extends javax.swing.JFrame {
     private javax.swing.JPanel AddPortfMan;
     private javax.swing.JPanel AddTrader;
     private javax.swing.JPanel ChangePassword;
-    private java.awt.TextField ConfirmPassText;
+    private javax.swing.JPasswordField ConfirmPassText;
     private javax.swing.JTextField CreateBrokerEmailText;
     private javax.swing.JTextField CreateBrokerNameText;
     private java.awt.Button CreatePMButton;
     private javax.swing.JTextField CreatePortfolioNameText;
-    private javax.swing.JTextField CreatePortfolioPasswordText;
+    private javax.swing.JPasswordField CreatePortfolioPasswordText;
     private javax.swing.JTextField CreatePortfolioUsernameText;
     private javax.swing.JTextField CreateTraderNameText;
-    private javax.swing.JTextField CreateTraderPasswordText;
+    private javax.swing.JPasswordField CreateTraderPasswordText;
     private javax.swing.JTextField CreateTraderUsernameText;
-    private java.awt.TextField NewPassText;
-    private java.awt.TextField OldPassText;
+    private javax.swing.JPasswordField NewPassText;
+    private javax.swing.JPasswordField OldPassText;
     private java.awt.Button createBrokerButton;
     private java.awt.Button createTraderButton;
     private javax.swing.JLabel jLabel1;

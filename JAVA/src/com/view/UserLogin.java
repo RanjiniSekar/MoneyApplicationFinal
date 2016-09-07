@@ -42,11 +42,13 @@ public class UserLogin extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         usernameText = new javax.swing.JTextField();
-        passwordText = new javax.swing.JTextField();
+        passwordText = new javax.swing.JPasswordField();
         jPanel1 = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
+        passwordText.setEchoChar('*');
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("MoneyTree Trading Platform");
 
         loginButton.setText("Login");
         loginButton.addActionListener(new java.awt.event.ActionListener() {
@@ -153,7 +155,7 @@ public class UserLogin extends javax.swing.JFrame {
 
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
         String nameText = usernameText.getText();
-        String passText = passwordText.getText();
+        String passText = new String(passwordText.getPassword());
         try {
             //SEND TO CONTROLLER TO CREATE BROKER AND SEND TO DB
             CLogin.handleLogin(nameText,passText);
@@ -224,7 +226,7 @@ public class UserLogin extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JButton loginButton;
-    private javax.swing.JTextField passwordText;
+    private javax.swing.JPasswordField passwordText;
     private javax.swing.JTextField usernameText;
     // End of variables declaration//GEN-END:variables
 }

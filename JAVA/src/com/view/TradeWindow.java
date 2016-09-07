@@ -14,6 +14,8 @@ import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -27,6 +29,7 @@ import javax.swing.JCheckBox;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
@@ -53,6 +56,10 @@ public class TradeWindow extends javax.swing.JFrame {
      * Creates new form TradeWindow
      */
     public TradeWindow() {
+        super();
+        //The following line is for the exit confirmation
+         
+        addWindowListener( new AreYouSure() );
         initComponents();
 
         //START TIMER TO UPDATE ORDERS
@@ -86,7 +93,8 @@ public class TradeWindow extends javax.swing.JFrame {
 // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
 private void initComponents() {
         java.awt.GridBagConstraints gridBagConstraints;
-
+        
+        logOutButton = new javax.swing.JButton();
         TraderPlatformTabbedPane = new javax.swing.JTabbedPane();
         TraderPlatformRequestsTab = new javax.swing.JPanel();
         TraderIncomingRequestsScrollPane = new javax.swing.JScrollPane();
@@ -113,7 +121,13 @@ private void initComponents() {
         setTitle("Trader Platform");
         setName("TraderPlatformFrame"); // NOI18N
         getContentPane().setLayout(new java.awt.GridBagLayout());
-
+        logOutButton.setText("Logout");
+        logOutButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                logOutButtonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(logOutButton, new java.awt.GridBagConstraints());
         TraderPlatformTabbedPane.setName("TraderPlatformTabbedPane");
 
         TraderPlatformRequestsTab.setName("TraderPlatformRequestsTab"); // NOI18N
@@ -452,6 +466,14 @@ private void initComponents() {
     		blockMap.put(n,singleOrderLists.get(n));
     }
     
+    private void logOutButtonActionPerformed(java.awt.event.ActionEvent evt) {                                             
+        UserLogin u = new UserLogin();
+        //u.setSize(300,300);
+        u.setVisible (true);
+      this.dispose();
+
+    }               
+    
     private void FilterTextTraderBlockHistoryActionPerformed(java.awt.event.ActionEvent evt) {                                                             
         // TODO add your handling code here:
     }                                                            
@@ -533,7 +555,7 @@ private void initComponents() {
             });*/
             JCheckBox check = new JCheckBox();  
             JLabel label = new JLabel();
-            label.setText("Selelct");
+            label.setText("Select Block");
             check.setName(""+i);
             check.addActionListener(new java.awt.event.ActionListener() {
               	public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -619,8 +641,25 @@ private void initComponents() {
     		
     	}
     	System.out.println(json);
-    }                                                  
-
+    }  
+    
+    //Code for giving a pop up box for exit confirmation
+    private class AreYouSure extends WindowAdapter {  
+        public void windowClosing( WindowEvent e ) {  
+            int option = JOptionPane.showOptionDialog(  
+                    TradeWindow.this,  
+                    "Are you sure you want to quit?",  
+                    "Exit Dialog", JOptionPane.YES_NO_OPTION,  
+                    JOptionPane.WARNING_MESSAGE, null, null,  
+                    null );  
+            if( option == JOptionPane.YES_OPTION ) {  
+                dispose();  
+            } 
+            else{
+                setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+            }
+        }  
+    }  
     /**
      * @param args the command line arguments
      */
@@ -695,5 +734,6 @@ private void initComponents() {
     private javax.swing.JPanel blockOptions;
     private ArrayList<ArrayList<SingleOrder>> singleOrderLists;
     private Map<Integer,ArrayList<SingleOrder>> blockMap;
+    private javax.swing.JButton logOutButton;
     // End of variables declaration                   
 }

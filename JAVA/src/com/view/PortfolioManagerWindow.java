@@ -24,7 +24,11 @@ import static javax.swing.JOptionPane.showMessageDialog;
 import javax.swing.Timer;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.util.Arrays;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JTabbedPane;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
@@ -44,10 +48,14 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
      * Creates new form MainJFrame
      */
     public PortfolioManagerWindow() {
+        super();
+        //The following line is for the exit confirmation
+         
+        addWindowListener( new AreYouSure() );
         initComponents();
 
         //START TIMER TO UPDATE ORDERS
-        Timer timer = new Timer(10000, new ActionListener() {
+        Timer timer = new Timer(5000, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 ArrayList<SingleOrder> ordersDone = (ArrayList) CPMOrderHistory.updateOrders();
@@ -63,7 +71,7 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
         });
         timer.start();
         try {
-            Thread.sleep(5000);
+            Thread.sleep(1000);
         } catch (InterruptedException e) {
         }
         timer.restart();
@@ -79,7 +87,7 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
     private void initComponents() {
         java.awt.GridBagConstraints gridBagConstraints;
 
-        jButton1 = new javax.swing.JButton();
+        logOutButton = new javax.swing.JButton();
         PMPlatformTabbedPane = new javax.swing.JTabbedPane();
         PendingOrders = new javax.swing.JPanel();
         PendingOrderRequests = new javax.swing.JScrollPane();
@@ -113,17 +121,17 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
         ChangePassword = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Portfolio Manager Platform");
+        setTitle("MoneyTree Trading Platform: Portfolio Manager");
         setMinimumSize(new java.awt.Dimension(1024, 768));
         getContentPane().setLayout(new java.awt.GridBagLayout());
 
-        jButton1.setText("Logout");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        logOutButton.setText("Logout");
+        logOutButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                logOutButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new java.awt.GridBagConstraints());
+        getContentPane().add(logOutButton, new java.awt.GridBagConstraints());
 
         PMPlatformTabbedPane.setMinimumSize(new java.awt.Dimension(150, 65));
 
@@ -586,6 +594,24 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_PMPendingOrderFilterActionPerformed
 
+    //Code for giving a pop up box for exit confirmation
+    private class AreYouSure extends WindowAdapter {  
+        public void windowClosing( WindowEvent e ) {  
+            int option = JOptionPane.showOptionDialog(  
+                    PortfolioManagerWindow.this,  
+                    "Are you sure you want to quit?",  
+                    "Exit Dialog", JOptionPane.YES_NO_OPTION,  
+                    JOptionPane.WARNING_MESSAGE, null, null,  
+                    null );  
+            if( option == JOptionPane.YES_OPTION ) {  
+                dispose();  
+            } 
+            else{
+                setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+            }
+        }  
+    }  
+    
     private void PMEODFilterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PMEODFilterActionPerformed
         final TableRowSorter<TableModel> sorter = new TableRowSorter<TableModel>(PMEODBoughtTable.getModel());
         PMEODBoughtTable.setRowSorter(sorter);
@@ -617,13 +643,13 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
         m.addRow(new Object[]{null, null, null, null, null, null, null, null, null});
     }//GEN-LAST:event_PMAddOrderRowActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void logOutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logOutButtonActionPerformed
         UserLogin u = new UserLogin();
         //u.setSize(300,300);
         u.setVisible (true);
       this.dispose();
 
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_logOutButtonActionPerformed
     private class myComboBoxEditor extends DefaultCellEditor {
 
         myComboBoxEditor(String[] items) {
@@ -773,10 +799,10 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
     private javax.swing.JTable PMSendOrderTable;
     private javax.swing.JScrollPane PendingOrderRequests;
     private javax.swing.JPanel PendingOrders;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JButton logOutButton;
     // End of variables declaration//GEN-END:variables
 
 }
