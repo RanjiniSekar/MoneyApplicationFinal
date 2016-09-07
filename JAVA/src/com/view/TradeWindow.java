@@ -130,7 +130,7 @@ private void initComponents() {
         FilterOptionsTraderBlockHistory = new javax.swing.JComboBox<>();
         TraderBlockHistoryFilter = new javax.swing.JButton();
         ChangePassword = new javax.swing.JButton();
-        brokerListForBox = new ArrayList<Broker>();
+        brokerListForBox = (ArrayList) CTraderGetAllBrokers.getBrokerList();
         blockMap = new HashMap<Integer,ArrayList<SingleOrder>>();
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Trader Platform");
@@ -533,7 +533,6 @@ private void initComponents() {
 
     public String[] blist() {    
         ArrayList<Broker> listOfBrokers = (ArrayList) CTraderGetAllBrokers.getBrokerList();
-        brokerListForBox = listOfBrokers;
         ArrayList<String> listOfNames = new ArrayList<>();
         for (int i = 0; i < listOfBrokers.size(); i++) {
                 String currName = listOfBrokers.get(i).getName();
@@ -703,22 +702,26 @@ private void initComponents() {
         // TODO add your handling code here:
     	//System.out.println(blockMap);
     	int index = TraderSelectBrokerOptions.getSelectedIndex();
+        System.out.println("INDEX OF BROKER IS: " + index);
+        System.out.println("BROKER LIST FOR BOX IS: " + brokerListForBox.toString());
     	Broker br = brokerListForBox.get(index);
+        System.out.println("I GOT THE RIGHT BROKER: " + br.getName());
     	long b_id = br.getBrokerId();
     	String b_email = br.getEmail();
     	Gson gson = new Gson();
     	String json = "";
+    	ArrayList<Block> blockList  = new ArrayList<Block>();
     	for (Map.Entry<Integer, ArrayList<SingleOrder>> entry : blockMap.entrySet()){
+                System.out.println("INSIDE MAP");
     		ArrayList<SingleOrder> temp = entry.getValue();
     		int quantity=0;
     		for(SingleOrder a : temp){
     			quantity = quantity + a.getQuantity();
     		}
     		Block b = new Block(b_id,b_email,temp.get(0).getSymbol(),quantity,temp.get(0).getOrderType(),temp.get(0).getStatus(),temp,temp.get(0).getStockExchange());
-    		
-    		json += gson.toJson(b) + " ";
-    		
+    		blockList.add(b);
     	}
+    	json = gson.toJson(blockList);
     	System.out.println(json);
     }  
     
@@ -818,6 +821,6 @@ private void initComponents() {
     private javax.swing.JButton logOutButton;
     private javax.swing.JButton clearFilterRequests;
     private javax.swing.JButton clearFilterBlockHistory;
-    public ArrayList<Broker> brokerListForBox;
+    static public ArrayList<Broker> brokerListForBox;
     // End of variables declaration              ;     
 }
