@@ -34,6 +34,8 @@ router.route('/updateTrade')
                                         res.status(500).send(error);
                                     } else {
                                         console.log("SINGLE_ORDER update successful");
+
+                                        //pending - DELETE FROM tmp_link table: uid
                                     }
                                 });
 
