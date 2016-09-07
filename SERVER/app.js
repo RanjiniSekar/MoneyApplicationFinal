@@ -22,11 +22,13 @@ var traderRouter = require('./routes/trader');
 var pmRouter = require('./routes/pm');
 var brokerRouter = require('./routes/broker');
 var adminRouter = require('./routes/admin');
+var viewRouter = require('./routes/views');
 
 app.use('/api/trader', traderRouter);
 app.use('/api/pm', pmRouter);
 app.use('/api/admin', adminRouter);
 app.use('/api/broker', brokerRouter);
+app.use('/views', viewRouter);
 
 app.use('/', function (req, res) {
     res.send('Welcome');
