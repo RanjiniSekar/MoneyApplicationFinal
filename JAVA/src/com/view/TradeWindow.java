@@ -1,15 +1,19 @@
 package com.view;
 
+import TestModules.JTableDataPopulation.JsonParsing;
 import UserObjects.Block;
+import UserObjects.Broker;
 import UserObjects.SingleOrder;
 import com.controller.CMAIN;
 import com.controller.CPMOrderHistory;
 import com.controller.CPMOrderMANIAC;
 
 import com.controller.CTraderBlockOrder;
+import com.controller.CTraderGetAllBrokers;
 import com.controller.CTraderOrderMANIAC;
 import com.controller.CTraderPendingRequest;
 import com.controller.ControllerBlockOrders;
+import com.controller.ControllerPMCreatedOrders;
 import com.google.gson.Gson;
 
 import java.awt.BorderLayout;
@@ -45,6 +49,7 @@ import javax.swing.table.TableRowSorter;
 import static javax.swing.JOptionPane.showMessageDialog;
 import static javax.swing.JOptionPane.showMessageDialog;
 import static javax.swing.JOptionPane.showMessageDialog;
+import org.json.JSONObject;
 
 /*
 * To change this license header, choose License Headers in Project Properties.
@@ -56,7 +61,8 @@ import static javax.swing.JOptionPane.showMessageDialog;
  * @author agopa3
  */
 public class TradeWindow extends javax.swing.JFrame {
-
+    
+    
     /**
      * Creates new form TradeWindow
      */
@@ -74,7 +80,9 @@ public class TradeWindow extends javax.swing.JFrame {
                 ArrayList<SingleOrder> ordersDone = (ArrayList) CTraderOrderMANIAC.updateOrders();
 
                 if (null != ordersDone) {
-                    TraderIncomingRequestsTable.setModel((TableModel) CTraderPendingRequest.getTableModel());
+                    CTraderOrderMANIAC.setPendings(ordersDone);
+                   
+                    TraderIncomingRequestsTable.setModel(CTraderOrderMANIAC.getPRTableModel());
                 } else {
                     System.out.println("ERROR UPDATING ORDERS");
                 }
@@ -122,6 +130,7 @@ private void initComponents() {
         FilterOptionsTraderBlockHistory = new javax.swing.JComboBox<>();
         TraderBlockHistoryFilter = new javax.swing.JButton();
         ChangePassword = new javax.swing.JButton();
+        brokerListForBox = new ArrayList<Broker>();
         blockMap = new HashMap<Integer,ArrayList<SingleOrder>>();
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Trader Platform");
@@ -138,7 +147,7 @@ private void initComponents() {
 
         TraderPlatformRequestsTab.setName("TraderPlatformRequestsTab"); // NOI18N
 
-        TraderIncomingRequestsTable
+       /* TraderIncomingRequestsTable
 
 .setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -178,7 +187,7 @@ private void initComponents() {
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
             }
-        });
+        });*/
         TraderIncomingRequestsScrollPane.setViewportView(TraderIncomingRequestsTable);
 
         TraderBlockOrders.setText("Block Orders");
@@ -269,8 +278,10 @@ private void initComponents() {
                 TraderSelectAllBlocksActionPerformed(evt);
             }
         });
-
-        TraderSelectBrokerOptions.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Broker 1", "Broker 2", "Broker 3", "Broker 4" }));
+        
+        
+        
+        TraderSelectBrokerOptions.setModel(new javax.swing.DefaultComboBoxModel<>(BrokerNames));
         TraderSelectBrokerOptions.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TraderSelectBrokerOptionsActionPerformed(evt);
@@ -520,8 +531,25 @@ private void initComponents() {
         // TODO add your handling code here:
     }                                                        
 
+    public String[] blist() {    
+        ArrayList<Broker> listOfBrokers = (ArrayList) CTraderGetAllBrokers.getBrokerList();
+        brokerListForBox = listOfBrokers;
+        ArrayList<String> listOfNames = new ArrayList<>();
+        for (int i = 0; i < listOfBrokers.size(); i++) {
+                String currName = listOfBrokers.get(i).getName();
+                listOfNames.add(currName);
+        }
+        System.out.println(listOfNames);
+        String[] b = new String[listOfNames.size()];
+        b = listOfNames.toArray(b);
+        return b;
+    }
+
+    //BROKER NAMESB
+    String[] BrokerNames = blist();
+    
     private void TraderBlockOrdersActionPerformed(java.awt.event.ActionEvent evt) {                                                  
-        DefaultTableModel dtm = (DefaultTableModel) TraderIncomingRequestsTable.getModel();
+        TableModel dtm = (TableModel) TraderIncomingRequestsTable.getModel();
         int nRow = dtm.getRowCount();
         int nCol = dtm.getColumnCount();
         Object[][] tableData = new Object[nRow][nCol];
@@ -538,7 +566,7 @@ private void initComponents() {
         }
         singleOrderLists = control.MakeBlock(parsedOrders);
         showMessageDialog(null, "Blocks have been successfully completed."); 
-        dtm.setRowCount(0);
+        //dtm.setRowCount(0);
         TraderPlatformBlockedRequests.setLayout(new BorderLayout());
         int count = 1;
         ArrayList<JScrollPane> paneList = new ArrayList<JScrollPane>();
@@ -674,6 +702,10 @@ private void initComponents() {
     private void TraderSubmitBlocksActionPerformed(java.awt.event.ActionEvent evt) {                                                   
         // TODO add your handling code here:
     	//System.out.println(blockMap);
+    	int index = TraderSelectBrokerOptions.getSelectedIndex();
+    	Broker br = brokerListForBox.get(index);
+    	long b_id = br.getBrokerId();
+    	String b_email = br.getEmail();
     	Gson gson = new Gson();
     	String json = "";
     	for (Map.Entry<Integer, ArrayList<SingleOrder>> entry : blockMap.entrySet()){
@@ -682,7 +714,7 @@ private void initComponents() {
     		for(SingleOrder a : temp){
     			quantity = quantity + a.getQuantity();
     		}
-    		Block b = new Block(temp.get(0).getSymbol(),quantity,temp.get(0).getOrderType(),temp.get(0).getStatus(),temp,temp.get(0).getStockExchange());
+    		Block b = new Block(b_id,b_email,temp.get(0).getSymbol(),quantity,temp.get(0).getOrderType(),temp.get(0).getStatus(),temp,temp.get(0).getStockExchange());
     		
     		json += gson.toJson(b) + " ";
     		
@@ -707,6 +739,8 @@ private void initComponents() {
             }
         }  
     }  
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -784,5 +818,6 @@ private void initComponents() {
     private javax.swing.JButton logOutButton;
     private javax.swing.JButton clearFilterRequests;
     private javax.swing.JButton clearFilterBlockHistory;
-    // End of variables declaration                   
+    public ArrayList<Broker> brokerListForBox;
+    // End of variables declaration              ;     
 }

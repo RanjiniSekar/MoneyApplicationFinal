@@ -23,7 +23,7 @@ public class Demo {
             @Override
 
             public void run() {
-
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
                 List<String> myWords = new ArrayList<String>();
 
                 CSVReader csv = new CSVReader();
@@ -37,7 +37,7 @@ public class Demo {
                 StringSearchable searchable = new StringSearchable(myWords);
 
                 AutocompleteJComboBox combo = new AutocompleteJComboBox(searchable);
-
+/////////////////////////////////////////////////////////////////////////////////////////////////////////
                 JFrame frame = new JFrame();
 
                 frame.add(combo);
