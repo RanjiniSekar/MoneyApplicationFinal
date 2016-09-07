@@ -68,6 +68,7 @@ function insert_order(req, res, assignedTo) {
 
                     /* Insert each single_order info into single_order table */
                     var i;
+                    var hasBeenError = false;
                     for (i = 0; i < req.body.containedSingleOrders.length; i++) {
                         var singleOrder = req.body.containedSingleOrders[i];
                         console.log(singleOrder);
@@ -94,12 +95,14 @@ function insert_order(req, res, assignedTo) {
                                     console.log('Error performing the query:');
                                     console.log(error);
                                     res.status(500).send(error);
+                                    hasBeenError = true;
                                 } else {
                                     console.log("SINGLE_ORDER insert successful");
                                 }
                             });
                     }
-                    res.status(201).send('Successfully created all the orders');
+                    if (!hasBeenError)
+                        res.status(201).send('Successfully created all the orders');
                 }
             });
         conn.release();

@@ -9,6 +9,7 @@ import com.controller.CChangePassword;
 import com.mashape.unirest.http.exceptions.UnirestException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import static javax.swing.JOptionPane.showMessageDialog;
 import org.json.JSONException;
 
 /**
@@ -43,7 +44,8 @@ public class ChangePassword extends javax.swing.JFrame {
         label4 = new java.awt.Label();
         ConfirmPassTextField = new java.awt.TextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("MoneyTree Trading Platform");
 
         submitButton.setBackground(new java.awt.Color(51, 51, 51));
         submitButton.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
@@ -161,6 +163,9 @@ public class ChangePassword extends javax.swing.JFrame {
             OldPassTextField.setText("");
             NewPassTextField.setText("");
             ConfirmPassTextField.setText("");
+            System.out.println("Fields cleared in change password.");
+            showMessageDialog(null, "You have successfully changed password."); 
+            
         } catch (UnirestException | JSONException ex) {
             Logger.getLogger(ChangePassword.class.getName()).log(Level.SEVERE, null, ex);
         }

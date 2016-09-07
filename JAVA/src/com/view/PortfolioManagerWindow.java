@@ -113,7 +113,7 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
         ChangePassword = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Portfolio Manager Platform");
+        setTitle("MoneyTree Trading Platform: Portfolio Manager");
         setMinimumSize(new java.awt.Dimension(1024, 768));
         getContentPane().setLayout(new java.awt.GridBagLayout());
 

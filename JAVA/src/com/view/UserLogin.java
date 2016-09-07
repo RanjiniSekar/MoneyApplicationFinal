@@ -48,6 +48,7 @@ public class UserLogin extends javax.swing.JFrame {
         passwordText.setEchoChar('*');
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("MoneyTree Trading Platform");
 
         loginButton.setText("Login");
         loginButton.addActionListener(new java.awt.event.ActionListener() {
