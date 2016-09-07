@@ -35,7 +35,19 @@ router.route('/updateTrade')
                                     } else {
                                         console.log("SINGLE_ORDER update successful");
 
-                                        //pending - DELETE FROM tmp_link table: uid
+                                        conn.query({
+                                                sql: "DELETE FROM temp_link WHERE uid = ?"
+                                            }, [req.body.uid],
+                                            function (error, results, fields) {
+                                                if (error) {
+                                                    console.log('Error performing the query:');
+                                                    console.log(error);
+                                                    res.status(500).send(error);
+                                                } else {
+                                                    console.log('temp_link deleted successfully')
+                                                    res.status(204).send(results);
+                                                }
+                                            });
                                     }
                                 });
 
