@@ -14,6 +14,8 @@ import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -27,6 +29,7 @@ import javax.swing.JCheckBox;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
@@ -53,6 +56,10 @@ public class TradeWindow extends javax.swing.JFrame {
      * Creates new form TradeWindow
      */
     public TradeWindow() {
+        super();
+        //The following line is for the exit confirmation
+         
+        addWindowListener( new AreYouSure() );
         initComponents();
 
         //START TIMER TO UPDATE ORDERS
@@ -533,7 +540,7 @@ private void initComponents() {
             });*/
             JCheckBox check = new JCheckBox();  
             JLabel label = new JLabel();
-            label.setText("Selelct");
+            label.setText("Select Block");
             check.setName(""+i);
             check.addActionListener(new java.awt.event.ActionListener() {
               	public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -619,8 +626,25 @@ private void initComponents() {
     		
     	}
     	System.out.println(json);
-    }                                                  
-
+    }  
+    
+    //Code for giving a pop up box for exit confirmation
+    private class AreYouSure extends WindowAdapter {  
+        public void windowClosing( WindowEvent e ) {  
+            int option = JOptionPane.showOptionDialog(  
+                    TradeWindow.this,  
+                    "Are you sure you want to quit?",  
+                    "Exit Dialog", JOptionPane.YES_NO_OPTION,  
+                    JOptionPane.WARNING_MESSAGE, null, null,  
+                    null );  
+            if( option == JOptionPane.YES_OPTION ) {  
+                dispose();  
+            } 
+            else{
+                setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+            }
+        }  
+    }  
     /**
      * @param args the command line arguments
      */

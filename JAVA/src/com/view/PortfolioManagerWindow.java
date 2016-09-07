@@ -24,7 +24,11 @@ import static javax.swing.JOptionPane.showMessageDialog;
 import javax.swing.Timer;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.util.Arrays;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JTabbedPane;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
@@ -44,6 +48,10 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
      * Creates new form MainJFrame
      */
     public PortfolioManagerWindow() {
+        super();
+        //The following line is for the exit confirmation
+         
+        addWindowListener( new AreYouSure() );
         initComponents();
 
         //START TIMER TO UPDATE ORDERS
@@ -586,6 +594,24 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_PMPendingOrderFilterActionPerformed
 
+    //Code for giving a pop up box for exit confirmation
+    private class AreYouSure extends WindowAdapter {  
+        public void windowClosing( WindowEvent e ) {  
+            int option = JOptionPane.showOptionDialog(  
+                    PortfolioManagerWindow.this,  
+                    "Are you sure you want to quit?",  
+                    "Exit Dialog", JOptionPane.YES_NO_OPTION,  
+                    JOptionPane.WARNING_MESSAGE, null, null,  
+                    null );  
+            if( option == JOptionPane.YES_OPTION ) {  
+                dispose();  
+            } 
+            else{
+                setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
+            }
+        }  
+    }  
+    
     private void PMEODFilterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PMEODFilterActionPerformed
         final TableRowSorter<TableModel> sorter = new TableRowSorter<TableModel>(PMEODBoughtTable.getModel());
         PMEODBoughtTable.setRowSorter(sorter);
