@@ -2,14 +2,10 @@ package com.view;
 
 import UserObjects.Order;
 import UserObjects.SingleOrder;
-import UserObjects.Trader;
 import com.controller.CMAIN;
-import com.controller.CPMOrderHistory;
-import com.controller.CPMPendingRequest;
+import com.controller.CPMOrderMANIAC;
 import com.controller.ControllerPMCreatedOrders;
 import java.awt.Component;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.DefaultCellEditor;
@@ -33,6 +29,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTabbedPane;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
+import static javax.swing.JOptionPane.showMessageDialog;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -59,7 +56,8 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
         Timer timer = new Timer(5000, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ArrayList<SingleOrder> ordersDone = (ArrayList) CPMPendingRequest.updateOrders();
+                ArrayList<SingleOrder> ordersDone = (ArrayList) CPMOrderMANIAC.updateOrders();
+                System.out.println("ORDERS GOTTEN FROM MANIAC:   " + ordersDone.toString());
                 ArrayList<SingleOrder> ordersPending = new ArrayList<>();
                 ArrayList<SingleOrder> ordersExecuted = new ArrayList<>();
                 
@@ -68,15 +66,20 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
                         String currStatus = ordersDone.get(i).getStatus();
                         if(currStatus.equals("Pending")){
                             ordersPending.add(ordersDone.get(i));
+                            System.out.println("ADDED TO PENDING");
                         }
                         if(currStatus.equals("Executed")){
                             ordersExecuted.add(ordersDone.get(i));
+                            System.out.println("ADDED TO EXECUTED");
                         }
                     }
-                    CPMPendingRequest.setPendings(ordersPending);
-                    CPMPendingRequest.setExecuted(ordersExecuted);
-                    PMOrderHistoryTable.setModel(CPMPendingRequest.getOHTableModel());
-                    PMPendingOrdersTable.setModel(CPMPendingRequest.getPRTableModel());
+                    System.out.println("ABOUT TO SET PENDINGS AND EXECUTED IN CPM MANIAC");
+                    CPMOrderMANIAC.setPendings(ordersPending);
+                    CPMOrderMANIAC.setExecuted(ordersExecuted);
+                    System.out.println("EXECUTED HAS: " + CPMOrderMANIAC.getExecuted().size());
+                    System.out.println("PENDINGS HAS: " + CPMOrderMANIAC.getPendings().size());
+                    PMOrderHistoryTable.setModel(CPMOrderMANIAC.getOHTableModel());
+                    PMPendingOrdersTable.setModel(CPMOrderMANIAC.getPRTableModel());
                 } else {
                     System.out.println("ERROR UPDATING ORDERS");
                 }
@@ -156,7 +159,7 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
         PMPendingOrdersTable.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         String[] CurrencyValues = {"USD", "GBP"};
         PMPendingOrdersTable.setForeground(new java.awt.Color(255, 255, 255));
-        PMPendingOrdersTable.setModel(CPMPendingRequest.getPRTableModel());
+        PMPendingOrdersTable.setModel(com.controller.CPMOrderMANIAC.getPRTableModel());
         PMPendingOrdersTable.setGridColor(new java.awt.Color(255, 255, 255));
         PMPendingOrdersTable.getTableHeader().setReorderingAllowed(false);
         PendingOrderRequests.setViewportView(PMPendingOrdersTable);
@@ -442,7 +445,7 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
         PMOrderHistoryTable.setBackground(new java.awt.Color(102, 102, 102));
         PMOrderHistoryTable.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         PMOrderHistoryTable.setForeground(new java.awt.Color(255, 255, 255));
-        PMOrderHistoryTable.setModel(CPMPendingRequest.getOHTableModel());
+        PMOrderHistoryTable.setModel(com.controller.CPMOrderMANIAC.getOHTableModel());
         PMOrderHistoryTable.setGridColor(new java.awt.Color(255, 255, 255));
         PMOrderHistoryTable.getTableHeader().setReorderingAllowed(false);
         PMOrderHistoryScrollPane.setViewportView(PMOrderHistoryTable);
@@ -701,7 +704,7 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
     }//GEN-LAST:event_logOutButtonActionPerformed
 
     private void ClearFilterPMPendingOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClearFilterPMPendingOrderActionPerformed
-        ClearFilterPMPendingOrder.setText("");
+        FilterTextPMPending.setText("");
         final TableRowSorter<TableModel> sorter = new TableRowSorter<TableModel>(PMPendingOrdersTable.getModel());
         PMPendingOrdersTable.setRowSorter(sorter);
         sorter.setRowFilter(null);
@@ -709,7 +712,7 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
 
     private void ClearFilterPMOrderHistoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClearFilterPMOrderHistoryActionPerformed
 
-        ClearFilterPMOrderHistory.setText("");
+        FilterTextPMOrderHistory.setText("");
         final TableRowSorter<TableModel> sorter = new TableRowSorter<TableModel>(PMOrderHistoryTable.getModel());
         PMOrderHistoryTable.setRowSorter(sorter);
         sorter.setRowFilter(null);        // TODO add your handling code here:
@@ -717,7 +720,7 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
 
     private void ClearFilterPMEODActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClearFilterPMEODActionPerformed
         // TODO add your handling code here:
-        ClearFilterPMEOD.setText("");
+        FilterTextPMEOD.setText("");
         final TableRowSorter<TableModel> sorter = new TableRowSorter<TableModel>(PMEODBoughtTable.getModel());
         PMEODBoughtTable.setRowSorter(sorter);
         final TableRowSorter<TableModel> sorter2 = new TableRowSorter<TableModel>(PMEODSoldTable.getModel());

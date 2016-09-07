@@ -1,10 +1,10 @@
 {
     "block_id": 0,
-    "t_id": 0,
-    "b_id": 0,
-    "symbol": "1",
+    "t_id": 32,
+    "b_id": 6,
+    "symbol": "APPL",
     "quantity": 2,
-    "order_type": "Stop Limit Order",
+    "order_type": "Stop",
     "price_executed": 0,
     "holdingOrders": [{
         "sorder_id": 0,

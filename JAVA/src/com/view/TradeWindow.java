@@ -4,11 +4,14 @@ import UserObjects.Block;
 import UserObjects.SingleOrder;
 import com.controller.CMAIN;
 import com.controller.CPMOrderHistory;
-import com.controller.CPMPendingRequest;
+import com.controller.CPMOrderMANIAC;
 
 import com.controller.CTraderBlockOrder;
+import com.controller.CTraderGetAllBrokers;
+import com.controller.CTraderOrderMANIAC;
 import com.controller.CTraderPendingRequest;
 import com.controller.ControllerBlockOrders;
+import com.controller.ControllerPMCreatedOrders;
 import com.google.gson.Gson;
 
 import java.awt.BorderLayout;
@@ -42,6 +45,8 @@ import javax.swing.table.TableColumn;
 import javax.swing.table.TableModel;
 import javax.swing.table.TableRowSorter;
 import static javax.swing.JOptionPane.showMessageDialog;
+import static javax.swing.JOptionPane.showMessageDialog;
+import static javax.swing.JOptionPane.showMessageDialog;
 
 /*
 * To change this license header, choose License Headers in Project Properties.
@@ -68,7 +73,7 @@ public class TradeWindow extends javax.swing.JFrame {
         Timer timer = new Timer(10000, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ArrayList<SingleOrder> ordersDone = (ArrayList) CPMOrderHistory.updateOrders();
+                ArrayList<SingleOrder> ordersDone = (ArrayList) CTraderOrderMANIAC.updateOrders();
 
                 if (null != ordersDone) {
                     TraderIncomingRequestsTable.setModel((TableModel) CTraderPendingRequest.getTableModel());
@@ -266,8 +271,10 @@ private void initComponents() {
                 TraderSelectAllBlocksActionPerformed(evt);
             }
         });
-
-        TraderSelectBrokerOptions.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Broker 1", "Broker 2", "Broker 3", "Broker 4" }));
+        
+        
+        
+        TraderSelectBrokerOptions.setModel(new javax.swing.DefaultComboBoxModel<>(BrokerNames));
         TraderSelectBrokerOptions.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TraderSelectBrokerOptionsActionPerformed(evt);
@@ -517,6 +524,16 @@ private void initComponents() {
         // TODO add your handling code here:
     }                                                        
 
+    public String[] blist() {
+        ArrayList<String> listOfBrokers = (ArrayList) CTraderGetAllBrokers.getBrokerList();
+        String[] b = new String[listOfBrokers.size()];
+        b = listOfBrokers.toArray(b);
+        return b;
+    }
+
+    //BROKER NAMESB
+    String[] BrokerNames = blist();
+    
     private void TraderBlockOrdersActionPerformed(java.awt.event.ActionEvent evt) {                                                  
         DefaultTableModel dtm = (DefaultTableModel) TraderIncomingRequestsTable.getModel();
         int nRow = dtm.getRowCount();
@@ -704,6 +721,8 @@ private void initComponents() {
             }
         }  
     }  
+    
+    
     /**
      * @param args the command line arguments
      */

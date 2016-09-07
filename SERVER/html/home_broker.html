@@ -1,59 +1,81 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>HOME BROKER</title>
-    
+    <title>HOME BROKER</title>
+
     <style>
-        #accept{
+        #accept {
             background-color: forestgreen;
             border: 1px solid black;
-            color:white;
-            margin:10px;
-             border-radius: 10px;
-        }
-        
-        #decline{
-            background-color: red;
-            border: 1px solid black;
-            color:white;
-            margin:10px;
+            color: white;
+            margin: 10px;
             border-radius: 10px;
         }
         
-        .container{
+        #decline {
+            background-color: red;
+            border: 1px solid black;
+            color: white;
+            margin: 10px;
+            border-radius: 10px;
+        }
+        
+        .container {
             border: 5px solid #000000;
             border-radius: 5px;
             padding: 10px;
         }
-    
     </style>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-     <script type = "text/javascript" 
-             src = "http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 </head>
+
 <body>
     <h1><center><u>Trade Request</u></center></h1>
     <div class="container">
         <h4 id="notification-bar"></h4>
         <form>
-          <b>Price:</b>
-          <input type="number" id="price" name="price" paceholder="0.00">
-          <input type="submit" id="accept" name="accept" value="Accept"> 
-          <input type="submit" id="decline" name="decline" value="Decline">
+            <b>Price:</b>
+            <input type="number" id="price" name="price" paceholder="0.00">
+            <input type="submit" id="accept" name="accept" value="Accept">
+            <input type="submit" id="decline" name="decline" value="Decline">
         </form>
     </div>
+    <script type="application/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script type="application/javascript">
+        function getQueryParam(param) {
+            location.search.substr(1)
+                .split("&")
+                .some(function (item) { // returns first occurence and stops
+                    return item.split("=")[0] == param && (param = item.split("=")[1])
+                })
+            return param;
+        }
 
-    <script>
-       $("submit").click(function(){
-            $.get("http://139.59.17.119:8080/api/broker/",
-            {         },
-            function(data, status){
-                alert("Data: " + data + "\nStatus: " + status);
+        var uid = getQueryParam("uid");
+
+        console.log(uid);
+        
+        $("#accept").click(function () {
+            var price = $("#price").val();
+            $.post("http://139.59.17.119:8080/api/broker/updateTrade", {
+                uid: uid,
+                action: "accept",
+                price: price
+            }).done(function (data) {
+                alert("Data uploaded successfully: " + data);
             });
-       });
-    </script>
-    
-</body>
-    
-</html>
 
+        });
+        $("#decline").click(function () {
+            $.post("http://139.59.17.119:8080/api/broker/updateTrade", {
+                uid: uid,
+                action: "reject"
+            }).done(function (data) {
+                alert("Trade declined succesfully");
+            });
+        });
+    </script>
+
+</body>
+
+</html>
