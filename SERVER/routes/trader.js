@@ -12,7 +12,7 @@ router.get('/', function (req, res) {
 
 router.route('/orders/:username')
     .get(function (req, res) {
-        console.log('Get request on order');
+        console.log('Get request on /trader/orders/:username');
         pool.getConnection(function (err, conn) {
             conn.query({
                     sql: 'SELECT s.*, p.assigned_to FROM single_order s INNER JOIN pm_order p ON s.order_id = p.order_id WHERE p.assigned_to = (SELECT u_id FROM user WHERE username = ? ) ORDER BY s.sorder_id'
@@ -58,7 +58,7 @@ router.route('/blocks')
 
                         /* Updating single_order information */
                         for (var i in req.body.holdingOrders) {
-                            var single_order = body.holdingOrders[i];
+                            var single_order = req.body.holdingOrders[i];
                             conn.query({
                                     sql: 'UPDATE single_order SET block_id = ?, date_trequest = CURDATE(), status = ? WHERE sorder_id = ?'
                                 }, [blockId, "Processed", single_order.sorder_id],
@@ -100,13 +100,22 @@ router.route('/blocks')
                             console.log('Message sent: ' + info.response);
                         });
 
-
-                        res.status(201).send(results);
-                    };
+                        conn.query({
+                                sql: 'INSERT INTO temp_link (block_id, url) VALUES (?, ?)'
+                            }, [blockId, url]),
+                            function (error, results, fields) {
+                                if (error) {
+                                    console.log('Error performing the query:');
+                                    console.log(error);
+                                    res.status(500).send(error);
+                                } else {
+                                    console.log("temp_link recorded successfully");
+                                    res.json(results);
+                                }
+                            }
+                    }
                 });
-
-
-
+            conn.release();
         });
     });
 
