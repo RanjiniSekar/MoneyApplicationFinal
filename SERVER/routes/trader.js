@@ -121,8 +121,9 @@ router.route('/blocks/')
                                 }
                         }
                     });
-                conn.release();
+
             }
+            conn.release();
         });
     });
 
