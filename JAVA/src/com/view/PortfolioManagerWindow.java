@@ -485,7 +485,14 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
             }
             System.out.println("Retrieved all table data");
             boolean trigg = true;
-            //System.out.println(tableData[i][1]);
+
+            //double check symbol is not null
+            if(tableData[i][2] == null){
+                trigg = false;
+            } else if(tableData[i][2].toString().trim().equals("")){
+                showMessageDialog(null, "You enter non-empty Symbol.");
+            }
+            
             if (tableData[i][0] != null && tableData[i][1] != null && tableData[i][2] != null && tableData[i][3] != null && tableData[i][4] != null) {
                 if (tableData[i][0] != null) {
                     long portIDC = (long) tableData[i][0];
@@ -533,7 +540,7 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
                 } else {
                     b = "";
                 }
-                if (tableData[i][2] == null) {
+                if (tableData[i][2] == null || tableData[i][2].toString().trim().equals("")) {
                     c = "Symbol";
                 } else {
                     c = "";
