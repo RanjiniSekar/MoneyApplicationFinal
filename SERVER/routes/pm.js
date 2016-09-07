@@ -74,11 +74,10 @@ function insert_order(req, res, assignedTo) {
                         console.log(singleOrder);
 
                         conn.query({
-                                sql: 'INSERT INTO single_order (p_id, pm_id, order_id, symbol, quantity, action_type, order_type, account_type, stock_exchange, price_stop, price_limit) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'
+                                sql: 'INSERT INTO single_order (p_id, order_id, symbol, quantity, action_type, order_type, account_type, stock_exchange, price_stop, price_limit) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)'
                             }, [
                                     singleOrder.p_id,
                                     orderId,
-                                    req.body.pm_id,
                                     singleOrder.symbol,
                                     singleOrder.quantity,
                                     singleOrder.action_type,
