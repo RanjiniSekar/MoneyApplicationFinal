@@ -46,7 +46,7 @@ public class ControllerPMCreatedOrders {
             System.err.println("Unirest Exception: " + e.getMessage());
         }
     }
-    
+
     public static List<String> getTraderList() {
         String tradersString = "";
         try {
@@ -69,9 +69,8 @@ public class ControllerPMCreatedOrders {
             System.out.println("Added Traders to list: " + tradersString);
             return traderList;
         } catch (UnirestException | JSONException ex) {
-            Logger.getLogger(CPMOrderHistory.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(ControllerPMCreatedOrders.class.getName()).log(Level.SEVERE, null, ex);
             return null;
         }
-    }    
+    }
 }
-  
