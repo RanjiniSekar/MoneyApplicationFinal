@@ -723,6 +723,7 @@ private void initComponents() {
     	}
     	json = gson.toJson(blockList);
     	System.out.println(json);
+        CTraderOrderMANIAC.sendBlockList(json);         
     }  
     
     //Code for giving a pop up box for exit confirmation

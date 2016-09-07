@@ -94,5 +94,15 @@ public class CTraderOrderMANIAC {
         }
     }
 
+    public static void sendBlockList(String parsedJSON) {
+        try {
+            Unirest.post("http://139.59.17.119:8080/api/trader/blocks")
+                    .header("content-type", "application/json")
+                    .body(parsedJSON)
+                    .asString();
+        } catch (UnirestException e) {
+            System.err.println("Unirest Exception: " + e.getMessage());
+        }
+    }
 }
 
