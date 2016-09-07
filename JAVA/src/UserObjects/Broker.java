@@ -6,6 +6,14 @@ public class Broker {
 	String email;
     String name;
     
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
 	public Broker(String name, String email) {
         this.email = email;
         this.name = name;

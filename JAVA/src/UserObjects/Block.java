@@ -5,8 +5,9 @@ import java.util.List;
 
 public class Block {
     //CONSTRUCTOR FOR CREATING BLOCKS IN TRADER WINDOW
-    public Block(long id,String symbol, int quantity, String orderType, String status, List<SingleOrder> holdingOrders,String stockExchange) {
+    public Block(long id, String email, String symbol, int quantity, String orderType, String status, List<SingleOrder> holdingOrders,String stockExchange) {
         this.b_id = id;
+        this.b_email = email;
     	this.symbol = symbol;
         this.quantity = quantity;
         this.order_type = orderType;
@@ -30,6 +31,7 @@ public class Block {
 	long block_id;
 	long t_id;
 	long b_id;
+	String b_email;
 	String symbol;
 	int quantity;
 	String order_type;

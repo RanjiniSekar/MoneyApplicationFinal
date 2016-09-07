@@ -703,6 +703,7 @@ private void initComponents() {
     	int index = TraderSelectBrokerOptions.getSelectedIndex();
     	Broker br = brokerListForBox.get(index);
     	long b_id = br.getBrokerId();
+    	String b_email = br.getEmail();
     	Gson gson = new Gson();
     	String json = "";
     	for (Map.Entry<Integer, ArrayList<SingleOrder>> entry : blockMap.entrySet()){
@@ -711,7 +712,7 @@ private void initComponents() {
     		for(SingleOrder a : temp){
     			quantity = quantity + a.getQuantity();
     		}
-    		Block b = new Block(b_id,temp.get(0).getSymbol(),quantity,temp.get(0).getOrderType(),temp.get(0).getStatus(),temp,temp.get(0).getStockExchange());
+    		Block b = new Block(b_id,b_email,temp.get(0).getSymbol(),quantity,temp.get(0).getOrderType(),temp.get(0).getStatus(),temp,temp.get(0).getStockExchange());
     		
     		json += gson.toJson(b) + " ";
     		
