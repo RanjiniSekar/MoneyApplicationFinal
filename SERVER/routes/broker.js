@@ -50,10 +50,6 @@ router.route('/updateTrade')
                                             });
                                     }
                                 });
-
-                            res.status(201).send(results);
-
-
                         }
                     }
                 );
