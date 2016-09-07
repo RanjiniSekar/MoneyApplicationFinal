@@ -79,6 +79,7 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
     private void initComponents() {
         java.awt.GridBagConstraints gridBagConstraints;
 
+        jButton1 = new javax.swing.JButton();
         PMPlatformTabbedPane = new javax.swing.JTabbedPane();
         PendingOrders = new javax.swing.JPanel();
         PendingOrderRequests = new javax.swing.JScrollPane();
@@ -116,11 +117,20 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
         setMinimumSize(new java.awt.Dimension(1024, 768));
         getContentPane().setLayout(new java.awt.GridBagLayout());
 
+        jButton1.setText("Logout");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1, new java.awt.GridBagConstraints());
+
         PMPlatformTabbedPane.setMinimumSize(new java.awt.Dimension(150, 65));
 
-        PMPendingOrdersTable.setBackground(new java.awt.Color(240, 240, 240));
+        PMPendingOrdersTable.setBackground(new java.awt.Color(102, 102, 102));
         PMPendingOrdersTable.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         String[] CurrencyValues = {"USD", "GBP"};
+        PMPendingOrdersTable.setForeground(new java.awt.Color(255, 255, 255));
         PMPendingOrdersTable.setModel(CPMPendingRequest.getTableModel());
         PMPendingOrdersTable.setGridColor(new java.awt.Color(255, 255, 255));
         PMPendingOrdersTable.getTableHeader().setReorderingAllowed(false);
@@ -384,8 +394,9 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
 
         PMPlatformTabbedPane.addTab("Create Order", CreateOrder);
 
-        PMOrderHistoryTable.setBackground(new java.awt.Color(240, 240, 240));
+        PMOrderHistoryTable.setBackground(new java.awt.Color(102, 102, 102));
         PMOrderHistoryTable.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        PMOrderHistoryTable.setForeground(new java.awt.Color(255, 255, 255));
         PMOrderHistoryTable.setModel(CPMOrderHistory.getTableModel());
         PMOrderHistoryTable.setGridColor(new java.awt.Color(255, 255, 255));
         PMOrderHistoryTable.getTableHeader().setReorderingAllowed(false);
@@ -474,7 +485,14 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
             }
             System.out.println("Retrieved all table data");
             boolean trigg = true;
-            //System.out.println(tableData[i][1]);
+
+            //double check symbol is not null
+            if(tableData[i][2] == null){
+                trigg = false;
+            } else if(tableData[i][2].toString().trim().equals("")){
+                showMessageDialog(null, "You enter non-empty Symbol.");
+            }
+            
             if (tableData[i][0] != null && tableData[i][1] != null && tableData[i][2] != null && tableData[i][3] != null && tableData[i][4] != null) {
                 if (tableData[i][0] != null) {
                     long portIDC = (long) tableData[i][0];
@@ -522,7 +540,7 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
                 } else {
                     b = "";
                 }
-                if (tableData[i][2] == null) {
+                if (tableData[i][2] == null || tableData[i][2].toString().trim().equals("")) {
                     c = "Symbol";
                 } else {
                     c = "";
@@ -598,6 +616,14 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
         DefaultTableModel m = (DefaultTableModel) PMSendOrderTable.getModel();
         m.addRow(new Object[]{null, null, null, null, null, null, null, null, null});
     }//GEN-LAST:event_PMAddOrderRowActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        UserLogin u = new UserLogin();
+        //u.setSize(300,300);
+        u.setVisible (true);
+      this.dispose();
+
+    }//GEN-LAST:event_jButton1ActionPerformed
     private class myComboBoxEditor extends DefaultCellEditor {
 
         myComboBoxEditor(String[] items) {
@@ -747,6 +773,7 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
     private javax.swing.JTable PMSendOrderTable;
     private javax.swing.JScrollPane PendingOrderRequests;
     private javax.swing.JPanel PendingOrders;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;

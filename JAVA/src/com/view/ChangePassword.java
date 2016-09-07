@@ -72,12 +72,16 @@ public class ChangePassword extends javax.swing.JFrame {
 
         label3.setText("New Password:");
 
+        NewPassTextField.setBackground(new java.awt.Color(51, 51, 51));
+        NewPassTextField.setForeground(new java.awt.Color(255, 255, 255));
         NewPassTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 NewPassTextFieldActionPerformed(evt);
             }
         });
 
+        OldPassTextField.setBackground(new java.awt.Color(51, 51, 51));
+        OldPassTextField.setForeground(new java.awt.Color(255, 255, 255));
         OldPassTextField.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 OldPassTextFieldActionPerformed(evt);
@@ -85,6 +89,9 @@ public class ChangePassword extends javax.swing.JFrame {
         });
 
         label4.setText("Confirm Password:");
+
+        ConfirmPassTextField.setBackground(new java.awt.Color(51, 51, 51));
+        ConfirmPassTextField.setForeground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -151,6 +158,9 @@ public class ChangePassword extends javax.swing.JFrame {
         try {
             //SEND TO CONTROLLER TO CREATE BROKER AND SEND TO DB
             CChangePassword.handleChange(oldPassText,newPassText, confirmPassText);
+            OldPassTextField.setText("");
+            NewPassTextField.setText("");
+            ConfirmPassTextField.setText("");
         } catch (UnirestException | JSONException ex) {
             Logger.getLogger(ChangePassword.class.getName()).log(Level.SEVERE, null, ex);
         }

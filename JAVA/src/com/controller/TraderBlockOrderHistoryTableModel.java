@@ -52,14 +52,10 @@ public class TraderBlockOrderHistoryTableModel extends AbstractTableModel{
          case 3: 
           return widget.getOrderType();
          case 4:
-          return String.valueOf(widget.getStopPrice());
-         case 5:
-          return String.valueOf(widget.getLimitPrice());
-         case 6:
           return widget.getBrokerID();
-         case 7:
+         case 5:
           return widget.getStatus();
-         case 8:
+         case 6:
           return widget.getHoldingOrders().get(0).getStockExchange();
 
          default:
