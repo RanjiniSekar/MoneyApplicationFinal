@@ -5,17 +5,11 @@
  */
 package com.controller;
 
-import TestModules.JTableDataPopulation.JsonParsing;
-import UserObjects.Broker;
-import UserObjects.PortfolioManager;
-import UserObjects.Trader;
-import UserObjects.UnknownUser;
-import UserObjects.User;
+
 import com.mashape.unirest.http.HttpResponse;
 import com.mashape.unirest.http.JsonNode;
 import com.mashape.unirest.http.Unirest;
 import com.mashape.unirest.http.exceptions.UnirestException;
-import java.util.Iterator;
 import static javax.swing.JOptionPane.showMessageDialog;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -31,37 +25,38 @@ public class CLogin {
     public static void handleLogin(String nameText, String passText) throws JSONException, UnirestException {
         //CHECK AGAINST THE DATABASE TO SEE IF THIS USER EXISTS AND LOG THEM IN
         //BASED ON USERTYPE, SHOULD SHOW THE APPROPRIATE JFRAME    
+        boolean nullTrigg = false;
         try {
-        HttpResponse<JsonNode> resp = Unirest.get("http://139.59.17.119:8080/api/admin/" + nameText)
+        HttpResponse<JsonNode> resp = Unirest.get("http://139.59.17.119:8080/api/admin/user/" + nameText)
         .header("content-type", "application/json")
         .asJson();   
         
         //THIS IS THE JSONRESPONSE TURNED INTO JSONOBJECT  
         JSONObject myRespO = new JSONObject(resp.getBody());
-        
+       
         JSONArray arrJson= myRespO.getJSONArray("array");
 
         //GET USERNAME FROM THE DATA ABOVE
         String thisUsername = arrJson.getJSONObject(0).getString("username");
         
-        //PASSWORD
-        String thisPassword = arrJson.getJSONObject(0).getString("password");
+        if(thisUsername == null || resp.getBody() == null){
+            showMessageDialog(null, "A user with this username does not exist."); 
+            nullTrigg = true;
+        }
         
-        //NAME
+        //RETRIEVE USER INFO FROM ARRAY
+        String thisPassword = arrJson.getJSONObject(0).getString("password");   
         String thisName = arrJson.getJSONObject(0).getString("name");
-
-        //TYPE
         String thisType = arrJson.getJSONObject(0).getString("user_type");
-        
         long thisID = arrJson.getJSONObject(0).getLong("u_id");
         
-        if(thisPassword.equals(passText)){
+        if(thisPassword.equals(passText) && nullTrigg == false){
            //PASSWORD MATCHES: SAVE USER IN SESSION
            CMAIN.handleUserPersistence(thisID, thisUsername,thisName, thisPassword,thisType);     
-        } 
-        else {
-            showMessageDialog(null, "Your password is incorrect."); 
-        } 
+           } 
+        else if(!(thisPassword.equals(passText)) && nullTrigg == false){
+           showMessageDialog(null, "Your password is incorrect."); 
+           } 
         } 
         catch (UnirestException e) {
             System.err.println("Unirest Exception: " + e.getMessage());
