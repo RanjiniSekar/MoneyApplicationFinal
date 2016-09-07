@@ -77,6 +77,20 @@ router.route('/traders')
         })
     })
 
+router.route('/brokers')
+    .get(function (req, res) {
+        console.log('GET request on /admin/brokers');
+        pool.getConnection(function (err, conn) {
+            conn.query('SELECT * from broker', function (err, rows, fields) {
+                if (!err) {
+                    console.log(rows);
+                    res.json(rows);
+                } else
+                    console.log('Error performing the query');
+            });
+            conn.release();
+        })
+    })
 
 router.route('/user/:username')
     .get(function (req, res) {
