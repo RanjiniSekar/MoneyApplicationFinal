@@ -7,9 +7,13 @@ package com.view;
 
 
 import com.controller.CAdmin;
+import com.controller.CChangePassword;
 import com.mashape.unirest.http.exceptions.UnirestException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import static javax.swing.JOptionPane.showMessageDialog;
+import org.json.JSONException;
 /**
  *
  * @author csavas
@@ -343,6 +347,11 @@ public class AdminWindow extends javax.swing.JFrame {
 
         label3.setText("New Password:");
 
+        NewPassText.setBackground(new java.awt.Color(51, 51, 51));
+        NewPassText.setForeground(new java.awt.Color(255, 255, 255));
+
+        OldPassText.setBackground(new java.awt.Color(51, 51, 51));
+        OldPassText.setForeground(new java.awt.Color(255, 255, 255));
         OldPassText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 OldPassTextActionPerformed(evt);
@@ -350,6 +359,9 @@ public class AdminWindow extends javax.swing.JFrame {
         });
 
         label7.setText("Confirm Password:");
+
+        ConfirmPassText.setBackground(new java.awt.Color(51, 51, 51));
+        ConfirmPassText.setForeground(new java.awt.Color(255, 255, 255));
 
         submitButton.setBackground(new java.awt.Color(51, 51, 51));
         submitButton.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
@@ -477,19 +489,11 @@ public class AdminWindow extends javax.swing.JFrame {
         String newPassText = NewPassText.getText();
         String confirmPassText = ConfirmPassText.getText();
 
-        //GET THE OLD PASSWORD OF USER HERE
-        String receivedPasswordForUser = "";
-
-        if(oldPassText.equals(receivedPasswordForUser)){ //CHECK IF OLD PASSWORD ENTERED CORRECTLY
-            if(newPassText.equals(confirmPassText)){  //CHECK IF CONFIRM AND NEW PASS ARE SAME
-                //SEND JSON
-            } else {
-                showMessageDialog(null, "Please enter the same password in the new password and confirm password fields.");
-                //DONT SEND JSON
-            }
-        } else {
-            showMessageDialog(null, "Please enter the correct old password.");
-            //DONT SEND JSON
+        try {
+            //GET THE OLD PASSWORD OF USER HERE
+            CChangePassword.handleChange(oldPassText, newPassText, confirmPassText);
+        } catch (JSONException | UnirestException ex) {
+            Logger.getLogger(AdminWindow.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }//GEN-LAST:event_submitButtonActionPerformed
