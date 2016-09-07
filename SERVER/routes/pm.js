@@ -51,7 +51,7 @@ function insert_order(req, res, assignedTo) {
     pool.getConnection(function (err, conn) {
         conn.query({
                 sql: 'INSERT INTO pm_order (pm_id, assigned_to) VALUES (?, ?)'
-            }, [req.body.portfolioManagerId, assignedTo],
+            }, [req.body.pm_id, assignedTo],
             function (error, results, fields) {
                 // error will be an Error if one occurred during the query 
                 // results will contain the results of the query 
@@ -78,7 +78,7 @@ function insert_order(req, res, assignedTo) {
                             }, [
                                     singleOrder.p_id,
                                     orderId,
-                                    req.body.portfolioManagerId,
+                                    req.body.pm_id,
                                     singleOrder.symbol,
                                     singleOrder.quantity,
                                     singleOrder.action_type,
