@@ -5,7 +5,8 @@ import java.util.List;
 public class Order {
 
     long orderId;
-    long portfolioManagerId;
+    long pm_id;
+    String pm_username;
     long assignedTo;
     String assignedTrader;
     List<SingleOrder> containedSingleOrders;
@@ -24,11 +25,11 @@ public class Order {
     }
 
     public long getPortfolioManagerId() {
-        return portfolioManagerId;
+        return pm_id;
     }
 
     public void setPortfolioManagerId(long portfolioManagerId) {
-        this.portfolioManagerId = portfolioManagerId;
+        this.pm_id = portfolioManagerId;
     }
 
     public long getAssignedTo() {
@@ -38,4 +39,23 @@ public class Order {
     public void setAssignedTo(long assignedTo) {
         this.assignedTo = assignedTo;
     }
+
+    public long getPmId() {
+        return pm_id;
+    }
+
+    public void setPmId(long pm_id) {
+        this.pm_id = pm_id;
+    }
+
+    public String getPmUsername() {
+        return pm_username;
+    }
+
+    public void setPmUsername(String pm_username) {
+        this.pm_username = pm_username;
+    }
+    
+    
+    
 }

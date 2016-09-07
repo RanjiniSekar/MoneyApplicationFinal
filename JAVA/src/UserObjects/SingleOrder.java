@@ -248,5 +248,9 @@ public class SingleOrder {
     public void setPmUsername(String pmUsername) {
         this.pm_username = pmUsername;
     }
+
+    public String getPmUsername() {
+        return pm_username;
+    }
     
 }

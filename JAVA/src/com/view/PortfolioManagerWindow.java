@@ -556,7 +556,11 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
                 if (tableData[i][2] == null) {
                     trigg = false;
                 } else if (tableData[i][2].toString().trim().equals("")) {
-                    showMessageDialog(null, "You enter non-empty Symbol.");
+                    showMessageDialog(null, "Please enter non-empty Symbol.");
+                    trigg = false;
+                } else if (!(tableData[i][2].toString().trim().equals(tableData[i][2].toString().trim().toUpperCase()))){
+                    showMessageDialog(null, "Please enter the Symbol in all capital letters.");
+                    trigg = false;
                 }
 
                 if (tableData[i][0] != null && tableData[i][1] != null && tableData[i][2] != null && tableData[i][3] != null && tableData[i][4] != null && tableData[i][5] != null ) {
@@ -624,10 +628,6 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
                     if (trigg == true) {
                         thereAreOrders = true;
                         SingleOrder o = new SingleOrder(tableData[i]);
-                        Long currID = CMAIN.reportUser().getU_id();
-                        String currUname = CMAIN.reportUser().getUsername();
-                        o.setPmId(currID);
-                        o.setPmUsername(currUname);
                         parsedOrders.add(o);
                     }
                 } else {
@@ -673,6 +673,10 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
             dtm.setRowCount(0);
             dtm.addRow(new Object[]{null, null, null, null, null, null, null, null, null});
             Order toSend = new Order(selectedTrader, parsedOrders);
+            Long currID = CMAIN.reportUser().getU_id();
+            String currUname = CMAIN.reportUser().getUsername();
+            toSend.setPmId(currID);
+            toSend.setPmUsername(currUname);
             ControllerPMCreatedOrders.handleOrder(toSend);
         }
     }//GEN-LAST:event_PMSendOrderActionPerformed
