@@ -16,7 +16,9 @@ router.route('/orders/:username')
         console.log('Get request on /trader/orders/:username');
         pool.getConnection(function (err, conn) {
             conn.query({
-                    sql: 'SELECT s.*, p.assigned_to FROM single_order s INNER JOIN pm_order p ON s.order_id = p.order_id WHERE s.status = "Pending" and p.assigned_to = (SELECT u_id FROM user WHERE username = ? ) ORDER BY s.sorder_id'
+                    sql: 'SELECT s.*, u.username, p.assigned_to FROM single_order s INNER JOIN pm_order p ON s.order_id = p.order_id INNER JOIN user u ON u.u_id = p.pm_id WHERE status = "Pending" and p.assigned_to = (SELECT u_id FROM user WHERE username = ? ) ORDER BY s.sorder_id;'
+
+                    //sql: 'SELECT s.*, p.assigned_to FROM single_order s INNER JOIN pm_order p ON s.order_id = p.order_id WHERE s.status = "Pending" and p.assigned_to = (SELECT u_id FROM user WHERE username = ? ) ORDER BY s.sorder_id'
                 }, [req.params.username],
                 function (error, results, fields) {
                     // error will be an Error if one occurred during the query 
