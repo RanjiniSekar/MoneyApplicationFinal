@@ -71,7 +71,7 @@ public class TradeWindow extends javax.swing.JFrame {
                 ArrayList<SingleOrder> ordersDone = (ArrayList) CPMOrderHistory.updateOrders();
 
                 if (null != ordersDone) {
-                    //TraderIncomingRequestsTable.setModel(CTraderPendingRequest.getTableModel());
+                    TraderIncomingRequestsTable.setModel((TableModel) CTraderPendingRequest.getTableModel());
                 } else {
                     System.out.println("ERROR UPDATING ORDERS");
                 }
