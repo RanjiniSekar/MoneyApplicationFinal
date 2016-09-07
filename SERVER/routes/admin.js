@@ -2,23 +2,6 @@ var express = require('express');
 var pool = require('../db/config');
 var router = express.Router();
 
-
-router.route('/traders')
-    .get(function (req, res) {
-        console.log('GET request on /admin/traders');
-        pool.getConnection(function (err, conn) {
-            conn.query('SELECT * from user where user_type = ?', ["trader"], function (err, rows, fields) {
-                if (!err) {
-                    console.log(rows);
-                    res.json(rows);
-                } else
-                    console.log('Error performing the query');
-            });
-            conn.release();
-        })
-    })
-
-
 router.route('/')
     .get(function (req, res) {
         console.log('GET request on /admin');
@@ -79,8 +62,23 @@ router.route('/')
         })
     });
 
+router.route('/traders')
+    .get(function (req, res) {
+        console.log('GET request on /admin/traders');
+        pool.getConnection(function (err, conn) {
+            conn.query('SELECT * from user where user_type = ?', ["trader"], function (err, rows, fields) {
+                if (!err) {
+                    console.log(rows);
+                    res.json(rows);
+                } else
+                    console.log('Error performing the query');
+            });
+            conn.release();
+        })
+    })
 
-router.route('/:username')
+
+router.route('/user/:username')
     .get(function (req, res) {
         pool.getConnection(function (err, conn) {
             conn.query('SELECT * from user WHERE username = ?',
