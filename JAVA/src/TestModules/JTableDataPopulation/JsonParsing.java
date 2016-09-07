@@ -5,10 +5,12 @@
  */
 package TestModules.JTableDataPopulation;
 
+import UserObjects.Block;
 import UserObjects.Broker;
 import UserObjects.SingleOrder;
 import UserObjects.Trader;
 import UserObjects.User;
+
 import com.google.gson.Gson;
 
 /**
@@ -31,6 +33,15 @@ public class JsonParsing {
         Trade trade = gson.fromJson(json, Trade.class);
         return trade;
     }
+    
+    // parse Json input into Block class object.
+    public static Block parseJsonToBlockObject(String json){
+        Gson gson = new Gson();
+        // Just Specify the class the json is need to be parsed into.
+        Block block = gson.fromJson(json, Block.class);
+        return block;
+    }
+    
     // parse Json input into Trade class object.
     public static User parseJsonToUserObject(String json){
         Gson gson = new Gson();

@@ -6,15 +6,20 @@
 package com.controller;
 
 import TestModules.JTableDataPopulation.JsonParsing;
+import UserObjects.Block;
 import UserObjects.SingleOrder;
+
 import com.mashape.unirest.http.HttpResponse;
 import com.mashape.unirest.http.JsonNode;
 import com.mashape.unirest.http.Unirest;
 import com.mashape.unirest.http.exceptions.UnirestException;
+
 import java.util.ArrayList;
 import java.util.List;
+
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -27,6 +32,15 @@ public class CTraderOrderMANIAC {
 
    static ArrayList<SingleOrder> pendings = new ArrayList<>();
     static ArrayList<SingleOrder> executed = new ArrayList<>();
+    public static ArrayList<Block> getBlockHistory() {
+		return blockHistory;
+	}
+
+	public static void setBlockHistory(ArrayList<Block> blockHistory) {
+		CTraderOrderMANIAC.blockHistory = blockHistory;
+	}
+
+	static ArrayList<Block> blockHistory = new ArrayList<>();
             
     static public void setPendings(ArrayList<SingleOrder> pendings) {
         CTraderOrderMANIAC.pendings = pendings;
@@ -53,12 +67,12 @@ public class CTraderOrderMANIAC {
         }       
     }
     
-    public static TableModel getOHTableModel() {
-        if(executed.isEmpty()){
+    public static TableModel getBlockHistoryTableModel() {
+        if(blockHistory.isEmpty()){
             return new DefaultTableModel();
         } else { 
-            ArrayList<SingleOrder> objList = (ArrayList) executed;
-            return new PMOrderHistoryTableModel(objList);
+            ArrayList<Block> objList = (ArrayList) blockHistory;
+            return new TraderBlockOrderHistoryTableModel(objList);
         }
 
     }
@@ -102,6 +116,32 @@ public class CTraderOrderMANIAC {
                     .asString();
         } catch (UnirestException e) {
             System.err.println("Unirest Exception: " + e.getMessage());
+        }
+    }
+    
+    public static List<Block> updateBlockOrderHistory(){
+    	String currUsername = CMAIN.reportUser().getUsername();
+        HttpResponse<JsonNode> resp;
+        try {
+            resp = Unirest.get("http://139.59.17.119:8080/api/trader/blocks/" + currUsername)
+                    .header("content-type", "application/json")
+                    .asJson();
+
+            //THIS IS THE JSONRESPONSE TURNED INTO JSONOBJECT  
+            JSONObject myRespO = new JSONObject(resp.getBody());
+            JSONArray arrJson = myRespO.getJSONArray("array");
+            //GET ORDERS FROM ARRAY
+            List<Block> arrayBlock = new ArrayList<>();
+
+            for (int i = 0; i < arrJson.length(); i++) {
+                JSONObject currentJSONBlock = arrJson.getJSONObject(i);
+                Block currentBlock = JsonParsing.parseJsonToBlockObject(currentJSONBlock.toString());
+                arrayBlock.add(currentBlock);
+            }
+            System.out.println("Inside Controller : \n"+arrayBlock);
+            return arrayBlock;
+        } catch (UnirestException | JSONException ex) {
+            return null;
         }
     }
 }
