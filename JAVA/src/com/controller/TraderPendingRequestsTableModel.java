@@ -7,12 +7,13 @@ package com.controller;
 
 import UserObjects.SingleOrder;
 import java.util.ArrayList;
+import javax.swing.table.AbstractTableModel;
 
 /**
  *
  * @author csavas
  */
-public class TraderPendingRequestsTableModel {
+public class TraderPendingRequestsTableModel extends AbstractTableModel{
     private ArrayList objList = new ArrayList();
     private Boolean[] select;
 

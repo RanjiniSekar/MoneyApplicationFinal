@@ -80,7 +80,9 @@ public class TradeWindow extends javax.swing.JFrame {
                 ArrayList<SingleOrder> ordersDone = (ArrayList) CTraderOrderMANIAC.updateOrders();
 
                 if (null != ordersDone) {
-                    TraderIncomingRequestsTable.setModel((TableModel) CTraderPendingRequest.getTableModel());
+                    CTraderOrderMANIAC.setPendings(ordersDone);
+                   
+                    TraderIncomingRequestsTable.setModel(CTraderOrderMANIAC.getPRTableModel());
                 } else {
                     System.out.println("ERROR UPDATING ORDERS");
                 }
@@ -145,7 +147,7 @@ private void initComponents() {
 
         TraderPlatformRequestsTab.setName("TraderPlatformRequestsTab"); // NOI18N
 
-        TraderIncomingRequestsTable
+       /* TraderIncomingRequestsTable
 
 .setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -185,7 +187,7 @@ private void initComponents() {
             public Class getColumnClass(int columnIndex) {
                 return types [columnIndex];
             }
-        });
+        });*/
         TraderIncomingRequestsScrollPane.setViewportView(TraderIncomingRequestsTable);
 
         TraderBlockOrders.setText("Block Orders");
@@ -537,9 +539,9 @@ private void initComponents() {
                 String currName = listOfBrokers.get(i).getName();
                 listOfNames.add(currName);
         }
-        
+        System.out.println(listOfNames);
         String[] b = new String[listOfNames.size()];
-        b = listOfBrokers.toArray(b);
+        b = listOfNames.toArray(b);
         return b;
     }
 
@@ -547,7 +549,7 @@ private void initComponents() {
     String[] BrokerNames = blist();
     
     private void TraderBlockOrdersActionPerformed(java.awt.event.ActionEvent evt) {                                                  
-        DefaultTableModel dtm = (DefaultTableModel) TraderIncomingRequestsTable.getModel();
+        TableModel dtm = (TableModel) TraderIncomingRequestsTable.getModel();
         int nRow = dtm.getRowCount();
         int nCol = dtm.getColumnCount();
         Object[][] tableData = new Object[nRow][nCol];
@@ -564,7 +566,7 @@ private void initComponents() {
         }
         singleOrderLists = control.MakeBlock(parsedOrders);
         showMessageDialog(null, "Blocks have been successfully completed."); 
-        dtm.setRowCount(0);
+        //dtm.setRowCount(0);
         TraderPlatformBlockedRequests.setLayout(new BorderLayout());
         int count = 1;
         ArrayList<JScrollPane> paneList = new ArrayList<JScrollPane>();

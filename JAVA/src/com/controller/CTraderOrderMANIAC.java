@@ -48,9 +48,9 @@ public class CTraderOrderMANIAC {
         if(pendings.isEmpty()){
             return new DefaultTableModel();
         } else { 
-            ArrayList objList = (ArrayList) pendings;
-            return (TableModel) new TraderPendingRequestsTableModel(objList);
-        }
+            ArrayList<SingleOrder> objList = (ArrayList) pendings;
+            return new TraderPendingRequestsTableModel(objList);
+        }       
     }
     
     public static TableModel getOHTableModel() {
@@ -87,6 +87,7 @@ public class CTraderOrderMANIAC {
                 SingleOrder currentSingleOrder = JsonParsing.parseJsonToSingleOrderObject(currentOrder.toString());
                 arrayOrders.add(currentSingleOrder);
             }
+            System.out.println("Inside Controller : \n"+arrayOrders);
             return arrayOrders;
         } catch (UnirestException | JSONException ex) {
             return null;

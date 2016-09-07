@@ -44,17 +44,17 @@ public class SingleOrder {
 
     public void SingleOrderMakeBlocks(Object[] object){
         
-        this.order_id = (long)object[0];
-        this.p_id = (long)object[1];    
+        this.order_id = Long.parseLong((String)object[0]);
+        this.p_id = Long.parseLong((String)object[1]);   
         this.symbol = (String)object[2];
-        this.quantity = (int)object[3];
+        this.quantity = Integer.parseInt((String)object[3]);
         
         this.action_type = (String)object[4];
         if(object[5] != null){
-            this.price_stop = (double)object[5];
+            this.price_stop = Double.parseDouble((String)object[5]);
         }
         if(object[6] != null){
-            this.price_limit = (double)object[6];
+            this.price_limit = Double.parseDouble((String)object[6]);
         }
         this.stock_exchange = (String)object[7];
         
@@ -75,7 +75,7 @@ public class SingleOrder {
         if(object[5] != null && object[6] != null){
             this.order_type = "Stop Limit Order"; //STOP LIMIT ORDER
         }
-        this.pmId = (long)object[10];
+        this.pmId = Long.parseLong((String)object[10]);
     }
     
     //SINGLE ORDER PARSED FROM TABLE - AT POINT OF SUBMITTING BY PM
