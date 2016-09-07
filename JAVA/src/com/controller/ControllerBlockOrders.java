@@ -29,7 +29,7 @@ public class ControllerBlockOrders {
             ArrayList<SingleOrder> common = new ArrayList();
             common.add(parsedOrders.get(i));
             for(int j=i+1;j<parsedOrders.size();j++){
-                    if(parsedOrders.get(j).getSymbol().equals(parsedOrders.get(i).getSymbol()) && parsedOrders.get(j).getAction().equals(parsedOrders.get(i).getAction()) && parsedOrders.get(j).getStockExchange().equals(parsedOrders.get(i).getStockExchange()) && parsedOrders.get(j).getOrderType().equals(parsedOrders.get(i).getOrderType())){
+                    if(parsedOrders.get(j).getSymbol().equals(parsedOrders.get(i).getSymbol()) && parsedOrders.get(j).getAction().equals(parsedOrders.get(i).getAction()) && parsedOrders.get(j).getStockExchange().equals(parsedOrders.get(i).getStockExchange()) && parsedOrders.get(j).getAccountType().equals(parsedOrders.get(i).getAccountType())){
                         if(parsedOrders.get(j).getOrderType().equals(parsedOrders.get(i).getOrderType())){
                             if(parsedOrders.get(j).getOrderType().equals("Market Order")){
                                // common.add(parsedOrders.get(i));
