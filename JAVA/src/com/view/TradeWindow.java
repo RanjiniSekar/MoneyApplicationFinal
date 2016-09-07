@@ -93,7 +93,8 @@ public class TradeWindow extends javax.swing.JFrame {
 // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
 private void initComponents() {
         java.awt.GridBagConstraints gridBagConstraints;
-
+        
+        logOutButton = new javax.swing.JButton();
         TraderPlatformTabbedPane = new javax.swing.JTabbedPane();
         TraderPlatformRequestsTab = new javax.swing.JPanel();
         TraderIncomingRequestsScrollPane = new javax.swing.JScrollPane();
@@ -120,7 +121,13 @@ private void initComponents() {
         setTitle("Trader Platform");
         setName("TraderPlatformFrame"); // NOI18N
         getContentPane().setLayout(new java.awt.GridBagLayout());
-
+        logOutButton.setText("Logout");
+        logOutButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                logOutButtonActionPerformed(evt);
+            }
+        });
+        getContentPane().add(logOutButton, new java.awt.GridBagConstraints());
         TraderPlatformTabbedPane.setName("TraderPlatformTabbedPane");
 
         TraderPlatformRequestsTab.setName("TraderPlatformRequestsTab"); // NOI18N
@@ -459,6 +466,14 @@ private void initComponents() {
     		blockMap.put(n,singleOrderLists.get(n));
     }
     
+    private void logOutButtonActionPerformed(java.awt.event.ActionEvent evt) {                                             
+        UserLogin u = new UserLogin();
+        //u.setSize(300,300);
+        u.setVisible (true);
+      this.dispose();
+
+    }               
+    
     private void FilterTextTraderBlockHistoryActionPerformed(java.awt.event.ActionEvent evt) {                                                             
         // TODO add your handling code here:
     }                                                            
@@ -719,5 +734,6 @@ private void initComponents() {
     private javax.swing.JPanel blockOptions;
     private ArrayList<ArrayList<SingleOrder>> singleOrderLists;
     private Map<Integer,ArrayList<SingleOrder>> blockMap;
+    private javax.swing.JButton logOutButton;
     // End of variables declaration                   
 }
