@@ -52,6 +52,9 @@
         }
 
         var uid = getQueryParam("uid");
+
+        console.log(uid);
+        
         $("#accept").click(function () {
             var price = $("#price").val();
             $.post("http://139.59.17.119:8080/api/broker/updateTrade", {
