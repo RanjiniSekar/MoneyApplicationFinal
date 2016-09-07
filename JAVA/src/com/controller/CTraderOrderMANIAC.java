@@ -100,6 +100,7 @@ public class CTraderOrderMANIAC {
             for (int i = 0; i < arrJson.length(); i++) {
                 JSONObject currentOrder = arrJson.getJSONObject(i);
                 SingleOrder currentSingleOrder = JsonParsing.parseJsonToSingleOrderObject(currentOrder.toString());
+                System.out.println("STATUS OF ORDER I RECEIVED IN TRADER MANIAC: " + currentSingleOrder.getStatus());
                 arrayOrders.add(currentSingleOrder);
             }
             return arrayOrders;
@@ -129,7 +130,6 @@ public class CTraderOrderMANIAC {
 
             //THIS IS THE JSONRESPONSE TURNED INTO JSONOBJECT  
             JSONObject myRespO = new JSONObject(resp.getBody());
-            System.out.println("Inside TRADER MANIAC TRYING TO GET RESPONSE OBJ : \n" + myRespO.toString());
             JSONArray arrJson = myRespO.getJSONArray("array");
             //GET ORDERS FROM ARRAY
             List<Block> arrayBlock = new ArrayList<>();
@@ -138,9 +138,7 @@ public class CTraderOrderMANIAC {
                 JSONObject currentJSONBlock = arrJson.getJSONObject(i);
                 Block currentBlock = JsonParsing.parseJsonToBlockObject(currentJSONBlock.toString());
                 arrayBlock.add(currentBlock);
-                System.out.println("Inside TRADER MANIAC TRYING I PARSED A BLOCK AND HERE IT IS MOFO: \n" + currentBlock.toString());
             }
-            System.out.println("Inside TRADER MANIAC TRYING TO GET BLOCKS IN ARRAY : \n" + arrayBlock.get(0).toString());
             return arrayBlock;
         } catch (UnirestException | JSONException ex) {
             return null;

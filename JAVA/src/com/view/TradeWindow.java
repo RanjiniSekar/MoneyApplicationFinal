@@ -724,6 +724,7 @@ private void initComponents() {
     		ArrayList<SingleOrder> temp = entry.getValue();
     		int quantity=0;
     		for(SingleOrder a : temp){
+                        System.out.println("THIS ONE CEREN: " + a.getSingleOrderId());
     			quantity = quantity + a.getQuantity();
     		}
     		Block b = new Block(ourUID, b_id, b_name, b_email,temp.get(0).getSymbol(),quantity,temp.get(0).getOrderType(),temp.get(0).getStatus(),temp,temp.get(0).getStockExchange());
