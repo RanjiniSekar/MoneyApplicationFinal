@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
-var nodemailer = require('../mailer/mailer.js')
+var transporter = require('../mailer/mailer.js');
+var pool = require('../db/config');
 
 /* GET users listing. */
 router.get('/', function (req, res) {
@@ -13,46 +14,76 @@ router.route('/blocks')
     .post(function (req, res) {
         /* Insert general block info into trader_block table */
         var blockId = 0;
+        pool.getConnection(function (err, conn) {
+            conn.query({
+                    sql: 'INSERT INTO trader_block (t_id, b_id, symbol, quantity, order_type) VALUES (?, ?, ?, ?, ?)'
+                }, [req.body.traderId, req.body.brokerId, req.body.symbol, req.body.quantity, req.body.order_type],
+                function (error, results, fields) {
+                    // error will be an Error if one occurred during the query 
+                    // results will contain the results of the query 
+                    // fields will contain information about the returned results fields (if any)
+                    if (error) {
+                        console.log('Error performing the query:');
+                        console.log(error);
+                        res.status(500).send(error);
+                    } else {
+                        console.log("Block insert successful");
+                        console.log(fields);
 
-        db.query({
-                sql: 'INSERT INTO trader_block (block_id, t_id, b_id, symbol, quantity, order_type) VALUES (?, ?, ?, ?, ?, ?)'
-            }, [blockId, req.body.traderId, req.body.brokerId, req.body.symbol, req.body.quantity, req.body.orderType],
-            function (error, results, fields) {
-                // error will be an Error if one occurred during the query 
-                // results will contain the results of the query 
-                // fields will contain information about the returned results fields (if any)
-                if (error) {
-                    console.log('Error performing the query:');
-                    console.log(error);
-                    res.status(500).send(error);
-                } else {
-                    console.log("ORDER insert successful");
-                    console.log(fields);
-                    blockId = results.insertId;
+                        blockId = results.insertId;
+
+                        /* Updating single_order information */
+                        for (var i in req.body.holdingOrders) {
+                            var single_order = body.holdingOrders[i];
+                            conn.query({
+                                    sql: 'UPDATE single_order SET block_id = ?, date_trequest = CURDATE(), status = ? WHERE sorder_id = ?'
+                                }, [blockId, "Processed", single_order.sorder_id],
+                                function (error, results, fields) {
+                                    if (error) {
+                                        console.log('Error performing the query:');
+                                        console.log(error);
+                                        res.status(500).send(error);
+                                    } else {
+                                        console.log("Single_order updated successfully");
+                                    }
+
+                                }
+                            )
+                        }
 
 
-                    res.status(201).send(results);
-                }
-            }
-        );
+                        /* Send email to the broker */
 
-    });
+                        // auto-generate the link
+                        var randomstring = randomstring.generate(32);
+                        var link = "http://139.59.17.119:8080/views/trader?uid=" + randomstring;
+
+                        // Create the email content
+                        var orderTable = "<table style=\"table, th, td {border: 1 px solid black;}\"><tr><th>Symbol</th><th>Quantity</th><th>Action</th><th>Ordertype</th></tr><tr><td>" + req.body.symbol + "</td><td>" + req.body.quantity + "</td><td>" + req.body.order_type + "</td></tr></table>"
+
+                        var mailText = "A new order has been placed: <br/>" + orderTable + "<br/>Please, press the following button when executed:<br/><a href=\"" + link + "\"><button>Confirm</button></a>";
+                        var mailOptions = {
+                            from: 'info@moneytree.com',
+                            to: 'otorrillas@gmail.com',
+                            subject: 'New trade request',
+                            html: mailText
+                        };
+
+                        transporter.sendMail(mailOptions, function (error, info) {
+                            if (error) {
+                                return console.log(error);
+                            }
+                            console.log('Message sent: ' + info.response);
+                        });
 
 
-router.route('/sendMail')
-    .get(function (req, res) {
-        nodemailer.sendMail({
-            sender: 'info@moneytree.com',
-            to: 'otorrillas@gmail.com',
-            subject: 'Govind is a pussy',
-            body: 'Hey there I am using WhatsApp'
-        }, function (error, success) {
-            if (error)
-                console.log(error);
-            else
-                console.log(success);
+                        res.status(201).send(results);
+                    };
+                });
+
+
+
         });
-
-    })
+    });
 
 module.exports = router;
