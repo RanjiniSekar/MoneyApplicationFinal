@@ -42,7 +42,7 @@ public class CTraderPendingRequest {
 
             //THIS IS THE JSONRESPONSE TURNED INTO JSONOBJECT  
             JSONObject myRespO = new JSONObject(resp.getBody());
-
+            System.out.println(myRespO);
             JSONArray arrJson = myRespO.getJSONArray("array");
             
             //GET ORDERS FROM ARRAY
