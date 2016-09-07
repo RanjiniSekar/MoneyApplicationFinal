@@ -18,7 +18,7 @@ public class SingleOrder {
 	private String order_type;
 	private String status;
         private long pmId;
-    private long assignedTo;
+        private long assignedTo;
 
     
     public SingleOrder(long SingleOrderId, long portfolioId, long OrderId, long BlockId, String symbol, int quantity, String action, double stopPrice, double limitPrice, double pricePaid, String stockExchange, String accountType, String orderType, String status) {
@@ -92,34 +92,21 @@ public class SingleOrder {
             
             this.action_type = (String)object[4];
             
+            this.order_type = (String)object[5];
             
-            if(object[5] != null){
-                this.price_stop = (double)object[5];
-            }
             if(object[6] != null){
-                this.price_limit = (double)object[6];
+                this.price_stop = (double)object[6];
+            }
+            if(object[7] != null){
+                this.price_limit = (double)object[7];
             }
             //this.pricePaid = (double)pricePaid;
             
             
             
-            if(object[7] != null){
-                this.account_type = (String)object[7];
+            if(object[8] != null){
+                this.account_type = (String)object[8];
                 
-            }
-            
-            
-            if(object[5] == null && object[6] == null){
-                this.order_type = "Market Order"; //MARKET ORDER
-            }
-            if(object[5] != null && object[6] == null){
-                this.order_type = "Stop Order"; //STOP ORDER
-            }
-            if(object[5] == null && object[6] != null){
-                this.order_type = "Limit Order"; //LIMIT ORDER
-            }
-            if(object[5] != null && object[6] != null){
-                this.order_type = "Stop Limit Order"; //STOP LIMIT ORDER
             }
             
     }
