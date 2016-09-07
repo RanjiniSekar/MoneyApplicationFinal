@@ -45,6 +45,7 @@ public class ChangePassword extends javax.swing.JFrame {
         ConfirmPassTextField = new java.awt.TextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("MoneyTree Trading Platform");
 
         submitButton.setBackground(new java.awt.Color(51, 51, 51));
         submitButton.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N

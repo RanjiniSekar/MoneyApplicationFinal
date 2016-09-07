@@ -47,7 +47,7 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
         initComponents();
 
         //START TIMER TO UPDATE ORDERS
-        Timer timer = new Timer(10000, new ActionListener() {
+        Timer timer = new Timer(5000, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 ArrayList<SingleOrder> ordersDone = (ArrayList) CPMOrderHistory.updateOrders();
@@ -63,7 +63,7 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
         });
         timer.start();
         try {
-            Thread.sleep(5000);
+            Thread.sleep(1000);
         } catch (InterruptedException e) {
         }
         timer.restart();
@@ -113,7 +113,7 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
         ChangePassword = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Portfolio Manager Platform");
+        setTitle("MoneyTree Trading Platform: Portfolio Manager");
         setMinimumSize(new java.awt.Dimension(1024, 768));
         getContentPane().setLayout(new java.awt.GridBagLayout());
 
