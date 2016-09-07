@@ -1,0 +1,3143 @@
+AAAP|Advanced Accelerator Applications S.A. 
+AAL|American Airlines Group, Inc. 
+AAME|Atlantic American Corporation 
+AAOI|Applied Optoelectronics, Inc. 
+AAON|AAON, Inc. 
+AAPC|Atlantic Alliance Partnership Corp. 
+AAPL|Apple Inc. 
+AAWW|Atlas Air Worldwide Holdings 
+AAXJ|iShares MSCI All Country Asia ex Japan Index Fund|G|N|N|100|Y|N
+ABAC|Aoxin Tianli Group, Inc. 
+ABAX|ABAXIS, Inc. 
+ABCB|Ameris Bancorp 
+ABCD|Cambium Learning Group, Inc. 
+ABCO|The Advisory Board Company 
+ABDC|Alcentra Capital Corp. 
+ABEO|Abeona Therapeutics Inc. 
+ABEOW|Abeona Therapeutics Inc. 
+ABIL|Ability Inc. 
+ABIO|ARCA biopharma, Inc. 
+ABMD|ABIOMED, Inc. 
+ABTL|Autobytel Inc. 
+ABTX|Allegiance Bancshares, Inc. 
+ABUS|Arbutus Biopharma Corporation 
+ABY|Atlantica Yield plc 
+ACAD|ACADIA Pharmaceuticals Inc. 
+ACAS|American Capital, Ltd. 
+ACAT|Arctic Cat Inc. 
+ACBI|Atlantic Capital Bancshares, Inc. 
+ACET|Aceto Corporation 
+ACFC|Atlantic Coast Financial Corporation 
+ACGL|Arch Capital Group Ltd. 
+ACHC|Acadia Healthcare Company, Inc. 
+ACHN|Achillion Pharmaceuticals, Inc. 
+ACIA|Acacia Communications, Inc. 
+ACIW|ACI Worldwide, Inc. 
+ACLS|Axcelis Technologies, Inc. 
+ACNB|ACNB Corporation 
+ACOR|Acorda Therapeutics, Inc. 
+ACPW|Active Power, Inc. 
+ACRS|Aclaris Therapeutics, Inc. 
+ACRX|AcelRx Pharmaceuticals, Inc. 
+ACSF|American Capital Senior Floating, Ltd. 
+ACST|Acasti Pharma, Inc. 
+ACTA|Actua Corporation 
+ACTG|Acacia Research Corporation 
+ACTS|Actions Semiconductor Co., Ltd. 
+ACTX|Global X Guru Activist ETF|G|N|N|100|Y|N
+ACUR|Acura Pharmaceuticals, Inc. 
+ACWI|iShares MSCI ACWI Index Fund|G|N|N|100|Y|N
+ACWX|iShares MSCI ACWI ex US Index Fund|G|N|N|100|Y|N
+ACXM|Acxiom Corporation 
+ADAP|Adaptimmune Therapeutics plc 
+ADBE|Adobe Systems Incorporated 
+ADES|Advanced Emissions Solutions, Inc. 
+ADHD|Alcobra Ltd. 
+ADI|Analog Devices, Inc. 
+ADMA|ADMA Biologics Inc 
+ADMP|Adamis Pharmaceuticals Corporation 
+ADMS|Adamas Pharmaceuticals, Inc. 
+ADP|Automatic Data Processing, Inc. 
+ADRA|BLDRS Asia 50 ADR Index Fund|G|N|N|100|Y|N
+ADRD|BLDRS Developed Markets 100 ADR Index Fund|G|N|N|100|Y|N
+ADRE|BLDRS Emerging Markets 50 ADR Index Fund|G|N|N|100|Y|N
+ADRO|Aduro Biotech, Inc. 
+ADRU|BLDRS Europe 100 ADR Index Fund|G|N|N|100|Y|N
+ADSK|Autodesk, Inc. 
+ADTN|ADTRAN, Inc. 
+ADUS|Addus HomeCare Corporation 
+ADVM|Adverum Biotechnologies, Inc. 
+ADXS|Advaxis, Inc. 
+ADXSW|Advaxis, Inc. 
+AEGN|Aegion Corp 
+AEGR|Aegerion Pharmaceuticals, Inc. 
+AEHR|Aehr Test Systems 
+AEIS|Advanced Energy Industries, Inc. 
+AEMD|Aethlon Medical, Inc. 
+AEPI|AEP Industries Inc. 
+AERI|Aerie Pharmaceuticals, Inc. 
+AETI|American Electric Technologies, Inc. 
+AEY|ADDvantage Technologies Group, Inc. 
+AEZS|AEterna Zentaris Inc. 
+AFAM|Almost Family Inc 
+AFH|Atlas Financial Holdings, Inc. 
+AFMD|Affimed N.V. 
+AFSI|AmTrust Financial Services, Inc. 
+AGEN|Agenus Inc. 
+AGFS|AgroFresh Solutions, Inc. 
+AGFSW|AgroFresh Solutions, Inc. 
+AGII|Argo Group International Holdings, Ltd. 
+AGIIL|Argo Group International Holdings, Ltd. 
+AGIO|Agios Pharmaceuticals, Inc. 
+AGLE|Aeglea BioTherapeutics, Inc. 
+AGNC|American Capital Agency Corp. 
+AGNCB|American Capital Agency Corp. 
+AGNCP|American Capital Agency Corp. 
+AGND|WisdomTree Barclays U.S. Aggregate Bond Negative Duration Fund|G|N|N|100|Y|N
+AGRX|Agile Therapeutics, Inc. 
+AGTC|Applied Genetic Technologies Corporation 
+AGYS|Agilysys, Inc. 
+AGZD|WisdomTree Barclays U.S. Aggregate Bond Zero Duration Fund|G|N|N|100|Y|N
+AHGP|Alliance Holdings GP, L.P. 
+AHPI|Allied Healthcare Products, Inc. 
+AIA|iShares Asia 50 ETF|G|N|N|100|Y|N
+AIMC|Altra Industrial Motion Corp. 
+AIMT|Aimmune Therapeutics, Inc. 
+AINV|Apollo Investment Corporation 
+AIQ|Alliance HealthCare Services, Inc. 
+AIRG|Airgain, Inc. 
+AIRM|Air Methods Corporation 
+AIRR|First Trust RBA American Industrial Renaissance ETF|G|N|N|100|Y|N
+AIRT|Air T, Inc. 
+AIXG|Aixtron SE 
+AKAM|Akamai Technologies, Inc. 
+AKAO|Achaogen, Inc. 
+AKBA|Akebia Therapeutics, Inc. 
+AKER|Akers Biosciences Inc 
+AKRX|Akorn, Inc. 
+AKTX|Akari Therapeutics Plc 
+ALCO|Alico, Inc. 
+ALDR|Alder BioPharmaceuticals, Inc. 
+ALDX|Aldeyra Therapeutics, Inc. 
+ALGN|Align Technology, Inc. 
+ALGT|Allegiant Travel Company 
+ALIM|Alimera Sciences, Inc. 
+ALJJ|ALJ Regional Holdings, Inc. 
+ALKS|Alkermes plc 
+ALLT|Allot Communications Ltd. 
+ALNY|Alnylam Pharmaceuticals, Inc. 
+ALOG|Analogic Corporation 
+ALOT|AstroNova, Inc. 
+ALQA|Alliqua BioMedical, Inc. 
+ALRM|Alarm.com Holdings, Inc. 
+ALSK|Alaska Communications Systems Group, Inc. 
+ALTY|Global X SuperDividend Alternatives ETF|G|N|N|100|Y|N
+ALXN|Alexion Pharmaceuticals, Inc. 
+AMAG|AMAG Pharmaceuticals, Inc. 
+AMAT|Applied Materials, Inc. 
+AMBA|Ambarella, Inc. 
+AMBC|Ambac Financial Group, Inc. 
+AMBCW|Ambac Financial Group, Inc. 
+AMCC|Applied Micro Circuits Corporation 
+AMCN|AirMedia Group Inc 
+AMCX|AMC Networks Inc. 
+AMD|Advanced Micro Devices, Inc. 
+AMDA|Amedica Corporation 
+AMED|Amedisys Inc 
+AMGN|Amgen Inc. 
+AMKR|Amkor Technology, Inc. 
+AMNB|American National Bankshares, Inc. 
+AMOT|Allied Motion Technologies, Inc. 
+AMOV|America Movil, S.A.B. de C.V. 
+AMPH|Amphastar Pharmaceuticals, Inc. 
+AMRB|American River Bankshares 
+AMRI|Albany Molecular Research, Inc. 
+AMRK|A
+AMRN|Amarin Corporation plc 
+AMRS|Amyris, Inc. 
+AMSC|American Superconductor Corporation 
+AMSF|AMERISAFE, Inc. 
+AMSG|Amsurg Corp. 
+AMSGP|Amsurg Corp. 
+AMSWA|American Software, Inc. 
+AMTD|TD Ameritrade Holding Corporation 
+AMTX|Aemetis, Inc 
+AMWD|American Woodmark Corporation 
+AMZN|Amazon.com, Inc. 
+ANAT|American National Insurance Company 
+ANCB|Anchor Bancorp 
+ANCX|Access National Corporation 
+ANDA|Andina Acquisition Corp. II 
+ANDAR|Andina Acquisition Corp. II 
+ANDAU|Andina Acquisition Corp. II 
+ANDAW|Andina Acquisition Corp. II 
+ANDE|The Andersons, Inc. 
+ANGI|Angie's List, Inc. 
+ANGO|AngioDynamics, Inc. 
+ANIK|Anika Therapeutics Inc. 
+ANIP|ANI Pharmaceuticals, Inc. 
+ANSS|ANSYS, Inc. 
+ANTH|Anthera Pharmaceuticals, Inc. 
+ANY|Sphere 3D Corp. 
+AOSL|Alpha and Omega Semiconductor Limited 
+APDN|Applied DNA Sciences Inc 
+APDNW|Applied DNA Sciences Inc 
+APEI|American Public Education, Inc. 
+APIC|Apigee Corporation 
+APLP|Archrock Partners, L.P. 
+APOG|Apogee Enterprises, Inc. 
+APOL|Apollo Education Group, Inc. 
+APOP|Cellect Biotechnology Ltd. 
+APOPW|Cellect Biotechnology Ltd. 
+APPF|AppFolio, Inc. 
+APPS|Digital Turbine, Inc. 
+APPY|Venaxis, Inc. 
+APRI|Apricus Biosciences, Inc 
+APTO|Aptose Biosciences, Inc. 
+APVO|Aptevo Therapeutics Inc. 
+APWC|Asia Pacific Wire & Cable Corporation Limited 
+AQMS|Aqua Metals, Inc. 
+AQXP|Aquinox Pharmaceuticals, Inc. 
+ARAY|Accuray Incorporated 
+ARCB|ArcBest Corporation 
+ARCC|Ares Capital Corporation 
+ARCI|Appliance Recycling Centers of America, Inc. 
+ARCW|ARC Group Worldwide, Inc. 
+ARDM|Aradigm Corporation 
+ARDX|Ardelyx, Inc. 
+AREX|Approach Resources Inc. 
+ARGS|Argos Therapeutics, Inc. 
+ARIA|ARIAD Pharmaceuticals, Inc. 
+ARII|American Railcar Industries, Inc. 
+ARIS|ARI Network Services, Inc. 
+ARKR|Ark Restaurants Corp. 
+ARLP|Alliance Resource Partners, L.P. 
+ARLZ|Aralez Pharmaceuticals Inc. 
+ARMH|ARM Holdings plc 
+ARNA|Arena Pharmaceuticals, Inc. 
+AROW|Arrow Financial Corporation 
+ARQL|ArQule, Inc. 
+ARRS|ARRIS International plc 
+ARRY|Array BioPharma Inc. 
+ARTNA|Artesian Resources Corporation 
+ARTW|Art's
+ARTX|Arotech Corporation 
+ARWA|Arowana Inc. 
+ARWAR|Arowana Inc. 
+ARWAU|Arowana Inc. 
+ARWAW|Arowana Inc. 
+ARWR|Arrowhead Pharmaceuticals, Inc. 
+ASBB|ASB Bancorp, Inc. 
+ASCMA|Ascent Capital Group, Inc. 
+ASEI|American Science and Engineering, Inc. 
+ASET|FlexShares Real Assets Allocation Index Fund|G|N|N|100|Y|N
+ASFI|Asta Funding, Inc. 
+ASMB|Assembly Biosciences, Inc. 
+ASML|ASML Holding N.V. 
+ASNA|Ascena Retail Group, Inc. 
+ASND|Ascendis Pharma A/S 
+ASPS|Altisource Portfolio Solutions S.A. 
+ASRV|AmeriServ Financial Inc. 
+ASRVP|AmeriServ Financial Inc. 
+ASTC|Astrotech Corporation 
+ASTE|Astec Industries, Inc. 
+ASUR|Asure Software Inc 
+ASYS|Amtech Systems, Inc. 
+ATAI|ATA Inc. 
+ATAX|America First Multifamily Investors, L.P. 
+ATEC|Alphatec Holdings, Inc. 
+ATHN|athenahealth, Inc. 
+ATHX|Athersys, Inc. 
+ATLC|Atlanticus Holdings Corporation 
+ATLO|Ames National Corporation 
+ATMR|Atomera Incorporated 
+ATNI|ATN International, Inc. 
+ATOS|Atossa Genetics Inc. 
+ATRA|Atara Biotherapeutics, Inc. 
+ATRC|AtriCure, Inc. 
+ATRI|Atrion Corporation 
+ATRO|Astronics Corporation 
+ATRS|Antares Pharma, Inc. 
+ATSG|Air Transport Services Group, Inc 
+ATTU|Attunity Ltd. 
+ATVI|Activision Blizzard, Inc 
+AUBN|Auburn National Bancorporation, Inc. 
+AUDC|AudioCodes Ltd. 
+AUMA|AR Capital Acquisition Corp. 
+AUMAU|AR Capital Acquisition Corp. 
+AUMAW|AR Capital Acquisition Corp. 
+AUPH|Aurinia Pharmaceuticals Inc 
+AVAV|AeroVironment, Inc. 
+AVEO|AVEO Pharmaceuticals, Inc. 
+AVGO|Broadcom Limited 
+AVGR|Avinger, Inc. 
+AVHI|A V Homes, Inc. 
+AVID|Avid Technology, Inc. 
+AVIR|Aviragen Therapeutics, Inc. 
+AVNW|Aviat Networks, Inc. 
+AVXL|Anavex Life Sciences Corp. 
+AVXS|AveXis, Inc. 
+AWRE|Aware, Inc. 
+AXAS|Abraxas Petroleum Corporation 
+AXDX|Accelerate Diagnostics, Inc. 
+AXGN|AxoGen, Inc. 
+AXSM|Axsome Therapeutics, Inc. 
+AXTI|AXT Inc 
+AYA|Amaya Inc. 
+AZPN|Aspen Technology, Inc. 
+BABY|Natus Medical Incorporated 
+BANF|BancFirst Corporation 
+BANFP|BancFirst Corporation 
+BANR|Banner Corporation 
+BANX|StoneCastle Financial Corp 
+BASI|Bioanalytical Systems, Inc. 
+BATRA|Liberty Media Corporation 
+BATRK|Liberty Media Corporation 
+BBBY|Bed Bath & Beyond Inc. 
+BBC|BioShares Biotechnology Clinical Trials Fund|G|N|N|100|Y|N
+BBGI|Beasley Broadcast Group, Inc. 
+BBH|VanEck Vectors Biotech ETF|G|N|N|100|Y|N
+BBOX|Black Box Corporation 
+BBP|BioShares Biotechnology Products Fund|G|N|N|100|Y|N
+BBRG|Bravo Brio Restaurant Group, Inc. 
+BBRY|BlackBerry Limited 
+BBSI|Barrett Business Services, Inc. 
+BCBP|BCB Bancorp, Inc. (NJ) 
+BCLI|Brainstorm Cell Therapeutics Inc. 
+BCOM|B Communications Ltd. 
+BCOR|Blucora, Inc. 
+BCOV|Brightcove Inc. 
+BCPC|Balchem Corporation 
+BCRX|BioCryst Pharmaceuticals, Inc. 
+BDE|Black Diamond, Inc. 
+BDGE|Bridge Bancorp, Inc. 
+BDSI|BioDelivery Sciences International, Inc. 
+BEAT|BioTelemetry, Inc. 
+BEAV|B/E Aerospace, Inc. 
+BEBE|bebe stores, inc. 
+BECN|Beacon Roofing Supply, Inc. 
+BELFA|Bel Fuse Inc. 
+BELFB|Bel Fuse Inc. 
+BFIN|BankFinancial Corporation 
+BFIT|Global X Health & Wellness Thematic ETF|G|N|N|100|Y|N
+BGCP|BGC Partners, Inc. 
+BGFV|Big 5 Sporting Goods Corporation 
+BGNE|BeiGene, Ltd. 
+BHAC|Barington/Hilco Acquisition Corp. 
+BHACR|Barington/Hilco Acquisition Corp. 
+BHACU|Barington/Hilco Acquisition Corp. 
+BHACW|Barington/Hilco Acquisition Corp. 
+BHBK|Blue Hills Bancorp, Inc. 
+BIB|ProShares Ultra Nasdaq Biotechnology|G|N|N|100|Y|N
+BICK|First Trust BICK Index Fund|G|N|N|100|Y|N
+BIDU|Baidu, Inc. 
+BIIB|Biogen Inc. 
+BIOC|Biocept, Inc. 
+BIOD|Biodel Inc. 
+BIOL|Biolase, Inc. 
+BIOS|BioScrip, Inc. 
+BIS|ProShares UltraShort Nasdaq Biotechnology|G|N|N|100|Y|N
+BITE|The Restaurant ETF|G|N|N|100|Y|N
+BJRI|BJ's Restaurants, Inc. 
+BKCC|BlackRock Capital Investment Corporation 
+BKEP|Blueknight Energy Partners L.P., L.L.C. 
+BKEPP|Blueknight Energy Partners L.P., L.L.C. 
+BKMU|Bank Mutual Corporation 
+BKSC|Bank of South Carolina Corp. 
+BLBD|Blue Bird Corporation 
+BLCM|Bellicum Pharmaceuticals, Inc. 
+BLDP|Ballard Power Systems, Inc. 
+BLDR|Builders FirstSource, Inc. 
+BLFS|BioLife Solutions, Inc. 
+BLIN|Bridgeline Digital, Inc. 
+BLKB|Blackbaud, Inc. 
+BLMN|Bloomin' Brands, Inc. 
+BLMT|BSB Bancorp, Inc. 
+BLPH|Bellerophon Therapeutics, Inc. 
+BLRX|BioLineRx Ltd. 
+BLUE|bluebird bio, Inc. 
+BLVD|Boulevard Acquisition Corp. II 
+BLVDU|Boulevard Acquisition Corp. II 
+BLVDW|Boulevard Acquisition Corp. II 
+BMCH|BMC Stock Holdings, Inc. 
+BMLA|BullMark LatAm Select Leaders ETF|G|N|N|100|Y|N
+BMRA|Biomerica, Inc. 
+BMRC|Bank of Marin Bancorp 
+BMRN|BioMarin Pharmaceutical Inc. 
+BMTC|Bryn Mawr Bank Corporation 
+BNCL|Beneficial Bancorp, Inc. 
+BNCN|BNC Bancorp 
+BNDX|Vanguard Total International Bond ETF|G|N|N|100|Y|N
+BNFT|Benefitfocus, Inc. 
+BNSO|Bonso Electronics International, Inc. 
+BNTC|Benitec Biopharma Limited 
+BNTCW|Benitec Biopharma Limited 
+BOBE|Bob Evans Farms, Inc. 
+BOCH|Bank of Commerce Holdings (CA) 
+BOFI|BofI Holding, Inc. 
+BOFIL|BofI Holding, Inc. 
+BOJA|Bojangles', Inc. 
+BOKF|BOK Financial Corporation 
+BOKFL|BOK Financial Corporation 
+BOLD|Audentes Therapeutics, Inc. 
+BONT|The Bon
+BOOM|Dynamic Materials Corporation 
+BOSC|B.O.S. Better Online Solutions 
+BOTJ|Bank of the James Financial Group, Inc. 
+BPFH|Boston Private Financial Holdings, Inc. 
+BPFHP|Boston Private Financial Holdings, Inc.  Series D|Q|N|N|100|N|N
+BPFHW|Boston Private Financial Holdings, Inc. 
+BPMC|Blueprint Medicines Corporation 
+BPOP|Popular, Inc. 
+BPOPM|Popular, Inc. 
+BPOPN|Popular, Inc. 
+BPTH|Bio
+BRCD|Brocade Communications Systems, Inc. 
+BREW|Craft Brew Alliance, Inc. 
+BRID|Bridgford Foods Corporation 
+BRKL|Brookline Bancorp, Inc. 
+BRKR|Bruker Corporation 
+BRKS|Brooks Automation, Inc. 
+BSET|Bassett Furniture Industries, Incorporated 
+BSF|Bear State Financial, Inc. 
+BSFT|BroadSoft, Inc. 
+BSPM|Biostar Pharmaceuticals, Inc. 
+BSQR|BSQUARE Corporation 
+BSRR|Sierra Bancorp 
+BSTC|BioSpecifics Technologies Corp 
+BSTG|Biostage, Inc. 
+BTEC|Principal Healthcare Innovators Index ETF|G|N|N|100|Y|N
+BUFF|Blue Buffalo Pet Products, Inc. 
+BUR|Burcon NutraScience Corp 
+BUSE|First Busey Corporation 
+BV|Bazaarvoice, Inc. 
+BVSN|BroadVision, Inc. 
+BVXV|BiondVax Pharmaceuticals Ltd. 
+BVXVW|BiondVax Pharmaceuticals Ltd. 
+BWEN|Broadwind Energy, Inc. 
+BWFG|Bankwell Financial Group, Inc. 
+BWINA|Baldwin & Lyons, Inc. 
+BWINB|Baldwin & Lyons, Inc. 
+BWLD|Buffalo Wild Wings, Inc. 
+BYBK|Bay Bancorp, Inc. 
+BYFC|Broadway Financial Corporation 
+BZUN|Baozun Inc. 
+CA|CA Inc. 
+CAAS|China Automotive Systems, Inc. 
+CAC|Camden National Corporation 
+CACB|Cascade Bancorp 
+CACC|Credit Acceptance Corporation 
+CACQ|Caesars Acquisition Company 
+CADC|China Advanced Construction Materials Group, Inc. 
+CAFD|8point3 Energy Partners LP 
+CAKE|The Cheesecake Factory Incorporated 
+CALA|Calithera Biosciences, Inc. 
+CALD|Callidus Software, Inc. 
+CALI|China Auto Logistics Inc. 
+CALL|magicJack VocalTec Ltd 
+CALM|Cal
+CAMP|CalAmp Corp. 
+CAMT|Camtek Ltd. 
+CAPN|Capnia, Inc. 
+CAPNW|Capnia, Inc. 
+CAPR|Capricor Therapeutics, Inc. 
+CAPX|Elkhorn S&P 500 Capital Expenditures Portfolio|G|N|N|100|Y|N
+CAR|Avis Budget Group, Inc. 
+CARA|Cara Therapeutics, Inc. 
+CARB|Carbonite, Inc. 
+CARO|Carolina Financial Corporation 
+CART|Carolina Trust BancShares, Inc. 
+CARV|Carver Bancorp, Inc. 
+CARZ|First Trust NASDAQ Global Auto Index Fund|G|N|N|100|Y|N
+CASC|Cascadian Therapeutics, Inc. 
+CASH|Meta Financial Group, Inc. 
+CASI|CASI Pharmaceuticals, Inc. 
+CASM|CAS Medical Systems, Inc. 
+CASS|Cass Information Systems, Inc 
+CASY|Caseys General Stores, Inc. 
+CATB|Catabasis Pharmaceuticals, Inc. 
+CATH|Global X S&P 500 Catholic Values ETF|G|N|N|100|Y|N
+CATM|Cardtronics plc 
+CATY|Cathay General Bancorp 
+CATYW|Cathay General Bancorp 
+CAVM|Cavium, Inc. 
+CBAK|China BAK Battery, Inc. 
+CBAN|Colony Bankcorp, Inc. 
+CBAY|CymaBay Therapeutics Inc. 
+CBF|Capital Bank Financial Corp. 
+CBFV|CB Financial Services, Inc. 
+CBIO|Catalyst Biosciences, Inc.  
+CBLI|Cleveland BioLabs, Inc. 
+CBMG|Cellular Biomedicine Group, Inc. 
+CBMX|CombiMatrix Corporation 
+CBMXW|CombiMatrix Corporation 
+CBNK|Chicopee Bancorp, Inc. 
+CBOE|CBOE Holdings, Inc. 
+CBPO|China Biologic Products, Inc. 
+CBRL|Cracker Barrel Old Country Store, Inc. 
+CBSH|Commerce Bancshares, Inc. 
+CBSHP|Commerce Bancshares, Inc.  Stock|Q|N|N|100|N|N
+CBYL|Carbylan Therapeutics, Inc. 
+CCBG|Capital City Bank Group 
+CCCL|China Ceramics Co., Ltd. 
+CCCR|China Commercial Credit, Inc. 
+CCD|Calamos Dynamic Convertible & Income Fund 
+CCIH|ChinaCache International Holdings Ltd. 
+CCLP|CSI Compressco LP 
+CCMP|Cabot Microelectronics Corporation 
+CCN|CardConnect Corp. 
+CCNE|CNB Financial Corporation 
+CCNWW|CardConnect Corp. 
+CCOI|Cogent Communications Holdings, Inc. 
+CCRC|China Customer Relations Centers, Inc. 
+CCRN|Cross Country Healthcare, Inc. 
+CCUR|Concurrent Computer Corporation 
+CCXI|ChemoCentryx, Inc. 
+CDC|Victory CEMP US EQ Income Enhanced Volatility Wtd Index ETF|G|N|N|100|Y|N
+CDK|CDK Global, Inc. 
+CDL|Victory CEMP US Large Cap High Div Volatility Wtd Index ETF|G|N|N|100|Y|N
+CDNA|CareDx, Inc. 
+CDNS|Cadence Design Systems, Inc. 
+CDOR|Condor Hospitality Trust, Inc. 
+CDTI|Clean Diesel Technologies, Inc. 
+CDTX|Cidara Therapeutics, Inc. 
+CDW|CDW Corporation 
+CDXC|ChromaDex Corporation 
+CDXS|Codexis, Inc. 
+CDZI|Cadiz, Inc. 
+CECE|CECO Environmental Corp. 
+CECO|Career Education Corporation 
+CELG|Celgene Corporation 
+CELGZ|Celgene Corporation 
+CEMI|Chembio Diagnostics, Inc. 
+CEMP|Cempra, Inc. 
+CENT|Central Garden & Pet Company 
+CENTA|Central Garden & Pet Company 
+CENX|Century Aluminum Company 
+CERC|Cerecor Inc. 
+CERCW|Cerecor Inc. 
+CERCZ|Cerecor Inc. 
+CERN|Cerner Corporation 
+CERS|Cerus Corporation 
+CERU|Cerulean Pharma Inc. 
+CETC|Hongli Clean Energy Technologies Corp. 
+CETV|Central European Media Enterprises Ltd. 
+CETX|Cemtrex Inc. 
+CEVA|CEVA, Inc. 
+CEZ|Victory CEMP Emerging Market Volatility Wtd Index ETF|G|N|N|100|Y|N
+CFA|Victory CEMP US 500 Volatility Wtd Index ETF|G|N|N|100|Y|N
+CFBK|Central Federal Corporation 
+CFCB|Centrue Financial Corporation 
+CFCO|CF Corporation 
+CFCOU|CF Corporation 
+CFCOW|CF Corporation 
+CFFI|C&F Financial Corporation 
+CFFN|Capitol Federal Financial, Inc. 
+CFMS|ConforMIS, Inc. 
+CFNB|California First National Bancorp 
+CFNL|Cardinal Financial Corporation 
+CFO|Victory CEMP US 500 Enhanced Volatility Wtd Index ETF|G|N|N|100|Y|N
+CFRX|ContraFect Corporation 
+CFRXW|ContraFect Corporation 
+CG|The Carlyle Group L.P. 
+CGEN|Compugen Ltd. 
+CGIX|Cancer Genetics, Inc. 
+CGNT|Cogentix Medical, Inc. 
+CGNX|Cognex Corporation 
+CGO|Calamos Global Total Return Fund 
+CHCI|Comstock Holding Companies, Inc. 
+CHCO|City Holding Company 
+CHDN|Churchill Downs, Incorporated 
+CHEF|The Chefs' Warehouse, Inc. 
+CHEK|Check
+CHEKW|Check
+CHFC|Chemical Financial Corporation 
+CHFN|Charter Financial Corp. 
+CHI|Calamos Convertible Opportunities and Income Fund 
+CHKE|Cherokee Inc. 
+CHKP|Check Point Software Technologies Ltd. 
+CHMA|Chiasma, Inc. 
+CHMG|Chemung Financial Corp 
+CHNR|China Natural Resources, Inc. 
+CHRS|Coherus BioSciences, Inc. 
+CHRW|C.H. Robinson Worldwide, Inc. 
+CHSCL|CHS Inc 
+CHSCM|CHS Inc 
+CHSCN|CHS Inc 
+CHSCO|CHS Inc 
+CHSCP|CHS Inc 
+CHTR|Charter Communications, Inc. 
+CHUBA|CommerceHub, Inc. 
+CHUBK|CommerceHub, Inc. 
+CHUY|Chuy's Holdings, Inc. 
+CHW|Calamos Global Dynamic Income Fund 
+CHY|Calamos Convertible and High Income Fund 
+CIBR|First Trust NASDAQ Cybersecurity ETF|G|N|N|100|Y|N
+CID|Victory CEMP International High Div Volatility Wtd Index ETF|G|N|N|100|Y|N
+CIDM|Cinedigm Corp 
+CIFC|CIFC LLC 
+CIGI|Colliers International Group Inc.  
+CIL|Victory CEMP International Volatility Wtd Index ETF|G|N|N|100|Y|N
+CINF|Cincinnati Financial Corporation 
+CISG|CNinsure Inc. 
+CIVB|Civista Bancshares, Inc.  
+CIVBP|Civista Bancshares, Inc.   Share, Series B|S|N|N|100|N|N
+CIZ|Victory CEMP Developed Enhanced Volatility Wtd Index ETF|G|N|N|100|Y|N
+CIZN|Citizens Holding Company 
+CJJD|China Jo
+CKEC|Carmike Cinemas, Inc. 
+CLAC|Capitol Acquisition Corp. III 
+CLACU|Capitol Acquisition Corp. III 
+CLACW|Capitol Acquisition Corp. III 
+CLBH|Carolina Bank Holdings Inc. 
+CLBS|Caladrius Biosciences, Inc. 
+CLCD|CoLucid Pharmaceuticals, Inc. 
+CLCT|Collectors Universe, Inc. 
+CLDC|China Lending Corporation 
+CLDCW|China Lending Corporation 
+CLDX|Celldex Therapeutics, Inc. 
+CLFD|Clearfield, Inc. 
+CLIR|ClearSign Combustion Corporation 
+CLLS|Cellectis S.A. 
+CLMS|Calamos Asset Management, Inc. 
+CLMT|Calumet Specialty Products Partners, L.P. 
+CLNE|Clean Energy Fuels Corp. 
+CLNT|Cleantech Solutions International, Inc. 
+CLRB|Cellectar Biosciences, Inc. 
+CLRBW|Cellectar Biosciences, Inc. 
+CLRBZ|Cellectar Biosciences, Inc. 
+CLRO|ClearOne, Inc. 
+CLSD|Clearside Biomedical, Inc. 
+CLSN|Celsion Corporation 
+CLUB|Town Sports International Holdings, Inc. 
+CLVS|Clovis Oncology, Inc. 
+CLWT|Euro Tech Holdings Company Limited 
+CMCO|Columbus McKinnon Corporation 
+CMCSA|Comcast Corporation 
+CMCT|CIM Commercial Trust Corporation 
+CME|CME Group Inc. 
+CMFN|CM Finance Inc 
+CMLS|Cumulus Media Inc. 
+CMPR|Cimpress N.V 
+CMRX|Chimerix, Inc. 
+CMTL|Comtech Telecommunications Corp. 
+CNAT|Conatus Pharmaceuticals Inc. 
+CNBKA|Century Bancorp, Inc. 
+CNCE|Concert Pharmaceuticals, Inc. 
+CNCR|Loncar Cancer Immunotherapy ETF|G|N|N|100|Y|N
+CNET|ChinaNet Online Holdings, Inc. 
+CNFR|Conifer Holdings, Inc. 
+CNIT|China Information Technology, Inc. 
+CNMD|CONMED Corporation 
+CNOB|ConnectOne Bancorp, Inc. 
+CNSL|Consolidated Communications Holdings, Inc. 
+CNTF|China TechFaith Wireless Communication Technology Limited 
+CNTY|Century Casinos, Inc. 
+CNV|Cnova N.V. 
+CNXR|Connecture, Inc. 
+COB|CommunityOne Bancorp 
+COBZ|CoBiz Financial Inc. 
+COHR|Coherent, Inc. 
+COHU|Cohu, Inc. 
+COKE|Coca
+COLB|Columbia Banking System, Inc. 
+COLL|Collegium Pharmaceutical, Inc. 
+COLM|Columbia Sportswear Company 
+COMM|CommScope Holding Company, Inc. 
+COMT|iShares Commodities Select Strategy ETF|G|N|N|100|Y|N
+CONE|CyrusOne Inc 
+CONN|Conn's, Inc. 
+COOL|Majesco Entertainment Company 
+CORE|Core
+CORI|Corium International, Inc. 
+CORT|Corcept Therapeutics Incorporated 
+COSI|Cosi, Inc. 
+COST|Costco Wholesale Corporation 
+COVS|Covisint Corporation 
+COWN|Cowen Group, Inc. 
+COWNL|Cowen Group, Inc. 
+COYN|COPsync, Inc. 
+COYNW|COPsync, Inc. 
+CPAAU|Conyers Park Acquisition Corp. 
+CPAH|CounterPath Corporation 
+CPHC|Canterbury Park Holding Corporation 
+CPHD|CEPHEID 
+CPHR|Cipher Pharmaceuticals Inc. 
+CPIX|Cumberland Pharmaceuticals Inc. 
+CPLA|Capella Education Company 
+CPLP|Capital Product Partners L.P. 
+CPRT|Copart, Inc. 
+CPRX|Catalyst Pharmaceuticals, Inc. 
+CPSH|CPS Technologies Corp. 
+CPSI|Computer Programs and Systems, Inc. 
+CPSS|Consumer Portfolio Services, Inc. 
+CPST|Capstone Turbine Corporation 
+CPTA|Capitala Finance Corp. 
+CRAI|CRA International,Inc. 
+CRAY|Cray Inc 
+CRBP|Corbus Pharmaceuticals Holdings, Inc. 
+CRDS|Crossroads Systems, Inc. 
+CRDT|WisdomTree Strategic Corporate Bond Fund|G|N|N|100|Y|N
+CREE|Cree, Inc. 
+CREG|China Recycling Energy Corporation 
+CRESY|Cresud S.A.C.I.F. y A. 
+CRIS|Curis, Inc. 
+CRME|Cardiome Pharma Corporation 
+CRMT|America's Car
+CRNT|Ceragon Networks Ltd. 
+CROX|Crocs, Inc. 
+CRTN|Cartesian, Inc. 
+CRTO|Criteo S.A. 
+CRUS|Cirrus Logic, Inc. 
+CRVL|CorVel Corp. 
+CRVS|Corvus Pharmaceuticals, Inc. 
+CRWS|Crown Crafts, Inc. 
+CRZO|Carrizo Oil & Gas, Inc. 
+CSA|Victory CEMP US Small Cap Volatility Wtd Index ETF|G|N|N|100|Y|N
+CSAL|Communications Sales & Leasing,Inc. 
+CSB|Victory CEMP US Small Cap High Div Volatility Wtd Index ETF|G|N|N|100|Y|N
+CSBK|Clifton Bancorp Inc. 
+CSBR|Champions Oncology, Inc. 
+CSCO|Cisco Systems, Inc. 
+CSF|Victory CEMP US Discovery Enhanced Volatility Wtd Index ETF|G|N|N|100|Y|N
+CSFL|CenterState Banks, Inc. 
+CSGP|CoStar Group, Inc. 
+CSGS|CSG Systems International, Inc. 
+CSII|Cardiovascular Systems, Inc. 
+CSIQ|Canadian Solar Inc. 
+CSOD|Cornerstone OnDemand, Inc. 
+CSPI|CSP Inc. 
+CSQ|Calamos Strategic Total Return Fund 
+CSTE|Caesarstone Ltd. 
+CSWC|Capital Southwest Corporation 
+CSWI|CSW Industrials, Inc. 
+CSX|CSX Corporation 
+CTAS|Cintas Corporation 
+CTBI|Community Trust Bancorp, Inc. 
+CTG|Computer Task Group, Incorporated 
+CTHR|Charles & Colvard Ltd 
+CTIB|CTI Industries Corporation 
+CTIC|CTI BioPharma Corp. 
+CTMX|CytomX Therapeutics, Inc. 
+CTRE|CareTrust REIT, Inc. 
+CTRL|Control4 Corporation 
+CTRN|Citi Trends, Inc. 
+CTRP|Ctrip.com International, Ltd. 
+CTRV|ContraVir Pharmaceuticals Inc 
+CTSH|Cognizant Technology Solutions Corporation 
+CTSO|Cytosorbents Corporation 
+CTWS|Connecticut Water Service, Inc. 
+CTXS|Citrix Systems, Inc. 
+CUBA|The Herzfeld Caribbean Basin Fund, Inc. 
+CUBN|Commerce Union Bancshares, Inc. 
+CUI|CUI Global, Inc. 
+CUNB|CU Bancorp (CA) 
+CUR|Neuralstem, Inc. 
+CUTR|Cutera, Inc. 
+CVBF|CVB Financial Corporation 
+CVCO|Cavco Industries, Inc. 
+CVCY|Central Valley Community Bancorp 
+CVGI|Commercial Vehicle Group, Inc. 
+CVGW|Calavo Growers, Inc. 
+CVLT|CommVault Systems, Inc. 
+CVLY|Codorus Valley Bancorp, Inc 
+CVTI|Covenant Transportation Group, Inc. 
+CVV|CVD Equipment Corporation 
+CWAY|Coastway Bancorp, Inc. 
+CWBC|Community West Bancshares 
+CWCO|Consolidated Water Co. Ltd. 
+CWST|Casella Waste Systems, Inc. 
+CXDC|China XD Plastics Company Limited 
+CXRX|Concordia International Corp. 
+CXSE|WisdomTree China ex
+CY|Cypress Semiconductor Corporation 
+CYAD|Celyad SA 
+CYAN|Cyanotech Corporation 
+CYBE|CyberOptics Corporation 
+CYBR|CyberArk Software Ltd. 
+CYCC|Cyclacel Pharmaceuticals, Inc. 
+CYCCP|Cyclacel Pharmaceuticals, Inc. 
+CYHHZ|Community Health Systems, Inc. 
+CYNA|Cynapsus Therapeutics Inc. 
+CYNO|Cynosure, Inc. 
+CYOU|Changyou.com Limited 
+CYRN|CYREN Ltd. 
+CYRX|CryoPort, Inc. 
+CYRXW|CryoPort, Inc. 
+CYTK|Cytokinetics, Incorporated 
+CYTR|CytRx Corporation 
+CYTX|Cytori Therapeutics Inc 
+CYTXW|Cytori Therapeutics Inc 
+CZFC|Citizens First Corporation 
+CZNC|Citizens & Northern Corp 
+CZR|Caesars Entertainment Corporation 
+CZWI|Citizens Community Bancorp, Inc. 
+DAIO|Data I/O Corporation 
+DAKT|Daktronics, Inc. 
+DAVE|Famous Dave's of America, Inc. 
+DAX|Recon Capital DAX Germany ETF|G|N|N|100|Y|N
+DBVT|DBV Technologies S.A. 
+DCIX|Diana Containerships Inc. 
+DCOM|Dime Community Bancshares, Inc. 
+DCTH|Delcath Systems, Inc. 
+DDBI|Legg Mason Developed EX
+DELT|Delta Technology Holdings Limited 
+DELTW|Delta Technology Holdings Limited 
+DENN|Denny's Corporation 
+DEPO|Depomed, Inc. 
+DERM|Dermira, Inc. 
+DEST|Destination Maternity Corporation 
+DFBG|Differential Brands Group Inc. 
+DFRG|Del Frisco's Restaurant Group, Inc. 
+DFVL|Barclays PLC 
+DFVS|Barclays PLC 
+DGAS|Delta Natural Gas Company, Inc. 
+DGICA|Donegal Group, Inc. 
+DGICB|Donegal Group, Inc. 
+DGII|Digi International Inc. 
+DGLD|Credit Suisse AG 
+DGLY|Digital Ally, Inc. 
+DGRE|WisdomTree Emerging Markets Quality Dividend Growth Fund|G|N|N|100|Y|N
+DGRS|WisdomTree U.S. SmallCap Quality Dividend Growth Fund|G|N|N|100|Y|N
+DGRW|WisdomTree U.S. Quality Dividend Growth Fund|G|N|N|100|Y|N
+DHIL|Diamond Hill Investment Group, Inc. 
+DHRM|Dehaier Medical Systems Limited 
+DHXM|DHX Media Ltd. 
+DIOD|Diodes Incorporated 
+DISCA|Discovery Communications, Inc. 
+DISCB|Discovery Communications, Inc. 
+DISCK|Discovery Communications, Inc. 
+DISH|DISH Network Corporation 
+DJCO|Daily Journal Corp. (S.C.) 
+DLBL|Barclays PLC 
+DLBS|Barclays PLC 
+DLHC|DLH Holdings Corp. 
+DLTH|Duluth Holdings Inc. 
+DLTR|Dollar Tree, Inc. 
+DMLP|Dorchester Minerals, L.P. 
+DMPI|DelMar Pharmaceuticals, Inc. 
+DMRC|Digimarc Corporation 
+DMTX|Dimension Therapeutics, Inc. 
+DNAI|ProNAi Therapeutics, Inc. 
+DNBF|DNB Financial Corp 
+DNKN|Dunkin' Brands Group, Inc. 
+DORM|Dorman Products, Inc. 
+DOX|Amdocs Limited 
+DPRX|Dipexium Pharmaceuticals, Inc. 
+DRAD|Digirad Corporation 
+DRAM|Dataram Corporation 
+DRIO|DarioHealth Corp. 
+DRIOW|DarioHealth Corp. 
+DRNA|Dicerna Pharmaceuticals, Inc. 
+DRRX|DURECT Corporation 
+DRWI|DragonWave Inc 
+DRYS|DryShips Inc. 
+DSCI|Derma Sciences, Inc. 
+DSGX|The Descartes Systems Group Inc. 
+DSKX|DS Healthcare Group, Inc. 
+DSKY|iDreamSky Technology Limited 
+DSLV|Credit Suisse AG 
+DSPG|DSP Group, Inc. 
+DSWL|Deswell Industries, Inc. 
+DTEA|DAVIDsTEA Inc. 
+DTLK|Datalink Corporation 
+DTRM|Determine, Inc.  
+DTSI|DTS, Inc. 
+DTUL|Barclays PLC 
+DTUS|Barclays PLC 
+DTYL|Barclays PLC 
+DTYS|Barclays PLC 
+DVAX|Dynavax Technologies Corporation 
+DVCR|Diversicare Healthcare Services Inc. 
+DWAT|Arrow DWA Tactical ETF|G|N|N|100|Y|N
+DWCH|Datawatch Corporation 
+DWFI|SPDR Dorsey Wright Fixed Income Allocation ETF|G|N|N|100|Y|N
+DWIN|PowerShares DWA Tactical Multi
+DWLV|PowerShares DWA Momentum & Low Volatility Rotation Portfolio|G|N|N|100|Y|N
+DWSN|Dawson Geophysical Company 
+DWTR|PowerShares DWA Tactical Sector Rotation Portfolio|G|N|N|100|Y|N
+DXCM|DexCom, Inc. 
+DXGE|WisdomTree Germany Hedged Equity Fund|G|N|N|100|Y|N
+DXJS|WisdomTree Japan Hedged SmallCap Equity Fund|G|N|N|100|Y|N
+DXKW|WisdomTree Korea Hedged Equity Fund|G|N|N|100|Y|N
+DXLG|Destination XL Group, Inc. 
+DXPE|DXP Enterprises, Inc. 
+DXPS|WisdomTree United Kingdom Hedged Equity Fund|G|N|N|100|Y|N
+DXTR|Dextera Surgical Inc. 
+DXYN|The Dixie Group, Inc. 
+DYNT|Dynatronics Corporation 
+DYSL|Dynasil Corporation of America 
+EA|Electronic Arts Inc. 
+EAC|Erickson Incorporated 
+EACQ|Easterly Acquisition Corp. 
+EACQU|Easterly Acquisition Corp. 
+EACQW|Easterly Acquisition Corp. 
+EAGL|Double Eagle Acquisition Corp. 
+EAGLU|Double Eagle Acquisition Corp. 
+EAGLW|Double Eagle Acquisition Corp. 
+EARS|Auris Medical Holding AG 
+EBAY|eBay Inc. 
+EBAYL|eBay Inc. 
+EBIO|Eleven Biotherapeutics, Inc. 
+EBIX|Ebix, Inc. 
+EBMT|Eagle Bancorp Montana, Inc. 
+EBSB|Meridian Bancorp, Inc. 
+EBTC|Enterprise Bancorp Inc 
+ECAC|E
+ECACR|E
+ECACU|E
+ECHO|Echo Global Logistics, Inc. 
+ECOL|US Ecology, Inc. 
+ECPG|Encore Capital Group Inc 
+ECYT|Endocyte, Inc. 
+EDAP|EDAP TMS S.A. 
+EDBI|Legg Mason Emerging Markets Diversified Core ETF|G|N|N|100|Y|N
+EDGE|Edge Therapeutics, Inc. 
+EDGW|Edgewater Technology, Inc. 
+EDIT|Editas Medicine, Inc. 
+EDUC|Educational Development Corporation 
+EEFT|Euronet Worldwide, Inc. 
+EEI|Ecology and Environment, Inc. 
+EEMA|iShares MSCI Emerging Markets Asia Index Fund|G|N|N|100|Y|N
+EFII|Electronics for Imaging, Inc. 
+EFOI|Energy Focus, Inc. 
+EFSC|Enterprise Financial Services Corporation 
+EFUT|eFuture Holding Inc. 
+EGAN|eGain Corporation 
+EGBN|Eagle Bancorp, Inc. 
+EGHT|8x8 Inc 
+EGLE|Eagle Bulk Shipping Inc. 
+EGLT|Egalet Corporation 
+EGOV|NIC Inc. 
+EGRX|Eagle Pharmaceuticals, Inc. 
+EGT|Entertainment Gaming Asia Incorporated 
+EHTH|eHealth, Inc. 
+EIGI|Endurance International Group Holdings, Inc. 
+EIGR|Eiger BioPharmaceuticals, Inc. 
+EKSO|Ekso Bionics Holdings, Inc. 
+ELEC|Electrum Special Acquisition Corporation 
+ELECU|Electrum Special Acquisition Corporation 
+ELECW|Electrum Special Acquisition Corporation 
+ELGX|Endologix, Inc. 
+ELNK|EarthLink Holdings Corp. 
+ELON|Echelon Corporation 
+ELOS|Syneron Medical Ltd. 
+ELSE|Electro
+ELTK|Eltek Ltd. 
+EMCB|WisdomTree Emerging Markets Corporate Bond Fund|G|N|N|100|Y|N
+EMCF|Emclaire Financial Corp 
+EMCG|WisdomTree Emerging Markets Consumer Growth Fund|G|N|N|100|Y|N
+EMCI|EMC Insurance Group Inc. 
+EMIF|iShares S&P Emerging Markets Infrastructure Index Fund|G|N|N|100|Y|N
+EMITF|Elbit Imaging Ltd. 
+EMKR|EMCORE Corporation 
+EML|Eastern Company (The) 
+EMMS|Emmis Communications Corporation 
+ENDP|Endo International plc 
+ENFC|Entegra Financial Corp. 
+ENG|ENGlobal Corporation 
+ENOC|EnerNOC, Inc. 
+ENPH|Enphase Energy, Inc. 
+ENSG|The Ensign Group, Inc. 
+ENT|Global Eagle Entertainment Inc. 
+ENTA|Enanta Pharmaceuticals, Inc. 
+ENTG|Entegris, Inc. 
+ENTL|Entellus Medical, Inc. 
+ENZL|iShares MSCI New Zealand Capped ETF|G|N|N|100|Y|N
+ENZY|Enzymotec Ltd. 
+EPAY|Bottomline Technologies, Inc. 
+EPIQ|EPIQ Systems, Inc. 
+EPIX|ESSA Pharma Inc. 
+EPZM|Epizyme, Inc. 
+EQBK|Equity Bancshares, Inc. 
+EQFN|Equitable Financial Corp. 
+EQIX|Equinix, Inc. 
+ERI|Eldorado Resorts, Inc. 
+ERIC|Ericsson 
+ERIE|Erie Indemnity Company 
+ERII|Energy Recovery, Inc. 
+ERS|Empire Resources, Inc. 
+ESBK|Elmira Savings Bank NY (The) 
+ESCA|Escalade, Incorporated 
+ESEA|Euroseas Ltd. 
+ESES|Eco
+ESG|FlexShares STOXX US ESG Impact Index Fund|G|N|N|100|Y|N
+ESGD|iShares MSCI EAFE ESG Optimized ETF|G|N|N|100|Y|N
+ESGE|iShares MSCI EM ESG Optimized ETF|G|N|N|100|Y|N
+ESGG|FlexShares STOXX Global ESG Impact Index Fund|G|N|N|100|Y|N
+ESGR|Enstar Group Limited 
+ESIO|Electro Scientific Industries, Inc. 
+ESLT|Elbit Systems Ltd. 
+ESMC|Escalon Medical Corp. 
+ESND|Essendant Inc. 
+ESPR|Esperion Therapeutics, Inc. 
+ESRX|Express Scripts Holding Company 
+ESSA|ESSA Bancorp, Inc. 
+ESXB|Community Bankers Trust Corporation. 
+ETFC|E*TRADE Financial Corporation 
+ETRM|EnteroMedics Inc. 
+ETSY|Etsy, Inc. 
+EUFN|iShares MSCI Europe Financials Sector Index Fund|G|N|N|100|Y|N
+EVAR|Lombard Medical, Inc. 
+EVBS|Eastern Virginia Bankshares, Inc. 
+EVEP|EV Energy Partners, L.P. 
+EVGBC|Eaton Vance NextShares Trust 
+EVK|Ever
+EVLMC|Eaton Vance NextShares Trust II 
+EVLV|EVINE Live Inc. 
+EVOK|Evoke Pharma, Inc. 
+EVOL|Evolving Systems, Inc. 
+EVSTC|Eaton Vance NextShares Trust 
+EWBC|East West Bancorp, Inc. 
+EWZS|iShares MSCI Brazil Small
+EXA|Exa Corporation 
+EXAC|Exactech, Inc. 
+EXAS|Exact Sciences Corporation 
+EXEL|Exelixis, Inc. 
+EXFO|EXFO Inc 
+EXLS|ExlService Holdings, Inc. 
+EXPD|Expeditors International of Washington, Inc. 
+EXPE|Expedia, Inc. 
+EXPO|Exponent, Inc. 
+EXTR|Extreme Networks, Inc. 
+EYEG|Eyegate Pharmaceuticals, Inc. 
+EYEGW|Eyegate Pharmaceuticals, Inc. 
+EYES|Second Sight Medical Products, Inc. 
+EZPW|EZCORP, Inc. 
+FAAR|First Trust Alternative Absolute Return Strategy ETF|G|N|N|100|Y|N
+FAB|First Trust Multi Cap Value AlphaDEX Fund|G|N|N|100|Y|N
+FAD|First Trust Multi Cap Growth AlphaDEX Fund|G|N|N|100|Y|N
+FALC|FalconStor Software, Inc. 
+FALN|iShares Fallen Angels USD Bond ETF|G|N|N|100|Y|N
+FANG|Diamondback Energy, Inc. 
+FARM|Farmer Brothers Company 
+FARO|FARO Technologies, Inc. 
+FAST|Fastenal Company 
+FATE|Fate Therapeutics, Inc. 
+FB|Facebook, Inc. 
+FBIO|Fortress Biotech, Inc. 
+FBIZ|First Business Financial Services, Inc. 
+FBMS|The First Bancshares, Inc. 
+FBNC|First Bancorp 
+FBNK|First Connecticut Bancorp, Inc. 
+FBRC|FBR & Co 
+FBSS|Fauquier Bankshares, Inc. 
+FBZ|First Trust Brazil AlphaDEX Fund|G|N|N|100|Y|N
+FCA|First Trust China AlphaDEX Fund|G|N|N|100|Y|N
+FCAN|First Trust Canada AlphaDEX Fund|G|N|N|100|Y|N
+FCAP|First Capital, Inc. 
+FCBC|First Community Bancshares, Inc. 
+FCCO|First Community Corporation 
+FCCY|1st Constitution Bancorp (NJ) 
+FCEL|FuelCell Energy, Inc. 
+FCFP|First Community Financial Partners, Inc. 
+FCFS|First Cash Financial Services, Inc. 
+FCLF|First Clover Leaf Financial Corp. 
+FCNCA|First Citizens BancShares, Inc. 
+FCS|Fairchild Semiconductor International, Inc. 
+FCSC|Fibrocell Science Inc 
+FCVT|First Trust SSI Strategic Convertible Securities ETF|G|N|N|100|Y|N
+FDEF|First Defiance Financial Corp. 
+FDIV|First Trust Strategic Income ETF|G|N|N|100|Y|N
+FDML|Federal
+FDT|First Trust Developed Markets Ex
+FDTS|First Trust Developed Markets ex
+FDUS|Fidus Investment Corporation 
+FEIC|FEI Company 
+FEIM|Frequency Electronics, Inc. 
+FELE|Franklin Electric Co., Inc. 
+FEM|First Trust Emerging Markets AlphaDEX Fund|G|N|N|100|Y|N
+FEMB|First Trust Emerging Markets Local Currency Bond ETF|G|N|N|100|Y|N
+FEMS|First Trust Emerging Markets Small Cap AlphaDEX Fund|G|N|N|100|Y|N
+FENX|Fenix Parts, Inc. 
+FEP|First Trust Europe AlphaDEX Fund|G|N|N|100|Y|N
+FES|Forbes Energy Services Ltd 
+FEUZ|First Trust Eurozone AlphaDEX ETF|G|N|N|100|Y|N
+FEX|First Trust Large Cap Core AlphaDEX Fund|G|N|N|100|Y|N
+FEYE|FireEye, Inc. 
+FFBC|First Financial Bancorp. 
+FFBCW|First Financial Bancorp. 
+FFHL|Fuwei Films (Holdings) Co., Ltd. 
+FFIC|Flushing Financial Corporation 
+FFIN|First Financial Bankshares, Inc. 
+FFIV|F5 Networks, Inc. 
+FFKT|Farmers Capital Bank Corporation 
+FFNW|First Financial Northwest, Inc. 
+FFWM|First Foundation Inc. 
+FGBI|First Guaranty Bancshares, Inc. 
+FGEN|FibroGen, Inc 
+FGM|First Trust Germany AlphaDEX Fund|G|N|N|100|Y|N
+FH|FORM Holdings Corp. 
+FHB|First Hawaiian, Inc. 
+FHCO|Female Health Company (The) 
+FHK|First Trust Hong Kong AlphaDEX Fund|G|N|N|100|Y|N
+FIBK|First Interstate BancSystem, Inc. 
+FINL|The Finish Line, Inc. 
+FINQ|Purefunds Solactive FinTech ETF|G|N|N|100|Y|N
+FISI|Financial Institutions, Inc. 
+FISV|Fiserv, Inc. 
+FITB|Fifth Third Bancorp 
+FITBI|Fifth Third Bancorp 
+FITS|The Health and Fitness ETF|G|N|N|100|Y|N
+FIVE|Five Below, Inc. 
+FIVN|Five9, Inc. 
+FIZZ|National Beverage Corp. 
+FJP|First Trust Japan AlphaDEX Fund|G|N|N|100|Y|N
+FKO|First Trust South Korea AlphaDEX Fund|G|N|N|100|Y|N
+FKU|First Trust United Kingdom AlphaDEX Fund|G|N|N|100|Y|N
+FLAG|WeatherStorm Forensic Accounting Long Short ETF|G|N|N|100|Y|N
+FLAT|Barclays PLC 
+FLDM|Fluidigm Corporation 
+FLEX|Flextronics International Ltd. 
+FLIC|The First of Long Island Corporation 
+FLIR|FLIR Systems, Inc. 
+FLKS|Flex Pharma, Inc. 
+FLL|Full House Resorts, Inc. 
+FLML|Flamel Technologies S.A. 
+FLN|First Trust Latin America AlphaDEX Fund|G|N|N|100|Y|N
+FLWS|1
+FLXN|Flexion Therapeutics, Inc. 
+FLXS|Flexsteel Industries, Inc. 
+FMB|First Trust Managed Municipal ETF|G|N|N|100|Y|N
+FMBH|First Mid
+FMBI|First Midwest Bancorp, Inc. 
+FMI|Foundation Medicine, Inc. 
+FMK|First Trust Mega Cap AlphaDEX Fund|G|N|N|100|Y|N
+FMNB|Farmers National Banc Corp. 
+FNBC|First NBC Bank Holding Company 
+FNCX|Function(x) Inc. 
+FNGN|Financial Engines, Inc. 
+FNHC|Federated National Holding Company 
+FNJN|Finjan Holdings, Inc. 
+FNK|First Trust Mid Cap Value AlphaDEX Fund|G|N|N|100|Y|N
+FNLC|First Bancorp, Inc (ME) 
+FNSR|Finisar Corporation 
+FNWB|First Northwest Bancorp 
+FNX|First Trust Mid Cap Core AlphaDEX Fund|G|N|N|100|Y|N
+FNY|First Trust Mid Cap Growth AlphaDEX Fund|G|N|N|100|Y|N
+FOGO|Fogo de Chao, Inc. 
+FOLD|Amicus Therapeutics, Inc. 
+FOMX|Foamix Pharmaceuticals Ltd. 
+FONE|First Trust NASDAQ Smartphone Index Fund|G|N|N|100|Y|N
+FONR|Fonar Corporation 
+FORD|Forward Industries, Inc. 
+FORK|Fuling Global Inc. 
+FORM|FormFactor, Inc. 
+FORR|Forrester Research, Inc. 
+FORTY|Formula Systems (1985) Ltd. 
+FOSL|Fossil Group, Inc. 
+FOX|Twenty
+FOXA|Twenty
+FOXF|Fox Factory Holding Corp. 
+FPA|First Trust Asia Pacific Ex
+FPRX|Five Prime Therapeutics, Inc. 
+FPXI|First Trust International IPO ETF|G|N|N|100|Y|N
+FRAN|Francesca's Holdings Corporation 
+FRBA|First Bank 
+FRBK|Republic First Bancorp, Inc. 
+FRED|Fred's, Inc. 
+FRGI|Fiesta Restaurant Group, Inc. 
+FRME|First Merchants Corporation 
+FRP|FairPoint Communications, Inc. 
+FRPH|FRP Holdings, Inc. 
+FRPT|Freshpet, Inc. 
+FRSH|Papa Murphy's Holdings, Inc. 
+FSAM|Fifth Street Asset Management Inc. 
+FSBC|FSB Bancorp, Inc. 
+FSBK|First South Bancorp Inc 
+FSBW|FS Bancorp, Inc. 
+FSC|Fifth Street Finance Corp. 
+FSCFL|Fifth Street Finance Corp. 
+FSFG|First Savings Financial Group, Inc. 
+FSFR|Fifth Street Senior Floating Rate Corp. 
+FSLR|First Solar, Inc. 
+FSNN|Fusion Telecommunications International, Inc. 
+FSTR|L.B. Foster Company 
+FSV|FirstService Corporation 
+FSZ|First Trust Switzerland AlphaDEX Fund|G|N|N|100|Y|N
+FTA|First Trust Large Cap Value AlphaDEX Fund|G|N|N|100|Y|N
+FTAG|First Trust Indxx Global Agriculture ETF|G|N|N|100|Y|N
+FTC|First Trust Large Cap Growth AlphaDEX Fund|G|N|N|100|Y|N
+FTCS|First Trust Capital Strength ETF|G|N|N|100|Y|N
+FTD|FTD Companies, Inc. 
+FTEK|Fuel Tech, Inc. 
+FTEO|FRONTEO, Inc. 
+FTGC|First Trust Global Tactical Commodity Strategy Fund|G|N|N|100|Y|N
+FTHI|First Trust High Income ETF|G|N|N|100|Y|N
+FTLB|First Trust Low Beta Income ETF|G|N|N|100|Y|N
+FTNT|Fortinet, Inc. 
+FTR|Frontier Communications Corporation 
+FTRI|First Trust Indxx Global Natural Resources Income ETF|G|N|N|100|Y|N
+FTRPR|Frontier Communications Corporation 
+FTSL|First Trust Senior Loan Fund ETF|G|N|N|100|Y|N
+FTSM|First Trust Enhanced Short Maturity ETF|G|N|N|100|Y|N
+FTW|First Trust Taiwan AlphaDEX Fund|G|N|N|100|Y|N
+FUEL|Rocket Fuel Inc. 
+FULL|Full Circle Capital Corporation 
+FULLL|Full Circle Capital Corporation 
+FULT|Fulton Financial Corporation 
+FUNC|First United Corporation 
+FUND|Sprott Focus Trust, Inc. 
+FV|First Trust Dorsey Wright Focus 5 ETF|G|N|N|100|Y|N
+FVC|First Trust Dorsey Wright Dynamic Focus 5 ETF|G|N|N|100|Y|N
+FVE|Five Star Quality Care, Inc. 
+FWP|Forward Pharma A/S 
+FWRD|Forward Air Corporation 
+FYC|First Trust Small Cap Growth AlphaDEX Fund|G|N|N|100|Y|N
+FYT|First Trust Small Cap Value AlphaDEX Fund|G|N|N|100|Y|N
+FYX|First Trust Small Cap Core AlphaDEX Fund|G|N|N|100|Y|N
+GABC|German American Bancorp, Inc. 
+GAIA|Gaia, Inc. 
+GAIN|Gladstone Investment Corporation 
+GAINN|Gladstone Investment Corporation 
+GAINO|Gladstone Investment Corporation 
+GAINP|Gladstone Investment Corporation 
+GALE|Galena Biopharma, Inc. 
+GALT|Galectin Therapeutics Inc. 
+GALTU|Galectin Therapeutics Inc. 
+GALTW|Galectin Therapeutics Inc. 
+GARS|Garrison Capital Inc. 
+GASS|StealthGas, Inc. 
+GBCI|Glacier Bancorp, Inc. 
+GBDC|Golub Capital BDC, Inc. 
+GBLI|Global Indemnity plc 
+GBLIZ|Global Indemnity plc 
+GBNK|Guaranty Bancorp 
+GBSN|Great Basin Scientific, Inc. 
+GBT|Global Blood Therapeutics, Inc. 
+GCBC|Greene County Bancorp, Inc. 
+GCVRZ|Sanofi 
+GDEN|Golden Entertainment, Inc. 
+GEC|Great Elm Capital Group, Inc.  
+GEMP|Gemphire Therapeutics Inc. 
+GENC|Gencor Industries Inc. 
+GENE|Genetic Technologies Ltd 
+GENY|Principal Millennials Index ETF|G|N|N|100|Y|N
+GEOS|Geospace Technologies Corporation 
+GERN|Geron Corporation 
+GEVO|Gevo, Inc. 
+GFED|Guaranty Federal Bancshares, Inc. 
+GFN|General Finance Corporation 
+GFNCP|General Finance Corporation 
+GFNSL|General Finance Corporation 
+GGAL|Grupo Financiero Galicia S.A. 
+GHDX|Genomic Health, Inc. 
+GIFI|Gulf Island Fabrication, Inc. 
+GIGA|Giga
+GIGM|GigaMedia Limited 
+GIII|G
+GILD|Gilead Sciences, Inc. 
+GILT|Gilat Satellite Networks Ltd. 
+GK|G&K Services, Inc. 
+GLAD|Gladstone Capital Corporation 
+GLADO|Gladstone Capital Corporation 
+GLBL|TerraForm Global, Inc. 
+GLBS|Globus Maritime Limited 
+GLBZ|Glen Burnie Bancorp 
+GLDC|Golden Enterprises, Inc. 
+GLDD|Great Lakes Dredge & Dock Corporation 
+GLDI|Credit Suisse AG 
+GLMD|Galmed Pharmaceuticals Ltd. 
+GLNG|Golar LNG Limited 
+GLPG|Galapagos NV 
+GLPI|Gaming and Leisure Properties, Inc. 
+GLRE|Greenlight Reinsurance, Ltd. 
+GLRI|Glori Energy Inc 
+GLUU|Glu Mobile Inc. 
+GLYC|GlycoMimetics, Inc. 
+GMAN|Gordmans Stores, Inc. 
+GMLP|Golar LNG Partners LP 
+GNBC|Green Bancorp, Inc. 
+GNCA|Genocea Biosciences, Inc. 
+GNCMA|General Communication, Inc. 
+GNMA|iShares GNMA Bond ETF|G|N|N|100|Y|N
+GNMK|GenMark Diagnostics, Inc. 
+GNRX|VanEck Vectors Generic Drugs ETF|G|N|N|100|Y|N
+GNTX|Gentex Corporation 
+GNVC|GenVec, Inc. 
+GOGL|Golden Ocean Group Limited 
+GOGO|Gogo Inc. 
+GOLD|Randgold Resources Limited 
+GOOD|Gladstone Commercial Corporation 
+GOODM|Gladstone Commercial Corporation 
+GOODO|Gladstone Commercial Corporation 
+GOODP|Gladstone Commercial Corporation 
+GOOG|Alphabet Inc. 
+GOOGL|Alphabet Inc. 
+GOV|Government Properties Income Trust 
+GOVNI|Government Properties Income Trust 
+GPAC|Global Partner Acquisition Corp. 
+GPACU|Global Partner Acquisition Corp. 
+GPACW|Global Partner Acquisition Corp. 
+GPIA|GP Investments Acquisition Corp. 
+GPIAU|GP Investments Acquisition Corp. 
+GPIAW|GP Investments Acquisition Corp. 
+GPIC|Gaming Partners International Corporation 
+GPOR|Gulfport Energy Corporation 
+GPP|Green Plains Partners LP 
+GPRE|Green Plains, Inc. 
+GPRO|GoPro, Inc. 
+GRBK|Green Brick Partners, Inc. 
+GRFS|Grifols, S.A. 
+GRID|First Trust NASDAQ Clean Edge Smart Grid Infrastructure Index Fund|G|N|N|100|Y|N
+GRIF|Griffin Industrial Realty, Inc. 
+GRMN|Garmin Ltd. 
+GROW|U.S. Global Investors, Inc. 
+GRPN|Groupon, Inc. 
+GRSH|Gores Holdings, Inc. 
+GRSHU|Gores Holdings, Inc. 
+GRSHW|Gores Holdings, Inc. 
+GRVY|GRAVITY Co., Ltd. 
+GSBC|Great Southern Bancorp, Inc. 
+GSIT|GSI Technology, Inc. 
+GSM|Ferroglobe PLC 
+GSOL|Global Sources Ltd. 
+GSVC|GSV Capital Corp 
+GT|The Goodyear Tire & Rubber Company 
+GTIM|Good Times Restaurants Inc. 
+GTLS|Chart Industries, Inc. 
+GTWN|Georgetown Bancorp, Inc. 
+GTXI|GTx, Inc. 
+GUID|Guidance Software, Inc. 
+GULF|WisdomTree Middle East Dividend Fund|G|N|N|100|Y|N
+GURE|Gulf Resources, Inc. 
+GWGH|GWG Holdings, Inc 
+GWPH|GW Pharmaceuticals Plc 
+GWRS|Global Water Resources, Inc. 
+GYRO|Gyrodyne , LLC 
+HA|Hawaiian Holdings, Inc. 
+HABT|The Habit Restaurants, Inc. 
+HAFC|Hanmi Financial Corporation 
+HAIN|The Hain Celestial Group, Inc. 
+HALL|Hallmark Financial Services, Inc. 
+HALO|Halozyme Therapeutics, Inc. 
+HAS|Hasbro, Inc. 
+HAWK|Blackhawk Network Holdings, Inc. 
+HAYN|Haynes International, Inc. 
+HBAN|Huntington Bancshares Incorporated 
+HBANN|Huntington Bancshares Incorporated  Preferred Stock|Q|N|N|100|N|N
+HBANO|Huntington Bancshares Incorporated 
+HBANP|Huntington Bancshares Incorporated 
+HBCP|Home Bancorp, Inc. 
+HBHC|Hancock Holding Company 
+HBHCL|Hancock Holding Company 
+HBIO|Harvard Bioscience, Inc. 
+HBK|Hamilton Bancorp, Inc. 
+HBMD|Howard Bancorp, Inc. 
+HBNC|Horizon Bancorp (IN) 
+HBP|Huttig Building Products, Inc. 
+HCAC|Hennessy Capital Acquisition Corp. II 
+HCACU|Hennessy Capital Acquisition Corp. II 
+HCACW|Hennessy Capital Acquisition Corp. II 
+HCAP|Harvest Capital Credit Corporation 
+HCAPL|Harvest Capital Credit Corporation 
+HCCI|Heritage
+HCKT|The Hackett Group, Inc. 
+HCM|Hutchison China MediTech Limited 
+HCOM|Hawaiian Telcom Holdco, Inc. 
+HCSG|Healthcare Services Group, Inc. 
+HDNG|Hardinge Inc. 
+HDP|Hortonworks, Inc. 
+HDRA|Hydra Industries Acquisition Corp. 
+HDRAR|Hydra Industries Acquisition Corp. 
+HDRAU|Hydra Industries Acquisition Corp. 
+HDRAW|Hydra Industries Acquisition Corp. 
+HDS|HD Supply Holdings, Inc. 
+HDSN|Hudson Technologies, Inc. 
+HEAR|Turtle Beach Corporation 
+HEES|H&E Equipment Services, Inc. 
+HELE|Helen of Troy Limited 
+HEOP|Heritage Oaks Bancorp 
+HFBC|HopFed Bancorp, Inc. 
+HFBL|Home Federal Bancorp, Inc. of Louisiana 
+HFWA|Heritage Financial Corporation 
+HGSH|China HGS Real Estate, Inc. 
+HIBB|Hibbett Sports, Inc. 
+HIFS|Hingham Institution for Savings 
+HIHO|Highway Holdings Limited 
+HIIQ|Health Insurance Innovations, Inc. 
+HIMX|Himax Technologies, Inc. 
+HLG|Hailiang Education Group Inc. 
+HLIT|Harmonic Inc. 
+HMHC|Houghton Mifflin Harcourt Company 
+HMNF|HMN Financial, Inc. 
+HMNY|Helios and Matheson Analytics Inc 
+HMST|HomeStreet, Inc. 
+HMSY|HMS Holdings Corp 
+HMTV|Hemisphere Media Group, Inc. 
+HNH|Handy & Harman Ltd. 
+HNNA|Hennessy Advisors, Inc. 
+HNRG|Hallador Energy Company 
+HOFT|Hooker Furniture Corporation 
+HOLI|Hollysys Automation Technologies, Ltd. 
+HOLX|Hologic, Inc. 
+HOMB|Home BancShares, Inc. 
+HONE|HarborOne Bancorp, Inc. 
+HOPE|Hope Bancorp, Inc. 
+HOTR|Chanticleer Holdings, Inc. 
+HOTRW|Chanticleer Holdings, Inc. 
+HOVNP|Hovnanian Enterprises Inc 
+HPJ|Highpower International Inc 
+HPT|Hospitality Properties Trust 
+HPTRP|Hospitality Properties Trust 
+HQCL|Hanwha Q CELLS Co., Ltd.  
+HQY|HealthEquity, Inc. 
+HRMN|Harmony Merger Corp. 
+HRMNU|Harmony Merger Corp. 
+HRMNW|Harmony Merger Corp. 
+HRTX|Heron Therapeutics, Inc.   
+HRZN|Horizon Technology Finance Corporation 
+HSGX|Histogenics Corporation 
+HSIC|Henry Schein, Inc. 
+HSII|Heidrick & Struggles International, Inc. 
+HSKA|Heska Corporation 
+HSNI|HSN, Inc. 
+HSON|Hudson Global, Inc. 
+HSTM|HealthStream, Inc. 
+HTBI|HomeTrust Bancshares, Inc. 
+HTBK|Heritage Commerce Corp 
+HTBX|Heat Biologics, Inc. 
+HTCH|Hutchinson Technology Incorporated 
+HTGM|HTG Molecular Diagnostics, Inc. 
+HTHT|China Lodging Group, Limited 
+HTLD|Heartland Express, Inc. 
+HTLF|Heartland Financial USA, Inc. 
+HUBG|Hub Group, Inc. 
+HURC|Hurco Companies, Inc. 
+HURN|Huron Consulting Group Inc. 
+HWAY|Healthways, Inc. 
+HWBK|Hawthorn Bancshares, Inc. 
+HWCC|Houston Wire & Cable Company 
+HWKN|Hawkins, Inc. 
+HYGS|Hydrogenics Corporation 
+HYLS|First Trust High Yield Long/Short ETF|G|N|N|100|Y|N
+HYND|WisdomTree BofA Merrill Lynch High Yield Bond Negative Duration Fund|G|N|N|100|Y|N
+HYXE|iShares iBoxx $ High Yield ex Oil & Gas Corporate Bond ETF|G|N|N|100|Y|N
+HYZD|WisdomTree BofA Merrill Lynch High Yield Bond Zero Duration Fund|G|N|N|100|Y|N
+HZNP|Horizon Pharma plc 
+IAC|IAC/InterActiveCorp 
+IART|Integra LifeSciences Holdings Corporation 
+IBB|iShares Nasdaq Biotechnology Index Fund|G|N|N|100|Y|N
+IBCP|Independent Bank Corporation 
+IBKC|IBERIABANK Corporation 
+IBKCO|IBERIABANK Corporation 
+IBKCP|IBERIABANK Corporation 
+IBKR|Interactive Brokers Group, Inc. 
+IBOC|International Bancshares Corporation 
+IBTX|Independent Bank Group, Inc 
+IBUY|Amplify Online Retail ETF|G|N|N|100|Y|N
+ICAD|icad inc. 
+ICBK|County Bancorp, Inc. 
+ICCC|ImmuCell Corporation 
+ICFI|ICF International, Inc. 
+ICLN|iShares S&P Global Clean Energy Index Fund|G|N|N|100|Y|N
+ICLR|ICON plc 
+ICON|Iconix Brand Group, Inc. 
+ICPT|Intercept Pharmaceuticals, Inc. 
+ICUI|ICU Medical, Inc. 
+IDCC|InterDigital, Inc. 
+IDLB|PowerShares FTSE International Low Beta Equal Weight Portfolio|G|N|N|100|Y|N
+IDRA|Idera Pharmaceuticals, Inc. 
+IDSA|Industrial Services of America, Inc. 
+IDSY|I.D. Systems, Inc. 
+IDTI|Integrated Device Technology, Inc. 
+IDXG|Interpace Diagnostics Group, Inc. 
+IDXX|IDEXX Laboratories, Inc. 
+IEP|Icahn Enterprises L.P. 
+IESC|IES Holdings, Inc. 
+IEUS|iShares MSCI Europe Small
+IFEU|iShares FTSE EPRA/NAREIT Europe Index Fund|G|N|N|100|Y|N
+IFGL|iShares FTSE EPRA/NAREIT Global Real Estate ex
+IFON|InfoSonics Corp 
+IFV|First Trust Dorsey Wright International Focus 5 ETF|G|N|N|100|Y|N
+IGF|iShares Global Infrastructure ETF|G|N|N|100|Y|N
+IGLD|Internet Gold Golden Lines Ltd. 
+IGOV|iShares S&P/Citigroup International Treasury Bond Fund|G|N|N|100|Y|N
+III|Information Services Group, Inc. 
+IIIN|Insteel Industries, Inc. 
+IIJI|Internet Initiative Japan, Inc. 
+IILG|Interval Leisure Group, Inc. 
+IIN|IntriCon Corporation 
+IIVI|II
+IKGH|Iao Kun Group Holding Company Limited 
+IKNX|Ikonics Corporation 
+ILMN|Illumina, Inc. 
+IMDZ|Immune Design Corp. 
+IMED|PureFunds ETFx HealthTech ETF|G|N|N|100|Y|N
+IMGN|ImmunoGen, Inc. 
+IMI|Intermolecular, Inc. 
+IMKTA|Ingles Markets, Incorporated 
+IMMR|Immersion Corporation 
+IMMU|Immunomedics, Inc. 
+IMMY|Imprimis Pharmaceuticals, Inc. 
+IMNP|Immune Pharmaceuticals Inc. 
+IMOS|ChipMOS TECHNOLOGIES (Bermuda) LTD. 
+INAP|Internap Corporation 
+INBK|First Internet Bancorp 
+INCR|INC Research Holdings, Inc. 
+INCY|Incyte Corporation 
+INDB|Independent Bank Corp. 
+INDY|iShares S&P India Nifty 50 Index Fund|G|N|N|100|Y|N
+INFI|Infinity Pharmaceuticals, Inc. 
+INFN|Infinera Corporation 
+INFO|IHS Markit Ltd. 
+INGN|Inogen, Inc 
+ININ|Interactive Intelligence Group, Inc. 
+INNL|Innocoll Holdings 
+INO|Inovio Pharmaceuticals, Inc. 
+INOD|Innodata Inc. 
+INOV|Inovalon Holdings, Inc. 
+INSM|Insmed, Inc. 
+INSY|Insys Therapeutics, Inc. 
+INTC|Intel Corporation 
+INTG|The Intergroup Corporation 
+INTL|INTL FCStone Inc. 
+INTLL|INTL FCStone Inc. 
+INTU|Intuit Inc. 
+INTX|Intersections, Inc. 
+INVA|Innoviva, Inc. 
+INVE|Identiv, Inc. 
+INVT|Inventergy Global, Inc. 
+INWK|InnerWorkings, Inc. 
+IONS|Ionis Pharmaceuticals, Inc. 
+IOSP|Innospec Inc. 
+IOTS|Adesto Technologies Corporation 
+IPAR|Inter Parfums, Inc. 
+IPAS|iPass Inc. 
+IPCC|Infinity Property and Casualty Corporation 
+IPCI|Intellipharmaceutics International Inc. 
+IPDN|Professional Diversity Network, Inc. 
+IPGP|IPG Photonics Corporation 
+IPHS|Innophos Holdings, Inc. 
+IPKW|PowerShares International BuyBack Achievers Portfolio|G|N|N|100|Y|N
+IPWR|Ideal Power Inc. 
+IPXL|Impax Laboratories, Inc. 
+IQNT|Inteliquent, Inc. 
+IRBT|iRobot Corporation 
+IRCP|IRSA Propiedades Comerciales S.A. 
+IRDM|Iridium Communications Inc 
+IRDMB|Iridium Communications Inc 
+IRG|Ignite Restaurant Group, Inc. 
+IRIX|IRIDEX Corporation 
+IRMD|iRadimed Corporation 
+IROQ|IF Bancorp, Inc. 
+IRWD|Ironwood Pharmaceuticals, Inc. 
+ISBC|Investors Bancorp, Inc. 
+ISCA|International Speedway Corporation 
+ISHG|iShares S&P/Citigroup 1
+ISIG|Insignia Systems, Inc. 
+ISIL|Intersil Corporation 
+ISLE|Isle of Capri Casinos, Inc. 
+ISM|SLM Corporation 
+ISNS|Image Sensing Systems, Inc. 
+ISRG|Intuitive Surgical, Inc. 
+ISRL|Isramco, Inc. 
+ISSC|Innovative Solutions and Support, Inc. 
+ISTR|Investar Holding Corporation 
+ITCI|Intra
+ITEK|Inotek Pharmaceuticals Corporation 
+ITEQ|BlueStar TA
+ITI|Iteris, Inc. 
+ITIC|Investors Title Company 
+ITRI|Itron, Inc. 
+ITRN|Ituran Location and Control Ltd. 
+ITUS|ITUS Corporation 
+IVAC|Intevac, Inc. 
+IVTY|Invuity, Inc. 
+IXUS|iShares Core MSCI Total International Stock ETF|G|N|N|100|Y|N
+IXYS|IXYS Corporation 
+IZEA|IZEA Inc. 
+JACK|Jack In The Box Inc. 
+JAGX|Jaguar Animal Health, Inc. 
+JAKK|JAKKS Pacific, Inc. 
+JASN|Jason Industries, Inc. 
+JASNW|Jason Industries, Inc. 
+JASO|JA Solar Holdings, Co., Ltd. 
+JAZZ|Jazz Pharmaceuticals plc 
+JBHT|J.B. Hunt Transport Services, Inc. 
+JBLU|JetBlue Airways Corporation 
+JBSS|John B. Sanfilippo & Son, Inc. 
+JCOM|j2 Global, Inc. 
+JCS|Communications Systems, Inc. 
+JCTCF|Jewett
+JD|JD.com, Inc. 
+JGBB|WisdomTree Japan Interest Rate Strategy Fund|G|N|N|100|Y|N
+JIVE|Jive Software, Inc. 
+JJSF|J & J Snack Foods Corp. 
+JKHY|Jack Henry & Associates, Inc. 
+JKI|iShares Morningstar Mid
+JMBA|Jamba, Inc. 
+JMU|Wowo Limited 
+JNP|Juniper Pharmaceuticals, Inc. 
+JOBS|51job, Inc. 
+JOUT|Johnson Outdoors Inc. 
+JRJC|China Finance Online Co. Limited 
+JRVR|James River Group Holdings, Ltd. 
+JSM|SLM Corporation 
+JSMD|Janus Small/Mid Cap Growth Alpha ETF|G|N|N|100|Y|N
+JSML|Janus Small Cap Growth Alpha ETF|G|N|N|100|Y|N
+JSYN|Jensyn Acquistion Corp. 
+JSYNR|Jensyn Acquistion Corp. 
+JSYNU|Jensyn Acquistion Corp. 
+JSYNW|Jensyn Acquistion Corp. 
+JTPY|JetPay Corporation 
+JUNO|Juno Therapeutics, Inc. 
+JVA|Coffee Holding Co., Inc. 
+JXSB|Jacksonville Bancorp Inc. 
+JYNT|The Joint Corp. 
+KALU|Kaiser Aluminum Corporation 
+KANG|iKang Healthcare Group, Inc. 
+KBAL|Kimball International, Inc. 
+KBSF|KBS Fashion Group Limited 
+KCAP|KCAP Financial, Inc. 
+KE|Kimball Electronics, Inc. 
+KELYA|Kelly Services, Inc. 
+KELYB|Kelly Services, Inc. 
+KEQU|Kewaunee Scientific Corporation 
+KERX|Keryx Biopharmaceuticals, Inc. 
+KEYW|The KEYW Holding Corporation 
+KFFB|Kentucky First Federal Bancorp 
+KFRC|Kforce, Inc. 
+KGJI|Kingold Jewelry Inc. 
+KHC|The Kraft Heinz Company 
+KIN|Kindred Biosciences, Inc. 
+KINS|Kingstone Companies, Inc 
+KIRK|Kirkland's, Inc. 
+KITE|Kite Pharma, Inc. 
+KLAC|KLA
+KLIC|Kulicke and Soffa Industries, Inc. 
+KLRE|KLR Energy Acquisition Corp. 
+KLREU|KLR Energy Acquisition Corp. 
+KLREW|KLR Energy Acquisition Corp. 
+KLXI|KLX Inc. 
+KMDA|Kamada Ltd. 
+KMPH|KemPharm, Inc. 
+KNDI|Kandi Technologies Group, Inc. 
+KNSL|Kinsale Capital Group, Inc. 
+KONA|Kona Grill, Inc. 
+KONE|Kingtone Wirelessinfo Solution Holding Ltd 
+KOOL|Cesca Therapeutics Inc. 
+KOPN|Kopin Corporation 
+KOSS|Koss Corporation 
+KPTI|Karyopharm Therapeutics Inc. 
+KRMA|Global X Conscious Companies ETF|G|N|N|100|Y|N
+KRNT|Kornit Digital Ltd. 
+KRNY|Kearny Financial 
+KTCC|Key Tronic Corporation 
+KTEC|Key Technology, Inc. 
+KTOS|Kratos Defense & Security Solutions, Inc. 
+KTOV|Kitov Pharmaceuticals Holdings Ltd. 
+KTOVW|Kitov Pharmaceuticals Holdings Ltd. 
+KTWO|K2M Group Holdings, Inc. 
+KURA|Kura Oncology, Inc. 
+KVHI|KVH Industries, Inc. 
+KWEB|KraneShares CSI China Internet ETF|G|N|N|100|Y|N
+KZ|KongZhong Corporation 
+LABL|Multi
+LAKE|Lakeland Industries, Inc. 
+LALT|PowerShares Multi
+LAMR|Lamar Advertising Company 
+LANC|Lancaster Colony Corporation 
+LAND|Gladstone Land Corporation 
+LANDP|Gladstone Land Corporation 
+LARK|Landmark Bancorp Inc. 
+LAWS|Lawson Products, Inc. 
+LAYN|Layne Christensen Company 
+LBAI|Lakeland Bancorp, Inc. 
+LBIO|Lion Biotechnologies, Inc. 
+LBIX|Leading Brands Inc 
+LBRDA|Liberty Broadband Corporation 
+LBRDK|Liberty Broadband Corporation 
+LBTYA|Liberty Global plc 
+LBTYB|Liberty Global plc 
+LBTYK|Liberty Global plc 
+LCA|Landcadia Holdings, Inc. 
+LCAHU|Landcadia Holdings, Inc. 
+LCAHW|Landcadia Holdings, Inc. 
+LCNB|LCNB Corporation 
+LCUT|Lifetime Brands, Inc. 
+LDRI|PowerShares LadderRite 0
+LE|Lands' End, Inc. 
+LECO|Lincoln Electric Holdings, Inc. 
+LEDS|SemiLEDS Corporation 
+LENS|Presbia PLC 
+LFUS|Littelfuse, Inc. 
+LFVN|Lifevantage Corporation 
+LGCY|Legacy Reserves LP 
+LGCYO|Legacy Reserves LP 
+LGCYP|Legacy Reserves LP 
+LGIH|LGI Homes, Inc. 
+LGND|Ligand Pharmaceuticals Incorporated 
+LHCG|LHC Group 
+LIFE|aTyr Pharma, Inc. 
+LILA|Liberty Global plc 
+LILAK|Liberty Global plc 
+LINC|Lincoln Educational Services Corporation 
+LIND|Lindblad Expeditions Holdings Inc.  
+LINDW|Lindblad Expeditions Holdings Inc.  
+LINK|Interlink Electronics, Inc. 
+LION|Fidelity Southern Corporation 
+LIOX|Lionbridge Technologies, Inc. 
+LITE|Lumentum Holdings Inc. 
+LIVE|Live Ventures Incorporated 
+LIVN|LivaNova PLC 
+LJPC|La Jolla Pharmaceutical Company 
+LKFN|Lakeland Financial Corporation 
+LKOR|FlexShares Credit
+LKQ|LKQ Corporation 
+LLNW|Limelight Networks, Inc. 
+LLTC|Linear Technology Corporation 
+LMAT|LeMaitre Vascular, Inc. 
+LMBS|First Trust Low Duration Opportunities ETF|G|N|N|100|Y|N
+LMCA|Liberty Media Corporation 
+LMCK|Liberty Media Corporation 
+LMFA|LM Funding America, Inc. 
+LMFAW|LM Funding America, Inc. 
+LMIA|LMI Aerospace, Inc. 
+LMNR|Limoneira Co 
+LMNX|Luminex Corporation 
+LMOS|Lumos Networks Corp. 
+LMRK|Landmark Infrastructure Partners LP 
+LMRKO|Landmark Infrastructure Partners LP 
+LMRKP|Landmark Infrastructure Partners LP 
+LNCE|Snyder's
+LNDC|Landec Corporation 
+LNGR|Global X Longevity Thematic ETF|G|N|N|100|Y|N
+LNTH|Lantheus Holdings, Inc. 
+LOAN|Manhattan Bridge Capital, Inc 
+LOB|Live Oak Bancshares, Inc. 
+LOCO|El Pollo Loco Holdings, Inc. 
+LOGI|Logitech International S.A. 
+LOGM|LogMein, Inc. 
+LONE|Lonestar Resources US Inc. 
+LOPE|Grand Canyon Education, Inc. 
+LORL|Loral Space and Communications, Inc. 
+LOXO|Loxo Oncology, Inc. 
+LPCN|Lipocine Inc. 
+LPLA|LPL Financial Holdings Inc. 
+LPNT|LifePoint Health, Inc. 
+LPSN|LivePerson, Inc. 
+LPTH|LightPath Technologies, Inc. 
+LPTN|Lpath, Inc. 
+LQDT|Liquidity Services, Inc. 
+LRAD|LRAD Corporation 
+LRCX|Lam Research Corporation 
+LSBG|Lake Sunapee Bank Group 
+LSBK|Lake Shore Bancorp, Inc. 
+LSCC|Lattice Semiconductor Corporation 
+LSTR|Landstar System, Inc. 
+LSXMA|Liberty Media Corporation 
+LSXMB|Liberty Media Corporation 
+LSXMK|Liberty Media Corporation 
+LTBR|Lightbridge Corporation 
+LTEA|Long Island Iced Tea Corp. 
+LTRPA|Liberty TripAdvisor Holdings, Inc. 
+LTRPB|Liberty TripAdvisor Holdings, Inc. 
+LTRX|Lantronix, Inc. 
+LTXB|LegacyTexas Financial Group, Inc. 
+LULU|lululemon athletica inc. 
+LUNA|Luna Innovations Incorporated 
+LVHD|Legg Mason Low Volatility High Dividend ETF|G|N|N|100|Y|N
+LVNTA|Liberty Interactive Corporation 
+LVNTB|Liberty Interactive Corporation 
+LWAY|Lifeway Foods, Inc. 
+LXRX|Lexicon Pharmaceuticals, Inc. 
+LYTS|LSI Industries Inc. 
+MACK|Merrimack Pharmaceuticals, Inc. 
+MAGS|Magal Security Systems Ltd. 
+MAMS|MAM Software Group, Inc. 
+MANH|Manhattan Associates, Inc. 
+MANT|ManTech International Corporation 
+MAR|Marriott International 
+MARA|Marathon Patent Group, Inc. 
+MARK|Remark Media, Inc. 
+MARPS|Marine Petroleum Trust 
+MASI|Masimo Corporation 
+MAT|Mattel, Inc. 
+MATN|Mateon Therapeutics, Inc.  
+MATR|Mattersight Corporation 
+MATW|Matthews International Corporation 
+MAUI|AdvisorShares Market Adaptive Unconstrained Income ETF|G|N|N|100|Y|N
+MAYS|J. W. Mays, Inc. 
+MB|MINDBODY, Inc. 
+MBCN|Middlefield Banc Corp. 
+MBFI|MB Financial Inc. 
+MBFIP|MB Financial Inc. 
+MBII|Marrone Bio Innovations, Inc. 
+MBLX|Metabolix, Inc. 
+MBRG|Middleburg Financial Corporation 
+MBRX|Moleculin Biotech, Inc. 
+MBSD|FlexShares Disciplined Duration MBS Index Fund|G|N|N|100|Y|N
+MBTF|M B T Financial Corp 
+MBUU|Malibu Boats, Inc. 
+MBVT|Merchants Bancshares, Inc. 
+MBVX|MabVax Therapeutics Holdings, Inc. 
+MBWM|Mercantile Bank Corporation 
+MCBC|Macatawa Bank Corporation 
+MCEP|Mid
+MCFT|MCBC Holdings, Inc. 
+MCHI|iShares MSCI China ETF|G|N|N|100|Y|N
+MCHP|Microchip Technology Incorporated 
+MCHX|Marchex, Inc. 
+MCRB|Seres Therapeutics, Inc. 
+MCRI|Monarch Casino & Resort, Inc. 
+MCUR|Macrocure Ltd. 
+MDCA|MDC Partners Inc. 
+MDCO|The Medicines Company 
+MDGL|Madrigal Pharmaceuticals, Inc. 
+MDGS|Medigus Ltd. 
+MDIV|First Trust Multi
+MDLZ|Mondelez International, Inc. 
+MDM|Mountain Province Diamonds Inc. 
+MDRX|Allscripts Healthcare Solutions, Inc. 
+MDSO|Medidata Solutions, Inc. 
+MDSY|ModSys International Ltd. 
+MDVN|Medivation, Inc. 
+MDVX|Medovex Corp. 
+MDVXW|Medovex Corp. 
+MDWD|MediWound Ltd. 
+MDXG|MiMedx Group, Inc 
+MEDP|Medpace Holdings, Inc. 
+MEET|MeetMe, Inc. 
+MEIP|MEI Pharma, Inc. 
+MELI|MercadoLibre, Inc. 
+MELR|Melrose Bancorp, Inc. 
+MEMP|Memorial Production Partners LP 
+MENT|Mentor Graphics Corporation 
+MEOH|Methanex Corporation 
+MERC|Mercer International Inc. 
+MESO|Mesoblast Limited 
+MFIN|Medallion Financial Corp. 
+MFINL|Medallion Financial Corp. 
+MFNC|Mackinac Financial Corporation 
+MFRI|MFRI, Inc. 
+MFRM|Mattress Firm Holding Corp. 
+MFSF|MutualFirst Financial Inc. 
+MGCD|MGC Diagnostics Corporation 
+MGEE|MGE Energy Inc. 
+MGI|Moneygram International, Inc. 
+MGIC|Magic Software Enterprises Ltd. 
+MGLN|Magellan Health, Inc. 
+MGNX|MacroGenics, Inc. 
+MGPI|MGP Ingredients, Inc. 
+MGRC|McGrath RentCorp 
+MGYR|Magyar Bancorp, Inc. 
+MHGC|Morgans Hotel Group Co. 
+MHLD|Maiden Holdings, Ltd. 
+MHLDO|Maiden Holdings, Ltd. 
+MICT|Micronet Enertec Technologies, Inc. 
+MICTW|Micronet Enertec Technologies, Inc. 
+MIDD|The Middleby Corporation 
+MIFI|Novatel Wireless, Inc. 
+MIII|M III Acquisition Corp. 
+MIIIU|M III Acquisition Corp. 
+MIIIW|M III Acquisition Corp. 
+MIK|The Michaels Companies, Inc. 
+MILN|Global X Millennials Thematic ETF|G|N|N|100|Y|N
+MIME|Mimecast Limited 
+MIND|Mitcham Industries, Inc. 
+MINDP|Mitcham Industries, Inc. 
+MINI|Mobile Mini, Inc. 
+MIRN|Mirna Therapeutics, Inc. 
+MITK|Mitek Systems, Inc. 
+MITL|Mitel Networks Corporation 
+MKSI|MKS Instruments, Inc. 
+MKTX|MarketAxess Holdings, Inc. 
+MLAB|Mesa Laboratories, Inc. 
+MLHR|Herman Miller, Inc. 
+MLNK|ModusLink Global Solutions, Inc 
+MLNX|Mellanox Technologies, Ltd. 
+MLVF|Malvern Bancorp, Inc. 
+MMAC|MMA Capital Management, LLC 
+MMLP|Martin Midstream Partners L.P. 
+MMSI|Merit Medical Systems, Inc. 
+MMYT|MakeMyTrip Limited 
+MNDO|MIND C.T.I. Ltd. 
+MNGA|MagneGas Corporation 
+MNKD|MannKind Corporation 
+MNOV|MediciNova, Inc. 
+MNRO|Monro Muffler Brake, Inc. 
+MNST|Monster Beverage Corporation 
+MNTA|Momenta Pharmaceuticals, Inc. 
+MNTX|Manitex International, Inc. 
+MOBI|Sky
+MOBL|MobileIron, Inc. 
+MOCO|MOCON, Inc. 
+MOFG|MidWestOne Financial Group, Inc. 
+MOMO|Momo Inc. 
+MORN|Morningstar, Inc. 
+MOSY|MoSys, Inc. 
+MPAA|Motorcar Parts of America, Inc. 
+MPB|Mid Penn Bancorp 
+MPCT|iShares MSCI Global Impact ETF|G|N|N|100|Y|N
+MPEL|Melco Crown Entertainment Limited 
+MPET|Magellan Petroleum Corporation 
+MPWR|Monolithic Power Systems, Inc. 
+MRCC|Monroe Capital Corporation 
+MRCY|Mercury Systems Inc 
+MRD|Memorial Resource Development Corp. 
+MRLN|Marlin Business Services Corp. 
+MRNS|Marinus Pharmaceuticals, Inc. 
+MRTN|Marten Transport, Ltd. 
+MRTX|Mirati Therapeutics, Inc. 
+MRUS|Merus N.V. 
+MRVC|MRV Communications, Inc. 
+MRVL|Marvell Technology Group Ltd. 
+MSBF|MSB Financial Corp. 
+MSBI|Midland States Bancorp, Inc. 
+MSCC|Microsemi Corporation 
+MSDI|Monster Digital, Inc. 
+MSDIW|Monster Digital, Inc. 
+MSEX|Middlesex Water Company 
+MSFG|MainSource Financial Group, Inc. 
+MSFT|Microsoft Corporation 
+MSLI|Merus Labs International Inc. 
+MSON|MISONIX, Inc. 
+MSTR|MicroStrategy Incorporated 
+MTBC|Medical Transcription Billing, Corp. 
+MTBCP|Medical Transcription Billing, Corp. 
+MTCH|Match Group, Inc. 
+MTEX|Mannatech, Incorporated 
+MTGE|American Capital Mortgage Investment Corp. 
+MTGEP|American Capital Mortgage Investment Corp. 
+MTLS|Materialise NV 
+MTP|Midatech Pharma PLC 
+MTRX|Matrix Service Company 
+MTSC|MTS Systems Corporation 
+MTSI|MACOM Technology Solutions Holdings, Inc. 
+MTSL|MER Telemanagement Solutions Ltd. 
+MU|Micron Technology, Inc. 
+MVIS|Microvision, Inc. 
+MXIM|Maxim Integrated Products, Inc. 
+MXPT|MaxPoint Interactive, Inc. 
+MXWL|Maxwell Technologies, Inc. 
+MYGN|Myriad Genetics, Inc. 
+MYL|Mylan N.V. 
+MYOK|MyoKardia, Inc. 
+MYOS|MYOS RENS Technology Inc. 
+MYRG|MYR Group, Inc. 
+MYSZ|My Size, Inc. 
+MZOR|Mazor Robotics Ltd. 
+NAII|Natural Alternatives International, Inc. 
+NAKD|Naked Brand Group Inc. 
+NAME|Rightside Group, Ltd. 
+NANO|Nanometrics Incorporated 
+NATH|Nathan's Famous, Inc. 
+NATI|National Instruments Corporation 
+NATL|National Interstate Corporation 
+NATR|Nature's Sunshine Products, Inc. 
+NAUH|National American University Holdings, Inc. 
+NAVG|The Navigators Group, Inc. 
+NAVI|Navient Corporation 
+NBIX|Neurocrine Biosciences, Inc. 
+NBN|Northeast Bancorp 
+NBRV|Nabriva Therapeutics AG 
+NBTB|NBT Bancorp Inc. 
+NCBS|Nicolet Bankshares Inc. 
+NCIT|NCI, Inc. 
+NCLH|Norwegian Cruise Line Holdings Ltd. 
+NCMI|National CineMedia, Inc. 
+NCOM|National Commerce Corporation 
+NCTY|The9 Limited 
+NDAQ|Nasdaq, Inc. 
+NDLS|Noodles & Company 
+NDRM|NeuroDerm Ltd. 
+NDSN|Nordson Corporation 
+NEO|NeoGenomics, Inc. 
+NEOG|Neogen Corporation 
+NEON|Neonode Inc. 
+NEOS|Neos Therapeutics, Inc. 
+NEOT|Neothetics, Inc. 
+NEPT|Neptune Technologies & Bioresources Inc 
+NERV|Minerva Neurosciences, Inc 
+NETE|Net Element, Inc. 
+NEWS|NewStar Financial, Inc. 
+NEWT|Newtek Business Services Corp. 
+NEWTL|Newtek Business Services Corp. 
+NEWTZ|Newtek Business Services Corp. 
+NFBK|Northfield Bancorp, Inc. 
+NFEC|NF Energy Saving Corporation 
+NFLX|Netflix, Inc. 
+NGHC|National General Holdings Corp 
+NGHCN|National General Holdings Corp 
+NGHCO|National General Holdings Corp 
+NGHCP|National General Holdings Corp 
+NGHCZ|National General Holdings Corp 
+NH|NantHealth, Inc. 
+NHLD|National Holdings Corporation 
+NHTC|Natural Health Trends Corp. 
+NICE|NICE Ltd 
+NICK|Nicholas Financial, Inc. 
+NIHD|NII Holdings, Inc. 
+NILE|Blue Nile, Inc. 
+NK|NantKwest, Inc. 
+NKSH|National Bankshares, Inc. 
+NKTR|Nektar Therapeutics 
+NLNK|NewLink Genetics Corporation 
+NLST|Netlist, Inc. 
+NMIH|NMI Holdings Inc 
+NMRX|Numerex Corp. 
+NNBR|NN, Inc. 
+NNDM|Nano Dimension Ltd. 
+NOVT|Novanta Inc. 
+NRCIA|National Research Corporation 
+NRCIB|National Research Corporation 
+NRIM|Northrim BanCorp Inc 
+NSEC|National Security Group, Inc. 
+NSIT|Insight Enterprises, Inc. 
+NSSC|NAPCO Security Technologies, Inc. 
+NSTG|NanoString Technologies, Inc. 
+NSYS|Nortech Systems Incorporated 
+NTAP|NetApp, Inc. 
+NTCT|NetScout Systems, Inc. 
+NTEC|Intec Pharma Ltd. 
+NTES|NetEase, Inc. 
+NTGR|NETGEAR, Inc. 
+NTIC|Northern Technologies International Corporation 
+NTLA|Intellia Therapeutics, Inc. 
+NTRA|Natera, Inc. 
+NTRI|NutriSystem Inc 
+NTRS|Northern Trust Corporation 
+NTRSP|Northern Trust Corporation 
+NTWK|NetSol Technologies Inc. 
+NUAN|Nuance Communications, Inc. 
+NURO|NeuroMetrix, Inc. 
+NUROW|NeuroMetrix, Inc. 
+NUTR|Nutraceutical International Corporation 
+NUVA|NuVasive, Inc. 
+NVAX|Novavax, Inc. 
+NVCN|Neovasc Inc. 
+NVCR|NovoCure Limited 
+NVDA|NVIDIA Corporation 
+NVDQ|Novadaq Technologies Inc 
+NVEC|NVE Corporation 
+NVEE|NV5 Global, Inc. 
+NVET|Nexvet Biopharma plc 
+NVFY|Nova Lifestyle, Inc 
+NVGN|Novogen Limited 
+NVIV|InVivo Therapeutics Holdings Corp. 
+NVLS|Nivalis Therapeutics, Inc. 
+NVMI|Nova Measuring Instruments Ltd. 
+NVTR|Nuvectra Corporation 
+NWBI|Northwest Bancshares, Inc. 
+NWBO|Northwest Biotherapeutics, Inc. 
+NWBOW|Northwest Biotherapeutics, Inc. 
+NWFL|Norwood Financial Corp. 
+NWLI|National Western Life Group, Inc. 
+NWPX|Northwest Pipe Company 
+NWS|News Corporation 
+NWSA|News Corporation 
+NXEO|Nexeo Solutions, Inc. 
+NXEOU|Nexeo Solutions, Inc. 
+NXEOW|Nexeo Solutions, Inc. 
+NXPI|NXP Semiconductors N.V. 
+NXST|Nexstar Broadcasting Group, Inc. 
+NXTD|NXT
+NXTDW|NXT
+NXTM|NxStage Medical, Inc. 
+NYMT|New York Mortgage Trust, Inc. 
+NYMTO|New York Mortgage Trust, Inc. 
+NYMTP|New York Mortgage Trust, Inc. 
+NYMX|Nymox Pharmaceutical Corporation 
+NYNY|Empire Resorts, Inc. 
+OACQ|Origo Acquisition Corporation 
+OACQR|Origo Acquisition Corporation 
+OACQU|Origo Acquisition Corporation 
+OACQW|Origo Acquisition Corporation 
+OASM|Oasmia Pharmaceutical AB 
+OBAS|Optibase Ltd. 
+OBCI|Ocean Bio
+OCC|Optical Cable Corporation 
+OCFC|OceanFirst Financial Corp. 
+OCLR|Oclaro, Inc. 
+OCLS|Oculus Innovative Sciences, Inc. 
+OCLSW|Oculus Innovative Sciences, Inc. 
+OCRX|Ocera Therapeutics, Inc. 
+OCUL|Ocular Therapeutix, Inc. 
+ODFL|Old Dominion Freight Line, Inc. 
+ODP|Office Depot, Inc. 
+OESX|Orion Energy Systems, Inc. 
+OFED|Oconee Federal Financial Corp. 
+OFIX|Orthofix International N.V. 
+OFLX|Omega Flex, Inc. 
+OFS|OFS Capital Corporation 
+OGXI|OncoGenex Pharmaceuticals Inc. 
+OHAI|OHA Investment Corporation 
+OHGI|One Horizon Group, Inc. 
+OHRP|Ohr Pharmaceuticals, Inc. 
+OIIM|O2Micro International Limited 
+OILD|AccuShares S&P GSCI Crude Oil Excess Return Down Shares|G|N|N|100|Y|N
+OILU|AccuShares S&P GSCI Crude Oil Excess Return Up Shares|G|N|N|100|Y|N
+OKSB|Southwest Bancorp, Inc. 
+OLBK|Old Line Bancshares, Inc. 
+OLD|The Long
+OLED|Universal Display Corporation 
+OLLI|Ollie's Bargain Outlet Holdings, Inc. 
+OMAB|Grupo Aeroportuario del Centro Norte S.A.B. de C.V. 
+OMCL|Omnicell, Inc. 
+OMED|OncoMed Pharmaceuticals, Inc. 
+OMER|Omeros Corporation 
+OMEX|Odyssey Marine Exploration, Inc. 
+ON|ON Semiconductor Corporation 
+ONB|Old National Bancorp 
+ONCE|Spark Therapeutics, Inc. 
+ONCS|OncoSec Medical Incorporated 
+ONEQ|Fidelity Nasdaq Composite Index Tracking Stock|G|N|N|100|Y|N
+ONS|Oncobiologics, Inc. 
+ONSIW|Oncobiologics, Inc. 
+ONSIZ|Oncobiologics, Inc. 
+ONTX|Onconova Therapeutics, Inc. 
+ONTXW|Onconova Therapeutics, Inc. 
+ONVI|Onvia, Inc. 
+ONVO|Organovo Holdings, Inc. 
+OPB|Opus Bank 
+OPGN|OpGen, Inc. 
+OPGNW|OpGen, Inc. 
+OPHC|OptimumBank Holdings, Inc. 
+OPHT|Ophthotech Corporation 
+OPK|Opko Health, Inc. 
+OPOF|Old Point Financial Corporation 
+OPTT|Ocean Power Technologies, Inc. 
+OPXA|Opexa Therapeutics, Inc. 
+OPXAW|Opexa Therapeutics, Inc. 
+ORBC|ORBCOMM Inc. 
+ORBK|Orbotech Ltd. 
+OREX|Orexigen Therapeutics, Inc. 
+ORG|The Organics ETF|G|N|N|100|Y|N
+ORIG|Ocean Rig UDW Inc. 
+ORIT|Oritani Financial Corp. 
+ORLY|O'Reilly Automotive, Inc. 
+ORMP|Oramed Pharmaceuticals Inc. 
+ORPN|Bio Blast Pharma Ltd. 
+ORRF|Orrstown Financial Services Inc 
+OSBC|Old Second Bancorp, Inc. 
+OSBCP|Old Second Bancorp, Inc. 
+OSHC|Ocean Shore Holding Co. 
+OSIR|Osiris Therapeutics, Inc. 
+OSIS|OSI Systems, Inc. 
+OSM|SLM Corporation 
+OSN|Ossen Innovation Co., Ltd. 
+OSTK|Overstock.com, Inc. 
+OSUR|OraSure Technologies, Inc. 
+OTEL|Otelco Inc. 
+OTEX|Open Text Corporation 
+OTIC|Otonomy, Inc. 
+OTIV|On Track Innovations Ltd 
+OTTR|Otter Tail Corporation 
+OUTR|Outerwall Inc. 
+OVAS|OvaScience Inc. 
+OVBC|Ohio Valley Banc Corp. 
+OVLY|Oak Valley Bancorp (CA) 
+OXBR|Oxbridge Re Holdings Limited 
+OXBRW|Oxbridge Re Holdings Limited 
+OXFD|Oxford Immunotec Global PLC 
+OXLC|Oxford Lane Capital Corp. 
+OXLCN|Oxford Lane Capital Corp. 
+OXLCO|Oxford Lane Capital Corp. 
+OZRK|Bank of the Ozarks 
+PAAC|Pacific Special Acquisition Corp. 
+PAACR|Pacific Special Acquisition Corp. 
+PAACU|Pacific Special Acquisition Corp. 
+PAACW|Pacific Special Acquisition Corp. 
+PAAS|Pan American Silver Corp. 
+PACB|Pacific Biosciences of California, Inc. 
+PACE|Pace Holdings Corp. 
+PACEU|Pace Holdings Corp. 
+PACEW|Pace Holdings Corp. 
+PACW|PacWest Bancorp 
+PAGG|PowerShares Global Agriculture Portfolio|G|N|N|100|Y|N
+PAHC|Phibro Animal Health Corporation 
+PANL|Pangaea Logistics Solutions Ltd. 
+PARN|Parnell Pharmaceuticals Holdings Ltd 
+PATI|Patriot Transportation Holding, Inc. 
+PATK|Patrick Industries, Inc. 
+PAVM|PAVmed Inc. 
+PAVMW|PAVmed Inc. 
+PAYX|Paychex, Inc. 
+PBBI|PB Bancorp, Inc. 
+PBCT|People's United Financial, Inc. 
+PBHC|Pathfinder Bancorp, Inc. 
+PBIB|Porter Bancorp, Inc. 
+PBIP|Prudential Bancorp, Inc. 
+PBMD|Prima BioMed Ltd 
+PBNC|Paragon Commercial Corporation 
+PBPB|Potbelly Corporation 
+PBSK|Poage Bankshares, Inc. 
+PCAR|PACCAR Inc. 
+PCBK|Pacific Continental Corporation (Ore) 
+PCCC|PC Connection, Inc. 
+PCH|Potlatch Corporation 
+PCLN|The Priceline Group Inc.  
+PCMI|PCM, Inc. 
+PCO|Pendrell Corporation 
+PCOM|Points International, Ltd. 
+PCRX|Pacira Pharmaceuticals, Inc. 
+PCTI|PC
+PCTY|Paylocity Holding Corporation 
+PCYG|Park City Group, Inc. 
+PCYO|Pure Cycle Corporation 
+PDBC|PowerShares DB Optimum Yield Diversified Commodity Strategy Portfolio|G|N|N|100|Y|N
+PDCE|PDC Energy, Inc. 
+PDCO|Patterson Companies, Inc. 
+PDEX|Pro
+PDFS|PDF Solutions, Inc. 
+PDLI|PDL BioPharma, Inc. 
+PDVW|pdvWireless, Inc. 
+PEBK|Peoples Bancorp of North Carolina, Inc. 
+PEBO|Peoples Bancorp Inc. 
+PEGA|Pegasystems Inc. 
+PEGI|Pattern Energy Group Inc. 
+PEIX|Pacific Ethanol, Inc. 
+PENN|Penn National Gaming, Inc. 
+PERF|Perfumania Holdings, Inc 
+PERI|Perion Network Ltd 
+PERY|Perry Ellis International Inc. 
+PESI|Perma
+PETS|PetMed Express, Inc. 
+PETX|Aratana Therapeutics, Inc. 
+PFBC|Preferred Bank 
+PFBI|Premier Financial Bancorp, Inc. 
+PFBX|Peoples Financial Corporation 
+PFIE|Profire Energy, Inc. 
+PFIN|P & F Industries, Inc. 
+PFIS|Peoples Financial Services Corp.  
+PFLT|PennantPark Floating Rate Capital Ltd. 
+PFMT|Performant Financial Corporation 
+PFPT|Proofpoint, Inc. 
+PFSW|PFSweb, Inc. 
+PGC|Peapack
+PGLC|Pershing Gold Corporation 
+PGNX|Progenics Pharmaceuticals Inc. 
+PGTI|PGT, Inc. 
+PHII|PHI, Inc. 
+PHIIK|PHI, Inc. 
+PHMD|PhotoMedex, Inc. 
+PI|Impinj, Inc. 
+PICO|PICO Holdings Inc. 
+PIH|1347 Property Insurance Holdings, Inc. 
+PINC|Premier, Inc. 
+PIRS|Pieris Pharmaceuticals, Inc. 
+PKBK|Parke Bancorp, Inc. 
+PKOH|Park
+PLAB|Photronics, Inc. 
+PLAY|Dave & Buster's Entertainment, Inc. 
+PLBC|Plumas Bancorp 
+PLCE|Children's Place, Inc. (The) 
+PLCM|Polycom, Inc. 
+PLKI|Popeyes Louisiana Kitchen, Inc. 
+PLPC|Preformed Line Products Company 
+PLPM|Planet Payment, Inc. 
+PLSE|Pulse Biosciences, Inc 
+PLUG|Plug Power, Inc. 
+PLUS|ePlus inc. 
+PLXS|Plexus Corp. 
+PMBC|Pacific Mercantile Bancorp 
+PMD|Psychemedics Corporation 
+PME|Pingtan Marine Enterprise Ltd. 
+PMPT|iSectors Post
+PMTS|CPI Card Group Inc. 
+PNBK|Patriot National Bancorp Inc. 
+PNFP|Pinnacle Financial Partners, Inc. 
+PNK|Pinnacle Entertainment, Inc. 
+PNNT|PennantPark Investment Corporation 
+PNQI|PowerShares Nasdaq Internet Portfolio|G|N|N|100|Y|N
+PNRA|Panera Bread Company 
+PNRG|PrimeEnergy Corporation 
+PNTR|Pointer Telocation Ltd. 
+PODD|Insulet Corporation 
+POOL|Pool Corporation 
+POPE|Pope Resources 
+POWI|Power Integrations, Inc. 
+POWL|Powell Industries, Inc. 
+PPBI|Pacific Premier Bancorp Inc 
+PPC|Pilgrim's Pride Corporation 
+PPH|VanEck Vectors Pharmaceutical ETF|G|N|N|100|Y|N
+PPHM|Peregrine Pharmaceuticals Inc. 
+PPHMP|Peregrine Pharmaceuticals Inc. 
+PPSI|Pioneer Power Solutions, Inc. 
+PRAA|PRA Group, Inc. 
+PRAH|PRA Health Sciences, Inc. 
+PRAN|Prana Biotechnology Ltd 
+PRCP|Perceptron, Inc. 
+PRFT|Perficient, Inc. 
+PRFZ|PowerShares FTSE RAFI US 1500 Small
+PRGS|Progress Software Corporation 
+PRGX|PRGX Global, Inc. 
+PRIM|Primoris Services Corporation 
+PRKR|ParkerVision, Inc. 
+PRMW|Primo Water Corporation 
+PROV|Provident Financial Holdings, Inc. 
+PRPH|ProPhase Labs, Inc. 
+PRQR|ProQR Therapeutics N.V. 
+PRSC|The Providence Service Corporation 
+PRSS|CafePress Inc. 
+PRTA|Prothena Corporation plc 
+PRTK|Paratek Pharmaceuticals, Inc.  
+PRTO|Proteon Therapeutics, Inc. 
+PRTS|U.S. Auto Parts Network, Inc. 
+PRXL|PAREXEL International Corporation 
+PRZM|Prism Technologies Group, Inc. 
+PSAU|PowerShares Global Gold & Precious Metals Portfolio|G|N|N|100|Y|N
+PSCC|PowerShares S&P SmallCap Consumer Staples Portfolio|G|N|N|100|Y|N
+PSCD|PowerShares S&P SmallCap Consumer Discretionary Portfolio|G|N|N|100|Y|N
+PSCE|PowerShares S&P SmallCap Energy Portfolio|G|N|N|100|Y|N
+PSCF|PowerShares S&P SmallCap Financials Portfolio|G|N|N|100|Y|N
+PSCH|PowerShares S&P SmallCap Health Care Portfolio|G|N|N|100|Y|N
+PSCI|PowerShares S&P SmallCap Industrials Portfolio|G|N|N|100|Y|N
+PSCM|PowerShares S&P SmallCap Materials Portfolio|G|N|N|100|Y|N
+PSCT|PowerShares S&P SmallCap Information Technology Portfolio|G|N|N|100|Y|N
+PSCU|PowerShares S&P SmallCap Utilities Portfolio|G|N|N|100|Y|N
+PSDV|pSivida Corp. 
+PSEC|Prospect Capital Corporation 
+PSET|Principal Price Setters Index ETF|G|N|N|100|Y|N
+PSIX|Power Solutions International, Inc. 
+PSMT|PriceSmart, Inc. 
+PSTB|Park Sterling Corporation 
+PSTI|Pluristem Therapeutics, Inc. 
+PTC|PTC Inc. 
+PTCT|PTC Therapeutics, Inc. 
+PTEN|Patterson
+PTGX|Protagonist Therapeutics, Inc. 
+PTI|Proteostasis Therapeutics, Inc. 
+PTIE|Pain Therapeutics 
+PTLA|Portola Pharmaceuticals, Inc. 
+PTNR|Partner Communications Company Ltd. 
+PTSI|P.A.M. Transportation Services, Inc. 
+PTX|Pernix Therapeutics Holdings, Inc. 
+PTXP|PennTex Midstream Partners, LP 
+PUB|People's Utah Bancorp 
+PULM|Pulmatrix, Inc. 
+PVBC|Provident Bancorp, Inc. 
+PVTB|PrivateBancorp, Inc. 
+PVTBP|PrivateBancorp, Inc. 
+PWOD|Penns Woods Bancorp, Inc. 
+PWX|Providence and Worcester Railroad Company 
+PXLW|Pixelworks, Inc. 
+PXS|Pyxis Tankers Inc. 
+PY|Principal Shareholder Yield Index ETF|G|N|N|100|Y|N
+PYDS|Payment Data Systems, Inc. 
+PYPL|PayPal Holdings, Inc. 
+PZRX|PhaseRx, Inc. 
+PZZA|Papa John's International, Inc. 
+QABA|First Trust NASDAQ ABA Community Bank Index Fund|G|N|N|100|Y|N
+QADA|QAD Inc. 
+QADB|QAD Inc. 
+QAT|iShares MSCI Qatar Capped ETF|G|N|N|100|Y|N
+QBAK|Qualstar Corporation 
+QCLN|First Trust NASDAQ Clean Edge Green Energy Index Fund|G|N|N|100|Y|N
+QCOM|QUALCOMM Incorporated 
+QCRH|QCR Holdings, Inc. 
+QDEL|Quidel Corporation 
+QGEN|Qiagen N.V. 
+QINC|First Trust RBA Quality Income ETF|G|N|N|100|Y|N
+QIWI|QIWI plc 
+QLC|FlexShares US Quality Large Cap Index Fund|G|N|N|100|Y|N
+QLTI|QLT Inc. 
+QLYS|Qualys, Inc. 
+QNST|QuinStreet, Inc. 
+QPAC|Quinpario Acquisition Corp. 2 
+QPACU|Quinpario Acquisition Corp. 2 
+QPACW|Quinpario Acquisition Corp. 2 
+QQEW|First Trust NASDAQ
+QQQ|PowerShares QQQ Trust, Series 1|G|N|N|100|Y|N
+QQQC|Global X NASDAQ China Technology ETF|G|N|N|100|Y|N
+QQQX|Nuveen NASDAQ 100 Dynamic Overwrite Fund 
+QQXT|First Trust NASDAQ
+QRHC|Quest Resource Holding Corporation. 
+QRVO|Qorvo, Inc. 
+QSII|Quality Systems, Inc. 
+QTEC|First Trust NASDAQ
+QTNT|Quotient Limited 
+QUIK|QuickLogic Corporation 
+QUMU|Qumu Corporation 
+QUNR|Qunar Cayman Islands Limited 
+QURE|uniQure N.V. 
+QVCA|Liberty Interactive Corporation 
+QVCB|Liberty Interactive Corporation 
+QYLD|Recon Capital NASDAQ
+RADA|Rada Electronics Industries Limited 
+RAIL|Freightcar America, Inc. 
+RAND|Rand Capital Corporation 
+RARE|Ultragenyx Pharmaceutical Inc. 
+RAVE|Rave Restaurant Group, Inc. 
+RAVN|Raven Industries, Inc. 
+RBCAA|Republic Bancorp, Inc. 
+RBCN|Rubicon Technology, Inc. 
+RBPAA|Royal Bancshares of Pennsylvania, Inc. 
+RCII|Rent
+RCKY|Rocky Brands, Inc. 
+RCMT|RCM Technologies, Inc. 
+RCON|Recon Technology, Ltd. 
+RDCM|Radcom Ltd. 
+RDEN|Elizabeth Arden, Inc. 
+RDHL|Redhill Biopharma Ltd. 
+RDI|Reading International Inc 
+RDIB|Reading International Inc 
+RDNT|RadNet, Inc. 
+RDUS|Radius Health, Inc. 
+RDVY|First Trust NASDAQ Rising Dividend Achievers ETF|G|N|N|100|Y|N
+RDWR|Radware Ltd. 
+RECN|Resources Connection, Inc. 
+REFR|Research Frontiers Incorporated 
+REGI|Renewable Energy Group, Inc. 
+REGN|Regeneron Pharmaceuticals, Inc. 
+REIS|Reis, Inc 
+RELL|Richardson Electronics, Ltd. 
+RELV|Reliv' International, Inc. 
+RELY|Real Industry, Inc.  
+REPH|Recro Pharma, Inc. 
+RESN|Resonant Inc. 
+RETA|Reata Pharmaceuticals, Inc. 
+REXI|Resource America, Inc. 
+REXX|Rex Energy Corporation 
+RFAP|First Trust RiverFront Dynamic Asia Pacific ETF|G|N|N|100|Y|N
+RFDI|First Trust RiverFront Dynamic Developed International ETF|G|N|N|100|Y|N
+RFEM|First Trust RiverFront Dynamic Emerging Markets ETF|G|N|N|100|Y|N
+RFEU|First Trust RiverFront Dynamic Europe ETF|G|N|N|100|Y|N
+RFIL|RF Industries, Ltd. 
+RGCO|RGC Resources Inc. 
+RGEN|Repligen Corporation 
+RGLD|Royal Gold, Inc. 
+RGLS|Regulus Therapeutics Inc. 
+RGNX|REGENXBIO Inc. 
+RGSE|Real Goods Solar, Inc. 
+RIBT|RiceBran Technologies 
+RIBTW|RiceBran Technologies 
+RICK|RCI Hospitality Holdings, Inc. 
+RIGL|Rigel Pharmaceuticals, Inc. 
+RILY|B. Riley Financial, Inc. 
+RKDA|Arcadia Biosciences, Inc. 
+RLJE|RLJ Entertainment, Inc. 
+RLOG|Rand Logistics, Inc. 
+RLYP|Relypsa, Inc. 
+RMBS|Rambus, Inc. 
+RMCF|Rocky Mountain Chocolate Factory, Inc. 
+RMGN|RMG Networks Holding Corporation 
+RMR|The RMR Group Inc. 
+RMTI|Rockwell Medical, Inc. 
+RNDB|Randolph Bancorp, Inc. 
+RNET|RigNet, Inc. 
+RNST|Renasant Corporation 
+RNVA|Rennova Health, Inc. 
+RNVAZ|Rennova Health, Inc. 
+RNWK|RealNetworks, Inc. 
+ROBO|ROBO Global Robotics and Automation Index ETF|G|N|N|100|Y|N
+ROCK|Gibraltar Industries, Inc. 
+ROIA|Radio One, Inc. 
+ROIAK|Radio One, Inc. 
+ROIC|Retail Opportunity Investments Corp. 
+ROKA|Roka Bioscience, Inc. 
+ROLL|RBC Bearings Incorporated 
+ROSG|Rosetta Genomics Ltd. 
+ROST|Ross Stores, Inc. 
+ROVI|Rovi Corporation 
+RP|RealPage, Inc. 
+RPD|Rapid7, Inc. 
+RPRX|Repros Therapeutics Inc. 
+RPTP|Raptor Pharmaceutical Corp. 
+RPXC|RPX Corporation 
+RRGB|Red Robin Gourmet Burgers, Inc. 
+RRR|Red Rock Resorts, Inc. 
+RSTI|Rofin
+RSYS|RadiSys Corporation 
+RTIX|RTI Surgical, Inc. 
+RTK|Rentech, Inc. 
+RTRX|Retrophin, Inc. 
+RTTR|Ritter Pharmaceuticals, Inc. 
+RUN|Sunrun Inc. 
+RUSHA|Rush Enterprises, Inc. 
+RUSHB|Rush Enterprises, Inc. 
+RUTH|Ruth's Hospitality Group, Inc. 
+RVEN|Reven Housing REIT, Inc. 
+RVLT|Revolution Lighting Technologies, Inc. 
+RVNC|Revance Therapeutics, Inc. 
+RVSB|Riverview Bancorp Inc 
+RWLK|ReWalk Robotics Ltd 
+RXDX|Ignyta, Inc. 
+RXII|RXi Pharmaceuticals Corporation 
+RYAAY|Ryanair Holdings plc 
+SAAS|inContact, Inc. 
+SABR|Sabre Corporation 
+SAEX|SAExploration Holdings, Inc. 
+SAFM|Sanderson Farms, Inc. 
+SAFT|Safety Insurance Group, Inc. 
+SAGE|Sage Therapeutics, Inc. 
+SAIA|Saia, Inc. 
+SAJA|Sajan, Inc. 
+SAL|Salisbury Bancorp, Inc. 
+SALE|RetailMeNot, Inc. 
+SALM|Salem Media Group, Inc. 
+SAMG|Silvercrest Asset Management Group Inc. 
+SANM|Sanmina Corporation 
+SANW|S&W Seed Company 
+SASR|Sandy Spring Bancorp, Inc. 
+SATS|EchoStar Corporation 
+SAUC|Diversified Restaurant Holdings, Inc. 
+SAVE|Spirit Airlines, Inc. 
+SBAC|SBA Communications Corporation 
+SBBP|Strongbridge Biopharma plc 
+SBBX|Sussex Bancorp 
+SBCF|Seacoast Banking Corporation of Florida 
+SBCP|Sunshine Bancorp, Inc. 
+SBFG|SB Financial Group, Inc. 
+SBFGP|SB Financial Group, Inc. 
+SBGI|Sinclair Broadcast Group, Inc. 
+SBLK|Star Bulk Carriers Corp. 
+SBLKL|Star Bulk Carriers Corp. 
+SBNY|Signature Bank 
+SBNYW|Signature Bank 
+SBOT|Stellar Biotechnologies, Inc. 
+SBPH|Spring Bank Pharmaceuticals, Inc. 
+SBRA|Sabra Healthcare REIT, Inc. 
+SBRAP|Sabra Healthcare REIT, Inc. 
+SBSA|Spanish Broadcasting System, Inc. 
+SBSI|Southside Bancshares, Inc. 
+SBUX|Starbucks Corporation 
+SCAI|Surgical Care Affiliates, Inc. 
+SCHL|Scholastic Corporation 
+SCHN|Schnitzer Steel Industries, Inc. 
+SCKT|Socket Mobile, Inc. 
+SCLN|SciClone Pharmaceuticals, Inc. 
+SCMP|Sucampo Pharmaceuticals, Inc. 
+SCON|Superconductor Technologies Inc. 
+SCOR|comScore, Inc. 
+SCSC|ScanSource, Inc. 
+SCSS|Select Comfort Corporation 
+SCTY|SolarCity Corporation 
+SCVL|Shoe Carnival, Inc. 
+SCWX|SecureWorks Corp. 
+SCYX|SCYNEXIS, Inc. 
+SCZ|iShares MSCI EAFE Small
+SEAC|SeaChange International, Inc. 
+SEDG|SolarEdge Technologies, Inc. 
+SEED|Origin Agritech Limited 
+SEIC|SEI Investments Company 
+SELB|Selecta Biosciences, Inc. 
+SELF|Global Self Storage, Inc. 
+SEMI|SunEdison Semiconductor Limited 
+SENEA|Seneca Foods Corp. 
+SENEB|Seneca Foods Corp. 
+SEV|Sevcon, Inc. 
+SFBC|Sound Financial Bancorp, Inc. 
+SFBS|ServisFirst Bancshares, Inc. 
+SFLY|Shutterfly, Inc. 
+SFM|Sprouts Farmers Market, Inc. 
+SFNC|Simmons First National Corporation 
+SFST|Southern First Bancshares, Inc. 
+SGBK|Stonegate Bank 
+SGC|Superior Uniform Group, Inc. 
+SGEN|Seattle Genetics, Inc. 
+SGI|Silicon Graphics International Corp 
+SGMA|SigmaTron International, Inc. 
+SGMO|Sangamo BioSciences, Inc. 
+SGMS|Scientific Games Corp 
+SGNL|Signal Genetics, Inc. 
+SGOC|SGOCO Group, Ltd 
+SGRP|SPAR Group, Inc. 
+SGRY|Surgery Partners, Inc. 
+SGYP|Synergy Pharmaceuticals, Inc. 
+SGYPU|Synergy Pharmaceuticals, Inc. 
+SGYPW|Synergy Pharmaceuticals, Inc. 
+SHBI|Shore Bancshares Inc 
+SHEN|Shenandoah Telecommunications Co 
+SHIP|Seanergy Maritime Holdings Corp 
+SHLD|Sears Holdings Corporation 
+SHLDW|Sears Holdings Corporation 
+SHLM|A. Schulman, Inc. 
+SHLO|Shiloh Industries, Inc. 
+SHOO|Steven Madden, Ltd. 
+SHOR|ShoreTel, Inc. 
+SHOS|Sears Hometown and Outlet Stores, Inc. 
+SHPG|Shire plc 
+SHSP|SharpSpring, Inc. 
+SIEB|Siebert Financial Corp. 
+SIEN|Sientra, Inc. 
+SIFI|SI Financial Group, Inc. 
+SIFY|Sify Technologies Limited 
+SIGI|Selective Insurance Group, Inc. 
+SIGM|Sigma Designs, Inc. 
+SILC|Silicom Ltd 
+SIMO|Silicon Motion Technology Corporation 
+SINA|Sina Corporation 
+SINO|Sino
+SIR|Select Income REIT 
+SIRI|Sirius XM Holdings Inc. 
+SITO|SITO Mobile, Ltd. 
+SIVB|SVB Financial Group 
+SIVBO|SVB Financial Group 
+SKIS|Peak Resorts, Inc. 
+SKLN|Skyline Medical Inc. 
+SKOR|FlexShares Credit
+SKUL|Skullcandy, Inc. 
+SKYS|Sky Solar Holdings, Ltd. 
+SKYW|SkyWest, Inc. 
+SKYY|First Trust ISE Cloud Computing Index Fund|G|N|N|100|Y|N
+SLAB|Silicon Laboratories, Inc. 
+SLCT|Select Bancorp, Inc. 
+SLGN|Silgan Holdings Inc. 
+SLIM|The Obesity ETF|G|N|N|100|Y|N
+SLM|SLM Corporation 
+SLMAP|SLM Corporation 
+SLMBP|SLM Corporation 
+SLP|Simulations Plus, Inc. 
+SLQD|iShares 0
+SLRC|Solar Capital Ltd. 
+SLVO|Credit Suisse AG 
+SMBC|Southern Missouri Bancorp, Inc. 
+SMBK|SmartFinancial, Inc. 
+SMCI|Super Micro Computer, Inc. 
+SMCP|AlphaMark Actively Managed Small Cap ETF|G|N|N|100|Y|N
+SMED|Sharps Compliance Corp 
+SMIT|Schmitt Industries, Inc. 
+SMMF|Summit Financial Group, Inc. 
+SMMT|Summit Therapeutics plc 
+SMRT|Stein Mart, Inc. 
+SMSI|Smith Micro Software, Inc. 
+SMT|SMART Technologies Inc. 
+SMTC|Semtech Corporation 
+SMTX|SMTC Corporation 
+SNAK|Inventure Foods, Inc. 
+SNBC|Sun Bancorp, Inc. 
+SNC|State National Companies, Inc. 
+SNCR|Synchronoss Technologies, Inc. 
+SNDE|Sundance Energy Australia Limited 
+SNDX|Syndax Pharmaceuticals, Inc. 
+SNFCA|Security National Financial Corporation 
+SNH|Senior Housing Properties Trust 
+SNHNI|Senior Housing Properties Trust 
+SNHNL|Senior Housing Properties Trust 
+SNHY|Sun Hydraulics Corporation 
+SNI|Scripps Networks Interactive, Inc 
+SNMX|Senomyx, Inc. 
+SNPS|Synopsys, Inc. 
+SNSS|Sunesis Pharmaceuticals, Inc. 
+SOCL|Global X Social Media Index ETF|G|N|N|100|Y|N
+SODA|SodaStream International Ltd. 
+SOFO|Sonic Foundry, Inc. 
+SOHO|Sotherly Hotels Inc. 
+SOHOB|Sotherly Hotels Inc. 
+SOHOL|Sotherly Hotels LP 
+SOHOM|Sotherly Hotels LP 
+SOHU|Sohu.com Inc. 
+SONA|Southern National Bancorp of Virginia, Inc. 
+SONC|Sonic Corp. 
+SONS|Sonus Networks, Inc. 
+SORL|SORL Auto Parts, Inc. 
+SOXX|iShares PHLX SOX Semiconductor Sector Index Fund|G|N|N|100|Y|N
+SP|SP Plus Corporation 
+SPAN|Span
+SPAR|Spartan Motors, Inc. 
+SPCB|SuperCom, Ltd. 
+SPEX|Spherix Incorporated 
+SPHS|Sophiris Bio, Inc. 
+SPI|SPI Energy Co., Ltd. 
+SPIL|Siliconware Precision Industries Company, Ltd. 
+SPKE|Spark Energy, Inc. 
+SPLK|Splunk Inc. 
+SPLS|Staples, Inc. 
+SPNC|The Spectranetics Corporation 
+SPNE|SeaSpine Holdings Corporation 
+SPNS|Sapiens International Corporation N.V. 
+SPOK|Spok Holdings, Inc. 
+SPPI|Spectrum Pharmaceuticals, Inc. 
+SPRT|support.com, Inc. 
+SPSC|SPS Commerce, Inc. 
+SPTN|SpartanNash Company 
+SPU|SkyPeople Fruit Juice, Inc. 
+SPWH|Sportsman's Warehouse Holdings, Inc. 
+SPWR|SunPower Corporation 
+SQBG|Sequential Brands Group, Inc. 
+SQNM|Sequenom, Inc. 
+SQQQ|ProShares UltraPro Short QQQ|G|N|N|100|Y|N
+SRAQ|Silver Run Acquisition Corporation 
+SRAQU|Silver Run Acquisition Corporation 
+SRAQW|Silver Run Acquisition Corporation 
+SRCE|1st Source Corporation 
+SRCL|Stericycle, Inc. 
+SRCLP|Stericycle, Inc. 
+SRDX|Surmodics, Inc. 
+SRET|Global X SuperDividend REIT ETF|G|N|N|100|Y|N
+SREV|ServiceSource International, Inc. 
+SRNE|Sorrento Therapeutics, Inc. 
+SRPT|Sarepta Therapeutics, Inc. 
+SRSC|Sears Canada Inc.  
+SRTS|Sensus Healthcare, Inc. 
+SRTSW|Sensus Healthcare, Inc. 
+SSB|South State Corporation 
+SSBI|Summit State Bank 
+SSFN|Stewardship Financial Corp 
+SSH|Sunshine Heart Inc 
+SSKN|Strata Skin Sciences, Inc. 
+SSNC|SS&C Technologies Holdings, Inc. 
+SSRI|Silver Standard Resources Inc. 
+SSYS|Stratasys, Ltd. 
+STAA|STAAR Surgical Company 
+STAF|Staffing 360 Solutions, Inc. 
+STB|Student Transportation Inc 
+STBA|S&T Bancorp, Inc. 
+STBZ|State Bank Financial Corporation. 
+STDY|SteadyMed Ltd. 
+STEM|StemCells, Inc. 
+STFC|State Auto Financial Corporation 
+STKL|SunOpta, Inc. 
+STKS|The ONE Group Hospitality, Inc. 
+STLD|Steel Dynamics, Inc. 
+STLRU|Stellar Acquisition III Inc. 
+STLY|Stanley Furniture Company, Inc. 
+STML|Stemline Therapeutics, Inc. 
+STMP|Stamps.com Inc. 
+STPP|Barclays PLC 
+STRA|Strayer Education, Inc. 
+STRL|Sterling Construction Company Inc 
+STRM|Streamline Health Solutions, Inc. 
+STRS|Stratus Properties, Inc. 
+STRT|Strattec Security Corporation 
+STRZA|Starz 
+STRZB|Starz 
+STX|Seagate Technology PLC 
+SUMR|Summer Infant, Inc. 
+SUNS|Solar Senior Capital Ltd. 
+SUNW|Sunworks, Inc. 
+SUPN|Supernus Pharmaceuticals, Inc. 
+SVA|Sinovac Biotech, Ltd. 
+SVBI|Severn Bancorp Inc 
+SVVC|Firsthand Technology Value Fund, Inc. 
+SWHC|Smith & Wesson Holding Corporation 
+SWIR|Sierra Wireless, Inc. 
+SWKS|Skyworks Solutions, Inc. 
+SYBT|Stock Yards Bancorp, Inc. 
+SYKE|Sykes Enterprises, Incorporated 
+SYMC|Symantec Corporation 
+SYMX|Synthesis Energy Systems, Inc. 
+SYNA|Synaptics Incorporated 
+SYNC|Synacor, Inc. 
+SYNL|Synalloy Corporation 
+SYNT|Syntel, Inc. 
+SYPR|Sypris Solutions, Inc. 
+SYRS|Syros Pharmaceuticals, Inc. 
+SYRX|Sysorex Global 
+SYUT|Synutra International, Inc. 
+SZMK|Sizmek Inc. 
+TA|TravelCenters of America LLC 
+TACO|Del Taco Restaurants, Inc. 
+TACOW|Del Taco Restaurants, Inc. 
+TACT|TransAct Technologies Incorporated 
+TAIT|Taitron Components Incorporated 
+TALL|Royal Bank Of Canada 
+TANH|Tantech Holdings Ltd. 
+TANNI|TravelCenters of America LLC 
+TANNL|TravelCenters of America LLC 
+TANNZ|TravelCenters of America LLC 
+TAPR|Barclays PLC 
+TASR|TASER International, Inc. 
+TAST|Carrols Restaurant Group, Inc. 
+TATT|TAT Technologies Ltd. 
+TAX|Liberty Tax, Inc. 
+TAYD|Taylor Devices, Inc. 
+TBBK|The Bancorp, Inc. 
+TBIO|Transgenomic, Inc. 
+TBK|Triumph Bancorp, Inc. 
+TBNK|Territorial Bancorp Inc. 
+TBPH|Theravance Biopharma, Inc. 
+TBRA|Tobira Therapeutics, Inc. 
+TCBI|Texas Capital Bancshares, Inc. 
+TCBIL|Texas Capital Bancshares, Inc. 
+TCBIP|Texas Capital Bancshares, Inc. 
+TCBIW|Texas Capital Bancshares, Inc. 
+TCBK|TriCo Bancshares 
+TCCO|Technical Communications Corporation 
+TCFC|The Community Financial Corporation 
+TCMD|Tactile Systems Technology, Inc. 
+TCON|TRACON Pharmaceuticals, Inc. 
+TCPC|TCP Capital Corp. 
+TCRD|THL Credit, Inc. 
+TCX|Tucows Inc. 
+TDIV|First Trust NASDAQ Technology Dividend Index Fund|G|N|N|100|Y|N
+TEAM|Atlassian Corporation Plc 
+TEAR|TearLab Corporation 
+TECD|Tech Data Corporation 
+TECH|Bio
+TEDU|Tarena International, Inc. 
+TENX|Tenax Therapeutics, Inc. 
+TERP|TerraForm Power, Inc. 
+TESO|Tesco Corporation 
+TESS|TESSCO Technologies Incorporated 
+TFSL|TFS Financial Corporation 
+TGA|Transglobe Energy Corp 
+TGEN|Tecogen Inc. 
+TGLS|Tecnoglass Inc. 
+TGTX|TG Therapeutics, Inc. 
+THFF|First Financial Corporation Indiana 
+THLD|Threshold Pharmaceuticals, Inc. 
+THRM|Gentherm Inc 
+THST|Truett
+TICC|TICC Capital Corp. 
+TIL|Till Capital Ltd. 
+TILE|Interface, Inc. 
+TINY|Harris & Harris Group, Inc. 
+TIPT|Tiptree Financial Inc. 
+TISA|Top Image Systems, Ltd. 
+TITN|Titan Machinery Inc. 
+TIVO|TiVo Inc. 
+TKAI|Tokai Pharmaceuticals, Inc. 
+TLF|Tandy Leather Factory, Inc. 
+TLGT|Teligent, Inc. 
+TLND|Talend S.A. 
+TLOG|TetraLogic Pharmaceuticals Corporation 
+TLT|iShares 20+ Year Treasury Bond ETF|G|N|N|100|Y|N
+TMUS|T
+TMUSP|T
+TNAV|Telenav, Inc. 
+TNDM|Tandem Diabetes Care, Inc. 
+TNGO|Tangoe, Inc. 
+TNXP|Tonix Pharmaceuticals Holding Corp. 
+TOPS|TOP Ships Inc. 
+TORM|TOR Minerals International Inc 
+TOUR|Tuniu Corporation 
+TOWN|Towne Bank 
+TPIC|TPI Composites, Inc. 
+TQQQ|ProShares UltraPro QQQ|G|N|N|100|Y|N
+TRCB|Two River Bancorp 
+TRCH|Torchlight Energy Resources, Inc. 
+TREE|LendingTree, Inc. 
+TRIB|Trinity Biotech plc 
+TRIL|Trillium Therapeutics Inc. 
+TRIP|TripAdvisor, Inc. 
+TRMB|Trimble Navigation Limited 
+TRMK|Trustmark Corporation 
+TRNC|tronc, Inc. 
+TRNS|Transcat, Inc. 
+TROV|TrovaGene, Inc. 
+TROVU|TrovaGene, Inc. 
+TROVW|TrovaGene, Inc. 
+TROW|T. Rowe Price Group, Inc. 
+TRS|TriMas Corporation 
+TRST|TrustCo Bank Corp NY 
+TRTL|Terrapin 3 Acquisition Corporation 
+TRTLU|Terrapin 3 Acquisition Corporation 
+TRTLW|Terrapin 3 Acquisition Corporation 
+TRUE|TrueCar, Inc. 
+TRUP|Trupanion, Inc. 
+TRVN|Trevena, Inc. 
+TSBK|Timberland Bancorp, Inc. 
+TSC|TriState Capital Holdings, Inc. 
+TSCO|Tractor Supply Company 
+TSEM|Tower Semiconductor Ltd. 
+TSLA|Tesla Motors, Inc. 
+TSRA|Tessera Technologies, Inc. 
+TSRI|TSR, Inc. 
+TSRO|TESARO, Inc. 
+TST|TheStreet, Inc. 
+TTEC|TeleTech Holdings, Inc. 
+TTEK|Tetra Tech, Inc. 
+TTGT|TechTarget, Inc. 
+TTMI|TTM Technologies, Inc. 
+TTNP|Titan Pharmaceuticals, Inc. 
+TTOO|T2 Biosystems, Inc. 
+TTPH|Tetraphase Pharmaceuticals, Inc. 
+TTS|Tile Shop Hldgs, Inc. 
+TTWO|Take
+TUBE|TubeMogul, Inc. 
+TUES|Tuesday Morning Corp. 
+TUSA|First Trust Total US Market AlphaDEX ETF|G|N|N|100|Y|N
+TUTI|Tuttle Tactical Management Multi
+TUTT|Tuttle Tactical Management U.S. Core ETF|G|N|N|100|Y|N
+TVIA|TerraVia Holdings, Inc. 
+TVIX|Credit Suisse AG 
+TVIZ|Credit Suisse AG 
+TWER|Towerstream Corporation 
+TWIN|Twin Disc, Incorporated 
+TWMC|Trans World Entertainment Corp. 
+TWOU|2U, Inc. 
+TXN|Texas Instruments Incorporated 
+TXRH|Texas Roadhouse, Inc. 
+TYPE|Monotype Imaging Holdings Inc. 
+TZOO|Travelzoo Inc. 
+UAE|iShares MSCI UAE Capped ETF|G|N|N|100|Y|N
+UBCP|United Bancorp, Inc. 
+UBFO|United Security Bancshares 
+UBIO|Proshares UltraPro Nasdaq Biotechnology|G|N|N|100|Y|N
+UBND|WisdomTree Western Asset Unconstrained Bond Fund|G|N|N|100|Y|N
+UBNK|United Financial Bancorp, Inc.  
+UBNT|Ubiquiti Networks, Inc. 
+UBOH|United Bancshares, Inc. 
+UBSH|Union Bankshares Corporation 
+UBSI|United Bankshares, Inc. 
+UCBA|United Community Bancorp 
+UCBI|United Community Banks, Inc. 
+UCFC|United Community Financial Corp. 
+UCTT|Ultra Clean Holdings, Inc. 
+UDBI|Legg Mason US Diversified Core ETF|G|N|N|100|Y|N
+UDF|United Development Funding IV 
+UEIC|Universal Electronics Inc. 
+UEPS|Net 1 UEPS Technologies, Inc. 
+UFCS|United Fire Group, Inc 
+UFPI|Universal Forest Products, Inc. 
+UFPT|UFP Technologies, Inc. 
+UG|United
+UGLD|Credit Suisse AG 
+UHAL|Amerco 
+UIHC|United Insurance Holdings Corp. 
+ULBI|Ultralife Corporation 
+ULH|Universal Logistics Holdings, Inc. 
+ULTA|Ulta Salon, Cosmetics & Fragrance, Inc. 
+ULTI|The Ultimate Software Group, Inc. 
+ULTR|Ultrapetrol (Bahamas) Limited 
+UMBF|UMB Financial Corporation 
+UMPQ|Umpqua Holdings Corporation 
+UNAM|Unico American Corporation 
+UNB|Union Bankshares, Inc. 
+UNFI|United Natural Foods, Inc. 
+UNIS|Unilife Corporation 
+UNTY|Unity Bancorp, Inc. 
+UNXL|Uni
+UPLD|Upland Software, Inc. 
+URBN|Urban Outfitters, Inc. 
+URRE|Uranium Resources, Inc. 
+USAK|USA Truck, Inc. 
+USAP|Universal Stainless & Alloy Products, Inc. 
+USAT|USA Technologies, Inc. 
+USATP|USA Technologies, Inc. 
+USBI|United Security Bancshares, Inc. 
+USCR|U S Concrete, Inc. 
+USEG|U.S. Energy Corp. 
+USLB|PowerShares Russell 1000 Low Beta Equal Weight Portfolio|G|N|N|100|Y|N
+USLM|United States Lime & Minerals, Inc. 
+USLV|Credit Suisse AG 
+USMD|USMD Holdings, Inc. 
+UTEK|Ultratech, Inc. 
+UTES|Reaves Utilities ETF|G|N|N|100|Y|N
+UTHR|United Therapeutics Corporation 
+UTMD|Utah Medical Products, Inc. 
+UTSI|UTStarcom Holdings Corp 
+UVSP|Univest Corporation of Pennsylvania 
+VA|Virgin America Inc. 
+VALU|Value Line, Inc. 
+VALX|Validea Market Legends ETF|G|N|N|100|Y|N
+VASC|Vascular Solutions, Inc. 
+VBFC|Village Bank and Trust Financial Corp. 
+VBIV|VBI Vaccines, Inc. 
+VBLT|Vascular Biogenics Ltd. 
+VBND|Vident Core U.S. Bond Strategy Fund|G|N|N|100|Y|N
+VBTX|Veritex Holdings, Inc. 
+VCEL|Vericel Corporation 
+VCIT|Vanguard Intermediate
+VCLT|Vanguard Long
+VCSH|Vanguard Short
+VCYT|Veracyte, Inc. 
+VDSI|VASCO Data Security International, Inc. 
+VDTH|Videocon d2h Limited 
+VECO|Veeco Instruments Inc. 
+VGIT|Vanguard Intermediate 
+VGLT|Vanguard Long
+VGSH|Vanguard Short
+VIA|Viacom Inc. 
+VIAB|Viacom Inc. 
+VIAV|Viavi Solutions Inc. 
+VICL|Vical Incorporated 
+VICR|Vicor Corporation 
+VIDI|Vident International Equity Fund|G|N|N|100|Y|N
+VIGI|Vanguard International Dividend Appreciation ETF|G|N|N|100|Y|N
+VIIX|Credit Suisse AG 
+VIIZ|Credit Suisse AG 
+VIP|VimpelCom Ltd. 
+VIRC|Virco Manufacturing Corporation 
+VIRT|Virtu Financial, Inc. 
+VISN|VisionChina Media, Inc. 
+VIVE|Viveve Medical, Inc. 
+VIVO|Meridian Bioscience Inc. 
+VKTX|Viking Therapeutics, Inc. 
+VKTXW|Viking Therapeutics, Inc. 
+VLGEA|Village Super Market, Inc. 
+VLTC|Voltari Corporation 
+VMBS|Vanguard Mortgage
+VNDA|Vanda Pharmaceuticals Inc. 
+VNET|21Vianet Group, Inc. 
+VNOM|Viper Energy Partners LP 
+VNQI|Vanguard Global ex
+VNR|Vanguard Natural Resources LLC 
+VNRAP|Vanguard Natural Resources LLC 
+VNRBP|Vanguard Natural Resources LLC 
+VNRCP|Vanguard Natural Resources LLC 
+VOD|Vodafone Group Plc 
+VONE|Vanguard Russell 1000 ETF|G|N|N|100|Y|N
+VONG|Vanguard Russell 1000 Growth ETF|G|N|N|100|Y|N
+VONV|Vanguard Russell 1000 Value ETF|G|N|N|100|Y|N
+VOXX|VOXX International Corporation 
+VRA|Vera Bradley, Inc. 
+VRAY|ViewRay, Inc. 
+VRML|Vermillion, Inc. 
+VRNS|Varonis Systems, Inc. 
+VRNT|Verint Systems Inc. 
+VRSK|Verisk Analytics, Inc. 
+VRSN|VeriSign, Inc. 
+VRTB|Vestin Realty Mortgage II, Inc. 
+VRTS|Virtus Investment Partners, Inc. 
+VRTU|Virtusa Corporation 
+VRTX|Vertex Pharmaceuticals Incorporated 
+VSAR|Versartis, Inc. 
+VSAT|ViaSat, Inc. 
+VSEC|VSE Corporation 
+VSTM|Verastem, Inc. 
+VTAE|Vitae Pharmaceuticals, Inc. 
+VTGN|VistaGen Therapeutics, Inc. 
+VTHR|Vanguard Russell 3000 ETF|G|N|N|100|Y|N
+VTIP|Vanguard Short
+VTL|Vital Therapies, Inc. 
+VTNR|Vertex Energy, Inc 
+VTVT|vTv Therapeutics Inc. 
+VTWG|Vanguard Russell 2000 Growth ETF|G|N|N|100|Y|N
+VTWO|Vanguard Russell 2000 ETF|G|N|N|100|Y|N
+VTWV|Vanguard Russell 2000 Value ETF|G|N|N|100|Y|N
+VUSE|Vident Core US Equity ETF|G|N|N|100|Y|N
+VUZI|Vuzix Corporation 
+VVUS|VIVUS, Inc. 
+VWOB|Vanguard Emerging Markets Government Bond ETF|G|N|N|100|Y|N
+VWR|VWR Corporation 
+VXDN|AccuShares Spot CBOE VIX Down Shares|G|N|N|100|Y|N
+VXUP|AccuShares Spot CBOE VIX Up Shares|G|N|N|100|Y|N
+VXUS|Vanguard Total International Stock ETF|G|N|N|100|Y|N
+VYGR|Voyager Therapeutics, Inc. 
+VYMI|Vanguard International High Dividend Yield ETF|G|N|N|100|Y|N
+WABC|Westamerica Bancorporation 
+WAFD|Washington Federal, Inc. 
+WAFDW|Washington Federal, Inc. 
+WASH|Washington Trust Bancorp, Inc. 
+WATT|Energous Corporation 
+WAYN|Wayne Savings Bancshares Inc. 
+WB|Weibo Corporation 
+WBA|Walgreens Boots Alliance, Inc. 
+WBB|Westbury Bancorp, Inc. 
+WBKC|Wolverine Bancorp, Inc. 
+WBMD|WebMD Health Corp 
+WCFB|WCF Bancorp, Inc. 
+WDC|Western Digital Corporation 
+WDFC|WD
+WEB|Web.com Group, Inc. 
+WEBK|Wellesley Bancorp, Inc. 
+WEN|Wendy's Company (The) 
+WERN|Werner Enterprises, Inc. 
+WETF|WisdomTree Investments, Inc. 
+WEYS|Weyco Group, Inc. 
+WFBI|WashingtonFirst Bankshares Inc 
+WFD|Westfield Financial, Inc. 
+WFM|Whole Foods Market, Inc. 
+WGBS|WaferGen Bio
+WHF|WhiteHorse Finance, Inc. 
+WHFBL|WhiteHorse Finance, Inc. 
+WHLM|Wilhelmina International, Inc. 
+WHLR|Wheeler Real Estate Investment Trust, Inc. 
+WHLRP|Wheeler Real Estate Investment Trust, Inc. 
+WHLRW|Wheeler Real Estate Investment Trust, Inc. 
+WIFI|Boingo Wireless, Inc. 
+WILC|G. Willi
+WILN|Wi
+WIN|Windstream Holdings, Inc. 
+WINA|Winmark Corporation 
+WING|Wingstop Inc. 
+WINS|Wins Finance Holdings Inc. 
+WINT|Windtree Therapeutics, Inc. 
+WIRE|Encore Wire Corporation 
+WIX|Wix.com Ltd. 
+WKHS|Workhorse Group, Inc. 
+WLB|Westmoreland Coal Company 
+WLDN|Willdan Group, Inc. 
+WLFC|Willis Lease Finance Corporation 
+WLTW|Willis Towers Watson Public Limited Company 
+WMAR|West Marine, Inc. 
+WMGI|Wright Medical Group N.V. 
+WMGIZ|Wright Medical Group N.V. 
+WMIH|WMIH Corp. 
+WOOD|iShares S&P Global Timber & Forestry Index Fund|G|N|N|100|Y|N
+WOOF|VCA Inc.  
+WPCS|WPCS International Incorporated 
+WPPGY|WPP plc 
+WPRT|Westport Fuel Systems Inc 
+WRLD|World Acceptance Corporation 
+WSBC|WesBanco, Inc. 
+WSBF|Waterstone Financial, Inc. 
+WSCI|WSI Industries Inc. 
+WSFS|WSFS Financial Corporation 
+WSFSL|WSFS Financial Corporation 
+WSTC|West Corporation 
+WSTG|Wayside Technology Group, Inc. 
+WSTL|Westell Technologies, Inc. 
+WTBA|West Bancorporation 
+WTFC|Wintrust Financial Corporation 
+WTFCM|Wintrust Financial Corporation 
+WTFCW|Wintrust Financial Corporation 
+WVE|WAVE Life Sciences Ltd. 
+WVFC|WVS Financial Corp. 
+WVVI|Willamette Valley Vineyards, Inc. 
+WVVIP|Willamette Valley Vineyards, Inc. 
+WWD|Woodward, Inc. 
+WYIG|JM Global Holding Company 
+WYIGU|JM Global Holding Company 
+WYIGW|JM Global Holding Company 
+WYNN|Wynn Resorts, Limited 
+XBIT|XBiotech Inc. 
+XBKS|Xenith Bankshares, Inc. 
+XCOM|Xtera Communications, Inc. 
+XCRA|Xcerra Corporation 
+XELB|Xcel Brands, Inc 
+XENE|Xenon Pharmaceuticals Inc. 
+XENT|Intersect ENT, Inc. 
+XGTI|XG Technology, Inc 
+XGTIW|XG Technology, Inc 
+XIV|Credit Suisse AG 
+XLNX|Xilinx, Inc. 
+XLRN|Acceleron Pharma Inc. 
+XNCR|Xencor, Inc. 
+XNET|Xunlei Limited 
+XOMA|XOMA Corporation 
+XONE|The ExOne Company 
+XPLR|Xplore Technologies Corp 
+XRAY|DENTSPLY SIRONA Inc. 
+XRDC|Crossroads Capital, Inc. 
+XTLB|XTL Biopharmaceuticals Ltd. 
+XXIA|Ixia 
+YCB|Your Community Bankshares, Inc. 
+YDIV|First Trust International Multi
+YECO|Yulong Eco
+YHOO|Yahoo! Inc. 
+YIN|Yintech Investment Holdings Limited 
+YLCO|Global X Yieldco Index ETF|G|N|N|100|Y|N
+YNDX|Yandex N.V. 
+YOD|You On Demand Holdings, Inc. 
+YORW|The York Water Company 
+YPRO|AdvisorShares YieldPro ETF|G|N|N|100|Y|N
+YRCW|YRC Worldwide, Inc. 
+YY|YY Inc. 
+Z|Zillow Group, Inc. 
+ZAGG|ZAGG Inc 
+ZAIS|ZAIS Group Holdings, Inc. 
+ZAZZT|Tick Pilot Test Stock Class A Common Stock|G|Y|N|100||N
+ZBIO|ProShares UltraPro Short NASDAQ Biotechnology|G|N|N|100|Y|N
+ZBRA|Zebra Technologies Corporation 
+ZBZZT|Test Pilot Test Stock Class B Common Stock|G|Y|N|100||N
+ZCZZT|Tick Pilot Test Stock Class C |G|Y|N|100||N
+ZEUS|Olympic Steel, Inc. 
+ZFGN|Zafgen, Inc. 
+ZG|Zillow Group, Inc. 
+ZGNX|Zogenix, Inc. 
+ZHNE|Zhone Technologies, Inc. 
+ZION|Zions Bancorporation 
+ZIONW|Zions Bancorporation 
+ZIONZ|Zions Bancorporation 
+ZIOP|ZIOPHARM Oncology Inc 
+ZIV|Credit Suisse AG 
+ZIXI|Zix Corporation 
+ZJZZT|NASDAQ TEST STOCK|Q|Y|N|100||N
+ZLTQ|ZELTIQ Aesthetics, Inc. 
+ZN|Zion Oil & Gas Inc 
+ZNGA|Zynga Inc. 
+ZNWAA|Zion Oil & Gas Inc 
+ZSAN|Zosano Pharma Corporation 
+ZUMZ|Zumiez Inc. 
+ZVZZC|NASDAQ TEST STOCK Nextshares Test Security|G|Y|N|100||Y
+ZVZZT|NASDAQ TEST STOCK|G|Y|N|100||N
+ZWZZT|NASDAQ TEST STOCK|S|Y|N|100||N
+ZXYZ.A|Nasdaq Symbology Test Common Stock|Q|Y|N|100||N
+ZXZZT|NASDAQ TEST STOCK|G|Y|N|100||N
+ZYNE|Zynerba Pharmaceuticals, Inc. 
+

@@ -39,10 +39,10 @@ public class ChangePassword extends javax.swing.JFrame {
         label1 = new java.awt.Label();
         label2 = new java.awt.Label();
         label3 = new java.awt.Label();
-        NewPassTextField = new java.awt.TextField();
-        OldPassTextField = new java.awt.TextField();
+        NewPassTextField = new javax.swing.JPasswordField();
+        OldPassTextField = new javax.swing.JPasswordField();
         label4 = new java.awt.Label();
-        ConfirmPassTextField = new java.awt.TextField();
+        ConfirmPassTextField = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("MoneyTree Trading Platform");
@@ -153,9 +153,9 @@ public class ChangePassword extends javax.swing.JFrame {
 
     private void submitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_submitButtonActionPerformed
         //ADD FIELDS
-        String oldPassText = OldPassTextField.getText();
-        String newPassText = NewPassTextField.getText();
-        String confirmPassText = ConfirmPassTextField.getText();
+        String oldPassText = new String(OldPassTextField.getPassword());
+        String newPassText = new String(NewPassTextField.getPassword());
+        String confirmPassText = new String(ConfirmPassTextField.getPassword());
 
         try {
             //SEND TO CONTROLLER TO CREATE BROKER AND SEND TO DB
@@ -224,9 +224,9 @@ public class ChangePassword extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private java.awt.TextField ConfirmPassTextField;
-    private java.awt.TextField NewPassTextField;
-    private java.awt.TextField OldPassTextField;
+    private javax.swing.JPasswordField ConfirmPassTextField;
+    private javax.swing.JPasswordField NewPassTextField;
+    private javax.swing.JPasswordField OldPassTextField;
     private java.awt.Button button2;
     private java.awt.Label label1;
     private java.awt.Label label2;

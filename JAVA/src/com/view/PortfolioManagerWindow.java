@@ -2,14 +2,10 @@ package com.view;
 
 import UserObjects.Order;
 import UserObjects.SingleOrder;
-import UserObjects.Trader;
 import com.controller.CMAIN;
-import com.controller.CPMOrderHistory;
-import com.controller.CPMPendingRequest;
+import com.controller.CPMOrderMANIAC;
 import com.controller.ControllerPMCreatedOrders;
 import java.awt.Component;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.DefaultCellEditor;
@@ -33,6 +29,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTabbedPane;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
+import static javax.swing.JOptionPane.showMessageDialog;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -59,11 +56,30 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
         Timer timer = new Timer(5000, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ArrayList<SingleOrder> ordersDone = (ArrayList) CPMOrderHistory.updateOrders();
-
+                ArrayList<SingleOrder> ordersDone = (ArrayList) CPMOrderMANIAC.updateOrders();
+                System.out.println("ORDERS GOTTEN FROM MANIAC:   " + ordersDone.toString());
+                ArrayList<SingleOrder> ordersPending = new ArrayList<>();
+                ArrayList<SingleOrder> ordersExecuted = new ArrayList<>();
+                
                 if (null != ordersDone) {
-                    PMOrderHistoryTable.setModel(CPMOrderHistory.getTableModel());
-                    PMPendingOrdersTable.setModel(CPMPendingRequest.getTableModel());
+                    for(int i=0; i < ordersDone.size(); i++){
+                        String currStatus = ordersDone.get(i).getStatus();
+                        if(currStatus.equals("Pending")){
+                            ordersPending.add(ordersDone.get(i));
+                            System.out.println("ADDED TO PENDING");
+                        }
+                        if(currStatus.equals("Executed")){
+                            ordersExecuted.add(ordersDone.get(i));
+                            System.out.println("ADDED TO EXECUTED");
+                        }
+                    }
+                    System.out.println("ABOUT TO SET PENDINGS AND EXECUTED IN CPM MANIAC");
+                    CPMOrderMANIAC.setPendings(ordersPending);
+                    CPMOrderMANIAC.setExecuted(ordersExecuted);
+                    System.out.println("EXECUTED HAS: " + CPMOrderMANIAC.getExecuted().size());
+                    System.out.println("PENDINGS HAS: " + CPMOrderMANIAC.getPendings().size());
+                    PMOrderHistoryTable.setModel(CPMOrderMANIAC.getOHTableModel());
+                    PMPendingOrdersTable.setModel(CPMOrderMANIAC.getPRTableModel());
                 } else {
                     System.out.println("ERROR UPDATING ORDERS");
                 }
@@ -96,6 +112,7 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
         PMPendingOrderFilter = new javax.swing.JButton();
         FilterOptionsPMPending = new javax.swing.JComboBox<>();
         FilterTextPMPending = new javax.swing.JTextField();
+        ClearFilterPMPendingOrder = new javax.swing.JButton();
         PMEOD = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         PMEODBoughtScrollPane = new javax.swing.JScrollPane();
@@ -106,6 +123,7 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
         FilterTextPMEOD = new javax.swing.JTextField();
         FilterOptionsPMEOD = new javax.swing.JComboBox<>();
         PMEODFilter = new javax.swing.JButton();
+        ClearFilterPMEOD = new javax.swing.JButton();
         CreateOrder = new javax.swing.JPanel();
         PMSelectTraderOptions = new javax.swing.JComboBox<>();
         jLabel5 = new javax.swing.JLabel();
@@ -119,6 +137,7 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
         FilterTextPMOrderHistory = new javax.swing.JTextField();
         FilterOptionsPMOrderHistory = new javax.swing.JComboBox<>();
         PMOrderHistoryFilter = new javax.swing.JButton();
+        ClearFilterPMOrderHistory = new javax.swing.JButton();
         ChangePassword = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -140,7 +159,7 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
         PMPendingOrdersTable.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         String[] CurrencyValues = {"USD", "GBP"};
         PMPendingOrdersTable.setForeground(new java.awt.Color(255, 255, 255));
-        PMPendingOrdersTable.setModel(CPMPendingRequest.getTableModel());
+        PMPendingOrdersTable.setModel(com.controller.CPMOrderMANIAC.getPRTableModel());
         PMPendingOrdersTable.setGridColor(new java.awt.Color(255, 255, 255));
         PMPendingOrdersTable.getTableHeader().setReorderingAllowed(false);
         PendingOrderRequests.setViewportView(PMPendingOrdersTable);
@@ -155,6 +174,13 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
         FilterOptionsPMPending.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Order ID", "Portfolio ID", "Symbol", "Quantity", "Action", "Stop Price", "Limit Price", "Account Type", "Order Type", "Assigned To" }));
 
         FilterTextPMPending.setText("Filter Text");
+
+        ClearFilterPMPendingOrder.setText("Clear Filter");
+        ClearFilterPMPendingOrder.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ClearFilterPMPendingOrderActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout PendingOrdersLayout = new javax.swing.GroupLayout(PendingOrders);
         PendingOrders.setLayout(PendingOrdersLayout);
@@ -171,6 +197,8 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
                 .addComponent(FilterOptionsPMPending, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(PMPendingOrderFilter)
+                .addGap(18, 18, 18)
+                .addComponent(ClearFilterPMPendingOrder)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         PendingOrdersLayout.setVerticalGroup(
@@ -182,7 +210,8 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
                 .addGroup(PendingOrdersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(FilterTextPMPending, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(FilterOptionsPMPending, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(PMPendingOrderFilter))
+                    .addComponent(PMPendingOrderFilter)
+                    .addComponent(ClearFilterPMPendingOrder))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -265,6 +294,13 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
             }
         });
 
+        ClearFilterPMEOD.setText("Clear Filter");
+        ClearFilterPMEOD.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ClearFilterPMEODActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout PMEODLayout = new javax.swing.GroupLayout(PMEOD);
         PMEOD.setLayout(PMEODLayout);
         PMEODLayout.setHorizontalGroup(
@@ -290,7 +326,9 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PMEODLayout.createSequentialGroup()
                                 .addComponent(jLabel3)
                                 .addGap(132, 132, 132)))))
-                .addGap(118, 118, 118))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(ClearFilterPMEOD)
+                .addGap(55, 55, 55))
         );
         PMEODLayout.setVerticalGroup(
             PMEODLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -310,7 +348,8 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
                 .addGroup(PMEODLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(PMEODFilter)
                     .addComponent(FilterOptionsPMEOD, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FilterTextPMEOD, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(FilterTextPMEOD, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(ClearFilterPMEOD))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -406,7 +445,7 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
         PMOrderHistoryTable.setBackground(new java.awt.Color(102, 102, 102));
         PMOrderHistoryTable.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         PMOrderHistoryTable.setForeground(new java.awt.Color(255, 255, 255));
-        PMOrderHistoryTable.setModel(CPMOrderHistory.getTableModel());
+        PMOrderHistoryTable.setModel(com.controller.CPMOrderMANIAC.getOHTableModel());
         PMOrderHistoryTable.setGridColor(new java.awt.Color(255, 255, 255));
         PMOrderHistoryTable.getTableHeader().setReorderingAllowed(false);
         PMOrderHistoryScrollPane.setViewportView(PMOrderHistoryTable);
@@ -419,6 +458,13 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
         PMOrderHistoryFilter.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 PMOrderHistoryFilterActionPerformed(evt);
+            }
+        });
+
+        ClearFilterPMOrderHistory.setText("Clear Filter");
+        ClearFilterPMOrderHistory.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ClearFilterPMOrderHistoryActionPerformed(evt);
             }
         });
 
@@ -436,6 +482,8 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
                         .addComponent(FilterOptionsPMOrderHistory, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(PMOrderHistoryFilter)
+                        .addGap(18, 18, 18)
+                        .addComponent(ClearFilterPMOrderHistory)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -447,7 +495,8 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
                 .addGroup(PMOrderHistoryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(FilterTextPMOrderHistory, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(FilterOptionsPMOrderHistory, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(PMOrderHistoryFilter))
+                    .addComponent(PMOrderHistoryFilter)
+                    .addComponent(ClearFilterPMOrderHistory))
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -638,20 +687,47 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
             sorter.setRowFilter(RowFilter.regexFilter(text));
         }
     }//GEN-LAST:event_PMOrderHistoryFilterActionPerformed
-
+                                                    
+    
     private void PMAddOrderRowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PMAddOrderRowActionPerformed
         DefaultTableModel m = (DefaultTableModel) PMSendOrderTable.getModel();
         m.addRow(new Object[]{null, null, null, null, null, null, null, null, null});
     }//GEN-LAST:event_PMAddOrderRowActionPerformed
 
     private void logOutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_logOutButtonActionPerformed
-        UserLogin u = new UserLogin();
+    	UserLogin u = new UserLogin();
         //u.setSize(300,300);
         u.setVisible (true);
         CMAIN.handleLogout();
-      this.dispose();
+      this.dispose(); 
 
     }//GEN-LAST:event_logOutButtonActionPerformed
+
+    private void ClearFilterPMPendingOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClearFilterPMPendingOrderActionPerformed
+        ClearFilterPMPendingOrder.setText("");
+        final TableRowSorter<TableModel> sorter = new TableRowSorter<TableModel>(PMPendingOrdersTable.getModel());
+        PMPendingOrdersTable.setRowSorter(sorter);
+        sorter.setRowFilter(null);
+    }//GEN-LAST:event_ClearFilterPMPendingOrderActionPerformed
+
+    private void ClearFilterPMOrderHistoryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClearFilterPMOrderHistoryActionPerformed
+
+        ClearFilterPMOrderHistory.setText("");
+        final TableRowSorter<TableModel> sorter = new TableRowSorter<TableModel>(PMOrderHistoryTable.getModel());
+        PMOrderHistoryTable.setRowSorter(sorter);
+        sorter.setRowFilter(null);        // TODO add your handling code here:
+    }//GEN-LAST:event_ClearFilterPMOrderHistoryActionPerformed
+
+    private void ClearFilterPMEODActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ClearFilterPMEODActionPerformed
+        // TODO add your handling code here:
+        ClearFilterPMEOD.setText("");
+        final TableRowSorter<TableModel> sorter = new TableRowSorter<TableModel>(PMEODBoughtTable.getModel());
+        PMEODBoughtTable.setRowSorter(sorter);
+        final TableRowSorter<TableModel> sorter2 = new TableRowSorter<TableModel>(PMEODSoldTable.getModel());
+        PMEODSoldTable.setRowSorter(sorter2);
+        sorter.setRowFilter(null);
+        sorter2.setRowFilter(null);
+    }//GEN-LAST:event_ClearFilterPMEODActionPerformed
     private class myComboBoxEditor extends DefaultCellEditor {
 
         myComboBoxEditor(String[] items) {
@@ -772,6 +848,9 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton ChangePassword;
+    private javax.swing.JButton ClearFilterPMEOD;
+    private javax.swing.JButton ClearFilterPMOrderHistory;
+    private javax.swing.JButton ClearFilterPMPendingOrder;
     private javax.swing.JPanel CreateOrder;
     private javax.swing.JComboBox<String> FilterOptionsPMEOD;
     private javax.swing.JComboBox<String> FilterOptionsPMOrderHistory;

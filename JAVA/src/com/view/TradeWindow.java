@@ -4,9 +4,10 @@ import UserObjects.Block;
 import UserObjects.SingleOrder;
 import com.controller.CMAIN;
 import com.controller.CPMOrderHistory;
-import com.controller.CPMPendingRequest;
+import com.controller.CPMOrderMANIAC;
 
 import com.controller.CTraderBlockOrder;
+import com.controller.CTraderOrderMANIAC;
 import com.controller.CTraderPendingRequest;
 import com.controller.ControllerBlockOrders;
 import com.google.gson.Gson;
@@ -42,6 +43,8 @@ import javax.swing.table.TableColumn;
 import javax.swing.table.TableModel;
 import javax.swing.table.TableRowSorter;
 import static javax.swing.JOptionPane.showMessageDialog;
+import static javax.swing.JOptionPane.showMessageDialog;
+import static javax.swing.JOptionPane.showMessageDialog;
 
 /*
 * To change this license header, choose License Headers in Project Properties.
@@ -68,10 +71,10 @@ public class TradeWindow extends javax.swing.JFrame {
         Timer timer = new Timer(10000, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ArrayList<SingleOrder> ordersDone = (ArrayList) CPMOrderHistory.updateOrders();
+                ArrayList<SingleOrder> ordersDone = (ArrayList) CTraderOrderMANIAC.updateOrders();
 
                 if (null != ordersDone) {
-                    //TraderIncomingRequestsTable.setModel(CTraderPendingRequest.getTableModel());
+                    TraderIncomingRequestsTable.setModel((TableModel) CTraderPendingRequest.getTableModel());
                 } else {
                     System.out.println("ERROR UPDATING ORDERS");
                 }

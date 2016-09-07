@@ -14,7 +14,6 @@ import org.json.JSONException;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author rseka1
@@ -158,34 +157,35 @@ public class UserLogin extends javax.swing.JFrame {
         String passText = new String(passwordText.getPassword());
         try {
             //SEND TO CONTROLLER TO CREATE BROKER AND SEND TO DB
-            CLogin.handleLogin(nameText,passText);
-            String trigger = CMAIN.triggerWindow();
-            switch(trigger){
-                case "pm":
-                    System.out.println("PM triggered.");
-                    new PortfolioManagerWindow().setVisible(true);
-                    this.dispose();
-                    break;
-                case "trader":
-                    System.out.println("Trader triggered.");
-                    new TradeWindow().setVisible(true);
-                    this.dispose();
-                    break;
-                case "admin":
-                    System.out.println("Admin triggered.");
-                    new AdminWindow().setVisible(true);
-                    this.dispose();
-                    break;
+            boolean returnedSuccess = CLogin.handleLogin(nameText, passText);
+            if (returnedSuccess == true) {
+                String trigger = CMAIN.triggerWindow();
+                switch (trigger) {
+                    case "pm":
+                        System.out.println("PM triggered.");
+                        new PortfolioManagerWindow().setVisible(true);
+                        this.dispose();
+                        break;
+                    case "trader":
+                        System.out.println("Trader triggered.");
+                        new TradeWindow().setVisible(true);
+                        this.dispose();
+                        break;
+                    case "admin":
+                        System.out.println("Admin triggered.");
+                        new AdminWindow().setVisible(true);
+                        this.dispose();
+                        break;
+                }
             }
-            
         } catch (JSONException | UnirestException ex) {
             Logger.getLogger(UserLogin.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_loginButtonActionPerformed
 
     /**
-     * @param args the command line arguments
-     */
+         * @param args the command line arguments
+         */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

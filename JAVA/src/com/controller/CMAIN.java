@@ -38,15 +38,16 @@ public class CMAIN {
         
     }
     
-    static public void handleLogout(){
-        CMAIN.currentUser = new UnknownUser("Unkown", "Unknown");
-    }
-    
-    static public User reportUser(){
+    public static User reportUser(){
         return currentUser;
     }
     
-    static public String triggerWindow(){
+    public static String triggerWindow(){
         return currentUser.getUserType();
     }
+
+	public static void handleLogout() {
+		// TODO Auto-generated method stub
+		CMAIN.currentUser = new UnknownUser("Unkown", "Unknown");
+	}
 }
