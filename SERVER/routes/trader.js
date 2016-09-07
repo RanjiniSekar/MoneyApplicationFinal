@@ -40,7 +40,7 @@ router.route('/blocks/')
     .post(function (req, res) {
         pool.getConnection(function (err, conn) {
             for (var i in req.body) {
-                var single_block = req.body.blocklist[i];
+                var single_block = req.body[i];
                 /* Insert general block info into trader_block table */
                 var blockId = 0;
                 conn.query({
