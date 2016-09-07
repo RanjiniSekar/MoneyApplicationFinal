@@ -625,8 +625,9 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
                         thereAreOrders = true;
                         SingleOrder o = new SingleOrder(tableData[i]);
                         Long currID = CMAIN.reportUser().getU_id();
+                        String currUname = CMAIN.reportUser().getUsername();
                         o.setPmId(currID);
-                        //System.out.println(o.toString());
+                        o.setPmUsername(currUname);
                         parsedOrders.add(o);
                     }
                 } else {

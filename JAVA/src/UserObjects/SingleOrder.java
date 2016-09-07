@@ -18,6 +18,7 @@ public class SingleOrder {
 	private String order_type;
 	private String status;
         private long pmId;
+        private String pm_username;
         private long assignedTo;
 
     
@@ -242,6 +243,10 @@ public class SingleOrder {
 
     public void setAssignedTo(long assignedTo) {
         this.assignedTo = assignedTo;
+    }
+    
+    public void setPmUsername(String pmUsername) {
+        this.pm_username = pmUsername;
     }
     
 }
