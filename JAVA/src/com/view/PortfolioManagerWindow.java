@@ -79,6 +79,7 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
     private void initComponents() {
         java.awt.GridBagConstraints gridBagConstraints;
 
+        jButton1 = new javax.swing.JButton();
         PMPlatformTabbedPane = new javax.swing.JTabbedPane();
         PendingOrders = new javax.swing.JPanel();
         PendingOrderRequests = new javax.swing.JScrollPane();
@@ -115,6 +116,14 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
         setTitle("Portfolio Manager Platform");
         setMinimumSize(new java.awt.Dimension(1024, 768));
         getContentPane().setLayout(new java.awt.GridBagLayout());
+
+        jButton1.setText("Logout");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1, new java.awt.GridBagConstraints());
 
         PMPlatformTabbedPane.setMinimumSize(new java.awt.Dimension(150, 65));
 
@@ -600,6 +609,14 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
         DefaultTableModel m = (DefaultTableModel) PMSendOrderTable.getModel();
         m.addRow(new Object[]{null, null, null, null, null, null, null, null, null});
     }//GEN-LAST:event_PMAddOrderRowActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        UserLogin u = new UserLogin();
+        //u.setSize(300,300);
+        u.setVisible (true);
+      this.dispose();
+
+    }//GEN-LAST:event_jButton1ActionPerformed
     private class myComboBoxEditor extends DefaultCellEditor {
 
         myComboBoxEditor(String[] items) {
@@ -749,6 +766,7 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
     private javax.swing.JTable PMSendOrderTable;
     private javax.swing.JScrollPane PendingOrderRequests;
     private javax.swing.JPanel PendingOrders;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel5;
