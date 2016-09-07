@@ -26,11 +26,12 @@ import org.json.JSONObject;
  */
 public class CChangePassword {
 
-    public static void handleChange(String oldPassText, String newPassText, String confirmPassText) throws JSONException, UnirestException {
+    public static boolean handleChange(String oldPassText, String newPassText, String confirmPassText) throws JSONException, UnirestException {
+        boolean success = false;
         try {
             User curr = CMAIN.reportUser();
             String currUName = curr.getUsername();
-            HttpResponse<JsonNode> resp = Unirest.get("http://139.59.17.119:8080/api/admin/" + currUName)
+            HttpResponse<JsonNode> resp = Unirest.get("http://139.59.17.119:8080/api/admin/user/" + currUName)
                     .header("content-type", "application/json")
                     .asJson();
 
@@ -58,18 +59,18 @@ public class CChangePassword {
             System.out.println("ACCESSED TYPE IN CHANGEPASSWORD: \n" + thisType);
 
             if (oldPassText.equals(thisPassword)) { //CHECK IF OLD PASSWORD ENTERED CORRECTLY
-                if (newPassText.equals(confirmPassText)) {  //CHECK IF CONFIRM AND NEW PASS ARE SAME
-                    //PASSWORD MATCHES: SEND NEW PASSWORD AND CHANGE DATABASE
-                    System.out.println("CONDITIONS MET, ABOUT TO UPDATE DB PASSWORD. \n");
-                    updateDBPassword(thisUsername, thisPassword, thisName, thisType, confirmPassText);
-                } else {
-                    showMessageDialog(null, "Please enter the same password in the new password and confirm password fields.");
-                }
+                //PASSWORD MATCHES: SEND NEW PASSWORD AND CHANGE DATABASE
+                System.out.println("CONDITIONS MET, ABOUT TO UPDATE DB PASSWORD. \n");
+                updateDBPassword(thisUsername, thisPassword, thisName, thisType, confirmPassText);
+                success = true;
             } else {
                 showMessageDialog(null, "Your password is incorrect.");
+                success = false;
             }
+        return success;
         } catch (UnirestException e) {
             System.err.println("Unirest Exception: " + e.getMessage());
+            return success;
         }
     }
     
@@ -92,7 +93,7 @@ public class CChangePassword {
         System.out.println("Jsonified User: " + jsonifiedUserUpdate);
         // send query to db.      
         try {
-        Unirest.put("http://139.59.17.119:8080/api/admin/" + username)
+        Unirest.put("http://139.59.17.119:8080/api/admin/user/" + username)
         .header("content-type", "application/json")
         .body(jsonifiedUserUpdate)
         .asString();     

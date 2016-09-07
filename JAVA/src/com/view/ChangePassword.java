@@ -156,16 +156,21 @@ public class ChangePassword extends javax.swing.JFrame {
         String oldPassText = OldPassTextField.getText();
         String newPassText = NewPassTextField.getText();
         String confirmPassText = ConfirmPassTextField.getText();
-        
+
         try {
             //SEND TO CONTROLLER TO CREATE BROKER AND SEND TO DB
-            CChangePassword.handleChange(oldPassText,newPassText, confirmPassText);
-            OldPassTextField.setText("");
-            NewPassTextField.setText("");
-            ConfirmPassTextField.setText("");
-            System.out.println("Fields cleared in change password.");
-            showMessageDialog(null, "You have successfully changed password."); 
-            
+            if (newPassText.equals(confirmPassText)) {
+                boolean returnedSuccess = CChangePassword.handleChange(oldPassText, newPassText, confirmPassText);
+                if(returnedSuccess == true){
+                    OldPassTextField.setText("");
+                    NewPassTextField.setText("");
+                    ConfirmPassTextField.setText("");
+                    showMessageDialog(null, "You have successfully changed password.");
+                }
+            } else {
+                showMessageDialog(null, "Please check that the password you entered matches what you entered in the confirm password field.");
+            }
+
         } catch (UnirestException | JSONException ex) {
             Logger.getLogger(ChangePassword.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -197,7 +202,7 @@ public class ChangePassword extends javax.swing.JFrame {
                     break;
                 }
             }
-            */
+             */
         } catch (ClassNotFoundException ex) {
             java.util.logging.Logger.getLogger(ChangePassword.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {

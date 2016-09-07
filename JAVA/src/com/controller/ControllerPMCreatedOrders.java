@@ -48,31 +48,25 @@ public class ControllerPMCreatedOrders {
     }
     
     public static List<String> getTraderList() {
+        String tradersString = "";
         try {
             HttpResponse<JsonNode> resp = Unirest.get("http://139.59.17.119:8080/api/admin/traders")
                     .header("content-type", "application/json")
                     .asJson();
-            System.out.println("RESPONSE FULLY IS: " + resp.toString());
             //THIS IS THE JSONRESPONSE TURNED INTO JSONOBJECT  
             JSONObject myRespO = new JSONObject(resp.getBody());
-            System.out.println("RESPONSE OBJECT IS: " + myRespO.toString());
             JSONArray arrJson = myRespO.getJSONArray("array");
-            
             //GET ORDERS FROM ARRAY
             List<String> traderList = new ArrayList<>();
-            System.out.println("arrayjson size " + arrJson.length());
 
             for (int i = 0; i < arrJson.length(); i++) {
                 JSONObject currentTr = arrJson.getJSONObject(i);
-                System.out.println("GOT JSON OBJECT");
                 Trader currentTrader = JsonParsing.parseJsonToTraderObject(currentTr.toString());
-                System.out.println("JSON PARSING SUCCESS");
                 String currUname = currentTrader.getUsername();
-               
                 traderList.add(currUname);
+                tradersString += currUname + ", ";
             }
-            
-            System.out.println("ARRAY OF TRADERS RETURNED FROM DB: " + traderList.size());
+            System.out.println("Added Traders to list: " + tradersString);
             return traderList;
         } catch (UnirestException | JSONException ex) {
             Logger.getLogger(CPMOrderHistory.class.getName()).log(Level.SEVERE, null, ex);
