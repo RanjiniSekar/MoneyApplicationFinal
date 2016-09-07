@@ -81,8 +81,8 @@ router.route('/blocks')
                         /* Send email to the broker */
 
                         // auto-generate the link
-                        var randomstring = randomstring.generate(32);
-                        var link = "http://139.59.17.119:8080/views/trader?uid=" + randomstring;
+                        var url = randomstring.generate(32);
+                        var link = "http://139.59.17.119:8080/views/trader?uid=" + url;
 
                         // Create the email content
                         var orderTable = "<table style=\"table, th, td {border: 1 px solid black;}\"><tr><th>Symbol</th><th>Quantity</th><th>Action</th><th>Ordertype</th></tr><tr><td>" + req.body.symbol + "</td><td>" + req.body.quantity + "</td><td>" + req.body.order_type + "</td></tr></table>"
