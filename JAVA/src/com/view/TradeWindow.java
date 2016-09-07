@@ -708,27 +708,25 @@ private void initComponents() {
     }                                                     
 
     private void TraderSubmitBlocksActionPerformed(java.awt.event.ActionEvent evt) {                                                   
-        // TODO add your handling code here:
+        //GET OUR TRADER USER INFO
+        long ourUID = CMAIN.reportUser().getU_id();
     	//System.out.println(blockMap);
     	int index = TraderSelectBrokerOptions.getSelectedIndex();
-        System.out.println("INDEX OF BROKER IS: " + index);
-        System.out.println("BROKER LIST FOR BOX IS: " + brokerListForBox.toString());
     	Broker br = brokerListForBox.get(index);
-        System.out.println("I GOT THE RIGHT BROKER: " + br.getName());
-    	long b_id = br.getBrokerId();
+        long b_id = br.getBrokerId();
+        String b_name = br.getName();
     	String b_email = br.getEmail();
     	Gson gson = new Gson();
     	String json = "";
     	ArrayList<Block> blockList  = new ArrayList<Block>();
     	for (Map.Entry<Integer, ArrayList<SingleOrder>> entry : blockMap.entrySet()){
-                System.out.println("INSIDE MAP");
     		ArrayList<SingleOrder> temp = entry.getValue();
     		int quantity=0;
     		for(SingleOrder a : temp){
     			quantity = quantity + a.getQuantity();
     		}
-    		Block b = new Block(b_id,b_email,temp.get(0).getSymbol(),quantity,temp.get(0).getOrderType(),temp.get(0).getStatus(),temp,temp.get(0).getStockExchange());
-    		blockList.add(b);
+    		Block b = new Block(ourUID, b_id, b_name, b_email,temp.get(0).getSymbol(),quantity,temp.get(0).getOrderType(),temp.get(0).getStatus(),temp,temp.get(0).getStockExchange());
+                blockList.add(b);
     	}
     	json = gson.toJson(blockList);
     	System.out.println(json);
