@@ -7,9 +7,11 @@ import com.controller.CPMOrderHistory;
 import com.controller.CPMOrderMANIAC;
 
 import com.controller.CTraderBlockOrder;
+import com.controller.CTraderGetAllBrokers;
 import com.controller.CTraderOrderMANIAC;
 import com.controller.CTraderPendingRequest;
 import com.controller.ControllerBlockOrders;
+import com.controller.ControllerPMCreatedOrders;
 import com.google.gson.Gson;
 
 import java.awt.BorderLayout;
@@ -269,8 +271,10 @@ private void initComponents() {
                 TraderSelectAllBlocksActionPerformed(evt);
             }
         });
-
-        TraderSelectBrokerOptions.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Broker 1", "Broker 2", "Broker 3", "Broker 4" }));
+        
+        
+        
+        TraderSelectBrokerOptions.setModel(new javax.swing.DefaultComboBoxModel<>(BrokerNames));
         TraderSelectBrokerOptions.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 TraderSelectBrokerOptionsActionPerformed(evt);
@@ -520,6 +524,16 @@ private void initComponents() {
         // TODO add your handling code here:
     }                                                        
 
+    public String[] blist() {
+        ArrayList<String> listOfBrokers = (ArrayList) CTraderGetAllBrokers.getBrokerList();
+        String[] b = new String[listOfBrokers.size()];
+        b = listOfBrokers.toArray(b);
+        return b;
+    }
+
+    //BROKER NAMESB
+    String[] BrokerNames = blist();
+    
     private void TraderBlockOrdersActionPerformed(java.awt.event.ActionEvent evt) {                                                  
         DefaultTableModel dtm = (DefaultTableModel) TraderIncomingRequestsTable.getModel();
         int nRow = dtm.getRowCount();
@@ -707,6 +721,8 @@ private void initComponents() {
             }
         }  
     }  
+    
+    
     /**
      * @param args the command line arguments
      */

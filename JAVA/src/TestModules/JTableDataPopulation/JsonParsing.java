@@ -5,6 +5,7 @@
  */
 package TestModules.JTableDataPopulation;
 
+import UserObjects.Broker;
 import UserObjects.SingleOrder;
 import UserObjects.Trader;
 import UserObjects.User;
@@ -35,6 +36,14 @@ public class JsonParsing {
         Gson gson = new Gson();
         // Just Specify the class the json is need to be parsed into.
         User u = gson.fromJson(json, User.class);
+        return u;
+    }
+    
+    // parse Json input into Trade class object.
+    public static Broker parseJsonToBrokerObject(String json){
+        Gson gson = new Gson();
+        // Just Specify the class the json is need to be parsed into.
+        Broker u = gson.fromJson(json, Broker.class);
         return u;
     }
     
