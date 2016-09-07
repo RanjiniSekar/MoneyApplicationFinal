@@ -52,9 +52,10 @@ router.route('/blocks')
                         res.status(500).send(error);
                     } else {
                         console.log("Block insert successful");
-                        console.log(fields);
+                        console.log(results);
 
                         blockId = results.insertId;
+                        console.log("Block id:" + blockId);
 
                         /* Updating single_order information */
                         for (var i in req.body.holdingOrders) {
