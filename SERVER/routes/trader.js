@@ -41,7 +41,7 @@ router.route('/blocks')
         pool.getConnection(function (err, conn) {
             conn.query({
                     sql: 'INSERT INTO trader_block (t_id, b_id, symbol, quantity, order_type) VALUES (?, ?, ?, ?, ?)'
-                }, [req.body.traderId, req.body.brokerId, req.body.symbol, req.body.quantity, req.body.order_type],
+                }, [req.body.t_id, req.body.b_id, req.body.symbol, req.body.quantity, req.body.order_type],
                 function (error, results, fields) {
                     // error will be an Error if one occurred during the query 
                     // results will contain the results of the query 
