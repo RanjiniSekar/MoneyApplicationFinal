@@ -730,14 +730,12 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
         
        // this.addAuto(TList);
         List<String> listOTraders = ControllerPMCreatedOrders.getTraderList();
-        System.out.println("SIZE OF LIST OF TRADERS: " + listOTraders.size());
         for(int i = 0 ; i<listOTraders.size();i++)
         {
            TList.add(listOTraders.get(i));
         } 
         String[] t = new String[TList.size()];
         t = TList.toArray(t);
-        System.out.println("STRING ARRAY: " + Arrays.toString(t));
         return t;
     }
 

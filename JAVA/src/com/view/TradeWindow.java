@@ -41,6 +41,7 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableColumn;
 import javax.swing.table.TableModel;
 import javax.swing.table.TableRowSorter;
+import static javax.swing.JOptionPane.showMessageDialog;
 
 /*
 * To change this license header, choose License Headers in Project Properties.
@@ -94,7 +95,8 @@ public class TradeWindow extends javax.swing.JFrame {
 // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
 private void initComponents() {
         java.awt.GridBagConstraints gridBagConstraints;
-        
+        clearFilterBlockHistory = new javax.swing.JButton();
+        clearFilterRequests = new javax.swing.JButton();
         logOutButton = new javax.swing.JButton();
         TraderPlatformTabbedPane = new javax.swing.JTabbedPane();
         TraderPlatformRequestsTab = new javax.swing.JPanel();
@@ -205,11 +207,18 @@ private void initComponents() {
                 TraderRequestsFilterActionPerformed(evt);
             }
         });
+        
+        clearFilterRequests.setText("Clear Filter");
+        clearFilterRequests.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clearFilterActionPerformed(evt);
+            }
+        });
+        
 
         javax.swing.GroupLayout TraderPlatformRequestsTabLayout = new javax.swing.GroupLayout(TraderPlatformRequestsTab);
         TraderPlatformRequestsTab.setLayout(TraderPlatformRequestsTabLayout);
-        TraderPlatformRequestsTabLayout.setHorizontalGroup(
-            TraderPlatformRequestsTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        TraderPlatformRequestsTabLayout.setHorizontalGroup(TraderPlatformRequestsTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(TraderPlatformRequestsTabLayout.createSequentialGroup()
                 .addGroup(TraderPlatformRequestsTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(TraderIncomingRequestsScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 786, Short.MAX_VALUE)
@@ -219,12 +228,13 @@ private void initComponents() {
                         .addComponent(FilterOptionsTraderRequests, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(TraderRequestsFilter)
+                        .addGap(2, 2, 2)   
+                        .addComponent(clearFilterRequests)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(TraderBlockOrders)))
                 .addContainerGap())
         );
-        TraderPlatformRequestsTabLayout.setVerticalGroup(
-            TraderPlatformRequestsTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        TraderPlatformRequestsTabLayout.setVerticalGroup(TraderPlatformRequestsTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TraderPlatformRequestsTabLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(TraderIncomingRequestsScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 195, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -233,7 +243,8 @@ private void initComponents() {
                     .addGroup(TraderPlatformRequestsTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(FilterTextTraderRequests, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(FilterOptionsTraderRequests, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(TraderRequestsFilter, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(TraderRequestsFilter, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(clearFilterRequests, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(TraderBlockOrders))
                 .addContainerGap(318, Short.MAX_VALUE))
         );
@@ -369,7 +380,14 @@ private void initComponents() {
                 TraderBlockHistoryFilterActionPerformed(evt);
             }
         });
-
+        
+        clearFilterBlockHistory.setText("Clear Filter");
+        clearFilterBlockHistory.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                clearFilterBlockHistoryActionPerformed(evt);
+            }
+        });
+        
         javax.swing.GroupLayout TraderPlatformBlockOrderHistoryLayout = new javax.swing.GroupLayout(TraderPlatformBlockOrderHistory);
         TraderPlatformBlockOrderHistory.setLayout(TraderPlatformBlockOrderHistoryLayout);
         TraderPlatformBlockOrderHistoryLayout.setHorizontalGroup(
@@ -382,7 +400,9 @@ private void initComponents() {
                         .addGap(18, 18, 18)
                         .addComponent(FilterOptionsTraderBlockHistory, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(TraderBlockHistoryFilter))
+                        .addComponent(TraderBlockHistoryFilter)
+                        .addGap(2, 2, 2)
+                        .addComponent(clearFilterBlockHistory))
                     .addComponent(TraderBlockHistoryScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 722, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -395,7 +415,8 @@ private void initComponents() {
                 .addGroup(TraderPlatformBlockOrderHistoryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(FilterTextTraderBlockHistory, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(FilterOptionsTraderBlockHistory, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(TraderBlockHistoryFilter, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(TraderBlockHistoryFilter, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(clearFilterBlockHistory, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(388, Short.MAX_VALUE))
         );
 
@@ -597,6 +618,27 @@ private void initComponents() {
         
     }                                                    
 
+    private void clearFilterActionPerformed(java.awt.event.ActionEvent evt) {                                                     
+            // TODO add your handling code here:
+        
+        FilterTextTraderRequests.setText("");
+        final TableRowSorter<TableModel> sorter = new TableRowSorter<TableModel>(TraderIncomingRequestsTable.getModel());
+        TraderIncomingRequestsTable.setRowSorter(sorter);
+        sorter.setRowFilter(null);
+        
+        
+    }      
+    
+    private void clearFilterBlockHistoryActionPerformed(java.awt.event.ActionEvent evt) {                                                     
+            // TODO add your handling code here:
+        FilterTextTraderBlockHistory.setText("");
+        final TableRowSorter<TableModel> sorter = new TableRowSorter<TableModel>(TraderBlockHistoryTable.getModel());
+        TraderBlockHistoryTable.setRowSorter(sorter);
+        sorter.setRowFilter(null);
+        
+        
+    }   
+    
     private void TraderBlockHistoryFilterActionPerformed(java.awt.event.ActionEvent evt) {                                                         
         final TableRowSorter<TableModel> sorter = new TableRowSorter<TableModel>(TraderBlockHistoryTable.getModel());
         TraderBlockHistoryTable.setRowSorter(sorter);
@@ -737,5 +779,7 @@ private void initComponents() {
     private ArrayList<ArrayList<SingleOrder>> singleOrderLists;
     private Map<Integer,ArrayList<SingleOrder>> blockMap;
     private javax.swing.JButton logOutButton;
+    private javax.swing.JButton clearFilterRequests;
+    private javax.swing.JButton clearFilterBlockHistory;
     // End of variables declaration                   
 }
