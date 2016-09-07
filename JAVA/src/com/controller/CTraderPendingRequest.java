@@ -56,7 +56,6 @@ public class CTraderPendingRequest {
             
             return arrayOrders;
         } catch (UnirestException | JSONException ex) {
-            Logger.getLogger(CPMOrderHistory.class.getName()).log(Level.SEVERE, null, ex);
             return null;
         }
     }
