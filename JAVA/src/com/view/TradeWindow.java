@@ -2,6 +2,7 @@ package com.view;
 
 import UserObjects.Block;
 import UserObjects.SingleOrder;
+import com.controller.CMAIN;
 import com.controller.CPMOrderHistory;
 import com.controller.CPMPendingRequest;
 
@@ -470,6 +471,7 @@ private void initComponents() {
         UserLogin u = new UserLogin();
         //u.setSize(300,300);
         u.setVisible (true);
+        CMAIN.handleLogout();
       this.dispose();
 
     }               
