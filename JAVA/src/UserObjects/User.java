@@ -29,7 +29,7 @@ public abstract class User {
         return password;
     }
 
-    boolean firstTime;
+    int firstTime;
     String username;
     String name;
     String password;

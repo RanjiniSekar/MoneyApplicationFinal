@@ -48,9 +48,11 @@ public class JsonParsing {
     
     // parse Json input into Trade class object.
     public static Trader parseJsonToTraderObject(String json){
+        System.out.println("Trying to parse into trader: "  + json);
         Gson gson = new Gson();
         // Just Specify the class the json is need to be parsed into.
         Trader t = gson.fromJson(json, Trader.class);
+        System.out.println("TRADER PARSING SUCCESS. RETURNING TRADER.");
         return t;
     }
     

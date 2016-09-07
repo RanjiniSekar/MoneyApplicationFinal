@@ -64,7 +64,9 @@ public class ControllerPMCreatedOrders {
 
             for (int i = 0; i < arrJson.length(); i++) {
                 JSONObject currentTr = arrJson.getJSONObject(i);
+                System.out.println("GOT JSON OBJECT");
                 Trader currentTrader = JsonParsing.parseJsonToTraderObject(currentTr.toString());
+                System.out.println("JSON PARSING SUCCESS");
                 String currUname = currentTrader.getUsername();
                
                 traderList.add(currUname);
