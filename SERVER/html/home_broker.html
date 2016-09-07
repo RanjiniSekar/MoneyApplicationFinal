@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>HOME BROKER</title>
+    <title>Submit a trade</title>
 
     <style>
         #accept {
@@ -30,7 +30,7 @@
 </head>
 
 <body>
-    <h1><center><u>Trade Request</u></center></h1>
+    <h1><center><u>Trade information</u></center></h1>
     <div class="container">
         <h4 id="notification-bar"></h4>
         <form>
@@ -54,7 +54,7 @@
         var uid = getQueryParam("uid");
 
         console.log(uid);
-        
+
         $("#accept").click(function () {
             var price = $("#price").val();
             $.post("http://139.59.17.119:8080/api/broker/updateTrade", {
@@ -62,7 +62,7 @@
                 action: "accept",
                 price: price
             }).done(function (data) {
-                alert("Data uploaded successfully: " + data);
+                window.location.replace("http://139.59.17.119:8080/views/success");
             });
 
         });
@@ -71,7 +71,7 @@
                 uid: uid,
                 action: "reject"
             }).done(function (data) {
-                alert("Trade declined succesfully");
+                window.location.replace("http://139.59.17.119:8080/views/success");
             });
         });
     </script>
