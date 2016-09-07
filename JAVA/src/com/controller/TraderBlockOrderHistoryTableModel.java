@@ -13,14 +13,14 @@ import javax.swing.table.AbstractTableModel;
  *
  * @author kjha4
  */
-public class TraderBlockOrderHistoryTableModel extends AbstractTableModel{
-    
+public class TraderBlockOrderHistoryTableModel extends AbstractTableModel {
+
     private ArrayList objList = new ArrayList();
 
     public TraderBlockOrderHistoryTableModel(ArrayList datalist) {
         this.objList = datalist;
     }
-      
+
     @Override
     public int getRowCount() {
         return objList.size();
@@ -28,13 +28,13 @@ public class TraderBlockOrderHistoryTableModel extends AbstractTableModel{
 
     @Override
     public int getColumnCount() {
-        return 11;
+        return 7;
     }
-    
+
     @Override
     public String getColumnName(int index) {
-        String[] indexName = new String [] {
-            "Block ID", "Symbol", "Quantity", "Order Type", "Stop Price", "Limit Price", "Broker Assigned", "Status", "Stock Exchange"
+        String[] indexName = new String[]{
+            "Block ID", "Symbol", "Quantity", "Order Type", "Price Executed", "Broker Assigned", "Status"
         };
         return indexName[index];
     }
@@ -43,23 +43,22 @@ public class TraderBlockOrderHistoryTableModel extends AbstractTableModel{
     public Object getValueAt(int rowIndex, int columnIndex) {
         Block widget = (Block) objList.get(rowIndex);
         switch (columnIndex) {
-         case 0:
-          return String.valueOf(widget.getBlockId());
-         case 1:
-          return widget.getSymbol();
-         case 2: 
-          return String.valueOf(widget.getQuantity());
-         case 3: 
-          return widget.getOrderType();
-         case 4:
-          return widget.getBrokerID();
-         case 5:
-          return widget.getStatus();
-         case 6:
-          return widget.getHoldingOrders().get(0).getStockExchange();
-
-         default:
-          return null;
+            case 0:
+                return String.valueOf(widget.getBlockId());
+            case 1:
+                return widget.getSymbol();
+            case 2:
+                return String.valueOf(widget.getQuantity());
+            case 3:
+                return widget.getOrderType();
+            case 4:
+                return widget.getPriceExecuted();
+            case 5:
+                return widget.getB_name();
+            case 6:
+                return widget.getStatus();
+            default:
+                return null;
         }
     }
 }

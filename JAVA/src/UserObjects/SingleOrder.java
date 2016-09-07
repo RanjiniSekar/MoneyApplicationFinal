@@ -18,7 +18,7 @@ public class SingleOrder {
 	private String order_type;
 	private String status;
         private long pmId;
-        private String pm_username;
+        private String username;
         private long assignedTo;
 
     
@@ -77,7 +77,7 @@ public class SingleOrder {
             this.order_type = "Stop Limit Order"; //STOP LIMIT ORDER
         }
         System.out.println("OBJECT 10 IS: " + object[10].toString() + " AND OF TYPE " + object[10].getClass());
-        this.pmId = (Long) object[10];
+        this.username = (String) object[10];
     }
     
     //SINGLE ORDER PARSED FROM TABLE - AT POINT OF SUBMITTING BY PM
@@ -246,11 +246,11 @@ public class SingleOrder {
     }
     
     public void setPmUsername(String pmUsername) {
-        this.pm_username = pmUsername;
+        this.username = pmUsername;
     }
 
     public String getPmUsername() {
-        return pm_username;
+        return username;
     }
     
 }

@@ -1,20 +1,20 @@
 package UserObjects;
 
 public class Broker {
-    
-	long brokerId;
-	String email;
+
+    long b_id;
+    String email;
     String name;
-    
-	public String getEmail() {
-		return email;
-	}
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
+    public String getEmail() {
+        return email;
+    }
 
-	public Broker(String name, String email) {
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public Broker(String name, String email) {
         this.email = email;
         this.name = name;
     }
@@ -27,12 +27,12 @@ public class Broker {
         return name;
     }
 
-	public long getBrokerId() {
-		return brokerId;
-	}
+    public long getBrokerId() {
+        return b_id;
+    }
 
-	public void setBrokerId(long brokerId) {
-		this.brokerId = brokerId;
-	}
+    public void setBrokerId(long brokerId) {
+        this.b_id = brokerId;
+    }
 
 }
