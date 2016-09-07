@@ -17,7 +17,7 @@ public class SingleOrder {
 	private String account_type;
 	private String order_type;
 	private String status;
-    private long pmId;
+        private long pmId;
     private long assignedTo;
 
     
@@ -75,7 +75,8 @@ public class SingleOrder {
         if(object[5] != null && object[6] != null){
             this.order_type = "Stop Limit Order"; //STOP LIMIT ORDER
         }
-        this.pmId = Long.parseLong((String)object[10]);
+        System.out.println("OBJECT 10 IS: " + object[10].toString() + " AND OF TYPE " + object[10].getClass());
+        this.pmId = (Long) object[10];
     }
     
     //SINGLE ORDER PARSED FROM TABLE - AT POINT OF SUBMITTING BY PM
