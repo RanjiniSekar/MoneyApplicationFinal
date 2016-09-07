@@ -1,0 +1,42 @@
+{
+    "block_id": 0,
+    "t_id": 0,
+    "b_id": 0,
+    "symbol": "1",
+    "quantity": 2,
+    "order_type": "Stop Limit Order",
+    "price_executed": 0,
+    "holdingOrders": [{
+        "sorder_id": 0,
+        "p_id": 1,
+        "order_id": 1,
+        "block_id": 0,
+        "symbol": "1",
+        "quantity": 1,
+        "action_type": "1",
+        "price_stop": 1.0,
+        "price_limit": 1.0,
+        "price_executed": 0.0,
+        "stock_exchange": "1",
+        "account_type": "1",
+        "order_type": "Stop Limit Order",
+        "pmId": 1,
+        "assignedTo": 0
+    }, {
+        "sorder_id": 0,
+        "p_id": 1,
+        "order_id": 1,
+        "block_id": 0,
+        "symbol": "1",
+        "quantity": 1,
+        "action_type": "1",
+        "price_stop": 1.0,
+        "price_limit": 1.0,
+        "price_executed": 0.0,
+        "stock_exchange": "1",
+        "account_type": "1",
+        "order_type": "Stop Limit Order",
+        "pmId": 1,
+        "assignedTo": 0
+    }]
+}
