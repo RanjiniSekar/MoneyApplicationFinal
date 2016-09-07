@@ -8,7 +8,7 @@ router.route('/updateTrade')
         console.log('Updating Trade...');
         console.log(req.body);
         pool.getConnection(function (err, conn) {
-            if (req.body.action == "accepted") {
+            if (req.body.action == "accept") {
                 conn.query({
                         sql: "UPDATE trader_block SET price_executed=? WHERE block_id= (select block_id from temp_link where uid = ?)"
                     }, [req.body.price, req.body.uid],
@@ -43,8 +43,11 @@ router.route('/updateTrade')
                         }
                     }
                 );
-            } else {
+            } else if (req.body.action == "reject") {
+                // order has been rejected
+                conn.query({
 
+                }, [req.body.uid]);
             }
             conn.release();
         });
