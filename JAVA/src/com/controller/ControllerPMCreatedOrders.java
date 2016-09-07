@@ -34,7 +34,7 @@ public class ControllerPMCreatedOrders {
         long currentUID = CMAIN.reportUser().getU_id();
         receivedOrder.setPortfolioManagerId(currentUID);
         String receivedJson = JsonParsing.parseJsonFromObject(receivedOrder);
-
+        
         //HERE YOU NEED TO HANDLE GETTING THE ID OF THE TRADER WHOS NAME WE HAVE STORED IN STRING
         // send query to db.
         try {
@@ -47,7 +47,7 @@ public class ControllerPMCreatedOrders {
         }
     }
 
-    public static List<String> getTraderList() {
+    public static List<Trader> getTraderList() {
         String tradersString = "";
         try {
             HttpResponse<JsonNode> resp = Unirest.get("http://139.59.17.119:8080/api/admin/traders")
@@ -57,13 +57,13 @@ public class ControllerPMCreatedOrders {
             JSONObject myRespO = new JSONObject(resp.getBody());
             JSONArray arrJson = myRespO.getJSONArray("array");
             //GET ORDERS FROM ARRAY
-            List<String> traderList = new ArrayList<>();
+            List<Trader> traderList = new ArrayList<>();
 
             for (int i = 0; i < arrJson.length(); i++) {
                 JSONObject currentTr = arrJson.getJSONObject(i);
                 Trader currentTrader = JsonParsing.parseJsonToTraderObject(currentTr.toString());
                 String currUname = currentTrader.getUsername();
-                traderList.add(currUname);
+                traderList.add(currentTrader);
                 tradersString += currUname + ", ";
             }
             System.out.println("Added Traders to list: " + tradersString);
