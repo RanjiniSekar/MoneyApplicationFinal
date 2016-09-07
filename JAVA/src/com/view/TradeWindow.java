@@ -78,13 +78,22 @@ public class TradeWindow extends javax.swing.JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 ArrayList<SingleOrder> ordersDone = (ArrayList) CTraderOrderMANIAC.updateOrders();
-
+                ArrayList<Block> blockHistory = (ArrayList) CTraderOrderMANIAC.updateBlockOrderHistory();
+                
                 if (null != ordersDone) {
                     CTraderOrderMANIAC.setPendings(ordersDone);
                    
                     TraderIncomingRequestsTable.setModel(CTraderOrderMANIAC.getPRTableModel());
                 } else {
                     System.out.println("ERROR UPDATING ORDERS");
+                }
+                
+                if(null != blockHistory){
+                	CTraderOrderMANIAC.setBlockHistory(blockHistory);
+                    
+                	TraderBlockHistoryTable.setModel(CTraderOrderMANIAC.getBlockHistoryTableModel());
+                } else {
+                    System.out.println("ERROR UPDATING BLOCKS");
                 }
 
             }
