@@ -18,10 +18,7 @@ public class TraderPendingRequestsTableModel {
 
     public TraderPendingRequestsTableModel(ArrayList datalist) {
         this.objList = datalist;
-        this.select = new Boolean[datalist.size()];
-        for(int i=0;i<datalist.size();i++){
-        	this.select[i] = false;
-        }
+        
     }
       
     
