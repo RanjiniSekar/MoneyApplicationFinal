@@ -1,2 +1,9 @@
-/com/
+/.classpath
+/.project
+/.settings
+/Resources
+/TestModules
 /UserObjects
+/com
+/logo.jpg
+/logo_transparent.png
