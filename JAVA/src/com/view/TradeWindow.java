@@ -107,8 +107,14 @@ public class TradeWindow extends javax.swing.JFrame {
                             pendingOrders.add(o);
                         }
                     }
+                    int currentlyInPendings = CTraderOrderMANIAC.getPendings().size();
+                    int updatedPendings = pendingOrders.size();
+                    System.out.println("Size of currentPend = " + currentlyInPendings + " and of updated: " + updatedPendings);
                     CTraderOrderMANIAC.setPendings(pendingOrders);                 
                     TraderIncomingRequestsTable.setModel(CTraderOrderMANIAC.getPRTableModel());
+                    if(currentlyInPendings < updatedPendings){
+                        showMessageDialog(null, "You have received new orders.");
+                    }
                 } else {
                     System.out.println("ERROR UPDATING ORDERS");
                 }

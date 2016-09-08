@@ -5,7 +5,6 @@
  */
 package com.view;
 
-
 import com.controller.CAdmin;
 import com.controller.CChangePassword;
 import com.mashape.unirest.http.exceptions.UnirestException;
@@ -18,6 +17,7 @@ import javax.swing.JPasswordField;
 import static javax.swing.JOptionPane.showMessageDialog;
 
 import org.json.JSONException;
+
 /**
  *
  * @author csavas
@@ -514,16 +514,23 @@ public class AdminWindow extends javax.swing.JFrame {
         String usernameText = CreatePortfolioUsernameText.getText();
         String passwordText = CreatePortfolioPasswordText.getText();
         String confirmPasswordText = CreatePortfolioConfirmPasswordText.getText();
+        boolean emptyTrigg = false;
         //SEND TO CONTROLLER TO CREATE PM AND SEND TO DB
-         if(passwordText.equals(confirmPasswordText)){
-             CAdmin.addPortfolioManager(nameText, usernameText, passwordText); 
-             CreatePortfolioNameText.setText("");
-             CreatePortfolioUsernameText.setText("");
-             CreatePortfolioPasswordText.setText("");
-             CreatePortfolioConfirmPasswordText.setText("");
+        if (passwordText.equals(confirmPasswordText)) {
+            if (nameText.trim().equals("") || usernameText.trim().equals("") || passwordText.trim().equals("") || confirmPasswordText.trim().equals("")) {
+                showMessageDialog(null, "None of the fields should be empty if you wish to create Portfolio Manager.");
+                emptyTrigg = true;
+            }
+            if (emptyTrigg == false) {
+                CAdmin.addPortfolioManager(nameText, usernameText, passwordText);
+                CreatePortfolioNameText.setText("");
+                CreatePortfolioUsernameText.setText("");
+                CreatePortfolioPasswordText.setText("");
+                CreatePortfolioConfirmPasswordText.setText("");
+            }
         } else {
             showMessageDialog(null, "Please check that the password you entered matches what you entered in the confirm password field.");
-        }  
+        }
     }//GEN-LAST:event_CreatePMButtonActionPerformed
 
     private void createTraderButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createTraderButtonActionPerformed
@@ -532,15 +539,25 @@ public class AdminWindow extends javax.swing.JFrame {
         String passwordText = CreateTraderPasswordText.getText();
         String confirmPasswordText = CreateTraderConfirmPasswordText.getText();
         //SEND TO CONTROLLER TO CREATE TRADER AND SEND TO DB
-        if(passwordText.equals(confirmPasswordText)){
-             CAdmin.addTrader(nameText, usernameText, passwordText); 
-             CreateTraderNameText.setText("");
-             CreateTraderUsernameText.setText("");
-             CreateTraderPasswordText.setText("");
-             CreateTraderConfirmPasswordText.setText("");
-        } else {
-            showMessageDialog(null, "Please check that the password you entered matches what you entered in the confirm password field.");
-        }      
+        if (passwordText.equals(confirmPasswordText)) {
+            boolean emptyTrigg = false;
+            //SEND TO CONTROLLER TO CREATE PM AND SEND TO DB
+            if (passwordText.equals(confirmPasswordText)) {
+                if (nameText.trim().equals("") || usernameText.trim().equals("") || passwordText.trim().equals("") || confirmPasswordText.trim().equals("")) {
+                    showMessageDialog(null, "None of the fields should be empty if you wish to create Portfolio Manager.");
+                    emptyTrigg = true;
+                }
+                if (emptyTrigg == false) {
+                    CAdmin.addTrader(nameText, usernameText, passwordText);
+                    CreateTraderNameText.setText("");
+                    CreateTraderUsernameText.setText("");
+                    CreateTraderPasswordText.setText("");
+                    CreateTraderConfirmPasswordText.setText("");
+                }
+            } else {
+                showMessageDialog(null, "Please check that the password you entered matches what you entered in the confirm password field.");
+            }
+        }
     }//GEN-LAST:event_createTraderButtonActionPerformed
 
     private void createBrokerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createBrokerButtonActionPerformed
@@ -548,11 +565,17 @@ public class AdminWindow extends javax.swing.JFrame {
         String usernameText = CreateBrokerEmailText.getText();
         //SEND TO CONTROLLER TO CREATE BROKER AND SEND TO DB
         try {
-            CAdmin.addBroker(nameText, usernameText); 
-            CreateBrokerNameText.setText("");
-            CreateBrokerEmailText.setText("");
-        }
-        catch (UnirestException e) {
+            boolean emptyTrigg = false;
+            if (nameText.trim().equals("") || usernameText.trim().equals("")) {
+                showMessageDialog(null, "None of the fields should be empty if you wish to create Portfolio Manager.");
+                emptyTrigg = true;
+            }
+            if (emptyTrigg == false) {
+                CAdmin.addBroker(nameText, usernameText);
+                CreateBrokerNameText.setText("");
+                CreateBrokerEmailText.setText("");
+            }
+        } catch (UnirestException e) {
             System.err.println("Unirest Exception in the View: " + e.getMessage());
         }
     }//GEN-LAST:event_createBrokerButtonActionPerformed
@@ -569,10 +592,18 @@ public class AdminWindow extends javax.swing.JFrame {
 
         try {
             //GET THE OLD PASSWORD OF USER HERE
-            CChangePassword.handleChange(oldPassText, newPassText, confirmPassText);
-            OldPassText.setText("");
-            NewPassText.setText("");
-            ConfirmPassText.setText("");
+            boolean emptyTrigg = false;
+            //SEND TO CONTROLLER TO CREATE PM AND SEND TO DB
+            if (newPassText.trim().equals("") || confirmPassText.trim().equals("")) {
+                showMessageDialog(null, "None of the fields should be empty if you wish to create Portfolio Manager.");
+                emptyTrigg = true;
+            }
+            if (emptyTrigg == false) {
+                CChangePassword.handleChange(oldPassText, newPassText, confirmPassText);
+                OldPassText.setText("");
+                NewPassText.setText("");
+                ConfirmPassText.setText("");
+            }
         } catch (JSONException | UnirestException ex) {
             Logger.getLogger(AdminWindow.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -597,16 +628,15 @@ public class AdminWindow extends javax.swing.JFrame {
                     break;
                 }
             }*/
-            
+
         } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(AdminWindow.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
-        
+
         //</editor-fold>
         //</editor-fold>
-        
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override

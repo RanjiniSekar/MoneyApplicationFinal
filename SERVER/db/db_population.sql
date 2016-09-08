@@ -104,7 +104,7 @@ Insert into temp_link values("1234", 3);
 Insert into temp_link values("qwer", 4);
 
 
-
+SELECT s.* FROM single_order s INNER join pm_order o ON o.order_id = s.order_id WHERE date_bexecuted = (DATE_ADD(CURDATE(), INTERVAL 0 DAY)) and o.pm_id = (SELECT u_id FROM user WHERE username = "oriol" )
 
 
 
