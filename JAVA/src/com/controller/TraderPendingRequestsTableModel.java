@@ -52,7 +52,7 @@ public class TraderPendingRequestsTableModel extends AbstractTableModel{
         
         switch (columnIndex) {
          case 0:
-          return String.valueOf(widget.getOrderId());
+          return String.valueOf(widget.getSingleOrderId());
          case 1:    
           return String.valueOf(widget.getPortfolioId());
          case 2:
