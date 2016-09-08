@@ -5,6 +5,7 @@ var path = require('path');
 router.route('/trade')
     .get(function (req, res) {
         var uid = req.params.uid;
+        console.log(uid);
         var pool = require('../db/config');
         pool.getConnection(function (err, conn) {
             conn.query({
