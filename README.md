@@ -2,6 +2,8 @@
 
 A Trading platform created as part of the studies at Global Markets Institute (GMI).
 
+/play tada
+
 ##Team
 
 **Project Manager**: Shawn Mok:runner:
