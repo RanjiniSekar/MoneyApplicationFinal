@@ -84,23 +84,22 @@ public class CPMOrderMANIAC {
     public static List<SingleOrder> updateOrders() throws ExecutionException, InterruptedException, IOException, JSONException {
         String currUsername = CMAIN.reportUser().getUsername();
         HttpResponse<JsonNode> resp;
-        // resp = Unirest.get("http://139.59.17.119:8080/api/pm/orders/" + currUsername)
-        //         .header("content-type", "application/json")
-        //         .asJson();
+        
+        //INIT CLIENT
         CloseableHttpAsyncClient client = HttpAsyncClients.createDefault();
         client.start();
+        
+        //REQUEST
         HttpGet request = new HttpGet("http://139.59.17.119:8080/api/pm/orders/" + currUsername);
 
+        //GET AND PARSE RESPONSE
         Future<org.apache.http.HttpResponse> future = client.execute(request, null);
         org.apache.http.HttpResponse response = future.get();
         String json_string = EntityUtils.toString(response.getEntity());
-        JSONArray arrJson = new JSONArray(json_string);
-        
-        //JSONObject myRespO = new JSONObject(response.getBody());
-        //String s = EntityUtils.toString(response.getEntity());
+        JSONArray arrJson = new JSONArray(json_string);      
         System.out.println("ASYNC JSONARRAY IS : " + arrJson.toString());     
-        //JSONArray arrJson = new JSONArray();
        
+        //PARSE ARRAY INTO SINGLE ORDERS
         List<SingleOrder> arrayOrders = new ArrayList<>();
         for (int i = 0; i < arrJson.length(); i++) {
             JSONObject currentOrder = new JSONObject();
@@ -114,12 +113,14 @@ public class CPMOrderMANIAC {
         }
         arrayOrdersMaster = arrayOrders;
 
-      
+        //DONT FORGET TO KILL CLIENT
         try {
             client.close();
         } catch (IOException ex) {
             Logger.getLogger(CPMOrderMANIAC.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
+        //RETURN ORDERS RETRIEVED
         if (!arrayOrdersMaster.isEmpty()) {
             return arrayOrdersMaster;
         } else {

@@ -23,10 +23,14 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ExecutionException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import static javax.swing.JOptionPane.showMessageDialog;
 
@@ -50,6 +54,7 @@ import javax.swing.table.TableRowSorter;
 import static javax.swing.JOptionPane.showMessageDialog;
 import static javax.swing.JOptionPane.showMessageDialog;
 import static javax.swing.JOptionPane.showMessageDialog;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 /*
@@ -78,12 +83,31 @@ public class TradeWindow extends javax.swing.JFrame {
         Timer timer = new Timer(10000, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ArrayList<SingleOrder> ordersDone = (ArrayList) CTraderOrderMANIAC.updateOrders();
-                ArrayList<Block> blockHistory = (ArrayList) CTraderOrderMANIAC.updateBlockOrderHistory();
+                ArrayList<SingleOrder> ordersDone = new ArrayList<>();
+                ArrayList<SingleOrder> pendingOrders = new ArrayList<>();
+                ArrayList<Block> blockHistory = new ArrayList<>();
+                
+                //MAKE PENDING ORDERS FROM PM UPDATE
+                try {
+                    ordersDone = (ArrayList) CTraderOrderMANIAC.updateOrders();
+                } catch (InterruptedException | IOException | JSONException | ExecutionException ex) {
+                    Logger.getLogger(TradeWindow.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                
+                //MAKE BLOCK ORDER HISTORY UPDATE
+                try {
+                    blockHistory = (ArrayList) CTraderOrderMANIAC.updateBlockOrderHistory();
+                } catch (InterruptedException | ExecutionException | IOException | JSONException ex) {
+                    Logger.getLogger(TradeWindow.class.getName()).log(Level.SEVERE, null, ex);
+                }
                 
                 if (null != ordersDone) {
-                    CTraderOrderMANIAC.setPendings(ordersDone);
-                   
+                    for(SingleOrder o : ordersDone){
+                        if(o.getStatus().equals("Pending")){
+                            pendingOrders.add(o);
+                        }
+                    }
+                    CTraderOrderMANIAC.setPendings(pendingOrders);                 
                     TraderIncomingRequestsTable.setModel(CTraderOrderMANIAC.getPRTableModel());
                 } else {
                     System.out.println("ERROR UPDATING ORDERS");
