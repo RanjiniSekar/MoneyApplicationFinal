@@ -1,35 +1,37 @@
 # MoneyTree
 
-Ranjini
-Kumar
+##Team
 
-CHECK THIS REPO
-http://www.eclipsetrader.org/
 
-High Priority
 
-•	Remove entire row if error 
-•	Timer push
-•	Assigned by name 
-•	Check username invalidity 
-•	List of symbol (50), validate 
-•	1-5 second auto fresh
-•	NYSE/LSE specific 
+##Working features
 
-Medium Priority
-•	Check grammar (Error Message)
-•	Stop/Limit Explicit
+- [x] Password starred
+- [x] Check username invalidity 
+- [x] Password change errors
+- [x] Clear Filter Button
+- [x] Check logout on all screens
+- [x] Exit out of program confirmation
+- [x] Assign temporary password and confirm line
+- [x] Check logout on all screens
 
-Low Priority 
-•	Everything in capital letters for symbols 
 
-DONE
+##Tasks
 
-•	Password starred
-•	Check username invalidity 
-•	Password change errors
-•	Clear Filter Button
-•	Check logout on all screens
-•	Exit out of program confirmation
-•	Assign temporary password and confirm line
-•	Check logout on all screens
+###High Priority
+
+- [ ] Remove entire row if error 
+- [x] Timer push
+- [x] Assigned by name 
+- [x] Check username invalidity 
+- [x] List of symbol (50), validate 
+- [x] 1-5 second auto fresh
+- [ ] NYSE/LSE specific 
+
+###Medium Priority
+- [x] Check grammar (Error Message)
+- [x] Stop/Limit Explicit
+
+###Low Priority 
+- [x] Everything in capital letters for symbols 
+
