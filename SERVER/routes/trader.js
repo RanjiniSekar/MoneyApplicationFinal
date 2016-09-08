@@ -37,7 +37,7 @@ router.route('/orders/:username')
     });
 
 
-function process_block(single_block) {
+function process_block(res, single_block) {
     pool.getConnection(function (err, conn) {
             console.log("Single block:");
             console.log(single_block);
@@ -116,7 +116,6 @@ function process_block(single_block) {
                                     res.status(500).send(error);
                                 } else {
                                     console.log("temp_link recorded successfully");
-                                    res.json(results);
                                 }
                             });
                     }
@@ -130,10 +129,11 @@ function process_block(single_block) {
 
 router.route('/blocks/')
     .post(function (req, res) {
-            for (var i in req.body) {
-                var single_block = req.body[i];
-                process_block(single_block);
-            });
+        for (var i in req.body) {
+            var single_block = req.body[i];
+            process_block(res, single_block);
+        }
+        res.json(results);
     });
 
 router.route('/blocks/:username')
