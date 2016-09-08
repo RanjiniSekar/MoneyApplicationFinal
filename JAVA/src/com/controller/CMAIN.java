@@ -26,11 +26,11 @@ public class CMAIN {
                  curr.setU_id(uid);
                  break;
             case "pm":
-                 curr = new PortfolioManager(uname, name, pass, type);
+                 curr = new PortfolioManager(name, uname, pass, type);
                  curr.setU_id(uid);
                  break;
             case "admin":
-                 curr = new Admin(uname, name, pass, type);
+                 curr = new Admin(name, uname, pass, type);
                  curr.setU_id(uid);
                  break;
         }
