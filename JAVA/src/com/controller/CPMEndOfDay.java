@@ -88,10 +88,10 @@ public class CPMEndOfDay {
             //REQUEST
             HttpGet request ;
             
-            if (x > 0) {
-                request = new HttpGet("http://139.59.17.119:8080/api/pm/eod/" + currUsername + "/1");
-            } else {
+            if (x >= 0) {
                 request = new HttpGet("http://139.59.17.119:8080/api/pm/eod/" + currUsername + "/0");
+            } else {
+                request = new HttpGet("http://139.59.17.119:8080/api/pm/eod/" + currUsername + "/1");
             }
 
             //GET AND PARSE RESPONSE
