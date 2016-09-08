@@ -96,7 +96,7 @@ public class CTraderOrderMANIAC {
                 
         String currUsername = CMAIN.reportUser().getUsername();
         HttpResponse<JsonNode> resp;
-        
+        System.out.println("Username in update orders is: " + currUsername);
         //INIT CLIENT
         CloseableHttpAsyncClient client = HttpAsyncClients.createDefault();
         client.start();
@@ -108,6 +108,7 @@ public class CTraderOrderMANIAC {
         Future<org.apache.http.HttpResponse> future = client.execute(request, null);
         org.apache.http.HttpResponse response = future.get();
         String json_string = EntityUtils.toString(response.getEntity());
+        System.out.println("ASYNC JSON STRING IS : " + json_string);     
         JSONArray arrJson = new JSONArray(json_string);      
         System.out.println("ASYNC JSONARRAY IS : " + arrJson.toString());     
        
@@ -124,7 +125,7 @@ public class CTraderOrderMANIAC {
             arrayOrders.add(currentSingleOrder);
         }
         arrayOrdersMaster = arrayOrders;
-
+        System.out.println("-----------------> THIS ARRAY IS: " + arrayOrdersMaster.size());
         //DONT FORGET TO KILL CLIENT
         try {
             client.close();

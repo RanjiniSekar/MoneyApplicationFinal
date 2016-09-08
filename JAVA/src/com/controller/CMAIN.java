@@ -22,7 +22,7 @@ public class CMAIN {
         User curr = new UnknownUser(uname, pass);
         switch(type){
             case "trader":
-                 curr = new Trader(uname, name, pass, type);
+                 curr = new Trader(name, uname, pass, type);
                  curr.setU_id(uid);
                  break;
             case "pm":
