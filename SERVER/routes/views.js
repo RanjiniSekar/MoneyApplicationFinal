@@ -4,7 +4,33 @@ var path = require('path');
 
 router.route('/trade')
     .get(function (req, res) {
-        res.sendFile(path.join(__dirname + '/../html/home_broker.html'));
+        var uid = req.param('uid');
+        var pool = require('../db/config');
+        pool.getConnection(function (err, conn) {
+            conn.query({
+                    sql: 'SELECT EXISTS(SELECT 1 FROM temp_link WHERE uid = ?)'
+
+                }, [uid],
+                function (error, results, fields) {
+                    // error will be an Error if one occurred during the query 
+                    // results will contain the results of the query 
+                    // fields will contain information about the returned results fields (if any)
+                    if (error) {
+                        console.log('Error performing the query:');
+                        console.log(error);
+                        res.sendFile(path.join(__dirname + '/../html/error.html'));
+                    } else {
+                        console.log(results);
+                        var uidExists = true;
+                        if (uidExists)
+                            res.sendFile(path.join(__dirname + '/../html/home_broker.html'));
+                        else
+                            res.status(404).send("Place has already been executed");
+                    }
+                });
+            conn.release();
+        });
+
     });
 
 router.route('/success')
@@ -16,6 +42,5 @@ router.route('/error')
     .get(function (req, res) {
         res.sendFile(path.join(__dirname + '/../html/error.html'));
     });
-
 
 module.exports = router;
