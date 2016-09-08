@@ -71,6 +71,7 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
                 ArrayList<SingleOrder> ordersDone = new ArrayList<>();
                 try {
                     ordersDone = (ArrayList) CPMOrderMANIAC.updateOrders();
+                    CPMEndOfDay.getEODData();
                 } catch (ExecutionException | InterruptedException | IOException | JSONException ex) {
                     Logger.getLogger(PortfolioManagerWindow.class.getName()).log(Level.SEVERE, null, ex);
                 }
@@ -91,6 +92,9 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
                     CPMOrderMANIAC.setExecuted(ordersExecuted);
                     PMOrderHistoryTable.setModel(CPMOrderMANIAC.getOHTableModel());
                     PMPendingOrdersTable.setModel(CPMOrderMANIAC.getPRTableModel());
+                    //System.out.println("ABOUT TO SET MODEL OF EOD TABLE");
+                    PMEODBoughtTable.setModel(CPMEndOfDay.getBuyTableModel());
+                    PMEODSoldTable.setModel(CPMEndOfDay.getSellTableModel());
                 } else {
                     System.out.println("ERROR UPDATING ORDERS");
                 }
@@ -232,35 +236,7 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
         PMEODBoughtTable.setModel(CPMEndOfDay.getBuyTableModel());
         PMEODBoughtScrollPane.setViewportView(PMEODBoughtTable);
 
-        PMEODSoldTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Portfolio ID", "Symbol", "Quantity", "Price"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.Object.class, java.lang.String.class, java.lang.Integer.class, java.lang.Double.class
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-        });
+        PMEODSoldTable.setModel(CPMEndOfDay.getSellTableModel());
         PMEODSoldScrollPane.setViewportView(PMEODSoldTable);
 
         jLabel3.setText("Sold");
@@ -288,9 +264,9 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
         PMEODLayout.setHorizontalGroup(
             PMEODLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PMEODLayout.createSequentialGroup()
-                .addGap(124, 124, 124)
                 .addGroup(PMEODLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(PMEODLayout.createSequentialGroup()
+                        .addGap(124, 124, 124)
                         .addComponent(FilterTextPMEOD, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(FilterOptionsPMEOD, javax.swing.GroupLayout.PREFERRED_SIZE, 126, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -299,10 +275,13 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
                     .addGroup(PMEODLayout.createSequentialGroup()
                         .addGroup(PMEODLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(PMEODLayout.createSequentialGroup()
-                                .addGap(110, 110, 110)
-                                .addComponent(jLabel2))
-                            .addComponent(PMEODBoughtScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGap(234, 234, 234)
+                                .addComponent(jLabel2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PMEODLayout.createSequentialGroup()
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(PMEODBoughtScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 273, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)))
                         .addGroup(PMEODLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(PMEODSoldScrollPane, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, PMEODLayout.createSequentialGroup()
@@ -316,16 +295,16 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
             PMEODLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(PMEODLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(PMEODLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(PMEODLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel2))
+                .addGroup(PMEODLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(PMEODLayout.createSequentialGroup()
-                        .addGap(32, 32, 32)
-                        .addComponent(PMEODBoughtScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(15, 15, 15)
+                        .addComponent(PMEODSoldScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(PMEODLayout.createSequentialGroup()
-                        .addGroup(PMEODLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel2))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(PMEODSoldScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(PMEODBoughtScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(21, 21, 21)
                 .addGroup(PMEODLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(PMEODFilter)
