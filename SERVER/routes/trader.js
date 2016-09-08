@@ -85,7 +85,7 @@ function process_block(res, single_block) {
 
                         // auto-generate the link
                         var url = randomstring.generate(32);
-                        var link = "http://139.59.17.119:8080/views/trade?uid=" + url;
+                        var link = "http://139.59.17.119:8080/views/trade/" + url;
                         var brokerEmail = single_block.b_email;
 
                         // Create the email content

@@ -2,9 +2,9 @@ var express = require('express');
 var router = express.Router();
 var path = require('path');
 
-router.route('/trade')
+router.route('/trade/:uid')
     .get(function (req, res) {
-        var uid = req.param('uid');
+        var uid = req.params.uid;
         console.log(uid);
         var pool = require('../db/config');
         pool.getConnection(function (err, conn) {
