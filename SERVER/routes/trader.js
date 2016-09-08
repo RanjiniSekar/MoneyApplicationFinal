@@ -138,7 +138,7 @@ router.route('/blocks/')
 
 router.route('/blocks/:username')
     .get(function (req, res) {
-        console.log('Get request on /trader/orders/:username');
+        console.log('Get request on /trader/blocks/:username');
         pool.getConnection(function (err, conn) {
             conn.query({
                     sql: 'SELECT b.*, k.name FROM trader_block b INNER JOIN broker k ON k.b_id = b.b_id WHERE b.t_id = (SELECT u_id FROM user WHERE username = ? ) ORDER BY b.block_id'
