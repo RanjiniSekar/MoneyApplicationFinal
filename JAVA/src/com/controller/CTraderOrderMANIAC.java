@@ -122,6 +122,7 @@ public class CTraderOrderMANIAC {
                 Logger.getLogger(CTraderOrderMANIAC.class.getName()).log(Level.SEVERE, null, ex);
             }
             SingleOrder currentSingleOrder = JsonParsing.parseJsonToSingleOrderObject(currentOrder.toString());
+            
             arrayOrders.add(currentSingleOrder);
         }
         arrayOrdersMaster = arrayOrders;
