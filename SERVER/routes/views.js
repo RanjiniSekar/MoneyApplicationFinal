@@ -4,7 +4,7 @@ var path = require('path');
 
 router.route('/trade')
     .get(function (req, res) {
-        var uid = req.param('uid');
+        var uid = req.params.uid;
         var pool = require('../db/config');
         pool.getConnection(function (err, conn) {
             conn.query({
@@ -22,7 +22,7 @@ router.route('/trade')
                     } else {
                         console.log(results);
                         var uidExists = results[0].uidExists;
-			console.log(uidExists);
+                        console.log(uidExists);
                         if (uidExists)
                             res.sendFile(path.join(__dirname + '/../html/home_broker.html'));
                         else

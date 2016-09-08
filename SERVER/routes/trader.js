@@ -63,8 +63,8 @@ router.route('/blocks/')
                             console.log("Block id:" + blockId);
 
                             /* Updating single_order information */
-                            for (var i in single_block.holdingOrders) {
-                                var single_order = single_block.holdingOrders[i];
+                            for (var j in single_block.holdingOrders) {
+                                var single_order = single_block.holdingOrders[j];
                                 console.log("Single order id: " + single_order.sorder_id);
                                 conn.query({
                                         sql: 'UPDATE single_order SET block_id = ?, date_trequest = CURDATE(), status = ? WHERE sorder_id = ?'
