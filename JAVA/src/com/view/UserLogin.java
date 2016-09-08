@@ -7,6 +7,7 @@ import com.mashape.unirest.http.exceptions.UnirestException;
 import java.awt.Window;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import static javax.swing.JOptionPane.showMessageDialog;
 import org.json.JSONException;
 
 /*
@@ -155,10 +156,17 @@ public class UserLogin extends javax.swing.JFrame {
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
         String nameText = usernameText.getText();
         String passText = new String(passwordText.getPassword());
+        boolean emptyTrigg = false;
+        
+        if (nameText.trim().equals("") || passText.trim().equals("")) {
+                showMessageDialog(null, "None of the fields should be empty if you wish to login.");
+                emptyTrigg = true;
+        }
+        
         try {
-            //SEND TO CONTROLLER TO CREATE BROKER AND SEND TO DB
+            //SEND TO CONTROLLER TO CREATE BROKER AND SEND TO 
             boolean returnedSuccess = CLogin.handleLogin(nameText, passText);
-            if (returnedSuccess == true) {
+            if (returnedSuccess == true && emptyTrigg == false) {
                 String trigger = CMAIN.triggerWindow();
                 switch (trigger) {
                     case "pm":

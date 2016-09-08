@@ -156,10 +156,16 @@ public class ChangePassword extends javax.swing.JFrame {
         String oldPassText = new String(OldPassTextField.getPassword());
         String newPassText = new String(NewPassTextField.getPassword());
         String confirmPassText = new String(ConfirmPassTextField.getPassword());
-
+        boolean emptyTrigg = false;
+        
+        if (oldPassText.trim().equals("") || newPassText.trim().equals("") || confirmPassText.trim().equals("")) {
+                showMessageDialog(null, "None of the fields should be empty if you wish to change your password.");
+                emptyTrigg = true;
+        }
+        
         try {
             //SEND TO CONTROLLER TO CREATE BROKER AND SEND TO DB
-            if (newPassText.equals(confirmPassText)) {
+            if (newPassText.equals(confirmPassText) && emptyTrigg == false) {
                 boolean returnedSuccess = CChangePassword.handleChange(oldPassText, newPassText, confirmPassText);
                 if(returnedSuccess == true){
                     OldPassTextField.setText("");
