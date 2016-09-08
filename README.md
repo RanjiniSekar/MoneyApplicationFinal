@@ -1,8 +1,14 @@
 # MoneyTree
 
+A Trading platform created as part of the studies at Global Markets Institute (GMI).
+
 ##Team
 
+**Project Manager**: Shawn Mok:runner:
 
+**Bussiness Associates**: Frank Brumfield:man:, Kendall Gordon:dog:,  Stuart O'Keeffe:rage2:, Simran Saron:princess:, Mariya Starin:woman:
+
+**Technology Associates**: Adit Chauhan:sleeping:, Anant Giria:confounded:, Anirudh Gopal:relieved:, Kumar Jha:alien:, Ceren Savasan :information_desk_person:, Ranjini Sekar:interrobang:, Oriol Torrillas:trollface: 
 
 ##Working features
 
