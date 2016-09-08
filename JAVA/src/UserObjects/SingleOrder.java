@@ -45,7 +45,7 @@ public class SingleOrder {
 
     public void SingleOrderMakeBlocks(Object[] object){
         
-        this.order_id = Long.parseLong((String)object[0]);
+        this.sorder_id = Long.parseLong((String)object[0]);
         this.p_id = Long.parseLong((String)object[1]);   
         this.symbol = (String)object[2];
         this.quantity = Integer.parseInt((String)object[3]);
