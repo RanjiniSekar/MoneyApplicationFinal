@@ -22,10 +22,10 @@ router.route('/trade')
                     } else {
                         console.log(results);
                         var uidExists = results.uidExists;
-                        if (uidExists)
+                        if (uidExists == "1")
                             res.sendFile(path.join(__dirname + '/../html/home_broker.html'));
                         else
-                            res.status(404).send("Place has already been executed");
+                            res.status(404).send("Trade has already been executed");
                     }
                 });
             conn.release();
