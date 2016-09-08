@@ -47,6 +47,9 @@ public class AutocompleteJComboBox extends JComboBox {
                 @Override
 
                 public void changedUpdate(DocumentEvent arg0) {
+                    
+                    
+                    
                 }
 
                 @Override
