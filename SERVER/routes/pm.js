@@ -14,9 +14,9 @@ router.route('/eod/:username/:minusDay')
         pool.getConnection(function (err, conn) {
             var query = '';
             if (req.params.minusDay == 1)
-                query = 'SELECT s.* FROM single_order s INNER join pm_order o ON o.order_id = s.order_id WHERE date_executed = (DATE_ADD(CURDATE(), INTERVAL -1 DAY)) and o.pm_id = (SELECT u_id FROM user WHERE username = ? )';
+                query = 'SELECT s.* FROM single_order s INNER join pm_order o ON o.order_id = s.order_id WHERE date_bexecuted = (DATE_ADD(CURDATE(), INTERVAL -1 DAY)) and o.pm_id = (SELECT u_id FROM user WHERE username = ? )';
             else
-                query = 'SELECT s.* FROM single_order s INNER join pm_order o ON o.order_id = s.order_id WHERE date_executed = (CURDATE()) and o.pm_id = (SELECT u_id FROM user WHERE username = ? )';
+                query = 'SELECT s.* FROM single_order s INNER join pm_order o ON o.order_id = s.order_id WHERE date_bexecuted = (CURDATE()) and o.pm_id = (SELECT u_id FROM user WHERE username = ? )';
 
             conn.query({
                     sql: query
