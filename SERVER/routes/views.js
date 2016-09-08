@@ -8,7 +8,7 @@ router.route('/trade')
         var pool = require('../db/config');
         pool.getConnection(function (err, conn) {
             conn.query({
-                    sql: 'SELECT EXISTS(SELECT 1 FROM temp_link WHERE uid = ?)'
+                    sql: 'SELECT EXISTS(SELECT 1 FROM temp_link WHERE uid = ?) as uidExists'
 
                 }, [uid],
                 function (error, results, fields) {
@@ -21,7 +21,7 @@ router.route('/trade')
                         res.sendFile(path.join(__dirname + '/../html/error.html'));
                     } else {
                         console.log(results);
-                        var uidExists = true;
+                        var uidExists = results.uidExists;
                         if (uidExists)
                             res.sendFile(path.join(__dirname + '/../html/home_broker.html'));
                         else
