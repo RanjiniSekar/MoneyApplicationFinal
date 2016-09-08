@@ -25,9 +25,11 @@ router.route('/eod/:username/:minusDay')
                     if (!err) {
                         console.log(rows);
                         res.json(rows);
-                    } else
+                    } else {
                         console.log('Error performing the query');
-                    res.json(err);
+                        res.json(err);
+                    }
+
 
                 });
             conn.release();
