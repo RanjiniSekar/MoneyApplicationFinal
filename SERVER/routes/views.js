@@ -21,8 +21,9 @@ router.route('/trade')
                         res.sendFile(path.join(__dirname + '/../html/error.html'));
                     } else {
                         console.log(results);
-                        var uidExists = results.uidExists;
-                        if (uidExists == "1")
+                        var uidExists = results[0].uidExists;
+			console.log(uidExists);
+                        if (uidExists)
                             res.sendFile(path.join(__dirname + '/../html/home_broker.html'));
                         else
                             res.status(404).send("Trade has already been executed");
