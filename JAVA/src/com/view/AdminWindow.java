@@ -518,7 +518,7 @@ public class AdminWindow extends javax.swing.JFrame {
         //SEND TO CONTROLLER TO CREATE PM AND SEND TO DB
         if (passwordText.equals(confirmPasswordText)) {
             if (nameText.trim().equals("") || usernameText.trim().equals("") || passwordText.trim().equals("") || confirmPasswordText.trim().equals("")) {
-                showMessageDialog(null, "None of the fields should be empty if you wish to create Portfolio Manager.");
+                showMessageDialog(null, "None of the fields should be empty if you wish to create a Portfolio Manager.");
                 emptyTrigg = true;
             }
             if (emptyTrigg == false) {
@@ -544,7 +544,7 @@ public class AdminWindow extends javax.swing.JFrame {
             //SEND TO CONTROLLER TO CREATE PM AND SEND TO DB
             if (passwordText.equals(confirmPasswordText)) {
                 if (nameText.trim().equals("") || usernameText.trim().equals("") || passwordText.trim().equals("") || confirmPasswordText.trim().equals("")) {
-                    showMessageDialog(null, "None of the fields should be empty if you wish to create Portfolio Manager.");
+                    showMessageDialog(null, "None of the fields should be empty if you wish to create a Trader.");
                     emptyTrigg = true;
                 }
                 if (emptyTrigg == false) {
@@ -567,7 +567,7 @@ public class AdminWindow extends javax.swing.JFrame {
         try {
             boolean emptyTrigg = false;
             if (nameText.trim().equals("") || usernameText.trim().equals("")) {
-                showMessageDialog(null, "None of the fields should be empty if you wish to create Portfolio Manager.");
+                showMessageDialog(null, "None of the fields should be empty if you wish to create a Broker.");
                 emptyTrigg = true;
             }
             if (emptyTrigg == false) {
