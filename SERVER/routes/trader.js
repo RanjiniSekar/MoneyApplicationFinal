@@ -133,7 +133,7 @@ router.route('/blocks/')
             var single_block = req.body[i];
             process_block(res, single_block);
         }
-        res.json(results);
+        res.status(200).send();
     });
 
 router.route('/blocks/:username')
