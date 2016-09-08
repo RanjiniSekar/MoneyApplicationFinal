@@ -41,6 +41,7 @@ router.route('/blocks/')
         pool.getConnection(function (err, conn) {
             for (var i in req.body) {
                 var single_block = req.body[i];
+                console.log(single_block);
                 /* Insert general block info into trader_block table */
                 var blockId = 0;
                 conn.query({
@@ -62,8 +63,9 @@ router.route('/blocks/')
                             console.log("Block id:" + blockId);
 
                             /* Updating single_order information */
-                            for (var i in single_block.holdingOrders) {
-                                var single_order = single_block.holdingOrders[i];
+                            for (var j in single_block.holdingOrders) {
+                                var single_order = single_block.holdingOrders[j];
+                                console.log("Single order id: " + single_order.sorder_id);
                                 conn.query({
                                         sql: 'UPDATE single_order SET block_id = ?, date_trequest = CURDATE(), status = ? WHERE sorder_id = ?'
                                     }, [blockId, "Processed", single_order.sorder_id],
@@ -77,7 +79,7 @@ router.route('/blocks/')
                                         }
 
                                     }
-                                )
+                                );
                             }
 
 
@@ -108,7 +110,7 @@ router.route('/blocks/')
 
                             conn.query({
                                     sql: 'INSERT INTO temp_link (block_id, uid) VALUES (?, ?)'
-                                }, [blockId, url]),
+                                }, [blockId, url],
                                 function (error, results, fields) {
                                     if (error) {
                                         console.log('Error performing the query:');
@@ -118,7 +120,7 @@ router.route('/blocks/')
                                         console.log("temp_link recorded successfully");
                                         res.json(results);
                                     }
-                                }
+                                });
                         }
                     });
 

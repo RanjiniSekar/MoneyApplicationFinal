@@ -8,18 +8,28 @@ router.get('/', function (req, res, next) {
     res.send('Welcome to pm page');
 });
 
-router.route('/eod/:username')
+router.route('/eod/:username/:minusDay')
     .get(function (req, res) {
-        console.log('GET request on /pm/eod/:username');
+        console.log('GET request on /pm/eod/:username/:minusDay');
         pool.getConnection(function (err, conn) {
-            conn.query('',
-                req.params.username,
+            var query = '';
+            if (req.params.minusDay == 1)
+                query = 'SELECT s.* FROM single_order s INNER join pm_order o ON o.order_id = s.order_id WHERE date_bexecuted = (DATE_ADD(CURDATE(), INTERVAL -1 DAY)) and o.pm_id = (SELECT u_id FROM user WHERE username = ? )';
+            else
+                query = 'SELECT s.* FROM single_order s INNER join pm_order o ON o.order_id = s.order_id WHERE date_bexecuted = (CURDATE()) and o.pm_id = (SELECT u_id FROM user WHERE username = ? )';
+
+            conn.query({
+                    sql: query
+                }, [req.params.username],
                 function (err, rows, fields) {
                     if (!err) {
                         console.log(rows);
                         res.json(rows);
-                    } else
+                    } else {
                         console.log('Error performing the query');
+                        res.json(err);
+                    }
+
 
                 });
             conn.release();

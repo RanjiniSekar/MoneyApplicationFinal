@@ -1,16 +1,17 @@
 [{
     "block_id": 0,
-    "t_id": 0,
-    "b_id": 0,
-    "b_email": "goku@dbz.ho",
+    "t_id": 51,
+    "b_id": 1,
+    "b_email": "otorrillas@gmail.com",
+    "b_name": "govind",
     "symbol": "GOOGLE",
     "quantity": 50,
     "order_type": "Stop Limit Order",
     "price_executed": 0,
     "holdingOrders": [{
-        "sorder_id": 0,
+        "sorder_id": 36,
         "p_id": 1,
-        "order_id": 46,
+        "order_id": 0,
         "block_id": 0,
         "symbol": "GOOGLE",
         "quantity": 50,
@@ -22,6 +23,35 @@
         "account_type": "Margin",
         "order_type": "Stop Limit Order",
         "pmId": 0,
+        "username": "oriol",
+        "assignedTo": 0
+    }]
+}, {
+    "block_id": 0,
+    "t_id": 51,
+    "b_id": 1,
+    "b_email": "otorrillas@gmail.com",
+    "b_name": "govind",
+    "symbol": "HOO",
+    "quantity": 60,
+    "order_type": "Stop Limit Order",
+    "price_executed": 0,
+    "holdingOrders": [{
+        "sorder_id": 46,
+        "p_id": 3,
+        "order_id": 0,
+        "block_id": 0,
+        "symbol": "HOO",
+        "quantity": 60,
+        "action_type": "Sell",
+        "price_stop": 0.0,
+        "price_limit": 0.0,
+        "price_executed": 0.0,
+        "stock_exchange": "LSE",
+        "account_type": "Margin",
+        "order_type": "Stop Limit Order",
+        "pmId": 0,
+        "username": "oriol",
         "assignedTo": 0
     }]
 }]

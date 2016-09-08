@@ -1,10 +1,13 @@
 package com.view;
 
+import Autocomplete.CSVReader;
+import Autocomplete.Java2sAutoComboBox;
 import UserObjects.Broker;
 import UserObjects.Order;
 import UserObjects.SingleOrder;
 import UserObjects.Trader;
 import com.controller.CMAIN;
+import com.controller.CPMEndOfDay;
 import com.controller.CPMOrderMANIAC;
 import com.controller.ControllerPMCreatedOrders;
 import java.awt.Component;
@@ -37,6 +40,8 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import static javax.swing.JOptionPane.showMessageDialog;
 import org.json.JSONException;
+import javax.swing.table.DefaultTableCellRenderer;
+
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -224,35 +229,7 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
 
         jLabel2.setText("Bought");
 
-        PMEODBoughtTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Portfolio ID", "Symbol", "Quantity", "Price"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class, java.lang.Double.class
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-        });
+        PMEODBoughtTable.setModel(CPMEndOfDay.getBuyTableModel());
         PMEODBoughtScrollPane.setViewportView(PMEODBoughtTable);
 
         PMEODSoldTable.setModel(new javax.swing.table.DefaultTableModel(
@@ -397,6 +374,22 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
         TableColumn col3 = PMSendOrderTable.getColumnModel().getColumn(8);
         col3.setCellEditor(new myComboBoxEditor(AccountType));
         col3.setCellRenderer(new MyComboBoxRenderer(AccountType));
+        /////////////////////////////////////GG
+        TableColumn col4 = PMSendOrderTable.getColumnModel().getColumn(2);
+
+        CSVReader csv = new CSVReader();
+        ArrayList<String> symbolList = csv.loadSymbol();
+
+        Java2sAutoComboBox comboBox = new Java2sAutoComboBox(symbolList);
+        comboBox.setDataList(symbolList);
+        comboBox.setMaximumRowCount(5);
+        col4.setCellEditor(new DefaultCellEditor(comboBox));
+        //Set up tool tips for the sport cells.
+        DefaultTableCellRenderer renderer = new DefaultTableCellRenderer();
+        renderer.setToolTipText("Click for combo box");
+        col4.setCellRenderer(renderer);
+
+        /////////////////////////////////////gg
         PMSendOrderScrollPane.setViewportView(PMSendOrderTable);
 
         PMSendOrder.setText("Send Order");

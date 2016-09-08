@@ -63,7 +63,7 @@ public class TraderBlockOrderTableModel extends AbstractTableModel{
         
         switch (columnIndex) {
          case 0:
-          return String.valueOf(widget.getBlockId());
+          return String.valueOf(widget.getSingleOrderId());
          case 1:
           return String.valueOf(widget.getPortfolioId());
          case 2:

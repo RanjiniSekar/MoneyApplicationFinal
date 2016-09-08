@@ -17,6 +17,7 @@ import com.controller.ControllerPMCreatedOrders;
 import com.google.gson.Gson;
 
 import java.awt.BorderLayout;
+import java.awt.Component;
 import java.awt.Dimension;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -115,6 +116,7 @@ public class TradeWindow extends javax.swing.JFrame {
 // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
 private void initComponents() {
         java.awt.GridBagConstraints gridBagConstraints;
+        test =  new JPanel();
         clearFilterBlockHistory = new javax.swing.JButton();
         clearFilterRequests = new javax.swing.JButton();
         logOutButton = new javax.swing.JButton();
@@ -141,6 +143,7 @@ private void initComponents() {
         ChangePassword = new javax.swing.JButton();
         brokerListForBox = (ArrayList) CTraderGetAllBrokers.getBrokerList();
         blockMap = new HashMap<Integer,ArrayList<SingleOrder>>();
+        cPanelList = new ArrayList<JPanel>();
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Trader Platform");
         setName("TraderPlatformFrame"); // NOI18N
@@ -503,12 +506,25 @@ private void initComponents() {
     	System.out.println(temp);
     }
    */ 
-    public void SelectBlockActionPerformed(ActionEvent e) {  
-    	int n = Integer.parseInt(((JComponent)e.getSource()).getName());
-    	if(blockMap.containsKey(n))
+
+    public void PopulateBlocks(int n){
+        
+        if(blockMap.containsKey(n)){
+                
     		blockMap.remove(n);
-    	else
+                System.out.println("Removed from blocks::"+blockMap.toString());
+        }
+        else{
     		blockMap.put(n,singleOrderLists.get(n));
+                System.out.println("Added to blocks::"+blockMap.toString());
+        }
+    }
+    public void SelectBlockActionPerformed(ActionEvent e) {  
+        if(!((JCheckBox)e.getSource()).isSelected()){
+            TraderSelectAllBlocks.setSelected(false);
+        }
+    	int n = Integer.parseInt(((JComponent)e.getSource()).getName());
+    	PopulateBlocks(n);
     }
     
     private void logOutButtonActionPerformed(java.awt.event.ActionEvent evt) {                                             
@@ -593,7 +609,7 @@ private void initComponents() {
             count++;
         }
         
-        final JPanel test = new JPanel();
+        
         test.add(blockOptions);
         int i=0;
         for(final JScrollPane j:paneList){          
@@ -601,7 +617,7 @@ private void initComponents() {
           //  btn.setText("Split Block");
        //     btn.setName(""+i);
            
-            final JPanel cPanel = new JPanel();
+            JPanel cPanel = new JPanel();
           /*  btn.addActionListener(new java.awt.event.ActionListener() {
              	public void actionPerformed(java.awt.event.ActionEvent evt) {
               		JViewport viewport = j.getViewport(); 
@@ -627,17 +643,20 @@ private void initComponents() {
             JPanel splitOptions = new JPanel();
             splitOptions.add(label);
             splitOptions.add(check);
+            splitOptions.setName("splitOpt");
           //  splitOptions.add(btn);
-            
+            cPanel.setName("cPanel"+i);
             cPanel.add(splitOptions);
             cPanel.add(j);
             cPanel.setLayout(new BoxLayout(cPanel,BoxLayout.Y_AXIS));
             test.add(cPanel);
+            cPanelList.add(cPanel);
             i++;
         } 
        
         test.setLayout(new BoxLayout(test,BoxLayout.Y_AXIS));
         JScrollPane p = new JScrollPane(test);
+        p.setName("ParentP");
         TraderPlatformBlockedRequests.add(p);
         TraderPlatformBlockedRequests.validate();
         TraderPlatformTabbedPane.setSelectedIndex(TraderPlatformTabbedPane.getSelectedIndex()+1);
@@ -694,17 +713,31 @@ private void initComponents() {
     }                                                         
 
     private void TraderSelectAllBlocksActionPerformed(java.awt.event.ActionEvent evt) {                                                      
-        /* if(TraderSelectAllBlocks.isSelected()){
-            jCheckBox1.setSelected(true);
-            jCheckBox2.setSelected(true);
-            jCheckBox3.setSelected(true);
+        
+        for(JPanel j: cPanelList){
+           Component[] c = j.getComponents(); 
+           for(Component singleC:c){
+               if(singleC.getName()==null){
+                   continue;
+               }
+               else if(singleC.getName().equals("splitOpt")){
+                   JPanel p = (JPanel)singleC;
+                   if(!TraderSelectAllBlocks.isSelected()){                       
+                        ((JCheckBox)p.getComponent(1)).setSelected(false);
+                        int n = Integer.parseInt(((JCheckBox)p.getComponent(1)).getName());
+                        PopulateBlocks(n);
+                   }
+                   else{   
+                        if(!((JCheckBox)p.getComponent(1)).isSelected()){
+                            ((JCheckBox)p.getComponent(1)).setSelected(true);
+                            int n = Integer.parseInt(((JCheckBox)p.getComponent(1)).getName());
+                            PopulateBlocks(n);
+                        }
+                    }
+               }
+               
+           }
         }
-        else{
-            jCheckBox1.setSelected(false);
-            jCheckBox2.setSelected(false);
-            jCheckBox3.setSelected(false);
-        }
-        */
     }                                                     
 
     private void TraderSubmitBlocksActionPerformed(java.awt.event.ActionEvent evt) {                                                   
@@ -720,8 +753,10 @@ private void initComponents() {
     	Gson gson = new Gson();
     	String json = "";
     	ArrayList<Block> blockList  = new ArrayList<Block>();
+        ArrayList<Integer> blockNoList = new ArrayList<Integer>(); 
     	for (Map.Entry<Integer, ArrayList<SingleOrder>> entry : blockMap.entrySet()){
     		ArrayList<SingleOrder> temp = entry.getValue();
+                blockNoList.add(entry.getKey());
     		int quantity=0;
     		for(SingleOrder a : temp){
                         System.out.println("THIS ONE CEREN: " + a.getSingleOrderId());
@@ -732,7 +767,12 @@ private void initComponents() {
     	}
     	json = gson.toJson(blockList);
     	System.out.println(json);
-        CTraderOrderMANIAC.sendBlockList(json);         
+        CTraderOrderMANIAC.sendBlockList(json); 
+        for(Integer i:blockNoList){
+            test.remove(cPanelList.get(i));
+            
+        }
+        test.validate();
     }  
     
     //Code for giving a pop up box for exit confirmation
@@ -803,9 +843,10 @@ private void initComponents() {
         });
     }
     
-    // Variables declaration - do not modify                     
+    // Variables declaration - do not modify     
+    private JPanel test;
     private javax.swing.JButton ChangePassword;
-    
+    private ArrayList<JPanel> cPanelList;
     private javax.swing.JComboBox<String> FilterOptionsTraderBlockHistory;
     private javax.swing.JComboBox<String> FilterOptionsTraderRequests;
     private javax.swing.JTextField FilterTextTraderBlockHistory;

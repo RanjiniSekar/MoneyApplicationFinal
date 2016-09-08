@@ -55,7 +55,8 @@
 
         console.log(uid);
 
-        $("#accept").click(function () {
+        $("#accept").click(function (event) {
+            event.preventDefault();
             var price = $("#price").val();
             $.post("http://139.59.17.119:8080/api/broker/updateTrade", {
                 uid: uid,
@@ -66,7 +67,8 @@
             });
 
         });
-        $("#decline").click(function () {
+        $("#decline").click(function (event) {
+            event.preventDefault();
             $.post("http://139.59.17.119:8080/api/broker/updateTrade", {
                 uid: uid,
                 action: "reject"

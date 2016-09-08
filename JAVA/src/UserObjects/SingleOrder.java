@@ -1,5 +1,7 @@
 package UserObjects;
 
+import java.sql.Timestamp;
+
 public class SingleOrder {
 	
     
@@ -20,7 +22,7 @@ public class SingleOrder {
         private long pmId;
         private String username;
         private long assignedTo;
-
+        private Timestamp date_executed;
     
     public SingleOrder(long SingleOrderId, long portfolioId, long OrderId, long BlockId, String symbol, int quantity, String action, double stopPrice, double limitPrice, double pricePaid, String stockExchange, String accountType, String orderType, String status) {
         this.sorder_id = SingleOrderId;
@@ -45,7 +47,7 @@ public class SingleOrder {
 
     public void SingleOrderMakeBlocks(Object[] object){
         
-        this.order_id = Long.parseLong((String)object[0]);
+        this.sorder_id = Long.parseLong((String)object[0]);
         this.p_id = Long.parseLong((String)object[1]);   
         this.symbol = (String)object[2];
         this.quantity = Integer.parseInt((String)object[3]);
@@ -251,6 +253,14 @@ public class SingleOrder {
 
     public String getPmUsername() {
         return username;
+    }
+
+    public Timestamp getDate_executed() {
+        return date_executed;
+    }
+
+    public void setDate_executed(Timestamp date_executed) {
+        this.date_executed = date_executed;
     }
     
 }
