@@ -41,7 +41,8 @@ router.route('/blocks/')
         pool.getConnection(function (err, conn) {
             for (var i in req.body) {
                 var single_block = req.body[i];
-                console.log("Single block:" + single_block);
+                console.log("Single block:");
+                console.log(single_block);
                 /* Insert general block info into trader_block table */
                 var blockId = 0;
                 conn.query({
