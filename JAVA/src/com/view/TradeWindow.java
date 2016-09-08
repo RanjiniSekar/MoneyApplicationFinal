@@ -506,12 +506,25 @@ private void initComponents() {
     	System.out.println(temp);
     }
    */ 
-    public void SelectBlockActionPerformed(ActionEvent e) {  
-    	int n = Integer.parseInt(((JComponent)e.getSource()).getName());
-    	if(blockMap.containsKey(n))
+
+    public void PopulateBlocks(int n){
+        
+        if(blockMap.containsKey(n)){
+                
     		blockMap.remove(n);
-    	else
+                System.out.println("Removed from blocks::"+blockMap.toString());
+        }
+        else{
     		blockMap.put(n,singleOrderLists.get(n));
+                System.out.println("Added to blocks::"+blockMap.toString());
+        }
+    }
+    public void SelectBlockActionPerformed(ActionEvent e) {  
+        if(!((JCheckBox)e.getSource()).isSelected()){
+            TraderSelectAllBlocks.setSelected(false);
+        }
+    	int n = Integer.parseInt(((JComponent)e.getSource()).getName());
+    	PopulateBlocks(n);
     }
     
     private void logOutButtonActionPerformed(java.awt.event.ActionEvent evt) {                                             
@@ -630,6 +643,7 @@ private void initComponents() {
             JPanel splitOptions = new JPanel();
             splitOptions.add(label);
             splitOptions.add(check);
+            splitOptions.setName("splitOpt");
           //  splitOptions.add(btn);
             cPanel.setName("cPanel"+i);
             cPanel.add(splitOptions);
@@ -699,17 +713,31 @@ private void initComponents() {
     }                                                         
 
     private void TraderSelectAllBlocksActionPerformed(java.awt.event.ActionEvent evt) {                                                      
-        /* if(TraderSelectAllBlocks.isSelected()){
-            jCheckBox1.setSelected(true);
-            jCheckBox2.setSelected(true);
-            jCheckBox3.setSelected(true);
+        
+        for(JPanel j: cPanelList){
+           Component[] c = j.getComponents(); 
+           for(Component singleC:c){
+               if(singleC.getName()==null){
+                   continue;
+               }
+               else if(singleC.getName().equals("splitOpt")){
+                   JPanel p = (JPanel)singleC;
+                   if(!TraderSelectAllBlocks.isSelected()){                       
+                        ((JCheckBox)p.getComponent(1)).setSelected(false);
+                        int n = Integer.parseInt(((JCheckBox)p.getComponent(1)).getName());
+                        PopulateBlocks(n);
+                   }
+                   else{   
+                        if(!((JCheckBox)p.getComponent(1)).isSelected()){
+                            ((JCheckBox)p.getComponent(1)).setSelected(true);
+                            int n = Integer.parseInt(((JCheckBox)p.getComponent(1)).getName());
+                            PopulateBlocks(n);
+                        }
+                    }
+               }
+               
+           }
         }
-        else{
-            jCheckBox1.setSelected(false);
-            jCheckBox2.setSelected(false);
-            jCheckBox3.setSelected(false);
-        }
-        */
     }                                                     
 
     private void TraderSubmitBlocksActionPerformed(java.awt.event.ActionEvent evt) {                                                   
