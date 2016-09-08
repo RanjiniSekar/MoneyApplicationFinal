@@ -28,14 +28,20 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.io.IOException;
 import java.util.Arrays;
+import java.util.concurrent.ExecutionException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JTabbedPane;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import static javax.swing.JOptionPane.showMessageDialog;
+import org.json.JSONException;
 import javax.swing.table.DefaultTableCellRenderer;
+
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -62,7 +68,12 @@ public class PortfolioManagerWindow extends javax.swing.JFrame {
         Timer timer = new Timer(5000, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                ArrayList<SingleOrder> ordersDone = (ArrayList) CPMOrderMANIAC.updateOrders();
+                ArrayList<SingleOrder> ordersDone = new ArrayList<>();
+                try {
+                    ordersDone = (ArrayList) CPMOrderMANIAC.updateOrders();
+                } catch (ExecutionException | InterruptedException | IOException | JSONException ex) {
+                    Logger.getLogger(PortfolioManagerWindow.class.getName()).log(Level.SEVERE, null, ex);
+                }
                 ArrayList<SingleOrder> ordersPending = new ArrayList<>();
                 ArrayList<SingleOrder> ordersExecuted = new ArrayList<>();
 
